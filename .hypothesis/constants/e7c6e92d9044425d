@@ -1,0 +1,4 @@
+# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/src/bounded_infinity/runtime.py
+# hypothesis_version: 6.141.1
+
+[60.0, 100, 1024, '_from_parent_summary', '_no_summary', '_reconstructed', '_summaries', 'cache_capacity', 'cache_free', 'cache_occupancy', 'cache_size', 'evictions', 'executed', 'executions', 'fragmentation', 'max_tree_depth', 'parent_summaries', 'peak_occupancy', 'spawns', 'stats', 'status', 'task', 'task_received', 'terminations']

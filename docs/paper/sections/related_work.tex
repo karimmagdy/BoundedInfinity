@@ -1,0 +1,61 @@
+% ============================================================
+% 2. Related Work
+% ============================================================
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Multi-agent LLM frameworks.}
+LangGraph~\citep{langgraph2024} models agent workflows as state
+machines with checkpointing but provides no memory bound.
+AutoGen~\citep{wu2023autogen} enables flexible multi-agent
+conversations; CrewAI~\citep{crewai2024} and
+CAMEL~\citep{li2023camel} orchestrate role-based agent teams;
+MetaGPT~\citep{hong2023metagpt} assigns software-engineering roles.
+All store every agent state in unbounded Python data structures.
+Our work is orthogonal: BIC can serve as the memory layer beneath any
+of these frameworks.
+
+\paragraph{Memory management for LLM agents.}
+MemGPT~\citep{packer2023memgpt} (now Letta) introduces an
+OS-inspired paging system for a \emph{single} agent's context window,
+moving segments to disk when the context is full.  It does not address
+multi-agent hierarchies or provide formal memory bounds.  We
+implement a Tiered baseline mirroring MemGPT's hot/cold architecture
+(\S\ref{sec:stress}); BIC outperforms it by $32\times$ on
+reconstruction quality at scale.
+Reflexion~\citep{shinn2023reflexion} compresses a single agent's
+episodic memory into a verbal summary for the next trial.
+Generative Agents~\citep{park2023generative} maintains an
+ever-growing memory stream with retrieval over it.
+None of these systems bound total memory across an agent swarm or
+provide reconstruction guarantees for evicted states.
+
+\paragraph{Streaming and sketching algorithms.}
+The streaming-algorithms community provides tools for processing
+unbounded data in bounded space: Count-Min
+Sketches~\citep{cormode2005cm}, HyperLogLog~\citep{flajolet2007hyperloglog},
+and sliding-window algorithms~\citep{datar2002sliding}.  These
+structures are designed for aggregate statistics (counts, cardinalities)
+over data streams, not for managing structured agent states with
+parent-child relationships and reconstruction requirements.  BIC
+borrows the principle of bounded-space processing but applies it to
+hierarchical agent-state management with summarization.
+
+\paragraph{Cache-efficient computation and space-filling curves.}
+Hilbert curves are widely used in database
+indexing~\citep{lawder2000hilbert} and cache-oblivious
+algorithms~\citep{frigo1999cache} to improve spatial
+locality.  The Cantor pairing function provides a bijection
+$\Nat \times \Nat \to \Nat$ used in computability theory and database
+design.  We repurpose both for a novel application: mapping
+tree-structured agent hierarchies to cache slots (Cantor) and
+clustering agent states for locality-aware eviction (Hilbert).
+
+\paragraph{Hierarchical summarization.}
+Tree-based summarization appears in document
+summarization~\citep{wu2021recursively} and retrieval-augmented
+generation~\citep{raptor2024}.  Our hierarchical summarization differs
+in that it is \emph{eviction-driven}: summaries are created lazily
+when cache pressure forces eviction, and the summarization chain
+doubles as the reconstruction path for queries about evicted agents.

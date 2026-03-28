@@ -1,0 +1,4 @@
+# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/experiments/research_decomposition.py
+# hypothesis_version: 6.141.1
+
+[0.0, 512, 2147483647, '\n---\n', '_summaries', 'completed', 'depth', 'llm', 'max_depth', 'question', 'response', 'synthetic']

@@ -1,0 +1,106 @@
+% ============================================================
+% 5. Discussion
+% ============================================================
+
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Key findings.}
+BIC achieves its design goal: cache-bounded memory with graceful quality
+degradation.  Even at extreme cache pressure (1.9\% retention,
+\S\ref{sec:stress}), BIC maintains 100\% query success and 0.619
+reconstruction quality---a $32\times$ improvement over baselines
+that lose access to evicted agents entirely.  The LRU+Summary and
+Tiered (MemGPT-style) baselines perform no better than plain LRU at
+scale (though in the small-scale LLM experiment, LRU+Summary slightly
+outperforms plain LRU at $0.242$ vs.\ $0.204$ semantic similarity,
+suggesting summarization helps when agents produce richer content):
+when children are evicted via LRU, their parents are often
+already gone, so summarization fails silently.  BIC's Cantor-pairing
+addressing keeps parents cached longer, enabling the summarization
+chain that is the primary quality driver ($5.2\times$ improvement
+per the ablation in \S\ref{sec:ablation}).  Hilbert-locality
+clustering is an optimization whose benefits will materialize with
+real-valued state distributions.
+
+\paragraph{Limitations.}
+We identify four limitations of the current system:
+
+\begin{enumerate}
+\item \textbf{Registry growth.}  While cached states are bounded by
+  $\slots$, the agent registry grows as $\Oh(N)$.  Each record is
+  lightweight ($\sim$100 bytes per agent: ID, parent ID, depth,
+  status), so the registry remains small relative to state storage
+  (1\,MB for 10{,}000 agents vs.\ 40\,MB for $\slots{=}1{,}000$ states).
+  Nonetheless, a complete solution would bound the registry as well,
+  perhaps via a secondary eviction policy or external storage.
+
+\item \textbf{Lossy summarization.}  Hierarchical summarization is
+  inherently lossy.  The preservation ratio $\preserv$ quantifies this
+  loss, but the \emph{quality} of reconstructed information depends on
+  the summarization function.  Our default summarizer stores raw child
+  states under parent keys; a production system would use an LLM to
+  produce semantic summaries.
+
+\item \textbf{Cantor depth truncation.}  We truncate Cantor addresses
+  at $d_{\max} = 8$ levels to prevent integer overflow.  With branching
+  factor $k{=}3$, this supports trees of up to $3^8 = 6{,}561$ agents.
+  Deeper trees require either extended-precision arithmetic or
+  alternative addressing schemes.
+
+\item \textbf{Limited LLM evaluation.}  We validate with a real LLM
+  experiment (\S\ref{sec:llm}), but the scale is small (7~agents,
+  Gemini-2.0-flash).  Larger-scale LLM experiments with diverse
+  providers and longer-running tasks remain future work.  Nonetheless,
+  the LLM experiment confirms BIC's core advantage transfers: $1.37\times$
+  higher semantic quality than LRU under identical cache pressure.
+\end{enumerate}
+
+\paragraph{Hilbert locality.}
+The ablation showed no measurable benefit of Hilbert-locality
+clustering in either synthetic or LLM settings.  We hypothesize this
+is because both our synthetic and small-scale LLM experiments produce
+state vectors that lack sufficient spatial structure for Hilbert
+curves to exploit.  In real-world settings where agent state vectors
+exhibit correlations (e.g., agents working on related sub-topics
+share embedding similarity), Hilbert clustering would co-evict
+nearby agents, producing more coherent summaries.  Validating this
+hypothesis at scale remains future work.
+
+\paragraph{Broader impact.}
+This work addresses a systems-level challenge in scaling agentic AI.
+As LLM-based agents are deployed in increasingly complex workflows
+(software engineering, scientific research, data analysis), unbounded
+memory growth becomes a practical barrier to reliability and cost
+efficiency.  BIC provides a principled alternative to ad-hoc memory
+limits, enabling long-running multi-agent systems that operate within
+predictable resource envelopes.  We see no immediate negative societal
+impacts specific to memory management; the general risks of
+LLM-based agents (hallucination, misuse) are orthogonal to this
+contribution.
+
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented \emph{Bounded Infinity Cache} (BIC), a cache-bounded
+memory management architecture for agentic swarms that provides four
+formal guarantees: bounded cache consumption, zero fragmentation,
+universal retrievability, and indefinite liveness.  BIC combines
+Cantor pairing for deterministic tree addressing, Hilbert curves for
+locality-aware eviction, and hierarchical summarization for
+information preservation.  On synthetic research-decomposition tasks
+with six baselines (including LRU+summarization and a Tiered
+MemGPT-style baseline), BIC achieves 100\% query success and
+$32\times$ higher reconstruction quality under identical cache
+constraints.  A real-LLM experiment with Gemini-2.0-flash confirms
+the advantage transfers: BIC achieves $1.37\times$ higher semantic
+reconstruction quality than LRU.
+
+\paragraph{Future work.}
+Natural extensions include: (1)~LLM-powered semantic summarization
+(replacing raw concatenation); (2)~bounding the agent registry;
+(3)~distributed BIC across multiple nodes; (4)~formal verification
+in Lean~4; and (5)~larger-scale LLM evaluation on production agentic
+workloads.

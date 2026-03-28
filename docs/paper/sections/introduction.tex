@@ -1,0 +1,71 @@
+% ============================================================
+% 1. Introduction
+% ============================================================
+
+\section{Introduction}
+\label{sec:introduction}
+
+Modern multi-agent LLM systems make an implicit promise of infinite
+capacity: every sub-task spawns a new agent, each carrying its own
+state---task descriptions, reasoning traces, embedding caches, tool
+outputs---and the framework assumes that every agent's state will
+remain available indefinitely.  In practice the resources run out.
+LangGraph~\citep{langgraph2024}, AutoGen~\citep{wu2023autogen},
+CrewAI~\citep{crewai2024}, and MetaGPT~\citep{hong2023metagpt} all
+store agent states in unbounded Python data structures.  A recursive
+research decomposition with branching factor~$k=3$ and depth~$d=7$
+produces $\sum_{i=0}^{7}3^i = 3{,}280$ agents, each carrying 1--4\,KB
+of LLM context; at depth~10 the count exceeds one million.  Without
+explicit memory management, these systems crash.
+
+The operating-systems community solved analogous problems decades ago
+with virtual memory, page replacement, and cache hierarchies.  Yet the
+agentic-AI community has largely ignored this body of work, relying on
+ad-hoc solutions: MemGPT~\citep{packer2023memgpt} pages individual
+agent context to disk but does not bound total memory;
+Reflexion~\citep{shinn2023reflexion} compresses a single agent's
+history but offers no multi-agent guarantees; Generative
+Agents~\citep{park2023generative} maintains an unbounded memory stream.
+
+We propose the \textbf{Bounded Infinity Cache (BIC)}, a principled
+architecture for cache-bounded state management in
+arbitrarily large agent swarms.  BIC draws on three mathematical tools:
+
+\begin{enumerate}
+  \item \textbf{Cantor pairing functions} map arbitrary tree-structured
+        agent hierarchies to natural-number addresses, which are then
+        reduced modulo $M$ to assign cache slots with structural
+        locality (siblings land in nearby slots).
+  \item \textbf{Hilbert space-filling curves} compress high-dimensional
+        agent-state vectors to one-dimensional indices, enabling
+        locality-aware eviction: agents with similar states are evicted
+        together, improving the effectiveness of joint summarization.
+  \item \textbf{Hierarchical summarization} compresses evicted states
+        into their parent's summary buffer via a lossy function
+        $\summarize$, creating a chain of summaries up the tree that
+        supports $\Oh(\log N)$ reconstruction of any evicted state.
+\end{enumerate}
+
+\paragraph{Contributions.} We make three contributions:
+\begin{enumerate}
+  \item We introduce the BIC architecture---to our knowledge the first
+        cache-bounded state-management system for multi-agent LLM
+        swarms---and prove four theorems guaranteeing bounded cache
+        consumption, zero fragmentation, information-preserving
+        retrievability, and indefinite liveness (\S\ref{sec:method}).
+  \item We design a hierarchical summarization scheme with
+        Cantor-pairing-based addressing that preserves parent--child
+        locality, and formally bound the information loss under
+        repeated eviction at $(1-\epsilon)^d$ per $d$ summarization
+        levels.  Hilbert-locality eviction is incorporated as an
+        optional optimization for correlated state distributions
+        (\S\ref{sec:proofs}).
+  \item We empirically demonstrate on synthetic and real-LLM
+        (Gemini-2.0-flash) research-decomposition tasks that BIC
+        achieves $100\%$ query success with $0.62$ reconstruction
+        quality in bounded cache, outperforming six baselines
+        (including LRU+summarization and a Tiered MemGPT-style
+        baseline) by $32\times$ on reconstruction quality at scale,
+        and $1.37\times$ on semantic quality with real LLM outputs
+        (\S\ref{sec:experiments}).
+\end{enumerate}

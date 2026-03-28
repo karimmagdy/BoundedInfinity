@@ -1,0 +1,92 @@
+% ============================================================
+% Bounding Unbounded Agentic Swarms:
+% Cache-Bounded State Management via Space-Filling Curves
+% ============================================================
+% NeurIPS 2026 Submission
+% ============================================================
+
+\documentclass{article}
+
+% NeurIPS 2026 style
+\usepackage[final]{neurips_2026}
+
+% Standard packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pifont}   % for \cmark \xmark in tables
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+
+% Checkmark and X-mark shortcuts
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+% Custom commands
+\newcommand{\BIC}{\mathcal{C}}
+\newcommand{\States}{\mathcal{S}}
+\newcommand{\Tree}{\mathcal{T}}
+\newcommand{\info}{I}
+\newcommand{\summarize}{\varphi}
+\newcommand{\cantor}{\alpha}
+\newcommand{\hilbert}{\mathcal{H}}
+\newcommand{\preserv}{\rho}
+\newcommand{\Oh}{\mathcal{O}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\slots}{M}
+
+\title{Bounding Unbounded Agentic Swarms: \\ Cache-Bounded State Management \\ via Space-Filling Curves}
+
+\author{
+  Anonymous Author(s)
+}
+
+\begin{document}
+
+\maketitle
+
+% ------------------------------------------------------------------ %
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/discussion}
+
+% ------------------------------------------------------------------ %
+% References
+% ------------------------------------------------------------------ %
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% ------------------------------------------------------------------ %
+% Appendix with full proofs
+% ------------------------------------------------------------------ %
+\newpage
+\appendix
+\input{sections/appendix_proofs}
+
+\end{document}

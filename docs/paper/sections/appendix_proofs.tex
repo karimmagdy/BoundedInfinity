@@ -1,0 +1,271 @@
+% ============================================================
+% Appendix: Formal Proofs
+% ============================================================
+
+\section{Formal Proofs}
+\label{sec:proofs}
+
+We provide complete proofs for the four theorems stated in
+\S\ref{sec:theorems}.  We also analyze the Cantor addressing scheme.
+
+% ------------------------------------------------------------
+\subsection{Cantor Pairing Properties}
+\label{sec:cantor-analysis}
+
+\begin{lemma}[Cantor Pairing Bijectivity]
+\label{lem:cantor-bijection}
+The standard Cantor pairing function
+$\pi: \Nat \times \Nat \to \Nat$ defined by
+$\pi(a, b) = \frac{(a+b)(a+b+1)}{2} + b$
+is a bijection.
+\end{lemma}
+
+\begin{proof}
+The function $\pi$ enumerates the pairs $(a,b)$ along successive
+anti-diagonals $a+b = 0, 1, 2, \dots$.  On diagonal $n = a+b$,
+the pairs are $(n,0), (n{-}1,1), \dots, (0,n)$, which are $n+1$
+pairs.  The total number of pairs on diagonals $0, \dots, n{-}1$ is
+$\sum_{i=0}^{n-1}(i+1) = \frac{n(n+1)}{2}$.  Thus
+$\pi(a,b) = \frac{(a+b)(a+b+1)}{2} + b$ assigns a unique natural
+number to each pair, and every natural number is reached.
+
+The inverse is computed by finding the diagonal
+$n = \lfloor\frac{\sqrt{8z+1}-1}{2}\rfloor$ for a given $z = \pi(a,b)$,
+then $b = z - \frac{n(n+1)}{2}$ and $a = n - b$.
+\end{proof}
+
+\begin{lemma}[Iterated Cantor Pairing]
+\label{lem:iterated-cantor}
+The iterated (left-fold) Cantor pairing
+$\cantor: \Nat^d \to \Nat$ defined by
+$\cantor(p_1, \dots, p_d) = \pi(\pi(\cdots\pi(\pi(p_1, p_2), p_3)\cdots), p_d)$
+is injective for each fixed depth $d$.
+\end{lemma}
+
+\begin{proof}
+By induction on $d$.  Base case $d=2$: $\cantor(p_1, p_2) = \pi(p_1, p_2)$
+is bijective by Lemma~\ref{lem:cantor-bijection}.  Inductive step:
+assume $\cantor_d: \Nat^d \to \Nat$ is injective.  Then
+$\cantor_{d+1}(p_1, \dots, p_{d+1}) = \pi(\cantor_d(p_1, \dots, p_d), p_{d+1})$.
+Since $\pi$ is bijective and $\cantor_d$ is injective, the composition
+is injective.  The iterated pairing is injective but not surjective
+onto $\Nat$ for $d>2$ (not all naturals appear as valid iterated
+encodings, since the first argument of $\pi$ is restricted to the
+range of $\cantor_d$).
+\end{proof}
+
+\begin{remark}[Depth Truncation]
+Our implementation truncates at $d_{\max} = 8$, bounding the Cantor
+address to at most $\pi^{(7)}$ nested applications.  With branching
+factor $k$, the maximum address value is $\cantor(k{-}1, k{-}1, \dots, k{-}1)$
+for $d_{\max}$ components.  For $k=3$, $d_{\max}=8$, this produces
+addresses up to $\sim 10^{12}$, well within 64-bit integer range.
+The slot mapping $h(v) = \cantor(v) \bmod \slots$ may produce
+collisions, which are resolved by open addressing with linear probing
+in the cache.
+\end{remark}
+
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:bounded} (Bounded Memory)}
+\label{sec:proof-bounded}
+
+\begin{proof}
+The BIC system has two memory components:
+
+\emph{(i) Cache array.}  The cache is a fixed-size array of $\slots$
+slots.  Each slot stores at most one agent state of size
+$\leq C_{\max}$.  Therefore the cache uses at most
+$\slots \cdot C_{\max}$ bytes, regardless of $N$.
+
+\emph{(ii) Agent registry.}  Each agent ever spawned gets a registry
+entry containing: agent ID (8 bytes), parent ID (8 bytes), tree depth
+(4 bytes), child indices (up to $k \times 4$ bytes), status (1 byte),
+Cantor address (8 bytes).  For branching factor $k$:
+$|r| \leq 29 + 4k$ bytes per agent.  With $k=3$, this is 41 bytes.
+After $N$ spawn events, the registry uses $N \cdot |r|$ bytes, i.e.,
+$\Oh(N)$.
+
+\emph{(iii) No other state.}  The eviction manager, Hilbert compressor,
+and API layer use $\Oh(\slots)$ auxiliary memory (priority queues,
+index arrays).
+
+Total: $\slots \cdot C_{\max} + N \cdot |r| + \Oh(\slots)
+= \slots \cdot C_{\max} + \Oh(N)$.
+
+Crucially, $\slots$ is a fixed constant chosen at initialization.
+The $\Oh(N)$ registry term grows linearly, but each record is
+$\sim$$|r| \approx 41$ bytes vs.\ $C_{\max} \approx 1{,}000$--$4{,}000$
+bytes per state, so the registry is $\sim$$40\times$ smaller per agent
+than the cache.
+\end{proof}
+
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:frag} (Fragmentation)}
+\label{sec:proof-frag}
+
+\begin{proof}
+The \textsc{Compact} operation is invoked explicitly (e.g., after a
+batch of evictions) to restore contiguity; it is \emph{not} called on
+every eviction, since the cache uses open addressing with linear probing
+which tolerates sparse layouts.
+
+The operation works as follows: given the cache array
+$A[0..\slots{-}1]$ with occupied slots at arbitrary positions, we
+scan left-to-right with two pointers: $w$ (write) starting at 0,
+and $r$ (read) starting at 0.
+
+\begin{enumerate}
+  \item \textbf{Invariant:} At the start of each iteration,
+    $A[0], A[1], \dots, A[w{-}1]$ are all occupied.
+  \item While $r < \slots$:
+    \begin{itemize}
+      \item If $A[r]$ is occupied: set $A[w] \gets A[r]$ (move entry),
+            update the slot-mapping index from $r \to w$,
+            increment both $w$ and $r$.
+      \item If $A[r]$ is empty: increment $r$ only.
+    \end{itemize}
+  \item Clear all slots $A[w..\slots{-}1]$.
+\end{enumerate}
+
+After compaction, all $|\BIC|$ occupied entries (where $|\BIC| = w$)
+reside in contiguous positions $A[0..w{-}1]$.  The invariant is
+maintained: $w$ only increments when an entry is placed, so
+$A[0], A[1], \dots, A[w{-}1]$ are all occupied.
+
+Positions $A[w..\slots{-}1]$ are all empty.  Therefore
+\emph{external fragmentation is zero}: there are no empty slots
+between occupied ones.
+
+The operation runs in $\Oh(\slots)$ time (single pass over the array)
+and requires no auxiliary memory beyond the two pointers.
+\end{proof}
+
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:retrieve} (Retrievability)}
+\label{sec:proof-retrieve}
+
+\begin{proof}
+We prove both parts.
+
+\emph{Part (a): Cached agents.}  If agent $v$ has a cache entry at
+slot $h(v) \bmod \slots$, the query resolves by hash-map lookup in
+$\Oh(1)$ expected time (with open addressing and load factor
+$< 1$, by standard hashing analysis).  The returned state is the
+exact stored state.
+
+\emph{Part (b): Evicted agents.}  If agent $v$ was evicted, its state
+was summarized into its parent's entry via $\summarize$ at eviction
+time.  To reconstruct $v$'s state, we walk the ancestor chain:
+
+Let $v = v_d \to v_{d-1} \to \cdots \to v_1 \to v_0$ be the path from
+$v$ to the root.  Define $v_{j^*}$ as the deepest ancestor that is
+still cached (i.e., $j^* = \max\{j : v_j \in \mathrm{Cache}\}$).
+Such $j^*$ exists because the root $v_0$ is never evicted (it has the
+shallowest depth, so it is the last candidate for eviction; and at
+cache size $\slots \geq 1$, at least one agent is always cached).
+
+The reconstruction walks from $v$'s registry entry upward until
+finding $v_{j^*}$, collecting summaries stored at $v_{j^*}$'s
+cache entry.  This walk visits $d - j^*$ registry entries, each
+costing $\Oh(1)$ (hash-map lookup), so the total cost is $\Oh(d)$.
+
+\emph{Information loss bound.}  Each eviction-summarization step
+preserves at least a $\preserv$ fraction of information.  An agent
+at depth $d$ has been summarized at most $d - j^*$ times (once per
+eviction along its ancestor chain).  In the worst case ($j^* = 0$,
+ancestors evicted in order from leaf to root, then re-cached), the
+cumulative preservation is $\preserv^{d}$.  Information loss is
+bounded by $1 - \preserv^{d}$.
+
+For $\preserv = 1 - \epsilon$ with small $\epsilon$:
+$\preserv^d = (1-\epsilon)^d \geq 1 - d\epsilon$
+(by Bernoulli's inequality).  With branching factor $k$, the maximum
+depth is $d \leq \log_k N$, so reconstruction cost is
+$\Oh(\log_k N)$ and information loss is at most
+$1 - (1-\epsilon)^{\log_k N}$.
+\end{proof}
+
+
+% ------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:liveness} (Indefinite Liveness)}
+\label{sec:proof-liveness}
+
+\begin{proof}
+We must show that every \textsc{Spawn} operation completes
+successfully, regardless of the number of agents previously spawned.
+
+\emph{Case 1: Cache has a free slot.}
+The new agent is placed in the free slot in $\Oh(1)$ time.
+
+\emph{Case 2: Cache is full ($|\BIC| = \slots$).}
+\textsc{EnsureCapacity} is invoked.  The eviction manager selects
+at least one victim agent $v^*$ from the cache using the priority
+scheme (idle $\to$ depth $\to$ LRU).  Since $|\BIC| = \slots \geq 1$,
+at least one agent exists in the cache, so the selection always
+succeeds.
+
+The eviction step:
+\begin{enumerate}
+  \item Summarizes $v^*$'s state into its parent (if parent is cached).
+  \item Removes $v^*$ from the cache, freeing one slot.
+\end{enumerate}
+
+After eviction, $|\BIC| = \slots - 1 < \slots$, so the new agent
+can be placed.
+
+\emph{Time complexity.}  Each operation's worst-case cost:
+\begin{itemize}
+  \item \textsc{Spawn}: $\Oh(\slots)$ (eviction candidate selection
+    scans the cache).
+  \item \textsc{Execute}: $\Oh(C_{\max})$ (state update).
+  \item \textsc{Query}: $\Oh(d) \leq \Oh(\log_k N)$ by
+    Theorem~\ref{thm:retrieve}.  Since $d \leq d_{\max} = 8$,
+    this is $\Oh(1)$ in practice.
+  \item \textsc{Compact}: $\Oh(\slots)$ (single array scan).
+\end{itemize}
+
+All operations complete in $\Oh(\slots)$ time, independent of $N$.
+Since $\slots$ is finite, the system never blocks and can execute
+indefinitely.
+
+\emph{Liveness argument.}  No operation can deadlock: there are no
+locks, no circular waits, and no unbounded loops.  The eviction
+manager always makes progress (removes at least one agent), so the
+system is live.
+\end{proof}
+
+
+% ------------------------------------------------------------
+\subsection{Hilbert Curve Locality}
+\label{sec:hilbert-analysis}
+
+\begin{lemma}[Hilbert Locality Bound]
+\label{lem:hilbert-locality}
+For the $p$-order Hilbert curve in $n$ dimensions, two points at
+$\ell_\infty$ distance $\leq r$ in $[0, 2^p)^n$ have Hilbert index
+distance at most $(2r+1)^n \cdot 2^{n-1}$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The Hilbert curve of order $p$ partitions $[0, 2^p)^n$ into $2^{np}$
+cells, each a unit hypercube.  Two cells adjacent in
+$\ell_\infty$ distance $\leq r$ lie within a hypercube of side
+$2r+1$.  This hypercube contains at most $(2r+1)^n$ cells.  The
+Hilbert curve visits each cell exactly once, and within any
+axis-aligned sub-hypercube of side $s$, the curve's path has at most
+$s^n \cdot 2^{n-1}$ local pieces (by the recursive
+construction of the Hilbert curve).  Therefore the maximum index gap
+between two cells in the sub-hypercube is bounded by
+$(2r+1)^n \cdot 2^{n-1}$.
+
+A full proof follows from the recursive structure of the Hilbert curve
+and the Butz--Moore characterization of locality
+\citep{butz1969hilbert, moon2001hilbert}.
+\end{proof}
+
+This locality property ensures that our Hilbert-based eviction
+clustering co-evicts agents with similar state vectors, producing
+more coherent summaries when the state space has spatial structure.

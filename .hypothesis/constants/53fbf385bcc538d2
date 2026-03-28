@@ -1,0 +1,4 @@
+# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/experiments/baselines.py
+# hypothesis_version: 6.141.1
+
+[0.0, 'bic', 'executed', 'fifo', 'lru', 'random', 'status', 'task', 'task_received', 'unbounded']

@@ -1,0 +1,262 @@
+% ============================================================
+% 3. Method: Formal Model, Architecture, and Theorems
+% ============================================================
+
+\section{Method}
+\label{sec:method}
+
+We first define the formal model (\S\ref{sec:formal}), then present
+the BIC architecture (\S\ref{sec:architecture}) and state our four
+main theorems (\S\ref{sec:theorems}).  Full proofs are in
+Appendix~\ref{sec:proofs}.
+
+% ============================================================
+\subsection{Formal Model}
+\label{sec:formal}
+
+\begin{definition}[Agent Swarm]
+\label{def:swarm}
+An \emph{agent swarm} is a rooted tree $\Tree = (V, E, \sigma, \delta)$
+where:
+\begin{itemize}
+  \item $V$ is a (potentially unbounded) set of \emph{agent nodes},
+        with root $v_0 \in V$.
+  \item $E \subseteq V \times V$ are directed parent$\to$child edges.
+  \item $\sigma: V \times \States \to V^*$ is the \emph{spawn function};
+        executing agent $v$ with state $s$ may spawn children
+        $\sigma(v,s) = (v_1, \dots, v_k)$.
+  \item $\delta: V \times \States \to \States$ is the \emph{transition
+        function}; executing agent $v$ in state $s$ produces a new
+        state $\delta(v, s)$.
+\end{itemize}
+The \emph{state space} $\States$ is the set of all possible agent
+states (e.g., JSON-serializable dictionaries).
+\end{definition}
+
+\begin{definition}[Bounded Infinity Cache (BIC)]
+\label{def:bic}
+A BIC is a tuple $\BIC = (\slots, h, \summarize, \info)$ where:
+\begin{itemize}
+  \item $\slots \in \Nat^+$ is the \emph{cache capacity}---the maximum
+        number of agent states stored simultaneously.
+  \item $h: V \to [\slots]$ is the \emph{slot mapping}: given an agent
+        $v$ at tree position $(p_1, \dots, p_d)$ (sequence of child
+        indices from root), define
+        \begin{equation}
+          h(v) = \cantor(p_1, \dots, p_d) \bmod \slots
+          \label{eq:slot}
+        \end{equation}
+        where $\cantor: \Nat^* \to \Nat$ is the generalized Cantor
+        pairing function (iterated left-fold of the standard Cantor
+        pair $\pi(a,b) = \frac{(a+b)(a+b+1)}{2} + b$).
+  \item $\summarize: \States \times \States^k \to \States$ is the
+        \emph{summarization function}: given a parent state and $k$
+        child states, produce a compressed parent state that subsumes
+        the children's information.
+  \item $\info: \States \to \Real_{\geq 0}$ is the \emph{information
+        metric}: a measure of the content in a state.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Hilbert Compression]
+\label{def:hilbert}
+For agents with $n$-dimensional numeric state vectors, the
+\emph{Hilbert compressor} $\hilbert_p^n: [0,1]^n \to [0, 2^{np})$
+maps an $n$-dimensional unit-hypercube coordinate to a
+one-dimensional Hilbert-curve index at resolution $p$ bits per
+dimension.  We use the Skilling~\citep{skilling2004hilbert} transpose
+algorithm for $\Oh(np)$ computation.  The Hilbert index is stored per
+cache entry and used by the eviction policy to cluster nearby states.
+\end{definition}
+
+\begin{definition}[Information Preservation Ratio]
+\label{def:preservation}
+The \emph{preservation ratio} of a summarization function $\summarize$
+under metric $\info$ is:
+\begin{equation}
+  \preserv(\summarize, \info) \;=\;
+  \inf_{s_p, s_{c_1}, \dots, s_{c_k}} \;
+  \frac{\info\bigl(\summarize(s_p, [s_{c_1}, \dots, s_{c_k}])\bigr)}
+       {\info(s_p) + \sum_{i=1}^{k} \info(s_{c_i})}
+  \label{eq:preservation}
+\end{equation}
+We require $\preserv \geq 1 - \epsilon$ for a configurable $\epsilon > 0$.
+\end{definition}
+
+
+% ============================================================
+\subsection{Architecture}
+\label{sec:architecture}
+
+The BIC exposes four operations: \textsc{Spawn}, \textsc{Execute},
+\textsc{Query}, and \textsc{Terminate}.  Figure~\ref{fig:architecture}
+shows the data flow.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, minimum width=2.4cm,
+                minimum height=0.8cm, font=\small},
+  arr/.style={-{Stealth[length=2mm]}, thick},
+  every node/.style={font=\small}
+]
+  % Blocks — wider horizontal spacing to avoid overlaps
+  \node[block, fill=blue!10] (api) {API Layer};
+  \node[block, fill=green!10, below left=1.2cm and 1.4cm of api] (reg) {Agent Registry};
+  \node[block, fill=orange!10, below right=1.2cm and 1.4cm of api] (cache) {BIC (Fixed Array)};
+  \node[block, fill=purple!10, below=1.2cm of reg] (cantor) {Cantor Addr};
+  \node[block, fill=red!10, below=1.2cm of cache] (evict) {Eviction Mgr};
+  \node[block, fill=cyan!10, left=1.2cm of evict] (hilbert) {Hilbert Idx};
+
+  % Arrows — re-routed to avoid crossing over blocks
+  \draw[arr] (api) -- node[left, pos=0.4] {register} (reg);
+  \draw[arr] (api) -- node[right, pos=0.4] {put/get} (cache);
+  \draw[arr] (reg) -- node[above, pos=0.4] {slot hint} (cache);
+  \draw[arr] (reg) -- node[left] {$\alpha(v)$} (cantor);
+  \draw[arr] (cache) -- node[right] {full?} (evict);
+  \draw[arr] (evict) -- node[above] {cluster} (hilbert);
+  \draw[arr] (evict.north) -- node[left] {$\summarize$} (cache.south);
+\end{tikzpicture}
+\caption{BIC architecture.  The API layer coordinates the Agent
+  Registry (tree tracking + Cantor addressing), the fixed-size cache
+  array, and the Eviction Manager (Hilbert-locality clustering +
+  hierarchical summarization).}
+\label{fig:architecture}
+\end{figure}
+
+Algorithm~\ref{alg:spawn} shows the \textsc{Spawn} operation;
+Algorithm~\ref{alg:query} shows \textsc{Query} with
+ancestor-chain reconstruction.
+
+\begin{algorithm}[t]
+\caption{\textsc{Spawn}$(v_{\mathrm{parent}}, \tau)$ — spawn a new
+  agent with task $\tau$ as a child of $v_{\mathrm{parent}}$.}
+\label{alg:spawn}
+\begin{algorithmic}[1]
+  \STATE $v \gets \mathrm{Registry.Register}(v_{\mathrm{parent}}, \tau)$
+  \COMMENT{Assign tree position, compute Cantor address}
+  \IF{$\mathrm{Cache.IsFull}()$}
+    \STATE $\mathrm{EvictionManager.EnsureCapacity}(1)$
+    \COMMENT{Evict + summarize into parents}
+  \ENDIF
+  \STATE $s_0 \gets \{\texttt{task}: \tau\}$
+  \STATE $\eta \gets \hilbert(\mathrm{ExtractVector}(s_0))$
+  \COMMENT{Hilbert index for locality}
+  \STATE $\mathrm{Cache.Put}(v, s_0, \eta, h(v))$
+  \COMMENT{$h(v) = \cantor(v) \bmod \slots$}
+  \RETURN $v$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{\textsc{Query}$(v)$ — retrieve agent $v$'s state.}
+\label{alg:query}
+\begin{algorithmic}[1]
+  \STATE $e \gets \mathrm{Cache.Get}(v)$
+  \IF{$e \neq \mathrm{nil}$}
+    \RETURN $e.\mathrm{state}$
+    \COMMENT{Cache hit: $\Oh(1)$}
+  \ENDIF
+  \STATE $r \gets \mathrm{Registry.Get}(v)$
+  \IF{$r = \mathrm{nil}$}
+    \RETURN nil
+  \ENDIF
+  \STATE \COMMENT{Reconstruct from ancestor chain: $\Oh(d)$}
+  \STATE $\mathrm{summaries} \gets [\,]$
+  \STATE $u \gets r.\mathrm{parent}$
+  \WHILE{$u \neq \mathrm{nil}$}
+    \STATE $e_u \gets \mathrm{Cache.Get}(u)$
+    \IF{$e_u \neq \mathrm{nil}$}
+      \STATE Append $e_u.\mathrm{state.\_summaries}$ to summaries
+      \STATE \textbf{break}
+      \COMMENT{Found cached ancestor}
+    \ENDIF
+    \STATE $u \gets \mathrm{Registry.Get}(u).\mathrm{parent}$
+  \ENDWHILE
+  \RETURN $\mathrm{MergeReconstruction}(r, \mathrm{summaries})$
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Eviction policy.}
+When the cache is full, the eviction manager selects victims using a
+three-level priority: (1)~idle agents (not accessed for $>t$ seconds);
+(2)~deepest agents (largest tree depth); (3)~least recently accessed.
+From the candidate pool, a \emph{Hilbert clustering} step selects the
+subset whose Hilbert indices form the tightest contiguous window
+(Algorithm~\ref{alg:evict}).  These are evicted together, and their
+states are summarized into their respective parents via $\summarize$.
+
+\begin{algorithm}[t]
+\caption{\textsc{Evict}$(n)$ — evict $n$ agents with Hilbert clustering.}
+\label{alg:evict}
+\begin{algorithmic}[1]
+  \STATE $P \gets$ top-$3n$ candidates by eviction priority
+  \STATE Sort $P$ by Hilbert index
+  \STATE $W^* \gets \arg\min_{|W|=n} \max(W.\eta) - \min(W.\eta)$
+  \COMMENT{Tightest sliding window}
+  \FOR{each parent group $(v_p, \{c_1, \dots, c_j\})$ in $W^*$}
+    \STATE $s_p' \gets \summarize(s_p, [s_{c_1}, \dots, s_{c_j}])$
+    \STATE $\mathrm{Cache.Update}(v_p, s_p')$
+    \FOR{$i = 1$ \TO $j$}
+      \STATE $\mathrm{Cache.Remove}(c_i)$
+    \ENDFOR
+  \ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+
+% ============================================================
+\subsection{Theorems}
+\label{sec:theorems}
+
+We state four theorems; full proofs are in Appendix~\ref{sec:proofs}.
+
+\begin{theorem}[Bounded Memory]
+\label{thm:bounded}
+For any execution trace $\tau$ of length $|\tau| \to \infty$, the BIC
+uses at most $\slots \cdot C_{\max} + \Oh(N)$ total memory, where
+$C_{\max} = \max_{s \in \States} |s|$ is the maximum state size and
+$N$ is the total number of agents ever spawned.  The $\Oh(N)$ term
+accounts for the agent registry (lightweight metadata: parent pointer,
+depth, status --- $\Oh(1)$ per agent).
+\end{theorem}
+
+\begin{remark}
+The registry's $\Oh(N)$ growth is an honest limitation.  Each registry
+record is $\sim$100 bytes (agent ID, parent ID, depth, status),
+compared to 1--4\,KB per agent state.  At $N = 10{,}000$ agents, the
+registry uses $\sim$1\,MB vs.\ $\sim$40\,MB for a cache of
+$\slots=1{,}000$ states.  In practice, the registry can also be bounded
+with a secondary eviction policy; we do not do so here to keep the
+architecture simple.
+\end{remark}
+
+\begin{theorem}[Fragmentation]
+\label{thm:frag}
+After a call to \textsc{Compact}, the BIC has zero external
+fragmentation: all $|\BIC|$ occupied slots are contiguous in
+positions $[0, |\BIC|)$.
+\end{theorem}
+
+\begin{theorem}[Retrievability]
+\label{thm:retrieve}
+Every agent state is retrievable:
+\begin{enumerate}
+  \item[(a)] \textbf{Cached agents:} Retrieved in $\Oh(1)$ via hash-map
+    lookup.
+  \item[(b)] \textbf{Evicted agents:} Reconstructed in $\Oh(d)$ by
+    walking the ancestor chain (depth $d$), with information
+    loss bounded by $1 - \preserv^d$ where $\preserv \geq 1-\epsilon$
+    is the preservation ratio (Definition~\ref{def:preservation}).
+    For branching factor $k$, $d \leq \log_k N$, so
+    reconstruction is $\Oh(\log_k N)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Indefinite Liveness]
+\label{thm:liveness}
+The BIC system can execute indefinitely: for any spawn event,
+\textsc{EnsureCapacity} either finds a free slot or successfully
+evicts $\geq 1$ agent.  Every operation completes in $\Oh(\slots)$
+worst-case time, independent of $N$.
+\end{theorem}

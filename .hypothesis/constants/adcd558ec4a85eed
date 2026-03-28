@@ -1,0 +1,4 @@
+# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/src/bounded_infinity/eviction.py
+# hypothesis_version: 6.141.1
+
+[0.0, 1.0, 60.0, 1000, '_', '_max_summaries', '_summaries', 'count', 'evicted', 'inf', 'timestamp']

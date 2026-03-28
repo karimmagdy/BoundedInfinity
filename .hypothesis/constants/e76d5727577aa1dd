@@ -1,0 +1,4 @@
+# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/experiments/harness.py
+# hypothesis_version: 6.141.1
+
+[0.0, 0.5, 1.0, '_ancestor_summaries', '_reconstructed', 'answer_length', 'backend', 'branching_factor', 'cache_hit_rate', 'config', 'count', 'current_bytes', 'elapsed_seconds', 'evictions', 'execute', 'final_size', 'inf', 'latency', 'max_depth', 'max_s', 'mean_s', 'memory', 'memory_size', 'min_s', 'mode', 'operation', 'peak_bytes', 'quality', 'query', 'query_success_rate', 'question', 'response', 'response_tokens', 'samples', 'seed', 'spawn', 'step', 'summaries', 'task', 'total_agents', 'total_evictions', 'total_s', 'tree_depth']
