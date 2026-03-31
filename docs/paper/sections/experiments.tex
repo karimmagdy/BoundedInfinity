@@ -150,9 +150,20 @@ hierarchical summarization (Table~\ref{tab:ablation}).
 Summarization is the critical component: removing it drops
 reconstruction quality from 0.559 to 0.107 ($5.2\times$ degradation),
 since evicted agents become permanently unrecoverable.  Removing
-Hilbert locality has no measurable effect in this experiment, likely
-because our synthetic task produces uniform state vectors that do not
-benefit from spatial clustering.
+Hilbert locality has no measurable effect in this experiment
+(BIC-Full and BIC-No-Hilbert achieve identical scores across all
+metrics, as shown in Table~\ref{tab:ablation}).  We attribute this to
+the uniform distribution of synthetic state vectors: when states lack
+spatial structure or correlation, Hilbert-curve reordering produces
+eviction clusters that are no more coherent than arbitrary groupings.
+We therefore acknowledge that \textbf{Hilbert locality is not a
+demonstrated contribution in the current experiments}.  It is
+included as an architectural component designed for future workloads
+where agent states exhibit spatial correlations---for example, agents
+working on related sub-topics whose embedding vectors cluster in
+semantic space.  Validating this hypothesis requires evaluation on
+tasks with naturally correlated state distributions, which we leave
+to future work.
 
 \begin{table}[t]
 \centering

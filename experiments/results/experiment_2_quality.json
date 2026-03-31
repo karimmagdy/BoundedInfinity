@@ -12,32 +12,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0745,
+      "elapsed_seconds": 0.0756,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1510317,
+      "peak_bytes": 59657098,
       "final_size": 8,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 198429,
-          "peak_bytes": 202366
+          "current_bytes": 247047,
+          "peak_bytes": 260267
         },
         {
           "step": 100,
-          "current_bytes": 339515,
-          "peak_bytes": 349373
+          "current_bytes": 364892,
+          "peak_bytes": 374738
         },
         {
           "step": 150,
-          "current_bytes": 409802,
-          "peak_bytes": 416371
+          "current_bytes": 470681,
+          "peak_bytes": 477482
         },
         {
           "step": 200,
-          "current_bytes": 664179,
-          "peak_bytes": 670812
+          "current_bytes": 722928,
+          "peak_bytes": 729561
         }
       ]
     },
@@ -45,36 +45,36 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.009845,
-        "mean_s": 8.1e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000187
+        "total_s": 0.009272,
+        "mean_s": 7.7e-05,
+        "min_s": 2.2e-05,
+        "max_s": 0.000566
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.035023,
-        "mean_s": 0.000289,
-        "min_s": 0.00024,
-        "max_s": 0.00092
+        "total_s": 0.035131,
+        "mean_s": 0.00029,
+        "min_s": 0.000263,
+        "max_s": 0.000395
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000908,
-        "mean_s": 7e-06,
+        "total_s": 0.000457,
+        "mean_s": 4e-06,
         "min_s": 1e-06,
-        "max_s": 0.000112
+        "max_s": 1e-05
       }
     },
     "quality": {
       "cache_hit_rate": 0.0488,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.619,
-      "semantic_reconstruction_quality": 0.8893,
-      "info_preservation_ratio": 0.7418
+      "semantic_reconstruction_quality": 0.8914,
+      "info_preservation_ratio": 0.7297
     },
-    "evictions": 227
+    "evictions": 228
   },
   {
     "backend": "lru",
@@ -89,32 +89,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0596,
+      "elapsed_seconds": 0.0533,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 804080,
+      "peak_bytes": 813649,
       "final_size": 8,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 88924,
-          "peak_bytes": 100983
+          "current_bytes": 91417,
+          "peak_bytes": 103575
         },
         {
           "step": 100,
-          "current_bytes": 159510,
-          "peak_bytes": 170952
+          "current_bytes": 162975,
+          "peak_bytes": 174322
         },
         {
           "step": 150,
-          "current_bytes": 242829,
-          "peak_bytes": 254876
+          "current_bytes": 248113,
+          "peak_bytes": 260309
         },
         {
           "step": 200,
-          "current_bytes": 484199,
-          "peak_bytes": 496428
+          "current_bytes": 489892,
+          "peak_bytes": 502020
         }
       ]
     },
@@ -122,33 +122,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001127,
-        "mean_s": 9e-06,
-        "min_s": 7e-06,
-        "max_s": 5.4e-05
+        "total_s": 0.000903,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 3.2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029388,
-        "mean_s": 0.000243,
-        "min_s": 0.000217,
-        "max_s": 0.000657
+        "total_s": 0.025901,
+        "mean_s": 0.000214,
+        "min_s": 0.000203,
+        "max_s": 0.00025
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 3.2e-05,
+        "total_s": 2.7e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 3e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.065,
       "query_success_rate": 0.065,
       "reconstruction_quality": 0.0661,
-      "semantic_reconstruction_quality": 0.0599,
+      "semantic_reconstruction_quality": 0.0607,
       "info_preservation_ratio": 0.0
     },
     "evictions": 231
@@ -166,32 +166,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0867,
+      "elapsed_seconds": 0.0535,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 807904,
+      "peak_bytes": 815017,
       "final_size": 8,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 90077,
-          "peak_bytes": 102177
+          "current_bytes": 91319,
+          "peak_bytes": 103357
         },
         {
           "step": 100,
-          "current_bytes": 161747,
-          "peak_bytes": 173077
+          "current_bytes": 163106,
+          "peak_bytes": 174457
         },
         {
           "step": 150,
-          "current_bytes": 247691,
-          "peak_bytes": 259866
+          "current_bytes": 249014,
+          "peak_bytes": 261056
         },
         {
           "step": 200,
-          "current_bytes": 489189,
-          "peak_bytes": 501432
+          "current_bytes": 490522,
+          "peak_bytes": 502551
         }
       ]
     },
@@ -199,33 +199,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.002403,
-        "mean_s": 2e-05,
-        "min_s": 7e-06,
-        "max_s": 0.000113
+        "total_s": 0.000896,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.038713,
-        "mean_s": 0.00032,
-        "min_s": 0.000222,
-        "max_s": 0.000906
+        "total_s": 0.026062,
+        "mean_s": 0.000215,
+        "min_s": 0.000202,
+        "max_s": 0.00026
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 5.8e-05,
+        "total_s": 5.3e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 3e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.065,
       "query_success_rate": 0.065,
       "reconstruction_quality": 0.0661,
-      "semantic_reconstruction_quality": 0.0602,
+      "semantic_reconstruction_quality": 0.0603,
       "info_preservation_ratio": 0.0
     },
     "evictions": 231
@@ -243,32 +243,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0591,
+      "elapsed_seconds": 0.0542,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 884550,
+      "peak_bytes": 891887,
       "final_size": 7,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 97755,
-          "peak_bytes": 104644
+          "current_bytes": 99220,
+          "peak_bytes": 106109
         },
         {
           "step": 100,
-          "current_bytes": 187388,
-          "peak_bytes": 193303
+          "current_bytes": 188638,
+          "peak_bytes": 194553
         },
         {
           "step": 150,
-          "current_bytes": 290143,
-          "peak_bytes": 297032
+          "current_bytes": 291622,
+          "peak_bytes": 298511
         },
         {
           "step": 200,
-          "current_bytes": 549307,
-          "peak_bytes": 560861
+          "current_bytes": 551497,
+          "peak_bytes": 562978
         }
       ]
     },
@@ -276,33 +276,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001108,
-        "mean_s": 9e-06,
-        "min_s": 7e-06,
-        "max_s": 2.8e-05
+        "total_s": 0.000935,
+        "mean_s": 8e-06,
+        "min_s": 6e-06,
+        "max_s": 1.2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028887,
-        "mean_s": 0.000239,
-        "min_s": 0.000227,
-        "max_s": 0.000305
+        "total_s": 0.026626,
+        "mean_s": 0.00022,
+        "min_s": 0.000206,
+        "max_s": 0.000258
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000146,
+        "total_s": 7.5e-05,
         "mean_s": 1e-06,
-        "min_s": 1e-06,
-        "max_s": 2.4e-05
+        "min_s": 0.0,
+        "max_s": 2e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.0569,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.0579,
-      "semantic_reconstruction_quality": 0.0528,
+      "semantic_reconstruction_quality": 0.0527,
       "info_preservation_ratio": 0.0
     },
     "evictions": 232
@@ -320,32 +320,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0583,
+      "elapsed_seconds": 0.0518,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 803251,
+      "peak_bytes": 817435,
       "final_size": 8,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 89159,
-          "peak_bytes": 96312
+          "current_bytes": 90326,
+          "peak_bytes": 97479
         },
         {
           "step": 100,
-          "current_bytes": 154654,
-          "peak_bytes": 166187
+          "current_bytes": 156167,
+          "peak_bytes": 167590
         },
         {
           "step": 150,
-          "current_bytes": 243054,
-          "peak_bytes": 250207
+          "current_bytes": 244695,
+          "peak_bytes": 251848
         },
         {
           "step": 200,
-          "current_bytes": 454710,
-          "peak_bytes": 461863
+          "current_bytes": 456480,
+          "peak_bytes": 463633
         }
       ]
     },
@@ -353,18 +353,18 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001045,
-        "mean_s": 9e-06,
-        "min_s": 7e-06,
-        "max_s": 3.4e-05
+        "total_s": 0.000855,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 1.6e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028584,
-        "mean_s": 0.000236,
-        "min_s": 0.000223,
-        "max_s": 0.000513
+        "total_s": 0.025234,
+        "mean_s": 0.000209,
+        "min_s": 0.000198,
+        "max_s": 0.000226
       },
       "query": {
         "operation": "query",
@@ -372,14 +372,14 @@
         "total_s": 2.6e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 2e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.065,
       "query_success_rate": 0.065,
       "reconstruction_quality": 0.0661,
-      "semantic_reconstruction_quality": 0.0598,
+      "semantic_reconstruction_quality": 0.0604,
       "info_preservation_ratio": 0.0
     },
     "evictions": 113
@@ -397,32 +397,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0609,
+      "elapsed_seconds": 0.0533,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 803029,
+      "peak_bytes": 792113,
       "final_size": 8,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 88666,
-          "peak_bytes": 95819
+          "current_bytes": 89747,
+          "peak_bytes": 96900
         },
         {
           "step": 100,
-          "current_bytes": 154596,
-          "peak_bytes": 165990
+          "current_bytes": 155914,
+          "peak_bytes": 167336
         },
         {
           "step": 150,
-          "current_bytes": 242921,
-          "peak_bytes": 250074
+          "current_bytes": 244168,
+          "peak_bytes": 251321
         },
         {
           "step": 200,
-          "current_bytes": 454419,
-          "peak_bytes": 461572
+          "current_bytes": 455974,
+          "peak_bytes": 463127
         }
       ]
     },
@@ -430,33 +430,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001219,
-        "mean_s": 1e-05,
-        "min_s": 7e-06,
-        "max_s": 4e-05
+        "total_s": 0.000957,
+        "mean_s": 8e-06,
+        "min_s": 6e-06,
+        "max_s": 1.4e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029335,
-        "mean_s": 0.000242,
-        "min_s": 0.000223,
-        "max_s": 0.000589
+        "total_s": 0.025825,
+        "mean_s": 0.000213,
+        "min_s": 0.000201,
+        "max_s": 0.000234
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 2.7e-05,
+        "total_s": 2.6e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 2e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.065,
       "query_success_rate": 0.065,
       "reconstruction_quality": 0.0661,
-      "semantic_reconstruction_quality": 0.0603,
+      "semantic_reconstruction_quality": 0.0606,
       "info_preservation_ratio": 0.0
     },
     "evictions": 113
@@ -474,32 +474,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.06,
+      "elapsed_seconds": 0.053,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 2053474,
+      "peak_bytes": 1873766,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 145396,
-          "peak_bytes": 152549
+          "current_bytes": 145748,
+          "peak_bytes": 152901
         },
         {
           "step": 100,
-          "current_bytes": 292496,
-          "peak_bytes": 298543
+          "current_bytes": 292765,
+          "peak_bytes": 298812
         },
         {
           "step": 150,
-          "current_bytes": 454752,
-          "peak_bytes": 461905
+          "current_bytes": 455098,
+          "peak_bytes": 462251
         },
         {
           "step": 200,
-          "current_bytes": 872659,
-          "peak_bytes": 879812
+          "current_bytes": 872530,
+          "peak_bytes": 879683
         }
       ]
     },
@@ -507,33 +507,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001033,
-        "mean_s": 9e-06,
+        "total_s": 0.000839,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 5.8e-05
+        "max_s": 1.6e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029311,
-        "mean_s": 0.000242,
-        "min_s": 0.000224,
-        "max_s": 0.000517
+        "total_s": 0.02581,
+        "mean_s": 0.000213,
+        "min_s": 0.000197,
+        "max_s": 0.000235
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000143,
-        "mean_s": 1e-06,
+        "total_s": 5e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 9e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9997,
-      "semantic_reconstruction_quality": 0.9111,
+      "reconstruction_quality": 0.9996,
+      "semantic_reconstruction_quality": 0.9094,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -551,32 +551,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0763,
+      "elapsed_seconds": 0.066,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1739641,
-      "final_size": 15,
+      "peak_bytes": 1889101,
+      "final_size": 16,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 205397,
-          "peak_bytes": 207670
+          "current_bytes": 190555,
+          "peak_bytes": 197252
         },
         {
           "step": 100,
-          "current_bytes": 296448,
-          "peak_bytes": 310131
+          "current_bytes": 312824,
+          "peak_bytes": 349493
         },
         {
           "step": 150,
-          "current_bytes": 477549,
-          "peak_bytes": 485003
+          "current_bytes": 525554,
+          "peak_bytes": 532251
         },
         {
           "step": 200,
-          "current_bytes": 755642,
-          "peak_bytes": 767665
+          "current_bytes": 744385,
+          "peak_bytes": 751391
         }
       ]
     },
@@ -584,36 +584,36 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.010769,
-        "mean_s": 8.9e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000781
+        "total_s": 0.010242,
+        "mean_s": 8.5e-05,
+        "min_s": 1.8e-05,
+        "max_s": 0.000279
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.035615,
-        "mean_s": 0.000294,
-        "min_s": 0.000239,
-        "max_s": 0.000713
+        "total_s": 0.029037,
+        "mean_s": 0.00024,
+        "min_s": 0.000223,
+        "max_s": 0.000266
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000776,
-        "mean_s": 6e-06,
+        "total_s": 0.000342,
+        "mean_s": 3e-06,
         "min_s": 1e-06,
-        "max_s": 2.4e-05
+        "max_s": 5e-06
       }
     },
     "quality": {
-      "cache_hit_rate": 0.0569,
+      "cache_hit_rate": 0.0732,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.5879,
-      "semantic_reconstruction_quality": 0.8475,
-      "info_preservation_ratio": 0.7161
+      "reconstruction_quality": 0.6027,
+      "semantic_reconstruction_quality": 0.8553,
+      "info_preservation_ratio": 0.695
     },
-    "evictions": 220
+    "evictions": 216
   },
   {
     "backend": "lru",
@@ -628,32 +628,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0587,
+      "elapsed_seconds": 0.0525,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 896186,
+      "peak_bytes": 899339,
       "final_size": 16,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 100119,
-          "peak_bytes": 112270
+          "current_bytes": 99851,
+          "peak_bytes": 112094
         },
         {
           "step": 100,
-          "current_bytes": 171969,
-          "peak_bytes": 183353
+          "current_bytes": 172105,
+          "peak_bytes": 183414
         },
         {
           "step": 150,
-          "current_bytes": 255897,
-          "peak_bytes": 267978
+          "current_bytes": 255733,
+          "peak_bytes": 267872
         },
         {
           "step": 200,
-          "current_bytes": 527079,
-          "peak_bytes": 539218
+          "current_bytes": 527889,
+          "peak_bytes": 540093
         }
       ]
     },
@@ -661,33 +661,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001336,
-        "mean_s": 1.1e-05,
-        "min_s": 7e-06,
-        "max_s": 9.6e-05
+        "total_s": 0.000823,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.1e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028539,
-        "mean_s": 0.000236,
-        "min_s": 0.000219,
-        "max_s": 0.000454
+        "total_s": 0.025594,
+        "mean_s": 0.000212,
+        "min_s": 0.000201,
+        "max_s": 0.000238
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 4.4e-05,
+        "total_s": 2.8e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 5e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.1301,
       "query_success_rate": 0.1301,
-      "reconstruction_quality": 0.1321,
-      "semantic_reconstruction_quality": 0.1213,
+      "reconstruction_quality": 0.1322,
+      "semantic_reconstruction_quality": 0.1202,
       "info_preservation_ratio": 0.0
     },
     "evictions": 220
@@ -705,32 +705,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0597,
+      "elapsed_seconds": 0.0535,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 902575,
+      "peak_bytes": 902422,
       "final_size": 16,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 100818,
-          "peak_bytes": 112957
+          "current_bytes": 101224,
+          "peak_bytes": 113288
         },
         {
           "step": 100,
-          "current_bytes": 174279,
-          "peak_bytes": 185756
+          "current_bytes": 174207,
+          "peak_bytes": 185520
         },
         {
           "step": 150,
-          "current_bytes": 260527,
-          "peak_bytes": 272582
+          "current_bytes": 260407,
+          "peak_bytes": 272478
         },
         {
           "step": 200,
-          "current_bytes": 531902,
-          "peak_bytes": 544044
+          "current_bytes": 532107,
+          "peak_bytes": 544369
         }
       ]
     },
@@ -738,33 +738,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001094,
-        "mean_s": 9e-06,
-        "min_s": 7e-06,
-        "max_s": 4.4e-05
+        "total_s": 0.000878,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 1.9e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029329,
-        "mean_s": 0.000242,
-        "min_s": 0.00022,
-        "max_s": 0.000591
+        "total_s": 0.026042,
+        "mean_s": 0.000215,
+        "min_s": 0.000202,
+        "max_s": 0.000238
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 6.6e-05,
-        "mean_s": 1e-06,
+        "total_s": 5.5e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 3e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.1301,
       "query_success_rate": 0.1301,
       "reconstruction_quality": 0.1322,
-      "semantic_reconstruction_quality": 0.1197,
+      "semantic_reconstruction_quality": 0.1209,
       "info_preservation_ratio": 0.0
     },
     "evictions": 220
@@ -782,32 +782,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.06,
+      "elapsed_seconds": 0.0535,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 969875,
+      "peak_bytes": 970805,
       "final_size": 15,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 108189,
-          "peak_bytes": 115078
+          "current_bytes": 108440,
+          "peak_bytes": 115329
         },
         {
           "step": 100,
-          "current_bytes": 197755,
-          "peak_bytes": 203670
+          "current_bytes": 199010,
+          "peak_bytes": 204925
         },
         {
           "step": 150,
-          "current_bytes": 300810,
-          "peak_bytes": 307699
+          "current_bytes": 301754,
+          "peak_bytes": 308643
         },
         {
           "step": 200,
-          "current_bytes": 588324,
-          "peak_bytes": 599992
+          "current_bytes": 589239,
+          "peak_bytes": 600847
         }
       ]
     },
@@ -815,33 +815,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.00109,
-        "mean_s": 9e-06,
+        "total_s": 0.000937,
+        "mean_s": 8e-06,
         "min_s": 6e-06,
-        "max_s": 3.4e-05
+        "max_s": 1.9e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029698,
-        "mean_s": 0.000245,
-        "min_s": 0.000226,
-        "max_s": 0.000791
+        "total_s": 0.025995,
+        "mean_s": 0.000215,
+        "min_s": 0.000204,
+        "max_s": 0.000247
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000134,
+        "total_s": 7.4e-05,
         "mean_s": 1e-06,
-        "min_s": 1e-06,
-        "max_s": 5e-06
+        "min_s": 0.0,
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.124,
-      "semantic_reconstruction_quality": 0.1131,
+      "semantic_reconstruction_quality": 0.1129,
       "info_preservation_ratio": 0.0
     },
     "evictions": 221
@@ -859,32 +859,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0594,
+      "elapsed_seconds": 0.0535,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 898422,
+      "peak_bytes": 898277,
       "final_size": 16,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 90106,
-          "peak_bytes": 97259
+          "current_bytes": 90144,
+          "peak_bytes": 97297
         },
         {
           "step": 100,
-          "current_bytes": 157166,
-          "peak_bytes": 168629
+          "current_bytes": 157264,
+          "peak_bytes": 168737
         },
         {
           "step": 150,
-          "current_bytes": 246093,
-          "peak_bytes": 253246
+          "current_bytes": 246202,
+          "peak_bytes": 253355
         },
         {
           "step": 200,
-          "current_bytes": 457792,
-          "peak_bytes": 464945
+          "current_bytes": 457572,
+          "peak_bytes": 464725
         }
       ]
     },
@@ -892,33 +892,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001042,
-        "mean_s": 9e-06,
+        "total_s": 0.000863,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 3.4e-05
+        "max_s": 1.7e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028848,
-        "mean_s": 0.000238,
-        "min_s": 0.000224,
-        "max_s": 0.000579
+        "total_s": 0.026,
+        "mean_s": 0.000215,
+        "min_s": 0.000201,
+        "max_s": 0.000239
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 3.2e-05,
+        "total_s": 2.4e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 2e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.1301,
       "query_success_rate": 0.1301,
       "reconstruction_quality": 0.1322,
-      "semantic_reconstruction_quality": 0.1194,
+      "semantic_reconstruction_quality": 0.121,
       "info_preservation_ratio": 0.0
     },
     "evictions": 105
@@ -936,32 +936,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0588,
+      "elapsed_seconds": 0.0523,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 896771,
+      "peak_bytes": 897195,
       "final_size": 16,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 89083,
-          "peak_bytes": 96236
+          "current_bytes": 89080,
+          "peak_bytes": 96233
         },
         {
           "step": 100,
-          "current_bytes": 161344,
-          "peak_bytes": 172843
+          "current_bytes": 161419,
+          "peak_bytes": 172764
         },
         {
           "step": 150,
-          "current_bytes": 250258,
-          "peak_bytes": 257411
+          "current_bytes": 250322,
+          "peak_bytes": 257475
         },
         {
           "step": 200,
-          "current_bytes": 461715,
-          "peak_bytes": 468868
+          "current_bytes": 461864,
+          "peak_bytes": 469017
         }
       ]
     },
@@ -969,33 +969,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001275,
-        "mean_s": 1.1e-05,
+        "total_s": 0.000978,
+        "mean_s": 8e-06,
         "min_s": 6e-06,
-        "max_s": 7.3e-05
+        "max_s": 1.4e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028566,
-        "mean_s": 0.000236,
-        "min_s": 0.000222,
-        "max_s": 0.000333
+        "total_s": 0.025357,
+        "mean_s": 0.00021,
+        "min_s": 0.000197,
+        "max_s": 0.000248
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 4.2e-05,
+        "total_s": 2.3e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 5e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.1301,
       "query_success_rate": 0.1301,
       "reconstruction_quality": 0.1322,
-      "semantic_reconstruction_quality": 0.1197,
+      "semantic_reconstruction_quality": 0.1203,
       "info_preservation_ratio": 0.0
     },
     "evictions": 105
@@ -1013,32 +1013,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.06,
+      "elapsed_seconds": 0.0515,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1854015,
+      "peak_bytes": 1861836,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 144786,
-          "peak_bytes": 151939
+          "current_bytes": 144631,
+          "peak_bytes": 151784
         },
         {
           "step": 100,
-          "current_bytes": 291850,
-          "peak_bytes": 297897
+          "current_bytes": 292045,
+          "peak_bytes": 298092
         },
         {
           "step": 150,
-          "current_bytes": 454155,
-          "peak_bytes": 461308
+          "current_bytes": 454087,
+          "peak_bytes": 461240
         },
         {
           "step": 200,
-          "current_bytes": 871817,
-          "peak_bytes": 878970
+          "current_bytes": 871577,
+          "peak_bytes": 878730
         }
       ]
     },
@@ -1046,33 +1046,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001046,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 4.8e-05
+        "total_s": 0.00079,
+        "mean_s": 7e-06,
+        "min_s": 5e-06,
+        "max_s": 1.6e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029389,
-        "mean_s": 0.000243,
-        "min_s": 0.000222,
-        "max_s": 0.000735
+        "total_s": 0.025046,
+        "mean_s": 0.000207,
+        "min_s": 0.000193,
+        "max_s": 0.000228
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000206,
-        "mean_s": 2e-06,
+        "total_s": 5.2e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 1e-05
+        "max_s": 2e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.9999,
-      "semantic_reconstruction_quality": 0.9091,
+      "semantic_reconstruction_quality": 0.91,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -1090,32 +1090,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0738,
+      "elapsed_seconds": 0.066,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1621679,
-      "final_size": 32,
+      "peak_bytes": 1862087,
+      "final_size": 29,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 181093,
-          "peak_bytes": 188246
+          "current_bytes": 180134,
+          "peak_bytes": 187287
         },
         {
           "step": 100,
-          "current_bytes": 393060,
-          "peak_bytes": 396076
+          "current_bytes": 395516,
+          "peak_bytes": 398532
         },
         {
           "step": 150,
-          "current_bytes": 584401,
-          "peak_bytes": 591098
+          "current_bytes": 523962,
+          "peak_bytes": 591322
         },
         {
           "step": 200,
-          "current_bytes": 819671,
-          "peak_bytes": 837672
+          "current_bytes": 831807,
+          "peak_bytes": 838949
         }
       ]
     },
@@ -1123,36 +1123,36 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.008472,
-        "mean_s": 7e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000424
+        "total_s": 0.005968,
+        "mean_s": 4.9e-05,
+        "min_s": 1.7e-05,
+        "max_s": 0.000191
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.03569,
-        "mean_s": 0.000295,
-        "min_s": 0.000246,
-        "max_s": 0.00055
+        "total_s": 0.033459,
+        "mean_s": 0.000277,
+        "min_s": 0.000218,
+        "max_s": 0.0005
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000727,
-        "mean_s": 6e-06,
+        "total_s": 0.000317,
+        "mean_s": 3e-06,
         "min_s": 1e-06,
-        "max_s": 2.5e-05
+        "max_s": 4e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.5591,
-      "semantic_reconstruction_quality": 0.7747,
-      "info_preservation_ratio": 0.6903
+      "reconstruction_quality": 0.5744,
+      "semantic_reconstruction_quality": 0.7954,
+      "info_preservation_ratio": 0.6862
     },
-    "evictions": 196
+    "evictions": 200
   },
   {
     "backend": "lru",
@@ -1167,32 +1167,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0618,
+      "elapsed_seconds": 0.0535,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1076291,
+      "peak_bytes": 1076187,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 120255,
-          "peak_bytes": 132317
+          "current_bytes": 120351,
+          "peak_bytes": 132511
         },
         {
           "step": 100,
-          "current_bytes": 197038,
-          "peak_bytes": 208505
+          "current_bytes": 197716,
+          "peak_bytes": 209068
         },
         {
           "step": 150,
-          "current_bytes": 281116,
-          "peak_bytes": 293245
+          "current_bytes": 281590,
+          "peak_bytes": 293647
         },
         {
           "step": 200,
-          "current_bytes": 612750,
-          "peak_bytes": 624822
+          "current_bytes": 612797,
+          "peak_bytes": 624870
         }
       ]
     },
@@ -1200,33 +1200,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001147,
-        "mean_s": 9e-06,
+        "total_s": 0.00086,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 9.1e-05
+        "max_s": 2.7e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.030307,
-        "mean_s": 0.00025,
-        "min_s": 0.000217,
-        "max_s": 0.000641
+        "total_s": 0.026068,
+        "mean_s": 0.000215,
+        "min_s": 0.000197,
+        "max_s": 0.000262
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 7.8e-05,
-        "mean_s": 1e-06,
+        "total_s": 4.2e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 5e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.2602,
       "query_success_rate": 0.2602,
-      "reconstruction_quality": 0.2645,
-      "semantic_reconstruction_quality": 0.2415,
+      "reconstruction_quality": 0.2643,
+      "semantic_reconstruction_quality": 0.2403,
       "info_preservation_ratio": 0.0
     },
     "evictions": 198
@@ -1244,32 +1244,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0595,
+      "elapsed_seconds": 0.0531,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1080346,
+      "peak_bytes": 1081955,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 121736,
-          "peak_bytes": 133825
+          "current_bytes": 121479,
+          "peak_bytes": 133549
         },
         {
           "step": 100,
-          "current_bytes": 199953,
-          "peak_bytes": 211360
+          "current_bytes": 199647,
+          "peak_bytes": 210993
         },
         {
           "step": 150,
-          "current_bytes": 286650,
-          "peak_bytes": 298803
+          "current_bytes": 286419,
+          "peak_bytes": 298554
         },
         {
           "step": 200,
-          "current_bytes": 617296,
-          "peak_bytes": 629364
+          "current_bytes": 616389,
+          "peak_bytes": 628450
         }
       ]
     },
@@ -1277,33 +1277,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001262,
-        "mean_s": 1e-05,
+        "total_s": 0.000894,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 0.000136
+        "max_s": 2.3e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029234,
-        "mean_s": 0.000242,
-        "min_s": 0.000218,
-        "max_s": 0.000892
+        "total_s": 0.025745,
+        "mean_s": 0.000213,
+        "min_s": 0.000197,
+        "max_s": 0.000247
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 9.4e-05,
-        "mean_s": 1e-06,
+        "total_s": 5.7e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 4e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.2602,
       "query_success_rate": 0.2602,
       "reconstruction_quality": 0.2645,
-      "semantic_reconstruction_quality": 0.2415,
+      "semantic_reconstruction_quality": 0.2402,
       "info_preservation_ratio": 0.0
     },
     "evictions": 198
@@ -1321,32 +1321,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0599,
+      "elapsed_seconds": 0.052,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1138720,
+      "peak_bytes": 1139448,
       "final_size": 31,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 124856,
-          "peak_bytes": 134011
+          "current_bytes": 124995,
+          "peak_bytes": 134130
         },
         {
           "step": 100,
-          "current_bytes": 218986,
-          "peak_bytes": 224901
+          "current_bytes": 219004,
+          "peak_bytes": 224919
         },
         {
           "step": 150,
-          "current_bytes": 321840,
-          "peak_bytes": 328729
+          "current_bytes": 321878,
+          "peak_bytes": 328767
         },
         {
           "step": 200,
-          "current_bytes": 666258,
-          "peak_bytes": 677991
+          "current_bytes": 665832,
+          "peak_bytes": 677443
         }
       ]
     },
@@ -1354,33 +1354,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001259,
-        "mean_s": 1e-05,
+        "total_s": 0.000914,
+        "mean_s": 8e-06,
         "min_s": 6e-06,
-        "max_s": 0.000102
+        "max_s": 2.3e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029432,
-        "mean_s": 0.000243,
-        "min_s": 0.000225,
-        "max_s": 0.000577
+        "total_s": 0.025449,
+        "mean_s": 0.00021,
+        "min_s": 0.000198,
+        "max_s": 0.000227
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000164,
+        "total_s": 7.7e-05,
         "mean_s": 1e-06,
-        "min_s": 1e-06,
-        "max_s": 5e-06
+        "min_s": 0.0,
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.252,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.2562,
-      "semantic_reconstruction_quality": 0.234,
+      "semantic_reconstruction_quality": 0.2339,
       "info_preservation_ratio": 0.0
     },
     "evictions": 199
@@ -1398,32 +1398,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0588,
+      "elapsed_seconds": 0.0528,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1077571,
+      "peak_bytes": 1077839,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 120501,
-          "peak_bytes": 132090
+          "current_bytes": 120350,
+          "peak_bytes": 131710
         },
         {
           "step": 100,
-          "current_bytes": 162740,
-          "peak_bytes": 174200
+          "current_bytes": 162607,
+          "peak_bytes": 173961
         },
         {
           "step": 150,
-          "current_bytes": 251888,
-          "peak_bytes": 259041
+          "current_bytes": 251856,
+          "peak_bytes": 259009
         },
         {
           "step": 200,
-          "current_bytes": 463596,
-          "peak_bytes": 470749
+          "current_bytes": 463441,
+          "peak_bytes": 470594
         }
       ]
     },
@@ -1431,33 +1431,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.000971,
-        "mean_s": 8e-06,
+        "total_s": 0.000879,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 2.6e-05
+        "max_s": 1.6e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028552,
-        "mean_s": 0.000236,
-        "min_s": 0.000223,
-        "max_s": 0.000432
+        "total_s": 0.025729,
+        "mean_s": 0.000213,
+        "min_s": 0.000198,
+        "max_s": 0.000239
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 4.6e-05,
+        "total_s": 2.6e-05,
         "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 2e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.2602,
       "query_success_rate": 0.2602,
       "reconstruction_quality": 0.2645,
-      "semantic_reconstruction_quality": 0.2403,
+      "semantic_reconstruction_quality": 0.2421,
       "info_preservation_ratio": 0.0
     },
     "evictions": 89
@@ -1475,32 +1475,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0595,
+      "elapsed_seconds": 0.0528,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1074792,
+      "peak_bytes": 1074007,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 133937,
-          "peak_bytes": 141090
+          "current_bytes": 134130,
+          "peak_bytes": 141283
         },
         {
           "step": 100,
-          "current_bytes": 185613,
-          "peak_bytes": 196990
+          "current_bytes": 185804,
+          "peak_bytes": 197267
         },
         {
           "step": 150,
-          "current_bytes": 259915,
-          "peak_bytes": 267068
+          "current_bytes": 259786,
+          "peak_bytes": 266939
         },
         {
           "step": 200,
-          "current_bytes": 511398,
-          "peak_bytes": 518551
+          "current_bytes": 510993,
+          "peak_bytes": 518146
         }
       ]
     },
@@ -1508,33 +1508,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.00115,
-        "mean_s": 1e-05,
+        "total_s": 0.000932,
+        "mean_s": 8e-06,
         "min_s": 6e-06,
-        "max_s": 4e-05
+        "max_s": 1.8e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029065,
-        "mean_s": 0.00024,
-        "min_s": 0.000223,
-        "max_s": 0.000571
+        "total_s": 0.025641,
+        "mean_s": 0.000212,
+        "min_s": 0.000199,
+        "max_s": 0.00024
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 9.6e-05,
-        "mean_s": 1e-06,
+        "total_s": 2.9e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 7e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.2602,
       "query_success_rate": 0.2602,
       "reconstruction_quality": 0.2645,
-      "semantic_reconstruction_quality": 0.2407,
+      "semantic_reconstruction_quality": 0.2414,
       "info_preservation_ratio": 0.0
     },
     "evictions": 89
@@ -1552,32 +1552,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0585,
+      "elapsed_seconds": 0.053,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 2015092,
+      "peak_bytes": 2019490,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 144438,
-          "peak_bytes": 151591
+          "current_bytes": 144887,
+          "peak_bytes": 152040
         },
         {
           "step": 100,
-          "current_bytes": 291189,
-          "peak_bytes": 297236
+          "current_bytes": 292169,
+          "peak_bytes": 298216
         },
         {
           "step": 150,
-          "current_bytes": 453463,
-          "peak_bytes": 460616
+          "current_bytes": 454360,
+          "peak_bytes": 461513
         },
         {
           "step": 200,
-          "current_bytes": 870139,
-          "peak_bytes": 877292
+          "current_bytes": 871790,
+          "peak_bytes": 878943
         }
       ]
     },
@@ -1585,1104 +1585,26 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.000995,
-        "mean_s": 8e-06,
+        "total_s": 0.000805,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 4.3e-05
+        "max_s": 2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028508,
-        "mean_s": 0.000236,
-        "min_s": 0.000224,
-        "max_s": 0.000398
+        "total_s": 0.02568,
+        "mean_s": 0.000212,
+        "min_s": 0.000199,
+        "max_s": 0.000234
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000135,
-        "mean_s": 1e-06,
+        "total_s": 4.8e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 5e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9099,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "bic",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0755,
-      "answer_length": 9293
-    },
-    "memory": {
-      "peak_bytes": 2106201,
-      "final_size": 63,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 161933,
-          "peak_bytes": 169062
-        },
-        {
-          "step": 100,
-          "current_bytes": 361172,
-          "peak_bytes": 366801
-        },
-        {
-          "step": 150,
-          "current_bytes": 573921,
-          "peak_bytes": 581074
-        },
-        {
-          "step": 200,
-          "current_bytes": 961365,
-          "peak_bytes": 998887
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.009412,
-        "mean_s": 7.8e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000481
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.035844,
-        "mean_s": 0.000296,
-        "min_s": 0.000246,
-        "max_s": 0.000908
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000514,
-        "mean_s": 4e-06,
-        "min_s": 1e-06,
-        "max_s": 2.6e-05
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.3415,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.6338,
-      "semantic_reconstruction_quality": 0.7364,
-      "info_preservation_ratio": 0.6298
-    },
-    "evictions": 136
-  },
-  {
-    "backend": "lru",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0615,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1431062,
-      "final_size": 64,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 145345,
-          "peak_bytes": 152498
-        },
-        {
-          "step": 100,
-          "current_bytes": 245877,
-          "peak_bytes": 262529
-        },
-        {
-          "step": 150,
-          "current_bytes": 333545,
-          "peak_bytes": 345727
-        },
-        {
-          "step": 200,
-          "current_bytes": 689983,
-          "peak_bytes": 697136
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001175,
-        "mean_s": 1e-05,
-        "min_s": 6e-06,
-        "max_s": 6.1e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029851,
-        "mean_s": 0.000247,
-        "min_s": 0.000225,
-        "max_s": 0.000581
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000128,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 7e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.5203,
-      "query_success_rate": 0.5203,
-      "reconstruction_quality": 0.5288,
-      "semantic_reconstruction_quality": 0.4835,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 154
-  },
-  {
-    "backend": "lru-summary",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0604,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1433825,
-      "final_size": 64,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 146600,
-          "peak_bytes": 153753
-        },
-        {
-          "step": 100,
-          "current_bytes": 247705,
-          "peak_bytes": 264371
-        },
-        {
-          "step": 150,
-          "current_bytes": 338078,
-          "peak_bytes": 350176
-        },
-        {
-          "step": 200,
-          "current_bytes": 692995,
-          "peak_bytes": 700148
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001133,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 5.2e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.02982,
-        "mean_s": 0.000246,
-        "min_s": 0.000225,
-        "max_s": 0.000623
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000126,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 7e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.5203,
-      "query_success_rate": 0.5203,
-      "reconstruction_quality": 0.5288,
-      "semantic_reconstruction_quality": 0.4796,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 154
-  },
-  {
-    "backend": "tiered",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0607,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1445333,
-      "final_size": 63,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 146797,
-          "peak_bytes": 153950
-        },
-        {
-          "step": 100,
-          "current_bytes": 254593,
-          "peak_bytes": 264657
-        },
-        {
-          "step": 150,
-          "current_bytes": 361554,
-          "peak_bytes": 368443
-        },
-        {
-          "step": 200,
-          "current_bytes": 737278,
-          "peak_bytes": 744167
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001089,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 4.1e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029832,
-        "mean_s": 0.000247,
-        "min_s": 0.000224,
-        "max_s": 0.000613
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000186,
-        "mean_s": 2e-06,
-        "min_s": 1e-06,
-        "max_s": 7e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.5122,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.5204,
-      "semantic_reconstruction_quality": 0.474,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 155
-  },
-  {
-    "backend": "fifo",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0597,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1430533,
-      "final_size": 64,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 145679,
-          "peak_bytes": 152832
-        },
-        {
-          "step": 100,
-          "current_bytes": 235945,
-          "peak_bytes": 262868
-        },
-        {
-          "step": 150,
-          "current_bytes": 263876,
-          "peak_bytes": 271029
-        },
-        {
-          "step": 200,
-          "current_bytes": 574298,
-          "peak_bytes": 581451
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.000966,
-        "mean_s": 8e-06,
-        "min_s": 6e-06,
-        "max_s": 2.3e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029344,
-        "mean_s": 0.000243,
-        "min_s": 0.000223,
-        "max_s": 0.000724
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000104,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 7e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.5203,
-      "query_success_rate": 0.5203,
-      "reconstruction_quality": 0.5288,
-      "semantic_reconstruction_quality": 0.4829,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 57
-  },
-  {
-    "backend": "random",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0594,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1427476,
-      "final_size": 64,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 143520,
-          "peak_bytes": 150673
-        },
-        {
-          "step": 100,
-          "current_bytes": 252915,
-          "peak_bytes": 269080
-        },
-        {
-          "step": 150,
-          "current_bytes": 324552,
-          "peak_bytes": 331705
-        },
-        {
-          "step": 200,
-          "current_bytes": 625851,
-          "peak_bytes": 633004
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001145,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 3.7e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.028648,
-        "mean_s": 0.000237,
-        "min_s": 0.000223,
-        "max_s": 0.000422
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 8.4e-05,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 4e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 0.5203,
-      "query_success_rate": 0.5203,
-      "reconstruction_quality": 0.5288,
-      "semantic_reconstruction_quality": 0.4844,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 57
-  },
-  {
-    "backend": "unbounded",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0596,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1723904,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 144532,
-          "peak_bytes": 151685
-        },
-        {
-          "step": 100,
-          "current_bytes": 292014,
-          "peak_bytes": 298061
-        },
-        {
-          "step": 150,
-          "current_bytes": 454261,
-          "peak_bytes": 461414
-        },
-        {
-          "step": 200,
-          "current_bytes": 872058,
-          "peak_bytes": 879211
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001084,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 0.000104
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029058,
-        "mean_s": 0.00024,
-        "min_s": 0.000224,
-        "max_s": 0.000523
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000132,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 4e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9999,
-      "semantic_reconstruction_quality": 0.9086,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "bic",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0676,
-      "answer_length": 9293
-    },
-    "memory": {
-      "peak_bytes": 2114511,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 161933,
-          "peak_bytes": 169062
-        },
-        {
-          "step": 100,
-          "current_bytes": 329572,
-          "peak_bytes": 334465
-        },
-        {
-          "step": 150,
-          "current_bytes": 509049,
-          "peak_bytes": 516178
-        },
-        {
-          "step": 200,
-          "current_bytes": 932189,
-          "peak_bytes": 939318
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.006659,
-        "mean_s": 5.5e-05,
-        "min_s": 1.9e-05,
-        "max_s": 0.000288
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.031504,
-        "mean_s": 0.00026,
-        "min_s": 0.000237,
-        "max_s": 0.000511
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000379,
-        "mean_s": 3e-06,
-        "min_s": 1e-06,
-        "max_s": 1.3e-05
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9072,
-      "info_preservation_ratio": 1.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "lru",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0605,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 2055717,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 145585,
-          "peak_bytes": 152738
-        },
-        {
-          "step": 100,
-          "current_bytes": 293181,
-          "peak_bytes": 299162
-        },
-        {
-          "step": 150,
-          "current_bytes": 455475,
-          "peak_bytes": 462628
-        },
-        {
-          "step": 200,
-          "current_bytes": 873522,
-          "peak_bytes": 880675
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001095,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 5.4e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029628,
-        "mean_s": 0.000245,
-        "min_s": 0.000219,
-        "max_s": 0.000558
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000231,
-        "mean_s": 2e-06,
-        "min_s": 1e-06,
-        "max_s": 7e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9997,
-      "semantic_reconstruction_quality": 0.9102,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "lru-summary",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0616,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1779386,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 147036,
-          "peak_bytes": 154189
-        },
-        {
-          "step": 100,
-          "current_bytes": 295475,
-          "peak_bytes": 301454
-        },
-        {
-          "step": 150,
-          "current_bytes": 460150,
-          "peak_bytes": 467303
-        },
-        {
-          "step": 200,
-          "current_bytes": 877709,
-          "peak_bytes": 884862
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001186,
-        "mean_s": 1e-05,
-        "min_s": 6e-06,
-        "max_s": 5.5e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029809,
-        "mean_s": 0.000246,
-        "min_s": 0.000218,
-        "max_s": 0.000738
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000229,
-        "mean_s": 2e-06,
-        "min_s": 1e-06,
-        "max_s": 1e-05
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9999,
-      "semantic_reconstruction_quality": 0.9091,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "tiered",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0596,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 2059121,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 146245,
-          "peak_bytes": 153398
-        },
-        {
-          "step": 100,
-          "current_bytes": 294763,
-          "peak_bytes": 300742
-        },
-        {
-          "step": 150,
-          "current_bytes": 459224,
-          "peak_bytes": 466377
-        },
-        {
-          "step": 200,
-          "current_bytes": 877276,
-          "peak_bytes": 884429
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001005,
-        "mean_s": 8e-06,
-        "min_s": 6e-06,
-        "max_s": 3e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029192,
-        "mean_s": 0.000241,
-        "min_s": 0.000222,
-        "max_s": 0.000543
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000259,
-        "mean_s": 2e-06,
-        "min_s": 1e-06,
-        "max_s": 9e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9095,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "fifo",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0588,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1787762,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 145849,
-          "peak_bytes": 153002
-        },
-        {
-          "step": 100,
-          "current_bytes": 293878,
-          "peak_bytes": 299857
-        },
-        {
-          "step": 150,
-          "current_bytes": 456065,
-          "peak_bytes": 463218
-        },
-        {
-          "step": 200,
-          "current_bytes": 874543,
-          "peak_bytes": 881696
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001003,
-        "mean_s": 8e-06,
-        "min_s": 6e-06,
-        "max_s": 2.6e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.028826,
-        "mean_s": 0.000238,
-        "min_s": 0.000224,
-        "max_s": 0.000504
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000136,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 5e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9999,
-      "semantic_reconstruction_quality": 0.9107,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "random",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0604,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 2047689,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 143366,
-          "peak_bytes": 150519
-        },
-        {
-          "step": 100,
-          "current_bytes": 288987,
-          "peak_bytes": 295032
-        },
-        {
-          "step": 150,
-          "current_bytes": 448786,
-          "peak_bytes": 455939
-        },
-        {
-          "step": 200,
-          "current_bytes": 866968,
-          "peak_bytes": 874121
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.000995,
-        "mean_s": 8e-06,
-        "min_s": 6e-06,
-        "max_s": 3.6e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029771,
-        "mean_s": 0.000246,
-        "min_s": 0.000221,
-        "max_s": 0.000946
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.000137,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 4e-06
-      }
-    },
-    "quality": {
-      "cache_hit_rate": 1.0,
-      "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9997,
-      "semantic_reconstruction_quality": 0.9113,
-      "info_preservation_ratio": 0.0
-    },
-    "evictions": 0
-  },
-  {
-    "backend": "unbounded",
-    "config": {
-      "question": "Survey the state of memory management in multi-agent LLM systems",
-      "branching_factor": 3,
-      "max_depth": 4,
-      "response_tokens": 512,
-      "mode": "synthetic",
-      "seed": 42
-    },
-    "task": {
-      "total_agents": 121,
-      "tree_depth": 4,
-      "elapsed_seconds": 0.0608,
-      "answer_length": 9302
-    },
-    "memory": {
-      "peak_bytes": 1780200,
-      "final_size": 121,
-      "samples": [
-        {
-          "step": 50,
-          "current_bytes": 144597,
-          "peak_bytes": 151750
-        },
-        {
-          "step": 100,
-          "current_bytes": 291838,
-          "peak_bytes": 297885
-        },
-        {
-          "step": 150,
-          "current_bytes": 454257,
-          "peak_bytes": 461410
-        },
-        {
-          "step": 200,
-          "current_bytes": 872141,
-          "peak_bytes": 879294
-        }
-      ]
-    },
-    "latency": {
-      "spawn": {
-        "operation": "spawn",
-        "count": 121,
-        "total_s": 0.001149,
-        "mean_s": 9e-06,
-        "min_s": 6e-06,
-        "max_s": 8.4e-05
-      },
-      "execute": {
-        "operation": "execute",
-        "count": 121,
-        "total_s": 0.029213,
-        "mean_s": 0.000241,
-        "min_s": 0.000216,
-        "max_s": 0.000575
-      },
-      "query": {
-        "operation": "query",
-        "count": 123,
-        "total_s": 0.00014,
-        "mean_s": 1e-06,
-        "min_s": 0.0,
-        "max_s": 5e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
@@ -2707,32 +1629,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.068,
+      "elapsed_seconds": 0.0655,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 2114511,
-      "final_size": 121,
+      "peak_bytes": 2198580,
+      "final_size": 58,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 161933,
-          "peak_bytes": 169062
+          "current_bytes": 162846,
+          "peak_bytes": 169975
         },
         {
           "step": 100,
-          "current_bytes": 329572,
-          "peak_bytes": 334465
+          "current_bytes": 360101,
+          "peak_bytes": 365730
         },
         {
           "step": 150,
-          "current_bytes": 509049,
-          "peak_bytes": 516178
+          "current_bytes": 577893,
+          "peak_bytes": 585046
         },
         {
           "step": 200,
-          "current_bytes": 932189,
-          "peak_bytes": 939318
+          "current_bytes": 971223,
+          "peak_bytes": 977920
         }
       ]
     },
@@ -2740,33 +1662,572 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.007083,
-        "mean_s": 5.9e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000324
+        "total_s": 0.007793,
+        "mean_s": 6.4e-05,
+        "min_s": 1.7e-05,
+        "max_s": 0.000557
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.031262,
+        "total_s": 0.031261,
         "mean_s": 0.000258,
-        "min_s": 0.000237,
-        "max_s": 0.000683
+        "min_s": 0.000216,
+        "max_s": 0.000574
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000372,
-        "mean_s": 3e-06,
+        "total_s": 0.000272,
+        "mean_s": 2e-06,
         "min_s": 1e-06,
-        "max_s": 1.2e-05
+        "max_s": 1.3e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.3415,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.6589,
+      "semantic_reconstruction_quality": 0.777,
+      "info_preservation_ratio": 0.6314
+    },
+    "evictions": 144
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0571,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1430636,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 145600,
+          "peak_bytes": 152753
+        },
+        {
+          "step": 100,
+          "current_bytes": 245806,
+          "peak_bytes": 262491
+        },
+        {
+          "step": 150,
+          "current_bytes": 333194,
+          "peak_bytes": 345426
+        },
+        {
+          "step": 200,
+          "current_bytes": 689051,
+          "peak_bytes": 696204
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000882,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.5e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.027998,
+        "mean_s": 0.000231,
+        "min_s": 0.000213,
+        "max_s": 0.000263
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 7.3e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 7e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5203,
+      "query_success_rate": 0.5203,
+      "reconstruction_quality": 0.5288,
+      "semantic_reconstruction_quality": 0.4816,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 154
+  },
+  {
+    "backend": "lru-summary",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0523,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1437276,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 146369,
+          "peak_bytes": 153522
+        },
+        {
+          "step": 100,
+          "current_bytes": 247416,
+          "peak_bytes": 264271
+        },
+        {
+          "step": 150,
+          "current_bytes": 338124,
+          "peak_bytes": 350215
+        },
+        {
+          "step": 200,
+          "current_bytes": 694044,
+          "peak_bytes": 701197
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000845,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.2e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025478,
+        "mean_s": 0.000211,
+        "min_s": 0.000197,
+        "max_s": 0.000235
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 7.4e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 2e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5203,
+      "query_success_rate": 0.5203,
+      "reconstruction_quality": 0.5285,
+      "semantic_reconstruction_quality": 0.4823,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 154
+  },
+  {
+    "backend": "tiered",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0538,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1445017,
+      "final_size": 63,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 146699,
+          "peak_bytes": 153852
+        },
+        {
+          "step": 100,
+          "current_bytes": 253903,
+          "peak_bytes": 264432
+        },
+        {
+          "step": 150,
+          "current_bytes": 361511,
+          "peak_bytes": 368400
+        },
+        {
+          "step": 200,
+          "current_bytes": 737461,
+          "peak_bytes": 744350
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000965,
+        "mean_s": 8e-06,
+        "min_s": 6e-06,
+        "max_s": 2.7e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.026361,
+        "mean_s": 0.000218,
+        "min_s": 0.000194,
+        "max_s": 0.000316
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000135,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 4e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5122,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.5205,
+      "semantic_reconstruction_quality": 0.4753,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 155
+  },
+  {
+    "backend": "fifo",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0527,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1431716,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 145531,
+          "peak_bytes": 152684
+        },
+        {
+          "step": 100,
+          "current_bytes": 235940,
+          "peak_bytes": 262385
+        },
+        {
+          "step": 150,
+          "current_bytes": 263855,
+          "peak_bytes": 271008
+        },
+        {
+          "step": 200,
+          "current_bytes": 574936,
+          "peak_bytes": 582089
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000898,
+        "mean_s": 7e-06,
+        "min_s": 5e-06,
+        "max_s": 2.6e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025594,
+        "mean_s": 0.000212,
+        "min_s": 0.0002,
+        "max_s": 0.000238
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 4.2e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 3e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5203,
+      "query_success_rate": 0.5203,
+      "reconstruction_quality": 0.5286,
+      "semantic_reconstruction_quality": 0.4794,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 57
+  },
+  {
+    "backend": "random",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0525,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1426476,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 143604,
+          "peak_bytes": 150757
+        },
+        {
+          "step": 100,
+          "current_bytes": 252300,
+          "peak_bytes": 268553
+        },
+        {
+          "step": 150,
+          "current_bytes": 324426,
+          "peak_bytes": 331579
+        },
+        {
+          "step": 200,
+          "current_bytes": 624935,
+          "peak_bytes": 632088
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000899,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.1e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025601,
+        "mean_s": 0.000212,
+        "min_s": 0.000198,
+        "max_s": 0.000257
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 4.1e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5203,
+      "query_success_rate": 0.5203,
+      "reconstruction_quality": 0.5285,
+      "semantic_reconstruction_quality": 0.4824,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 57
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.053,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1723408,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 144767,
+          "peak_bytes": 151920
+        },
+        {
+          "step": 100,
+          "current_bytes": 291385,
+          "peak_bytes": 297432
+        },
+        {
+          "step": 150,
+          "current_bytes": 454169,
+          "peak_bytes": 461322
+        },
+        {
+          "step": 200,
+          "current_bytes": 871738,
+          "peak_bytes": 878891
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000781,
+        "mean_s": 6e-06,
+        "min_s": 5e-06,
+        "max_s": 1.9e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025813,
+        "mean_s": 0.000213,
+        "min_s": 0.0002,
+        "max_s": 0.000228
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 5.6e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 2e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9072,
+      "semantic_reconstruction_quality": 0.9119,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0619,
+      "answer_length": 9293
+    },
+    "memory": {
+      "peak_bytes": 2116865,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 162846,
+          "peak_bytes": 169975
+        },
+        {
+          "step": 100,
+          "current_bytes": 330660,
+          "peak_bytes": 335553
+        },
+        {
+          "step": 150,
+          "current_bytes": 510609,
+          "peak_bytes": 517738
+        },
+        {
+          "step": 200,
+          "current_bytes": 934595,
+          "peak_bytes": 941724
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.005843,
+        "mean_s": 4.8e-05,
+        "min_s": 1.8e-05,
+        "max_s": 0.000217
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.0288,
+        "mean_s": 0.000238,
+        "min_s": 0.000221,
+        "max_s": 0.000269
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000159,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 2e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9108,
       "info_preservation_ratio": 1.0
     },
     "evictions": 0
@@ -2784,32 +2245,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0613,
+      "elapsed_seconds": 0.0532,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 2053714,
+      "peak_bytes": 2054735,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 145134,
-          "peak_bytes": 152287
+          "current_bytes": 145679,
+          "peak_bytes": 152832
         },
         {
           "step": 100,
-          "current_bytes": 292470,
-          "peak_bytes": 298451
+          "current_bytes": 293115,
+          "peak_bytes": 299096
         },
         {
           "step": 150,
-          "current_bytes": 454620,
-          "peak_bytes": 461773
+          "current_bytes": 455569,
+          "peak_bytes": 462722
         },
         {
           "step": 200,
-          "current_bytes": 873191,
-          "peak_bytes": 880344
+          "current_bytes": 873449,
+          "peak_bytes": 880602
         }
       ]
     },
@@ -2817,33 +2278,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001249,
-        "mean_s": 1e-05,
+        "total_s": 0.000836,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 9.6e-05
+        "max_s": 2.7e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029683,
-        "mean_s": 0.000245,
-        "min_s": 0.000219,
-        "max_s": 0.000892
+        "total_s": 0.025942,
+        "mean_s": 0.000214,
+        "min_s": 0.0002,
+        "max_s": 0.000236
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000223,
-        "mean_s": 2e-06,
-        "min_s": 1e-06,
-        "max_s": 8e-06
+        "total_s": 9.9e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9994,
-      "semantic_reconstruction_quality": 0.9105,
+      "reconstruction_quality": 0.9997,
+      "semantic_reconstruction_quality": 0.9103,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -2861,32 +2322,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0612,
+      "elapsed_seconds": 0.0536,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1778108,
+      "peak_bytes": 1782060,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 146482,
-          "peak_bytes": 153635
+          "current_bytes": 146603,
+          "peak_bytes": 153756
         },
         {
           "step": 100,
-          "current_bytes": 294807,
-          "peak_bytes": 300786
+          "current_bytes": 295725,
+          "peak_bytes": 301704
         },
         {
           "step": 150,
-          "current_bytes": 459325,
-          "peak_bytes": 466478
+          "current_bytes": 460315,
+          "peak_bytes": 467468
         },
         {
           "step": 200,
-          "current_bytes": 876409,
-          "peak_bytes": 883562
+          "current_bytes": 879008,
+          "peak_bytes": 886161
         }
       ]
     },
@@ -2894,33 +2355,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001147,
-        "mean_s": 9e-06,
+        "total_s": 0.00086,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 9.9e-05
+        "max_s": 2.2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029625,
-        "mean_s": 0.000245,
-        "min_s": 0.00022,
-        "max_s": 0.000526
+        "total_s": 0.026074,
+        "mean_s": 0.000215,
+        "min_s": 0.000201,
+        "max_s": 0.000238
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000291,
-        "mean_s": 2e-06,
+        "total_s": 9.6e-05,
+        "mean_s": 1e-06,
         "min_s": 1e-06,
-        "max_s": 1.9e-05
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.9997,
-      "semantic_reconstruction_quality": 0.9097,
+      "semantic_reconstruction_quality": 0.9117,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -2938,32 +2399,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0592,
+      "elapsed_seconds": 0.0533,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 2059226,
+      "peak_bytes": 2059498,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 147107,
-          "peak_bytes": 154260
+          "current_bytes": 146729,
+          "peak_bytes": 153882
         },
         {
           "step": 100,
-          "current_bytes": 295875,
-          "peak_bytes": 301854
+          "current_bytes": 295532,
+          "peak_bytes": 301511
         },
         {
           "step": 150,
-          "current_bytes": 460124,
-          "peak_bytes": 467277
+          "current_bytes": 459694,
+          "peak_bytes": 466847
         },
         {
           "step": 200,
-          "current_bytes": 878236,
-          "peak_bytes": 885389
+          "current_bytes": 877565,
+          "peak_bytes": 884718
         }
       ]
     },
@@ -2971,33 +2432,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001023,
-        "mean_s": 8e-06,
+        "total_s": 0.00086,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 2.8e-05
+        "max_s": 2.1e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029102,
-        "mean_s": 0.000241,
-        "min_s": 0.000223,
-        "max_s": 0.00058
+        "total_s": 0.026009,
+        "mean_s": 0.000215,
+        "min_s": 0.000198,
+        "max_s": 0.000272
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000214,
-        "mean_s": 2e-06,
-        "min_s": 0.0,
-        "max_s": 6e-06
+        "total_s": 0.0001,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 2e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9109,
+      "reconstruction_quality": 0.9997,
+      "semantic_reconstruction_quality": 0.9114,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -3015,32 +2476,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0605,
+      "elapsed_seconds": 0.0532,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1787405,
+      "peak_bytes": 1786834,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 145394,
-          "peak_bytes": 152547
+          "current_bytes": 145322,
+          "peak_bytes": 152475
         },
         {
           "step": 100,
-          "current_bytes": 293252,
-          "peak_bytes": 299231
+          "current_bytes": 292917,
+          "peak_bytes": 298896
         },
         {
           "step": 150,
-          "current_bytes": 455660,
-          "peak_bytes": 462813
+          "current_bytes": 455105,
+          "peak_bytes": 462258
         },
         {
           "step": 200,
-          "current_bytes": 873526,
-          "peak_bytes": 880679
+          "current_bytes": 872693,
+          "peak_bytes": 879846
         }
       ]
     },
@@ -3048,33 +2509,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001123,
-        "mean_s": 9e-06,
+        "total_s": 0.000879,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 8.2e-05
+        "max_s": 2.4e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029435,
-        "mean_s": 0.000243,
-        "min_s": 0.00022,
-        "max_s": 0.000642
+        "total_s": 0.025788,
+        "mean_s": 0.000213,
+        "min_s": 0.000198,
+        "max_s": 0.000236
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000138,
-        "mean_s": 1e-06,
+        "total_s": 4.9e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 5e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9997,
-      "semantic_reconstruction_quality": 0.9091,
+      "reconstruction_quality": 0.9996,
+      "semantic_reconstruction_quality": 0.9096,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -3092,32 +2553,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0597,
+      "elapsed_seconds": 0.0539,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 2049008,
+      "peak_bytes": 2048771,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 143780,
-          "peak_bytes": 150933
+          "current_bytes": 143584,
+          "peak_bytes": 150737
         },
         {
           "step": 100,
-          "current_bytes": 290137,
-          "peak_bytes": 296182
+          "current_bytes": 289219,
+          "peak_bytes": 295264
         },
         {
           "step": 150,
-          "current_bytes": 450531,
-          "peak_bytes": 457684
+          "current_bytes": 449175,
+          "peak_bytes": 456328
         },
         {
           "step": 200,
-          "current_bytes": 868792,
-          "peak_bytes": 875945
+          "current_bytes": 866718,
+          "peak_bytes": 873871
         }
       ]
     },
@@ -3125,33 +2586,33 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001088,
-        "mean_s": 9e-06,
+        "total_s": 0.000837,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 0.000108
+        "max_s": 2e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.028632,
-        "mean_s": 0.000237,
-        "min_s": 0.000217,
-        "max_s": 0.000494
+        "total_s": 0.02622,
+        "mean_s": 0.000217,
+        "min_s": 0.000203,
+        "max_s": 0.000248
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000155,
-        "mean_s": 1e-06,
+        "total_s": 5.1e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 4e-06
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.9996,
-      "semantic_reconstruction_quality": 0.9089,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9093,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0
@@ -3169,32 +2630,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0603,
+      "elapsed_seconds": 0.0532,
       "answer_length": 9302
     },
     "memory": {
-      "peak_bytes": 1779115,
+      "peak_bytes": 1780671,
       "final_size": 121,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 144523,
-          "peak_bytes": 151676
+          "current_bytes": 144703,
+          "peak_bytes": 151856
         },
         {
           "step": 100,
-          "current_bytes": 291378,
-          "peak_bytes": 297425
+          "current_bytes": 291861,
+          "peak_bytes": 297908
         },
         {
           "step": 150,
-          "current_bytes": 453863,
-          "peak_bytes": 461016
+          "current_bytes": 454230,
+          "peak_bytes": 461383
         },
         {
           "step": 200,
-          "current_bytes": 871589,
-          "peak_bytes": 878742
+          "current_bytes": 872087,
+          "peak_bytes": 879240
         }
       ]
     },
@@ -3202,33 +2663,572 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.001013,
-        "mean_s": 8e-06,
+        "total_s": 0.000797,
+        "mean_s": 7e-06,
         "min_s": 6e-06,
-        "max_s": 4.7e-05
+        "max_s": 1.8e-05
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.029269,
-        "mean_s": 0.000242,
-        "min_s": 0.000216,
-        "max_s": 0.000648
+        "total_s": 0.02605,
+        "mean_s": 0.000215,
+        "min_s": 0.0002,
+        "max_s": 0.000242
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000155,
-        "mean_s": 1e-06,
+        "total_s": 5.2e-05,
+        "mean_s": 0.0,
         "min_s": 0.0,
-        "max_s": 1e-05
+        "max_s": 1e-06
       }
     },
     "quality": {
       "cache_hit_rate": 1.0,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.9999,
-      "semantic_reconstruction_quality": 0.9104,
+      "semantic_reconstruction_quality": 0.909,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.062,
+      "answer_length": 9293
+    },
+    "memory": {
+      "peak_bytes": 2116683,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 163077,
+          "peak_bytes": 170206
+        },
+        {
+          "step": 100,
+          "current_bytes": 330579,
+          "peak_bytes": 335472
+        },
+        {
+          "step": 150,
+          "current_bytes": 510427,
+          "peak_bytes": 517556
+        },
+        {
+          "step": 200,
+          "current_bytes": 934413,
+          "peak_bytes": 941542
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.005836,
+        "mean_s": 4.8e-05,
+        "min_s": 2.1e-05,
+        "max_s": 0.00019
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.02882,
+        "mean_s": 0.000238,
+        "min_s": 0.000218,
+        "max_s": 0.000301
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000166,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 2e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9108,
+      "info_preservation_ratio": 1.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0529,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 2055672,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 145488,
+          "peak_bytes": 152641
+        },
+        {
+          "step": 100,
+          "current_bytes": 293153,
+          "peak_bytes": 299134
+        },
+        {
+          "step": 150,
+          "current_bytes": 454757,
+          "peak_bytes": 461910
+        },
+        {
+          "step": 200,
+          "current_bytes": 873718,
+          "peak_bytes": 880871
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000854,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.4e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025757,
+        "mean_s": 0.000213,
+        "min_s": 0.000198,
+        "max_s": 0.000229
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.0001,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9123,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "lru-summary",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0529,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1780807,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 146356,
+          "peak_bytes": 153509
+        },
+        {
+          "step": 100,
+          "current_bytes": 295027,
+          "peak_bytes": 301006
+        },
+        {
+          "step": 150,
+          "current_bytes": 459927,
+          "peak_bytes": 467080
+        },
+        {
+          "step": 200,
+          "current_bytes": 878462,
+          "peak_bytes": 885615
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000848,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.3e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025722,
+        "mean_s": 0.000213,
+        "min_s": 0.000198,
+        "max_s": 0.000237
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 9.6e-05,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9108,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "tiered",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0524,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 2059935,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 146639,
+          "peak_bytes": 153792
+        },
+        {
+          "step": 100,
+          "current_bytes": 295317,
+          "peak_bytes": 301296
+        },
+        {
+          "step": 150,
+          "current_bytes": 460272,
+          "peak_bytes": 467425
+        },
+        {
+          "step": 200,
+          "current_bytes": 878920,
+          "peak_bytes": 886073
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000849,
+        "mean_s": 7e-06,
+        "min_s": 5e-06,
+        "max_s": 2.3e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025603,
+        "mean_s": 0.000212,
+        "min_s": 0.000198,
+        "max_s": 0.000229
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000101,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9997,
+      "semantic_reconstruction_quality": 0.9098,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "fifo",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0527,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1785665,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 145121,
+          "peak_bytes": 152274
+        },
+        {
+          "step": 100,
+          "current_bytes": 292573,
+          "peak_bytes": 298552
+        },
+        {
+          "step": 150,
+          "current_bytes": 454792,
+          "peak_bytes": 461945
+        },
+        {
+          "step": 200,
+          "current_bytes": 872068,
+          "peak_bytes": 879221
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000838,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 3.2e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025587,
+        "mean_s": 0.000211,
+        "min_s": 0.000198,
+        "max_s": 0.000241
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 5.3e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9999,
+      "semantic_reconstruction_quality": 0.9085,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "random",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0535,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 2049175,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 143526,
+          "peak_bytes": 150679
+        },
+        {
+          "step": 100,
+          "current_bytes": 289899,
+          "peak_bytes": 295944
+        },
+        {
+          "step": 150,
+          "current_bytes": 450186,
+          "peak_bytes": 457339
+        },
+        {
+          "step": 200,
+          "current_bytes": 868056,
+          "peak_bytes": 875209
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.000848,
+        "mean_s": 7e-06,
+        "min_s": 6e-06,
+        "max_s": 2.3e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.026018,
+        "mean_s": 0.000215,
+        "min_s": 0.0002,
+        "max_s": 0.000254
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 4.8e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9997,
+      "semantic_reconstruction_quality": 0.9128,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.0533,
+      "answer_length": 9302
+    },
+    "memory": {
+      "peak_bytes": 1780992,
+      "final_size": 121,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 144609,
+          "peak_bytes": 151762
+        },
+        {
+          "step": 100,
+          "current_bytes": 291600,
+          "peak_bytes": 297647
+        },
+        {
+          "step": 150,
+          "current_bytes": 454346,
+          "peak_bytes": 461499
+        },
+        {
+          "step": 200,
+          "current_bytes": 872600,
+          "peak_bytes": 879753
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.00082,
+        "mean_s": 7e-06,
+        "min_s": 5e-06,
+        "max_s": 2.3e-05
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.025864,
+        "mean_s": 0.000214,
+        "min_s": 0.0002,
+        "max_s": 0.000236
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 4.9e-05,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 1e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.9997,
+      "semantic_reconstruction_quality": 0.9093,
       "info_preservation_ratio": 0.0
     },
     "evictions": 0

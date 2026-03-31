@@ -12,32 +12,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0759,
+      "elapsed_seconds": 0.0835,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1837628,
+      "peak_bytes": 59865783,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 183285,
-          "peak_bytes": 190438
+          "current_bytes": 230192,
+          "peak_bytes": 237345
         },
         {
           "step": 100,
-          "current_bytes": 401972,
-          "peak_bytes": 404988
+          "current_bytes": 453518,
+          "peak_bytes": 456534
         },
         {
           "step": 150,
-          "current_bytes": 524545,
-          "peak_bytes": 582343
+          "current_bytes": 645062,
+          "peak_bytes": 651695
         },
         {
           "step": 200,
-          "current_bytes": 832495,
-          "peak_bytes": 850496
+          "current_bytes": 900811,
+          "peak_bytes": 918505
         }
       ]
     },
@@ -45,34 +45,34 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.009167,
-        "mean_s": 7.6e-05,
-        "min_s": 2.2e-05,
-        "max_s": 0.000345
+        "total_s": 0.011739,
+        "mean_s": 9.7e-05,
+        "min_s": 2.3e-05,
+        "max_s": 0.000719
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.036524,
-        "mean_s": 0.000302,
-        "min_s": 0.000245,
-        "max_s": 0.000779
+        "total_s": 0.038625,
+        "mean_s": 0.000319,
+        "min_s": 0.000281,
+        "max_s": 0.000501
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000622,
+        "total_s": 0.000591,
         "mean_s": 5e-06,
         "min_s": 1e-06,
-        "max_s": 1.9e-05
+        "max_s": 2.1e-05
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.5591,
-      "semantic_reconstruction_quality": 0.7747,
-      "info_preservation_ratio": 0.6903
+      "reconstruction_quality": 0.5585,
+      "semantic_reconstruction_quality": 0.7744,
+      "info_preservation_ratio": 0.6753
     },
     "evictions": 196
   },
@@ -89,32 +89,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0769,
+      "elapsed_seconds": 0.0777,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1619535,
+      "peak_bytes": 1700067,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 179189,
-          "peak_bytes": 186342
+          "current_bytes": 180292,
+          "peak_bytes": 187445
         },
         {
           "step": 100,
-          "current_bytes": 390916,
-          "peak_bytes": 393932
+          "current_bytes": 360138,
+          "peak_bytes": 415789
         },
         {
           "step": 150,
-          "current_bytes": 581441,
-          "peak_bytes": 588138
+          "current_bytes": 536840,
+          "peak_bytes": 571351
         },
         {
           "step": 200,
-          "current_bytes": 817527,
-          "peak_bytes": 835528
+          "current_bytes": 857749,
+          "peak_bytes": 875443
         }
       ]
     },
@@ -122,34 +122,34 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.009249,
-        "mean_s": 7.6e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000289
+        "total_s": 0.011224,
+        "mean_s": 9.3e-05,
+        "min_s": 2.1e-05,
+        "max_s": 0.000347
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.038123,
-        "mean_s": 0.000315,
-        "min_s": 0.000241,
-        "max_s": 0.001447
+        "total_s": 0.035335,
+        "mean_s": 0.000292,
+        "min_s": 0.00025,
+        "max_s": 0.000559
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000687,
-        "mean_s": 6e-06,
+        "total_s": 0.000552,
+        "mean_s": 4e-06,
         "min_s": 1e-06,
-        "max_s": 1.9e-05
+        "max_s": 1.8e-05
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
-      "reconstruction_quality": 0.5591,
-      "semantic_reconstruction_quality": 0.7747,
-      "info_preservation_ratio": 0.6903
+      "reconstruction_quality": 0.5585,
+      "semantic_reconstruction_quality": 0.7744,
+      "info_preservation_ratio": 0.6753
     },
     "evictions": 196
   },
@@ -166,32 +166,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.0753,
+      "elapsed_seconds": 0.0759,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1079647,
+      "peak_bytes": 1079857,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 175949,
-          "peak_bytes": 183102
+          "current_bytes": 173223,
+          "peak_bytes": 180376
         },
         {
           "step": 100,
-          "current_bytes": 366315,
-          "peak_bytes": 369331
+          "current_bytes": 349916,
+          "peak_bytes": 366217
         },
         {
           "step": 150,
-          "current_bytes": 467386,
-          "peak_bytes": 474019
+          "current_bytes": 464485,
+          "peak_bytes": 471118
         },
         {
           "step": 200,
-          "current_bytes": 687778,
-          "peak_bytes": 705779
+          "current_bytes": 689682,
+          "peak_bytes": 707544
         }
       ]
     },
@@ -199,34 +199,34 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.008993,
-        "mean_s": 7.4e-05,
-        "min_s": 2.1e-05,
-        "max_s": 0.000346
+        "total_s": 0.010255,
+        "mean_s": 8.5e-05,
+        "min_s": 2.3e-05,
+        "max_s": 0.000359
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.036484,
-        "mean_s": 0.000302,
-        "min_s": 0.000248,
-        "max_s": 0.000616
+        "total_s": 0.034953,
+        "mean_s": 0.000289,
+        "min_s": 0.000252,
+        "max_s": 0.000647
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000288,
+        "total_s": 0.000255,
         "mean_s": 2e-06,
         "min_s": 1e-06,
-        "max_s": 1.1e-05
+        "max_s": 5e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.1074,
-      "semantic_reconstruction_quality": 0.0966,
-      "info_preservation_ratio": 0.6903
+      "semantic_reconstruction_quality": 0.0978,
+      "info_preservation_ratio": 0.6753
     },
     "evictions": 196
   },
@@ -243,32 +243,32 @@
     "task": {
       "total_agents": 121,
       "tree_depth": 4,
-      "elapsed_seconds": 0.075,
+      "elapsed_seconds": 0.0767,
       "answer_length": 9293
     },
     "memory": {
-      "peak_bytes": 1075303,
+      "peak_bytes": 1066160,
       "final_size": 32,
       "samples": [
         {
           "step": 50,
-          "current_bytes": 175949,
-          "peak_bytes": 183102
+          "current_bytes": 173223,
+          "peak_bytes": 180376
         },
         {
           "step": 100,
-          "current_bytes": 355915,
-          "peak_bytes": 358931
+          "current_bytes": 339505,
+          "peak_bytes": 355806
         },
         {
           "step": 150,
-          "current_bytes": 460250,
-          "peak_bytes": 466883
+          "current_bytes": 455586,
+          "peak_bytes": 462219
         },
         {
           "step": 200,
-          "current_bytes": 683722,
-          "peak_bytes": 701723
+          "current_bytes": 678601,
+          "peak_bytes": 696463
         }
       ]
     },
@@ -276,34 +276,34 @@
       "spawn": {
         "operation": "spawn",
         "count": 121,
-        "total_s": 0.00925,
-        "mean_s": 7.6e-05,
-        "min_s": 2e-05,
-        "max_s": 0.000579
+        "total_s": 0.010333,
+        "mean_s": 8.5e-05,
+        "min_s": 2.1e-05,
+        "max_s": 0.000362
       },
       "execute": {
         "operation": "execute",
         "count": 121,
-        "total_s": 0.036148,
-        "mean_s": 0.000299,
-        "min_s": 0.000244,
-        "max_s": 0.00086
+        "total_s": 0.03511,
+        "mean_s": 0.00029,
+        "min_s": 0.00025,
+        "max_s": 0.00046
       },
       "query": {
         "operation": "query",
         "count": 123,
-        "total_s": 0.000319,
-        "mean_s": 3e-06,
+        "total_s": 0.000276,
+        "mean_s": 2e-06,
         "min_s": 1e-06,
-        "max_s": 1.4e-05
+        "max_s": 9e-06
       }
     },
     "quality": {
       "cache_hit_rate": 0.122,
       "query_success_rate": 1.0,
       "reconstruction_quality": 0.1074,
-      "semantic_reconstruction_quality": 0.0966,
-      "info_preservation_ratio": 0.6903
+      "semantic_reconstruction_quality": 0.0978,
+      "info_preservation_ratio": 0.6753
     },
     "evictions": 196
   }

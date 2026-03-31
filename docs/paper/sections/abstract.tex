@@ -9,26 +9,30 @@ carrying kilobytes of state (task descriptions, reasoning traces, tool
 outputs).  Current frameworks store every agent state in memory,
 eventually exhausting resources and crashing.  We present the
 \emph{Bounded Infinity Cache} (BIC), the first
-cache-bounded state management system for agentic swarms.  BIC
+cache-bounded state management system for agentic swarms.  BIC bounds
+the cache memory used for agent states to $\Oh(M)$ for a fixed
+capacity $M$, while maintaining a lightweight $\Oh(N)$ registry
+($\sim$100 bytes per agent) for tree metadata that grows linearly
+with the number of agents spawned.  BIC
 combines three ideas: (1)~a fixed-size cache with Cantor-pairing-derived
 addressing that maps tree-structured agent hierarchies to contiguous
 slots; (2)~hierarchical summarization that compresses evicted states
 into ancestors, enabling $\Oh(\log N)$ reconstruction of any agent
 state; and (3)~a Hilbert-curve-based locality-aware eviction policy
 that clusters similar states for joint summarization.  We prove
-four theorems: cache-bounded memory ($\Oh(M)$ for cache capacity $M$,
-plus a lightweight $\Oh(N)$ registry for tree metadata),
+four theorems: cache-bounded memory,
 zero fragmentation after compaction,
 information-preserving retrievability with loss bounded by
 $(1-\epsilon)^d$ after $d$ summarization levels, and indefinite
-liveness.  Experiments on a recursive research-decomposition task with
-up to 3{,}280 synthetic agents show that BIC achieves 100\% query
+liveness.  A real-LLM experiment with Gemini-2.0-flash (3 runs)
+demonstrates that BIC achieves $1.37\times$ higher semantic
+reconstruction quality than LRU ($0.280 \pm 0.023$ vs.\
+$0.204 \pm 0.021$) with 100\% query success, while LRU baselines
+lose access to 56\% of agents.  Supporting synthetic experiments
+with up to 3{,}280 agents confirm that BIC achieves 100\% query
 success rate and $9.4\times$ higher reconstruction quality than
 LRU, FIFO, random-eviction, and LRU+summarization baselines at the
-same cache size.  A real-LLM experiment (Gemini, 3 runs) confirms that BIC
-outperforms baselines in semantic reconstruction quality ($0.280 \pm 0.023$ vs.\
-$0.204 \pm 0.021$) with 100\% query success, while LRU baselines lose access
-to 56\% of agents.  Ablation studies confirm that hierarchical
+same cache size.  Ablation studies confirm that hierarchical
 summarization is the critical component, providing a $5.2\times$
 improvement in reconstruction quality over eviction without
 summarization.

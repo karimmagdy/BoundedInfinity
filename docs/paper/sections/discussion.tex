@@ -23,6 +23,25 @@ per the ablation in \S\ref{sec:ablation}).  Hilbert-locality
 clustering is an optimization whose benefits will materialize with
 real-valued state distributions.
 
+\paragraph{Gap between theoretical and empirical preservation ratio.}
+The Information Preservation Ratio (Definition~\ref{def:preservation})
+is defined as an infimum over all possible parent and child states,
+providing a worst-case guarantee: no matter what states are
+encountered, at least a $(1-\epsilon)$ fraction of information
+survives each summarization step.  In our experiments, we report the
+\emph{average} preservation ratio across all eviction events rather
+than the infimum.  This is a practical choice: computing the true
+infimum would require evaluating $\summarize$ over the entire
+(infinite) state space, which is intractable.  The average provides
+a meaningful empirical characterization of typical system behavior,
+while the theoretical infimum bound provides the safety guarantee
+that reconstruction quality degrades gracefully even in the worst
+case.  We note that the observed average $\preserv$ values
+(0.69--0.74 in our experiments) are consistent with the theoretical
+framework: they represent the typical case, while the worst-case
+bound ensures no catastrophic information loss for any individual
+eviction event.
+
 \paragraph{Limitations.}
 We identify four limitations of the current system:
 
@@ -56,16 +75,24 @@ We identify four limitations of the current system:
   higher semantic quality than LRU under identical cache pressure.
 \end{enumerate}
 
-\paragraph{Hilbert locality.}
-The ablation showed no measurable benefit of Hilbert-locality
-clustering in either synthetic or LLM settings.  We hypothesize this
-is because both our synthetic and small-scale LLM experiments produce
-state vectors that lack sufficient spatial structure for Hilbert
-curves to exploit.  In real-world settings where agent state vectors
-exhibit correlations (e.g., agents working on related sub-topics
-share embedding similarity), Hilbert clustering would co-evict
-nearby agents, producing more coherent summaries.  Validating this
-hypothesis at scale remains future work.
+\paragraph{Hilbert locality: a non-contribution in current experiments.}
+We are transparent that the ablation (Table~\ref{tab:ablation}) showed
+\emph{no measurable benefit} of Hilbert-locality clustering:
+BIC-Full and BIC-No-Hilbert achieve identical reconstruction quality,
+semantic quality, and preservation ratio in both synthetic and LLM
+settings.  We hypothesize this is because both our synthetic and
+small-scale LLM experiments produce state vectors that lack sufficient
+spatial structure for Hilbert curves to exploit---synthetic states are
+generated with uniform random tokens, and the 7-agent LLM experiment
+is too small for clustering effects to manifest.  Hilbert locality
+should therefore be understood not as a current empirical contribution
+but as an architectural provision for future workloads where agent
+states exhibit spatial correlations (e.g., agents working on related
+sub-topics that share embedding similarity).  In such settings,
+Hilbert clustering would co-evict nearby agents, producing more
+coherent joint summaries.  Until this hypothesis is validated on
+appropriate workloads, we consider Hilbert locality a direction for
+future work rather than a demonstrated advantage.
 
 \paragraph{Broader impact.}
 This work addresses a systems-level challenge in scaling agentic AI.
@@ -74,10 +101,35 @@ As LLM-based agents are deployed in increasingly complex workflows
 memory growth becomes a practical barrier to reliability and cost
 efficiency.  BIC provides a principled alternative to ad-hoc memory
 limits, enabling long-running multi-agent systems that operate within
-predictable resource envelopes.  We see no immediate negative societal
-impacts specific to memory management; the general risks of
-LLM-based agents (hallucination, misuse) are orthogonal to this
-contribution.
+predictable resource envelopes.
+
+On the positive side, BIC makes large agent swarms more
+resource-efficient by bounding cache memory, reducing the hardware
+requirements for running multi-agent systems and potentially lowering
+the barrier to entry for researchers and practitioners with limited
+compute budgets.
+
+However, several concerns deserve consideration.  First,
+\emph{computational cost of summarization}: BIC's eviction-driven
+summarization may invoke LLM calls during each eviction event (when
+using LLM-powered summarization rather than raw concatenation),
+adding inference cost that scales with the eviction rate.  In
+high-churn scenarios, these summarization calls could dominate the
+overall computational budget.  Second, \emph{environmental impact}:
+by enabling larger and longer-running multi-agent systems, BIC could
+contribute to increased aggregate LLM inference demand and associated
+energy consumption, even as it reduces per-system memory waste.
+Third, \emph{reduced human oversight}: by enabling agent swarms to
+run indefinitely without crashing from resource exhaustion, BIC
+removes a natural stopping point that currently forces human
+intervention.  Longer-running autonomous agent systems may require
+new mechanisms for periodic human review, intervention triggers, and
+shutdown policies to ensure alignment with human intent.
+
+We believe the net impact is positive---resource efficiency and
+reliability are prerequisites for responsible deployment of agentic
+systems---but emphasize that BIC should be deployed alongside
+appropriate oversight mechanisms.
 
 
 % ============================================================

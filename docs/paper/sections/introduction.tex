@@ -29,7 +29,10 @@ Agents~\citep{park2023generative} maintains an unbounded memory stream.
 
 We propose the \textbf{Bounded Infinity Cache (BIC)}, a principled
 architecture for cache-bounded state management in
-arbitrarily large agent swarms.  BIC draws on three mathematical tools:
+arbitrarily large agent swarms.  We use ``cache-bounded'' precisely:
+the cache holding full agent states is bounded by $\Oh(M)$ for a
+fixed capacity $M$, while a lightweight registry ($\sim$100 bytes per
+agent) tracking tree metadata grows as $\Oh(N)$.  BIC draws on three mathematical tools:
 
 \begin{enumerate}
   \item \textbf{Cantor pairing functions} map arbitrary tree-structured

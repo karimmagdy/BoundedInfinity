@@ -31,6 +31,23 @@ ever-growing memory stream with retrieval over it.
 None of these systems bound total memory across an agent swarm or
 provide reconstruction guarantees for evicted states.
 
+\paragraph{Recent memory management for LLM agents.}
+The growing interest in long-running LLM agents has spurred recent work
+on agent memory management.  The ICLR 2026 MemAgents
+Workshop~\citep{memagents2026} brought together researchers addressing
+memory architectures, retrieval mechanisms, and resource management for
+LLM-based agents, highlighting the timeliness of this problem.
+A-MEM~\citep{amem2025} proposes an agentic memory system where an LLM
+agent autonomously decides what to remember and how to organize its
+memories, treating memory management itself as an agentic task.
+Both lines of work focus on the \emph{quality} and \emph{organization}
+of individual agent memories, whereas BIC addresses a complementary
+\emph{systems} challenge: bounding the total cache memory consumed by
+an entire swarm of agents while preserving retrievability of evicted
+states through hierarchical summarization.  BIC's cache management
+layer could be combined with richer per-agent memory strategies such
+as those explored in A-MEM.
+
 \paragraph{Streaming and sketching algorithms.}
 The streaming-algorithms community provides tools for processing
 unbounded data in bounded space: Count-Min
