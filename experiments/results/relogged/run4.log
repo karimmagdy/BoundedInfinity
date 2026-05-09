@@ -1,0 +1,116 @@
+======================================================================
+Experiment 6: 50-Agent LLM Experiment
+  Tree: branching=3, depth=3 -> ~40 agents/run
+  Cache sizes: [8, 16, 32]
+  Seeds: [42, 123, 7, 2024, 314] (5 runs per config)
+  Backends: ['bic', 'lru', 'lru-summary', 'unbounded']
+  Total configurations: 60 (~2400 LLM calls)
+  Provider: gemini
+======================================================================
+
+  Cache size: 8 (ratio: 20.0%)
+  --------------------------------------------------
+    Run 1/5 (seed=42):
+      bic            (seed=42, cache=8) ... /Users/kmagdy-ma-eg/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/kmagdy-ma-eg/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/kmagdy-ma-eg/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/kmagdy-ma-eg/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/src/bounded_infinity/adapters/llm_client.py:67: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+sem=0.210 qs=1.000 (160.9s)
+      lru            (seed=42, cache=8) ... sem=0.053 qs=0.190 (166.0s)
+      lru-summary    (seed=42, cache=8) ... sem=0.045 qs=0.190 (164.8s)
+      unbounded      (seed=42, cache=8) ... sem=0.232 qs=1.000 (163.4s)
+      [saved partial: 1 runs -> experiment_6_llm_50agents_partial.json]
+    Run 2/5 (seed=123):
+      bic            (seed=123, cache=8) ... sem=0.205 qs=1.000 (157.5s)
+      lru            (seed=123, cache=8) ... sem=0.027 qs=0.190 (161.8s)
+      lru-summary    (seed=123, cache=8) ... sem=0.029 qs=0.190 (172.5s)
+      unbounded      (seed=123, cache=8) ... sem=0.223 qs=1.000 (163.3s)
+      [saved partial: 2 runs -> experiment_6_llm_50agents_partial.json]
+    Run 3/5 (seed=7):
+      bic            (seed=7, cache=8) ... sem=0.187 qs=1.000 (159.9s)
+      lru            (seed=7, cache=8) ... sem=0.050 qs=0.190 (161.4s)
+      lru-summary    (seed=7, cache=8) ... sem=0.063 qs=0.190 (162.8s)
+      unbounded      (seed=7, cache=8) ... sem=0.242 qs=1.000 (163.9s)
+      [saved partial: 3 runs -> experiment_6_llm_50agents_partial.json]
+    Run 4/5 (seed=2024):
+      bic            (seed=2024, cache=8) ... sem=0.203 qs=1.000 (160.3s)
+      lru            (seed=2024, cache=8) ... sem=0.037 qs=0.190 (409.9s)
+      lru-summary    (seed=2024, cache=8) ... sem=0.076 qs=0.190 (541.7s)
+      unbounded      (seed=2024, cache=8) ... sem=0.204 qs=1.000 (549.6s)
+      [saved partial: 4 runs -> experiment_6_llm_50agents_partial.json]
+    Run 5/5 (seed=314):
+      bic            (seed=314, cache=8) ... sem=0.158 qs=1.000 (279.1s)
+      lru            (seed=314, cache=8) ... sem=0.034 qs=0.190 (158.7s)
+      lru-summary    (seed=314, cache=8) ... sem=0.031 qs=0.190 (164.9s)
+      unbounded      (seed=314, cache=8) ... sem=0.196 qs=1.000 (168.3s)
+      [saved partial: 5 runs -> experiment_6_llm_50agents_partial.json]
+
+  Cache size: 16 (ratio: 40.0%)
+  --------------------------------------------------
+    Run 1/5 (seed=42):
+      bic            (seed=42, cache=16) ... sem=0.198 qs=1.000 (161.0s)
+      lru            (seed=42, cache=16) ... sem=0.066 qs=0.381 (176.7s)
+      lru-summary    (seed=42, cache=16) ... sem=0.090 qs=0.381 (178.2s)
+      unbounded      (seed=42, cache=16) ... sem=0.235 qs=1.000 (170.9s)
+      [saved partial: 6 runs -> experiment_6_llm_50agents_partial.json]
+    Run 2/5 (seed=123):
+      bic            (seed=123, cache=16) ... sem=0.163 qs=1.000 (162.7s)
+      lru            (seed=123, cache=16) ... sem=0.078 qs=0.381 (168.5s)
+      lru-summary    (seed=123, cache=16) ... sem=0.057 qs=0.381 (166.4s)
+      unbounded      (seed=123, cache=16) ... sem=0.207 qs=1.000 (171.3s)
+      [saved partial: 7 runs -> experiment_6_llm_50agents_partial.json]
+    Run 3/5 (seed=7):
+      bic            (seed=7, cache=16) ... sem=0.200 qs=1.000 (171.2s)
+      lru            (seed=7, cache=16) ... sem=0.125 qs=0.381 (167.7s)
+      lru-summary    (seed=7, cache=16) ... sem=0.077 qs=0.381 (164.0s)
+      unbounded      (seed=7, cache=16) ... sem=0.263 qs=1.000 (169.1s)
+      [saved partial: 8 runs -> experiment_6_llm_50agents_partial.json]
+    Run 4/5 (seed=2024):
+      bic            (seed=2024, cache=16) ... sem=0.178 qs=1.000 (166.0s)
+      lru            (seed=2024, cache=16) ... sem=0.084 qs=0.381 (164.3s)
+      lru-summary    (seed=2024, cache=16) ... sem=0.085 qs=0.381 (269.7s)
+      unbounded      (seed=2024, cache=16) ... sem=0.268 qs=1.000 (166.8s)
+      [saved partial: 9 runs -> experiment_6_llm_50agents_partial.json]
+    Run 5/5 (seed=314):
+      bic            (seed=314, cache=16) ... sem=0.132 qs=1.000 (162.7s)
+      lru            (seed=314, cache=16) ... sem=0.067 qs=0.381 (162.8s)
+      lru-summary    (seed=314, cache=16) ... sem=0.068 qs=0.381 (158.0s)
+      unbounded      (seed=314, cache=16) ... sem=0.161 qs=1.000 (164.9s)
+      [saved partial: 10 runs -> experiment_6_llm_50agents_partial.json]
+
+  Cache size: 32 (ratio: 80.0%)
+  --------------------------------------------------
+    Run 1/5 (seed=42):
+      bic            (seed=42, cache=32) ... sem=0.193 qs=1.000 (157.5s)
+      lru            (seed=42, cache=32) ... sem=0.175 qs=0.738 (164.0s)
+      lru-summary    (seed=42, cache=32) ... sem=0.160 qs=0.738 (164.6s)
+      unbounded      (seed=42, cache=32) ... sem=0.249 qs=1.000 (167.2s)
+      [saved partial: 11 runs -> experiment_6_llm_50agents_partial.json]
+    Run 2/5 (seed=123):
+      bic            (seed=123, cache=32) ... sem=0.114 qs=1.000 (157.8s)
+      lru            (seed=123, cache=32) ... sem=0.156 qs=0.738 (166.2s)
+      lru-summary    (seed=123, cache=32) ... sem=0.144 qs=0.738 (429.5s)
+      unbounded      (seed=123, cache=32) ... sem=0.196 qs=1.000 (325.5s)
+      [saved partial: 12 runs -> experiment_6_llm_50agents_partial.json]
+    Run 3/5 (seed=7):
+      bic            (seed=7, cache=32) ... sem=0.115 qs=1.000 (158.1s)
+      lru            (seed=7, cache=32) ... sem=0.126 qs=0.738 (209.3s)
+      lru-summary    (seed=7, cache=32) ... sem=0.167 qs=0.738 (165.6s)
+      unbounded      (seed=7, cache=32) ... sem=0.238 qs=1.000 (190.2s)
+      [saved partial: 13 runs -> experiment_6_llm_50agents_partial.json]
+    Run 4/5 (seed=2024):
+      bic            (seed=2024, cache=32) ... sem=0.157 qs=1.000 (185.8s)
+      lru            (seed=2024, cache=32) ... sem=0.144 qs=0.738 (235.4s)

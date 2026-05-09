@@ -1,0 +1,1994 @@
+[
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 40.3612,
+      "answer_length": 3328
+    },
+    "memory": {
+      "peak_bytes": 34763621,
+      "final_size": 2,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.002364,
+        "mean_s": 0.000182,
+        "min_s": 3.8e-05,
+        "max_s": 0.000463
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 40.354199,
+        "mean_s": 3.104169,
+        "min_s": 2.50615,
+        "max_s": 4.615411
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 0.000161,
+        "mean_s": 1.1e-05,
+        "min_s": 3e-06,
+        "max_s": 3.6e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.0,
+      "semantic_reconstruction_quality": 0.0,
+      "info_preservation_ratio": 0.5892
+    },
+    "evictions": 22,
+    "text_pairs": [
+      {
+        "agent_id": "agent-0",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-1",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-2",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-3",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-4",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-5",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-6",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-7",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-8",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-9",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-10",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-11",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-12",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 1,
+    "cache_size": 2,
+    "wall_time_s": 40.39,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 43.5906,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 53310114,
+      "final_size": 2,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000771,
+        "mean_s": 5.9e-05,
+        "min_s": 1.7e-05,
+        "max_s": 0.000168
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 43.584585,
+        "mean_s": 3.35266,
+        "min_s": 2.717747,
+        "max_s": 5.571601
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 1.8e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 6e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.1333,
+      "query_success_rate": 0.1333,
+      "reconstruction_quality": 0.0053,
+      "semantic_reconstruction_quality": 0.0126,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 23,
+    "text_pairs": [
+      {
+        "agent_id": "lru-ef731cfa6d1d",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-da4addb3abda",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-274749c6a0a0",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-9e32aeffd35d",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-17d3b2211e46",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-cdaea9758647",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-cef980a7fa2b",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-aafb11637460",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-e0a7f3629962",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-9cf68b793aed",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-dfa63984354d",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-a5f8ea21ea0e",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques",
+        "category": "cached",
+        "jaccard": 0.0476,
+        "tfidf_cosine": 0.146
+      },
+      {
+        "agent_id": "lru-8f3ed7e19c1d",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the computational complexity",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0184
+      }
+    ],
+    "seed": 1,
+    "cache_size": 2,
+    "wall_time_s": 45.92,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru-summary-aw",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 40.7231,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 125835,
+      "final_size": 2,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000988,
+        "mean_s": 7.6e-05,
+        "min_s": 1.9e-05,
+        "max_s": 0.000177
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 40.714751,
+        "mean_s": 3.131904,
+        "min_s": 2.617629,
+        "max_s": 3.83894
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 8.1e-05,
+        "mean_s": 5e-06,
+        "min_s": 2e-06,
+        "max_s": 3.1e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.1333,
+      "query_success_rate": 0.1333,
+      "reconstruction_quality": 0.0035,
+      "semantic_reconstruction_quality": 0.0078,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 23,
+    "text_pairs": [
+      {
+        "agent_id": "lrusaw-0a3ef512c4a9",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-3d56b730e981",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-bc32f1d38ed1",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-d4977b5cf3ec",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-d3de93c8874f",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-c37d39b91671",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-1e8ca6d98490",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-5f740a98721d",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-08be877b2da2",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-33a267f0ef9b",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-c4ba67ab2923",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-406bd9680531",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key",
+        "category": "cached",
+        "jaccard": 0.0238,
+        "tfidf_cosine": 0.0835
+      },
+      {
+        "agent_id": "lrusaw-0eb32cabfc00",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the mathematical properties",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0184
+      }
+    ],
+    "seed": 1,
+    "cache_size": 2,
+    "wall_time_s": 40.74,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 40.7427,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 136456,
+      "final_size": 13,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000587,
+        "mean_s": 4.5e-05,
+        "min_s": 6e-06,
+        "max_s": 0.000152
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 40.735716,
+        "mean_s": 3.133517,
+        "min_s": 2.700454,
+        "max_s": 3.581774
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 4.7e-05,
+        "mean_s": 3e-06,
+        "min_s": 1e-06,
+        "max_s": 2.7e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.019,
+      "semantic_reconstruction_quality": 0.037,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0,
+    "text_pairs": [
+      {
+        "agent_id": "ub-7d4a3b33e9a7",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "```python",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-334d9524e2a9",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "For the",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-3cb685898b7a",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "The prompt is",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0188
+      },
+      {
+        "agent_id": "ub-a64a13c52a21",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "The `fibonacci(",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0265
+      },
+      {
+        "agent_id": "ub-be32e387bbc8",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0204,
+        "tfidf_cosine": 0.0297
+      },
+      {
+        "agent_id": "ub-b93f44969b9b",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "The literature primarily",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0228
+      },
+      {
+        "agent_id": "ub-76dfc7b7c347",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "For the standard",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0218
+      },
+      {
+        "agent_id": "ub-eec9faa1164d",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "Empirical evidence",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-99f2825d7395",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "The key",
+        "category": "cached",
+        "jaccard": 0.0238,
+        "tfidf_cosine": 0.0817
+      },
+      {
+        "agent_id": "ub-310962b592d6",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "Naive recursive approaches for `",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0559
+      },
+      {
+        "agent_id": "ub-659ad1752e7a",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature extensively addresses the",
+        "category": "cached",
+        "jaccard": 0.0233,
+        "tfidf_cosine": 0.0617
+      },
+      {
+        "agent_id": "ub-7408363c66f7",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques",
+        "category": "cached",
+        "jaccard": 0.0476,
+        "tfidf_cosine": 0.146
+      },
+      {
+        "agent_id": "ub-531accdfeecd",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the standard recursive and",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0162
+      }
+    ],
+    "seed": 1,
+    "cache_size": 2,
+    "wall_time_s": 40.78,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 38.533,
+      "answer_length": 3368
+    },
+    "memory": {
+      "peak_bytes": 193540,
+      "final_size": 4,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.004005,
+        "mean_s": 0.000308,
+        "min_s": 3.4e-05,
+        "max_s": 0.000795
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 38.523915,
+        "mean_s": 2.963378,
+        "min_s": 2.689239,
+        "max_s": 3.387829
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 0.000124,
+        "mean_s": 8e-06,
+        "min_s": 2e-06,
+        "max_s": 2.7e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.2667,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.0232,
+      "semantic_reconstruction_quality": 0.08,
+      "info_preservation_ratio": 0.587
+    },
+    "evictions": 17,
+    "text_pairs": [
+      {
+        "agent_id": "agent-0",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "```python\ndef",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-1",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0128,
+        "tfidf_cosine": 0.056
+      },
+      {
+        "agent_id": "agent-2",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.039,
+        "tfidf_cosine": 0.1398
+      },
+      {
+        "agent_id": "agent-3",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0385,
+        "tfidf_cosine": 0.1966
+      },
+      {
+        "agent_id": "agent-4",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0361,
+        "tfidf_cosine": 0.0678
+      },
+      {
+        "agent_id": "agent-5",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.025,
+        "tfidf_cosine": 0.0839
+      },
+      {
+        "agent_id": "agent-6",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0247,
+        "tfidf_cosine": 0.0674
+      },
+      {
+        "agent_id": "agent-7",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0361,
+        "tfidf_cosine": 0.1024
+      },
+      {
+        "agent_id": "agent-8",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0395,
+        "tfidf_cosine": 0.1333
+      },
+      {
+        "agent_id": "agent-9",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-10",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0244,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "agent-11",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "{'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}} {'task': {'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'max_depth': 2}, 'response': 'The literature primarily addresses', 'question': 'How does the literature address function fibonacci(n) that returns the (sub-question 2)', 'depth': 1, 'completed': True} {'task': {'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'max_depth': 2}, 'response': 'The fundamental mathematical', 'question': 'What open problems remain in function fibonacci(n) that returns the (sub-question 1)', 'depth': 1, 'completed': True} {'task': {'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'max_depth': 2}, 'response': 'The `fib', 'question': 'What theoretical foundations underlie function fibonacci(n) that returns the (sub-question 3)', 'depth': 1, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.026,
+        "tfidf_cosine": 0.1367
+      },
+      {
+        "agent_id": "agent-12",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 1,
+    "cache_size": 4,
+    "wall_time_s": 38.57,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 36.632,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 101554,
+      "final_size": 4,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.0009,
+        "mean_s": 6.9e-05,
+        "min_s": 1e-05,
+        "max_s": 0.000173
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 36.624716,
+        "mean_s": 2.817286,
+        "min_s": 2.509564,
+        "max_s": 3.256302
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 4.8e-05,
+        "mean_s": 3e-06,
+        "min_s": 1e-06,
+        "max_s": 1.2e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.2667,
+      "query_success_rate": 0.2667,
+      "reconstruction_quality": 0.0107,
+      "semantic_reconstruction_quality": 0.0214,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 20,
+    "text_pairs": [
+      {
+        "agent_id": "lru-dd0406196bd7",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-9d76f57264ce",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-4ad750e8d423",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-7911e4a3dc71",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-9dd4007942c3",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-89e0a0322f59",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-3af0e867372c",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-00ce8d45bef4",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-3fcda74fabad",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-60015c0c5f20",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "The naive recursive approach",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.0805
+      },
+      {
+        "agent_id": "lru-feda09d52ad3",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0244,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "lru-c2a6e38256e2",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques for",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.1193
+      },
+      {
+        "agent_id": "lru-699584527f06",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the mathematical",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0217
+      }
+    ],
+    "seed": 1,
+    "cache_size": 4,
+    "wall_time_s": 36.65,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru-summary-aw",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 36.9841,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 94484,
+      "final_size": 4,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000834,
+        "mean_s": 6.4e-05,
+        "min_s": 2.3e-05,
+        "max_s": 0.000137
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 36.974863,
+        "mean_s": 2.84422,
+        "min_s": 2.464332,
+        "max_s": 3.359566
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 7.3e-05,
+        "mean_s": 5e-06,
+        "min_s": 2e-06,
+        "max_s": 2.7e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.2667,
+      "query_success_rate": 0.2667,
+      "reconstruction_quality": 0.0108,
+      "semantic_reconstruction_quality": 0.0243,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 20,
+    "text_pairs": [
+      {
+        "agent_id": "lrusaw-677f92bbf0d6",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-95025859d8a2",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-b759c1343c1e",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-a7865cf55cd1",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-1da0832c2de1",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-ed4b09873409",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-e0b26fb930ab",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-3aeb17543289",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-188159dd585b",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-e455d5279eab",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "The naive recursive approach",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.0805
+      },
+      {
+        "agent_id": "lrusaw-b9651c2ff7d5",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature primarily addresses the",
+        "category": "cached",
+        "jaccard": 0.0233,
+        "tfidf_cosine": 0.0617
+      },
+      {
+        "agent_id": "lrusaw-42a6a12e5220",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques",
+        "category": "cached",
+        "jaccard": 0.0476,
+        "tfidf_cosine": 0.146
+      },
+      {
+        "agent_id": "lrusaw-0204bbdcd1cf",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.028
+      }
+    ],
+    "seed": 1,
+    "cache_size": 4,
+    "wall_time_s": 37.0,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 36.6308,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 155209,
+      "final_size": 13,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000981,
+        "mean_s": 7.5e-05,
+        "min_s": 2.5e-05,
+        "max_s": 0.000213
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 36.622836,
+        "mean_s": 2.817141,
+        "min_s": 2.486565,
+        "max_s": 3.571099
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 4.1e-05,
+        "mean_s": 3e-06,
+        "min_s": 0.0,
+        "max_s": 2.1e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.0157,
+      "semantic_reconstruction_quality": 0.0298,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0,
+    "text_pairs": [
+      {
+        "agent_id": "ub-50fd51ba006d",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "```python\ndef",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-e220f69aa968",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "For the standard mathematical",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-0f5598e62b51",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0233,
+        "tfidf_cosine": 0.0242
+      },
+      {
+        "agent_id": "ub-f23d90569226",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "The `fibonacci",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0265
+      },
+      {
+        "agent_id": "ub-b9fe0435332b",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "The term",
+        "category": "cached",
+        "jaccard": 0.0204,
+        "tfidf_cosine": 0.0297
+      },
+      {
+        "agent_id": "ub-d292d29709b3",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "The literature on the Fibonacci",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0321
+      },
+      {
+        "agent_id": "ub-edd704e6ceac",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "For the",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0281
+      },
+      {
+        "agent_id": "ub-3fba2fc48ad5",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "Empirical evidence for",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-64266eaffcfa",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "For a `fibonacci",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-8bb4478f147e",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "Recursive approaches",
+        "category": "cached",
+        "jaccard": 0.0238,
+        "tfidf_cosine": 0.0853
+      },
+      {
+        "agent_id": "ub-ca24739a11e1",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0244,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "ub-ce48eeb229f1",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key",
+        "category": "cached",
+        "jaccard": 0.0238,
+        "tfidf_cosine": 0.0835
+      },
+      {
+        "agent_id": "ub-b456843870a9",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the computational",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0217
+      }
+    ],
+    "seed": 1,
+    "cache_size": 4,
+    "wall_time_s": 36.66,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 38.482,
+      "answer_length": 3328
+    },
+    "memory": {
+      "peak_bytes": 169026,
+      "final_size": 8,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.004276,
+        "mean_s": 0.000329,
+        "min_s": 5.2e-05,
+        "max_s": 0.000737
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 38.471437,
+        "mean_s": 2.959341,
+        "min_s": 2.605133,
+        "max_s": 3.467049
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 8.1e-05,
+        "mean_s": 5e-06,
+        "min_s": 1e-06,
+        "max_s": 1.3e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.4667,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.0201,
+      "semantic_reconstruction_quality": 0.0385,
+      "info_preservation_ratio": 0.5953
+    },
+    "evictions": 12,
+    "text_pairs": [
+      {
+        "agent_id": "agent-0",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "```python\n",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-1",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "For the standard definition",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-2",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "The literature extensively covers the",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0265
+      },
+      {
+        "agent_id": "agent-3",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "The `fibonacci",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0265
+      },
+      {
+        "agent_id": "agent-4",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "{'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}, 'response': 'The literature typically addresses \"', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}, 'response': 'The phrase', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}, 'response': 'For the `fibonacci', 'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0375,
+        "tfidf_cosine": 0.056
+      },
+      {
+        "agent_id": "agent-5",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "{'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}, 'response': 'The literature typically addresses \"', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}, 'response': 'The phrase', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}, 'response': 'For the `fibonacci', 'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.026,
+        "tfidf_cosine": 0.0695
+      },
+      {
+        "agent_id": "agent-6",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "{'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}, 'response': 'The literature typically addresses \"', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}, 'response': 'The phrase', 'question': 'How does the literature address remain in function fibonacci(n) that (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}, 'response': 'For the `fibonacci', 'question': 'What open problems remain in remain in function fibonacci(n) that (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0256,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "agent-7",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "{'task': {'question': 'What empirical evidence exists for literature address function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'Compare and contrast approaches to literature address function fibonacci(n) that (sub-question 3)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'What are the key techniques for literature address function fibonacci(n) that (sub-question 2)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'What empirical evidence exists for literature address function fibonacci(n) that (sub-question 1)', 'depth': 2, 'max_depth': 2}, 'response': 'Empirical evidence for the', 'question': 'What empirical evidence exists for literature address function fibonacci(n) that (sub-question 1)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.037,
+        "tfidf_cosine": 0.0812
+      },
+      {
+        "agent_id": "agent-8",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-9",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-10",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "{'task': {'question': 'What open problems remain in underlie function fibonacci(n) that returns (sub-question 3)', 'depth': 2, 'max_depth': 2}} {'task': {'question': 'How does the literature address underlie function fibonacci(n) that returns (sub-question 1)', 'depth': 2, 'max_depth': 2}, 'response': 'The literature', 'question': 'How does the literature address underlie function fibonacci(n) that returns (sub-question 1)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0441,
+        "tfidf_cosine": 0.0649
+      },
+      {
+        "agent_id": "agent-11",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques for",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.1193
+      },
+      {
+        "agent_id": "agent-12",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 1,
+    "cache_size": 8,
+    "wall_time_s": 38.52,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 39.8011,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 121656,
+      "final_size": 8,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.001015,
+        "mean_s": 7.8e-05,
+        "min_s": 3.7e-05,
+        "max_s": 0.00015
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 39.794248,
+        "mean_s": 3.061096,
+        "min_s": 2.739972,
+        "max_s": 3.502019
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 3.5e-05,
+        "mean_s": 2e-06,
+        "min_s": 1e-06,
+        "max_s": 6e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5333,
+      "query_success_rate": 0.5333,
+      "reconstruction_quality": 0.0139,
+      "semantic_reconstruction_quality": 0.0243,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 15,
+    "text_pairs": [
+      {
+        "agent_id": "lru-986a374b12e7",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-d5ca5f07c853",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-ebafea0ef764",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-d4a81f7a46cf",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-ba32d09fefa6",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-7db23bfd643c",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "The term \"remain",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0228
+      },
+      {
+        "agent_id": "lru-971ee5fa2057",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "For the `",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0281
+      },
+      {
+        "agent_id": "lru-700e2aeb6367",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "Empirical",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-089b2c9accd2",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "Key techniques for implementing `",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0177
+      },
+      {
+        "agent_id": "lru-4f388afe0707",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "Naive recursive approaches for",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0559
+      },
+      {
+        "agent_id": "lru-c6bf77e4d2ea",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0244,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "lru-b9144e74500c",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques for",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.1193
+      },
+      {
+        "agent_id": "lru-507cbc61d405",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While the mathematical definition and",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0162
+      }
+    ],
+    "seed": 1,
+    "cache_size": 8,
+    "wall_time_s": 39.83,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "lru-summary-aw",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 41.2364,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 122559,
+      "final_size": 8,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000883,
+        "mean_s": 6.8e-05,
+        "min_s": 2.2e-05,
+        "max_s": 0.000154
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 41.229371,
+        "mean_s": 3.17149,
+        "min_s": 2.649643,
+        "max_s": 3.777912
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 7.1e-05,
+        "mean_s": 5e-06,
+        "min_s": 2e-06,
+        "max_s": 2.8e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.5333,
+      "query_success_rate": 0.5333,
+      "reconstruction_quality": 0.0139,
+      "semantic_reconstruction_quality": 0.0265,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 15,
+    "text_pairs": [
+      {
+        "agent_id": "lrusaw-661d1cb85bbf",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-d3b83daa116d",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-3f5bbdfca43f",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-5ca520243d8c",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-217af986bac1",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-27af68d08d14",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "The literature addresses",
+        "category": "cached",
+        "jaccard": 0.0217,
+        "tfidf_cosine": 0.0228
+      },
+      {
+        "agent_id": "lrusaw-41d701ef5606",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "For the standard `",
+        "category": "cached",
+        "jaccard": 0.0208,
+        "tfidf_cosine": 0.0218
+      },
+      {
+        "agent_id": "lrusaw-5c0131055253",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "Empirical evidence for the",
+        "category": "cached",
+        "jaccard": 0.0196,
+        "tfidf_cosine": 0.0199
+      },
+      {
+        "agent_id": "lrusaw-b6211bbd781b",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "The key techniques for",
+        "category": "cached",
+        "jaccard": 0.0465,
+        "tfidf_cosine": 0.0771
+      },
+      {
+        "agent_id": "lrusaw-778f186f0c58",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "Comparing approaches",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrusaw-c96f74f13c19",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0244,
+        "tfidf_cosine": 0.0564
+      },
+      {
+        "agent_id": "lrusaw-5197363b45ed",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques",
+        "category": "cached",
+        "jaccard": 0.0476,
+        "tfidf_cosine": 0.146
+      },
+      {
+        "agent_id": "lrusaw-4874a833a576",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "For extremely large `n",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 1,
+    "cache_size": 8,
+    "wall_time_s": 41.27,
+    "task_family": "coding_pilot"
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion.",
+      "branching_factor": 3,
+      "max_depth": 2,
+      "response_tokens": 80,
+      "mode": "real_llm",
+      "seed": 1
+    },
+    "task": {
+      "total_agents": 13,
+      "tree_depth": 2,
+      "elapsed_seconds": 68.4694,
+      "answer_length": 3337
+    },
+    "memory": {
+      "peak_bytes": 171357,
+      "final_size": 13,
+      "samples": []
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 13,
+        "total_s": 0.000887,
+        "mean_s": 6.8e-05,
+        "min_s": 1.1e-05,
+        "max_s": 0.000225
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 13,
+        "total_s": 68.460508,
+        "mean_s": 5.266193,
+        "min_s": 2.714427,
+        "max_s": 32.277411
+      },
+      "query": {
+        "operation": "query",
+        "count": 15,
+        "total_s": 3.1e-05,
+        "mean_s": 2e-06,
+        "min_s": 1e-06,
+        "max_s": 1e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.0155,
+      "semantic_reconstruction_quality": 0.031,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0,
+    "text_pairs": [
+      {
+        "agent_id": "ub-b91f26d88b66",
+        "original": "sub-question open investigation agent techniques sliding probing Cantor sub-question probing defragmentation loss sliding linear attention addressing explores window loss caching investigation embedding function hash compaction Cantor policy context state compression explores attention hierarchical space-filling multi-agent eviction function eviction allocation Cantor information recursive addressing linear token function LLM fragmentation attention caching eviction mechanism multi-agent hierarchical mechanism coordination token bijection hierarchical investigation open Hilbert explores mechanism space-filling probing Hilbert state eviction linear curve window bijection embedding function agent bounded loss attention linear",
+        "reconstructed": "```python",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-8b1f8b07e645",
+        "original": "information collision coordination information preservation LLM breadth-first allocation fragmentation investigation summarization embedding compression retrieval collision breadth-first allocation breadth-first fragmentation eviction recursive attention aggregation compaction defragmentation transformer preservation information multi-agent linear compression token allocation open aggregation eviction caching memory Hilbert allocation depth-first allocation Cantor retrieval probing depth-first sub-question pairing agent defragmentation transformer memory agent hierarchical caching retrieval explores policy information multi-agent addressing eviction memory resolution resolution addressing including depth-first investigation addressing investigation attention collision caching caching aggregation bijection collision loss token",
+        "reconstructed": "For the standard",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-dcbf0325ba0e",
+        "original": "recursive agent policy transformer retrieval resolution caching slot space-filling open curve addressing hierarchical compaction curve decomposition preservation sub-question linear attention memory agent explores collision transformer explores pairing bounded curve hierarchical resolution curve depth-first space-filling Hilbert management coordination sliding techniques agent space-filling space-filling sub-question hash space-filling including transformer pairing window Hilbert breadth-first including allocation information eviction explores resolution function addressing explores collision resolution context coordination techniques resolution the recursive addressing open management mechanism sub-question probing context space-filling curve depth-first function space-filling",
+        "reconstructed": "The literature extensively addresses the",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0265
+      },
+      {
+        "agent_id": "ub-443a4789ecd9",
+        "original": "summarization resolution caching summarization embedding coordination management LLM hash techniques agent techniques depth-first curve curve slot pairing function breadth-first function hash hash function slot eviction sliding fragmentation slot bijection bijection function function policy recursive hierarchical loss space-filling resolution preservation slot allocation sub-question sub-question compaction the defragmentation memory transformer loss defragmentation explores state embedding bijection recursive mechanism slot slot memory fragmentation mechanism attention sub-question recursive aggregation depth-first fragmentation slot Cantor compression bijection LLM Cantor LLM open summarization depth-first probing hierarchical decomposition",
+        "reconstructed": "The `",
+        "category": "cached",
+        "jaccard": 0.0227,
+        "tfidf_cosine": 0.0458
+      },
+      {
+        "agent_id": "ub-345cbf9f8360",
+        "original": "policy memory window loss hierarchical policy addressing caching coordination policy mechanism linear defragmentation embedding caching pairing policy investigation defragmentation techniques sliding bounded state probing token bijection probing eviction hierarchical management space-filling information decomposition retrieval caching function retrieval agent fragmentation token preservation LLM multi-agent space-filling Cantor the hash bijection open collision hierarchical probing aggregation recursive compression agent bounded compaction collision coordination Cantor management token multi-agent bounded caching token token LLM eviction sub-question open embedding sliding transformer allocation slot coordination breadth-first attention",
+        "reconstructed": "The literature on the `",
+        "category": "cached",
+        "jaccard": 0.0196,
+        "tfidf_cosine": 0.0363
+      },
+      {
+        "agent_id": "ub-bf23f7f9f194",
+        "original": "context multi-agent including agent embedding hash context recursive retrieval compression depth-first bijection state agent depth-first eviction memory LLM Hilbert addressing transformer mechanism caching investigation loss sub-question sliding information curve policy agent addressing Cantor function bijection defragmentation defragmentation memory pairing policy compression techniques retrieval caching hash explores aggregation techniques eviction space-filling hash compaction agent allocation attention breadth-first hash investigation information linear techniques memory aggregation attention attention addressing curve including Cantor summarization explores bounded eviction investigation hierarchical sliding embedding caching the hierarchical",
+        "reconstructed": "The literature",
+        "category": "cached",
+        "jaccard": 0.0222,
+        "tfidf_cosine": 0.0294
+      },
+      {
+        "agent_id": "ub-a999d1c24469",
+        "original": "compression collision token compression attention bijection summarization compression retrieval summarization investigation the hash fragmentation decomposition depth-first compaction LLM sliding state resolution caching preservation probing allocation caching eviction bijection space-filling agent embedding allocation agent information defragmentation bijection recursive open window sliding summarization eviction transformer multi-agent open mechanism fragmentation curve embedding multi-agent linear hierarchical LLM techniques token collision compression summarization aggregation retrieval summarization bounded bijection addressing pairing attention sub-question summarization recursive addressing bijection open decomposition aggregation explores space-filling techniques curve loss bijection",
+        "reconstructed": "For the `",
+        "category": "cached",
+        "jaccard": 0.0213,
+        "tfidf_cosine": 0.0281
+      },
+      {
+        "agent_id": "ub-13543a0f062b",
+        "original": "management retrieval decomposition coordination techniques curve multi-agent depth-first explores preservation management compression Hilbert eviction defragmentation investigation policy space-filling mechanism sub-question coordination recursive addressing Cantor mechanism embedding context slot caching hash summarization transformer function summarization transformer token loss decomposition addressing transformer transformer agent state allocation mechanism slot compaction hierarchical summarization information the compaction policy depth-first bounded collision open aggregation aggregation linear depth-first eviction investigation fragmentation preservation memory decomposition recursive recursive information allocation decomposition policy pairing bijection defragmentation hierarchical space-filling bounded defragmentation",
+        "reconstructed": "Empirical evidence for",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-d7376285c697",
+        "original": "Hilbert function eviction sliding eviction sliding coordination pairing techniques eviction multi-agent memory recursive bijection slot eviction mechanism preservation linear attention function the bounded Cantor Cantor policy linear sliding aggregation including Cantor function addressing linear addressing curve management breadth-first open eviction compression linear Cantor preservation bijection hierarchical sub-question state fragmentation addressing mechanism information caching window eviction token the sliding resolution allocation state depth-first window open multi-agent breadth-first compression including pairing space-filling sliding loss bounded loss Hilbert multi-agent preservation the open curve",
+        "reconstructed": "For a",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "ub-11af61899c7f",
+        "original": "curve mechanism compaction decomposition context information state compaction techniques open LLM sliding hash compaction recursive techniques transformer window probing allocation sub-question context loss investigation compression transformer window slot sub-question allocation summarization open aggregation sliding hash open preservation preservation recursive fragmentation multi-agent bijection management Hilbert embedding agent Hilbert compaction compression embedding sub-question compaction Cantor attention state bounded embedding the compression hash allocation agent space-filling resolution policy memory Cantor summarization sliding techniques eviction eviction state compaction recursive memory LLM policy loss LLM",
+        "reconstructed": "The naive recursive approach for",
+        "category": "cached",
+        "jaccard": 0.0455,
+        "tfidf_cosine": 0.0697
+      },
+      {
+        "agent_id": "ub-1b17b05ec04b",
+        "original": "collision explores open state techniques collision including defragmentation context eviction bounded curve eviction policy sliding compression window techniques collision eviction LLM fragmentation depth-first open including context caching Hilbert Hilbert aggregation attention addressing recursive attention hash bijection fragmentation management state function context fragmentation probing the preservation management sliding summarization eviction window transformer curve techniques bounded defragmentation resolution caching collision curve mechanism explores linear token collision function aggregation the eviction function hash hash breadth-first fragmentation hierarchical compression eviction aggregation bijection agent open",
+        "reconstructed": "[LLM Error: DeadlineExceeded]",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0218
+      },
+      {
+        "agent_id": "ub-4f38d67c9db0",
+        "original": "probing multi-agent depth-first transformer compression allocation depth-first collision multi-agent sub-question techniques collision addressing compression multi-agent curve collision breadth-first linear pairing hash compression agent addressing retrieval transformer sub-question resolution including breadth-first caching probing sliding transformer caching techniques token bounded resolution summarization information token eviction retrieval techniques the policy token caching the aggregation fragmentation pairing curve space-filling Hilbert defragmentation pairing sliding hash token the aggregation curve open Hilbert eviction window state context pairing summarization loss management coordination information loss attention hash coordination",
+        "reconstructed": "The key techniques",
+        "category": "cached",
+        "jaccard": 0.0476,
+        "tfidf_cosine": 0.146
+      },
+      {
+        "agent_id": "ub-60224b439d02",
+        "original": "token depth-first function state hash summarization compaction preservation addressing allocation techniques including aggregation compaction policy probing caching LLM state information including policy depth-first aggregation Hilbert mechanism the bounded policy retrieval open policy resolution context embedding breadth-first slot bounded memory sub-question memory preservation addressing techniques investigation token addressing allocation decomposition depth-first bijection including bijection sub-question Hilbert attention sliding open memory hierarchical LLM including Hilbert management agent defragmentation including defragmentation curve depth-first Cantor embedding retrieval retrieval resolution window context window defragmentation sliding",
+        "reconstructed": "While efficient algorithms like",
+        "category": "cached",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 1,
+    "cache_size": 8,
+    "wall_time_s": 68.51,
+    "task_family": "coding_pilot"
+  }
+]

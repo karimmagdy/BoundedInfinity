@@ -1,6 +1,6 @@
 % ============================================================
-% Bounding Unbounded Agentic Swarms:
-% Cache-Bounded State Management via Space-Filling Curves
+% Bounded Infinity Cache:
+% Memory-Bounded State Management for Recursive LLM Agent Swarms
 % ============================================================
 % NeurIPS 2026 Submission
 % ============================================================
@@ -8,7 +8,7 @@
 \documentclass{article}
 
 % NeurIPS 2026 style
-\usepackage[final]{neurips_2026}
+\usepackage[preprint]{neurips_2026}
 
 % Standard packages
 \usepackage[utf8]{inputenc}
@@ -27,6 +27,7 @@
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{multirow}
 \usepackage{tikz}
 \usepackage{pifont}   % for \cmark \xmark in tables
 \usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
@@ -58,7 +59,7 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\slots}{M}
 
-\title{Bounding Unbounded Agentic Swarms: \\ Cache-Bounded State Management \\ via Space-Filling Curves}
+\title{Bounded Infinity Cache: \\ Memory-Bounded State Management \\ for Recursive LLM Agent Swarms}
 
 \author{
   Karim Magdy$^{1(\boxtimes)}$\thanks{Corresponding author.} \\
@@ -101,5 +102,169 @@
 \newpage
 \appendix
 \input{sections/appendix_proofs}
+
+\section{Hilbert Locality Extension}
+\label{app:hilbert}
+
+\begin{definition}[Hilbert Compression (Optional)]
+\label{def:hilbert}
+As an optional locality optimization, for agents with $n$-dimensional
+numeric state vectors, the \emph{Hilbert compressor}
+$\hilbert_p^n: [0,1]^n \to [0, 2^{np})$ maps an $n$-dimensional
+unit-hypercube coordinate to a one-dimensional Hilbert-curve index at
+resolution $p$ bits per dimension.  We use the
+Skilling~\citep{skilling2004hilbert} transpose algorithm for
+$\Oh(np)$ computation.  The Hilbert index is stored per cache entry
+and used by the eviction policy to cluster nearby states.  Ablation
+experiments (\S\ref{sec:experiments}) show that this optimization
+provides no measurable benefit in our current experimental settings
+(bic-full $=$ bic-no-hilbert $= 0.558$), suggesting that the
+tree-structural locality from Cantor pairing already provides
+sufficient clustering.
+\end{definition}
+
+\paragraph{Hilbert-locality eviction.}
+When evicting $n$ agents, the eviction manager may optionally apply a
+Hilbert clustering step to the candidate pool.  Algorithm~\ref{alg:evict}
+describes this procedure.
+
+\begin{algorithm}[t]
+\caption{\textsc{Evict}$(n)$ — evict $n$ agents with Hilbert clustering.}
+\label{alg:evict}
+\begin{algorithmic}[1]
+  \STATE $P \gets$ top-$3n$ candidates by eviction priority
+  \COMMENT{Heuristic three-level priority (idle / depth / LRU), no LLM}
+  \STATE Sort $P$ by Hilbert index
+  \COMMENT{Closed-form bit-interleaving (Butz~1971), no learning}
+  \STATE $W^* \gets \arg\min_{|W|=n} \max(W.\eta) - \min(W.\eta)$
+  \COMMENT{Heuristic tightest sliding window, no LLM}
+  \FOR{each parent group $(v_p, \{c_1, \dots, c_j\})$ in $W^*$}
+    \STATE $s_p' \gets \summarize(s_p, [s_{c_1}, \dots, s_{c_j}])$
+    \COMMENT{LLM-eligible: default concat-merge, optional Gemini-2.0-flash with prompt in App.~\ref{app:summary-prompt}}
+    \STATE $\mathrm{Cache.Update}(v_p, s_p')$
+    \COMMENT{Heuristic write, no LLM}
+    \FOR{$i = 1$ \TO $j$}
+      \STATE $\mathrm{Cache.Remove}(c_i)$
+      \COMMENT{Heuristic, no LLM}
+    \ENDFOR
+  \ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\section{Summarization Prompt Template}
+\label{app:summary-prompt}
+
+The default $\summarize$ in BIC is a deterministic concat-and-merge that
+appends each evicted child's non-private keys into the parent's
+\texttt{\_summaries} list (capped at 16 entries by recency).  This is what
+the experiments in \S\ref{sec:experiments} actually use; the LLM
+(Gemini-2.0-flash) is invoked once per agent for \emph{task execution},
+not for summarization.  An LLM-backed summarizer is a drop-in plug-in
+through the same \texttt{SummarizationFunction} interface.  When equipped,
+it receives the following prompt:
+
+\begin{quote}\small\ttfamily
+You are compressing the working memory of a recursive multi-agent
+research system.  Below are the most recent $N$ child agent states
+that are being evicted from cache, plus the parent state they will be
+merged into.  Produce a single $\leq 200$-token summary that
+preserves: (1)~the parent's current goal, (2)~each child's key
+findings or decisions, (3)~unresolved questions or open follow-ups.
+Do not invent content.  Do not include process metadata.
+
+PARENT STATE:\\
+\{parent\_state\}
+
+CHILD STATES (chronological):\\
+\{child\_states\}
+
+SUMMARY:
+\end{quote}
+
+The same prompt template is used (with the cached parent's
+\texttt{\_summaries} list as input) when an LLM-equipped \textsc{Query}
+re-expands an evicted descendant's reconstructed state.  We log the
+prompt verbatim alongside experimental results in the open-source
+release.
+
+% ------------------------------------------------------------------ %
+% NeurIPS Paper Checklist
+% ------------------------------------------------------------------ %
+\newcommand{\answerYes}[1][]{\textcolor{blue}{[Yes]}~#1}
+\newcommand{\answerNo}[1][]{\textcolor{orange}{[No]}~#1}
+\newcommand{\answerNA}[1][]{\textcolor{gray}{[N/A]}~#1}
+
+\section*{NeurIPS Paper Checklist}
+\begin{enumerate}
+\item {\bf Claims}
+\item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+\item[] Answer: \answerYes{}
+\item[] Justification: All claims supported by synthetic (3,280 agents) and real-LLM (50 agents, 5 seeds) experiments.
+
+\item {\bf Limitations}
+\item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+\item[] Answer: \answerYes{}
+\item[] Justification: Section~5 discusses registry O(N) growth, single LLM provider, lossy summarization, and Hilbert non-contribution.
+
+\item {\bf Theory Assumptions and Proofs}
+\item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete proof?
+\item[] Answer: \answerYes{}
+\item[] Justification: Four theorems with complete proofs in Appendix~A.
+
+\item {\bf Experimental Result Reproducibility}
+\item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results?
+\item[] Answer: \answerYes{}
+\item[] Justification: All parameters, algorithms, and experimental setup fully described. Code available at \url{https://github.com/karimmagdy/BoundedInfinity} under Apache-2.0.
+
+\item {\bf Open access to data and code}
+\item[] Question: Does the paper provide open access to the data and code?
+\item[] Answer: \answerYes{}
+\item[] Justification: Open-source implementation at \url{https://github.com/karimmagdy/BoundedInfinity} under Apache-2.0 license.
+
+\item {\bf Experimental Setting/Details}
+\item[] Question: Does the paper specify all the training and test details?
+\item[] Answer: \answerYes{}
+\item[] Justification: Section~4 provides all experimental parameters including cache sizes, branching factors, seeds.
+
+\item {\bf Experiment Statistical Significance}
+\item[] Question: Does the paper report error bars or statistical significance?
+\item[] Answer: \answerYes{}
+\item[] Justification: LLM experiments report mean $\pm$ std over 5 seeds. Synthetic experiments use deterministic seeding.
+
+\item {\bf Experiments Compute Resources}
+\item[] Question: For each experiment, does the paper provide sufficient information on the computer resources?
+\item[] Answer: \answerYes{}
+\item[] Justification: Wall-clock timing provided for all operations.
+
+\item {\bf Code Of Ethics}
+\item[] Question: Does the research conducted in the paper conform to the NeurIPS Code of Ethics?
+\item[] Answer: \answerYes{}
+
+\item {\bf Broader Impacts}
+\item[] Question: Does the paper discuss both potential positive and negative societal impacts?
+\item[] Answer: \answerYes{}
+\item[] Justification: Broader Impact section discusses computational costs and autonomous agent implications.
+
+\item {\bf Safeguards}
+\item[] Question: Does the paper describe safeguards for responsible use?
+\item[] Answer: \answerNA{}
+
+\item {\bf Licenses}
+\item[] Question: Are the creators of assets used in the paper properly credited?
+\item[] Answer: \answerYes{}
+
+\item {\bf New Assets}
+\item[] Question: Are new assets introduced in the paper well documented?
+\item[] Answer: \answerYes{}
+\item[] Justification: BIC architecture fully documented with algorithms, definitions, and open-source code.
+
+\item {\bf Human Subjects}
+\item[] Question: Does the paper involve human subjects or human-derived data?
+\item[] Answer: \answerNo{}
+
+\item {\bf IRB Approvals}
+\item[] Question: Does the paper describe potential risks and IRB approvals?
+\item[] Answer: \answerNA{}
+\end{enumerate}
 
 \end{document}

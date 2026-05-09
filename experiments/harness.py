@@ -98,6 +98,12 @@ class RunMetrics:
     total_evictions: int = 0
     final_memory_size: int = 0
 
+    # Per-agent (original_answer, reconstructed_text) text pairs.
+    # Used for offline computation of stronger semantic metrics
+    # (sentence-embedding cosine, BERTScore, LLM-as-judge).
+    # Populated when run_instrumented(..., log_text_pairs=True).
+    text_pairs: list[dict[str, Any]] = field(default_factory=list)
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "backend": self.backend_name,
@@ -121,6 +127,7 @@ class RunMetrics:
                 "info_preservation_ratio": round(self.info_preservation_ratio, 4),
             },
             "evictions": self.total_evictions,
+            "text_pairs": self.text_pairs,
         }
 
 
@@ -253,6 +260,7 @@ def _extract_reconstructed_text(state: dict[str, Any]) -> str:
 def measure_reconstruction_quality(
     backend: SwarmBackend,
     agent_answers: dict[str, str],
+    pairs_out: list[dict[str, Any]] | None = None,
 ) -> tuple[float, float]:
     """Query every agent and measure how much of the original answer is recoverable.
 
@@ -261,6 +269,12 @@ def measure_reconstruction_quality(
     For lost agents (baselines with no summarization): query returns None → 0.
 
     Returns (jaccard_quality, semantic_quality) averaged across all agents.
+
+    If pairs_out is provided, appends per-agent records of the form
+    {"agent_id": ..., "original": ..., "reconstructed": ..., "category": ...}
+    where category in {"cached", "reconstructed", "lost", "empty"}. This lets
+    callers re-score offline with stronger semantic metrics (sentence-embedding
+    cosine, BERTScore, LLM-as-judge) without re-running the swarm.
     """
     if not agent_answers:
         return 0.0, 0.0
@@ -271,21 +285,44 @@ def measure_reconstruction_quality(
 
     for agent_id, original_answer in agent_answers.items():
         state = backend.query(agent_id)
+        category = "lost"
+        reconstructed_text = ""
+        jacc = 0.0
+        sem = 0.0
         if state is None:
             pass  # 0.0 for both metrics
         elif state.get("_reconstructed"):
             reconstructed_text = _extract_reconstructed_text(state)
-            total_jaccard += _token_overlap(original_answer, reconstructed_text)
-            total_semantic += _semantic_similarity(original_answer, reconstructed_text)
+            jacc = _token_overlap(original_answer, reconstructed_text)
+            sem = _semantic_similarity(original_answer, reconstructed_text)
+            total_jaccard += jacc
+            total_semantic += sem
+            category = "reconstructed"
         else:
             cached_response = state.get("response", "")
             if cached_response:
-                total_jaccard += _token_overlap(original_answer, cached_response)
-                total_semantic += _semantic_similarity(original_answer, cached_response)
+                reconstructed_text = cached_response
+                jacc = _token_overlap(original_answer, cached_response)
+                sem = _semantic_similarity(original_answer, cached_response)
+                total_jaccard += jacc
+                total_semantic += sem
+                category = "cached"
             else:
                 total_jaccard += 0.5
                 total_semantic += 0.5
+                jacc = 0.5
+                sem = 0.5
+                category = "empty"
         count += 1
+        if pairs_out is not None:
+            pairs_out.append({
+                "agent_id": agent_id,
+                "original": original_answer,
+                "reconstructed": reconstructed_text,
+                "category": category,
+                "jaccard": round(jacc, 4),
+                "tfidf_cosine": round(sem, 4),
+            })
 
     n = max(count, 1)
     return total_jaccard / n, total_semantic / n
@@ -299,11 +336,17 @@ def run_instrumented(
     backend_name: str,
     backend: SwarmBackend,
     config: TaskConfig,
+    log_text_pairs: bool = False,
 ) -> RunMetrics:
     """Run a research-decomposition task with full instrumentation.
 
     Wraps the backend, runs the task, measures reconstruction quality,
     and returns a RunMetrics with everything.
+
+    If log_text_pairs is True, the per-agent (original, reconstructed)
+    text pairs are saved into RunMetrics.text_pairs for offline scoring
+    with stronger semantic metrics (sentence-embedding cosine, BERTScore,
+    LLM-as-judge).
     """
     tracemalloc.start()
     instrumented = InstrumentedBackend(backend)
@@ -312,8 +355,9 @@ def run_instrumented(
     task_result = run_research_task(instrumented, config)
 
     # Measure reconstruction quality (query every agent)
+    pairs: list[dict[str, Any]] = [] if log_text_pairs else None  # type: ignore[assignment]
     recon_quality, semantic_quality = measure_reconstruction_quality(
-        instrumented, task_result.agent_answers
+        instrumented, task_result.agent_answers, pairs_out=pairs,
     )
 
     # Collect memory info
@@ -370,6 +414,7 @@ def run_instrumented(
         info_preservation_ratio=info_pres,
         total_evictions=total_evictions,
         final_memory_size=final_size,
+        text_pairs=(pairs if pairs is not None else []),
     )
 
     return metrics

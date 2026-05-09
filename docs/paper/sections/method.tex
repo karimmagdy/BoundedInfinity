@@ -58,16 +58,7 @@ A BIC is a tuple $\BIC = (\slots, h, \summarize, \info)$ where:
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Hilbert Compression]
-\label{def:hilbert}
-For agents with $n$-dimensional numeric state vectors, the
-\emph{Hilbert compressor} $\hilbert_p^n: [0,1]^n \to [0, 2^{np})$
-maps an $n$-dimensional unit-hypercube coordinate to a
-one-dimensional Hilbert-curve index at resolution $p$ bits per
-dimension.  We use the Skilling~\citep{skilling2004hilbert} transpose
-algorithm for $\Oh(np)$ computation.  The Hilbert index is stored per
-cache entry and used by the eviction policy to cluster nearby states.
-\end{definition}
+We also explore an optional Hilbert locality optimization (Appendix~\ref{app:hilbert}), though ablation experiments show no measurable benefit (Section~\ref{sec:ablation}).
 
 \begin{definition}[Information Preservation Ratio]
 \label{def:preservation}
@@ -119,8 +110,8 @@ shows the data flow.
 \end{tikzpicture}
 \caption{BIC architecture.  The API layer coordinates the Agent
   Registry (tree tracking + Cantor addressing), the fixed-size cache
-  array, and the Eviction Manager (Hilbert-locality clustering +
-  hierarchical summarization).}
+  array, and the Eviction Manager (hierarchical summarization, with
+  optional Hilbert-locality clustering).}
 \label{fig:architecture}
 \end{figure}
 
@@ -134,16 +125,17 @@ ancestor-chain reconstruction.
 \label{alg:spawn}
 \begin{algorithmic}[1]
   \STATE $v \gets \mathrm{Registry.Register}(v_{\mathrm{parent}}, \tau)$
-  \COMMENT{Assign tree position, compute Cantor address}
+  \COMMENT{Heuristic, no LLM: assign tree position, compute Cantor addr.}
   \IF{$\mathrm{Cache.IsFull}()$}
     \STATE $\mathrm{EvictionManager.EnsureCapacity}(1)$
-    \COMMENT{Evict + summarize into parents}
+    \COMMENT{Triggers Algorithm~\ref{alg:evict}; summarization is LLM-eligible}
   \ENDIF
   \STATE $s_0 \gets \{\texttt{task}: \tau\}$
+  \COMMENT{Heuristic, no LLM}
   \STATE $\eta \gets \hilbert(\mathrm{ExtractVector}(s_0))$
-  \COMMENT{Hilbert index for locality}
+  \COMMENT{Closed-form bit-interleaving (Butz~1971), no learning}
   \STATE $\mathrm{Cache.Put}(v, s_0, \eta, h(v))$
-  \COMMENT{$h(v) = \cantor(v) \bmod \slots$}
+  \COMMENT{$h(v) = \cantor(v) \bmod \slots$; closed-form (Cantor 1878)}
   \RETURN $v$
 \end{algorithmic}
 \end{algorithm}
@@ -153,15 +145,16 @@ ancestor-chain reconstruction.
 \label{alg:query}
 \begin{algorithmic}[1]
   \STATE $e \gets \mathrm{Cache.Get}(v)$
+  \COMMENT{Heuristic Cantor-index lookup, no LLM}
   \IF{$e \neq \mathrm{nil}$}
     \RETURN $e.\mathrm{state}$
-    \COMMENT{Cache hit: $\Oh(1)$}
+    \COMMENT{Cache hit: $\Oh(1)$, no LLM}
   \ENDIF
   \STATE $r \gets \mathrm{Registry.Get}(v)$
   \IF{$r = \mathrm{nil}$}
     \RETURN nil
   \ENDIF
-  \STATE \COMMENT{Reconstruct from ancestor chain: $\Oh(d)$}
+  \STATE \COMMENT{Reconstruct from ancestor chain: $\Oh(d)$ — heuristic walk}
   \STATE $\mathrm{summaries} \gets [\,]$
   \STATE $u \gets r.\mathrm{parent}$
   \WHILE{$u \neq \mathrm{nil}$}
@@ -169,11 +162,12 @@ ancestor-chain reconstruction.
     \IF{$e_u \neq \mathrm{nil}$}
       \STATE Append $e_u.\mathrm{state.\_summaries}$ to summaries
       \STATE \textbf{break}
-      \COMMENT{Found cached ancestor}
+      \COMMENT{Found cached ancestor; LLM optional for re-expansion}
     \ENDIF
     \STATE $u \gets \mathrm{Registry.Get}(u).\mathrm{parent}$
   \ENDWHILE
   \RETURN $\mathrm{MergeReconstruction}(r, \mathrm{summaries})$
+  \COMMENT{Heuristic merge by default; LLM-eligible re-expansion if equipped}
 \end{algorithmic}
 \end{algorithm}
 
@@ -181,28 +175,48 @@ ancestor-chain reconstruction.
 When the cache is full, the eviction manager selects victims using a
 three-level priority: (1)~idle agents (not accessed for $>t$ seconds);
 (2)~deepest agents (largest tree depth); (3)~least recently accessed.
-From the candidate pool, a \emph{Hilbert clustering} step selects the
-subset whose Hilbert indices form the tightest contiguous window
-(Algorithm~\ref{alg:evict}).  These are evicted together, and their
-states are summarized into their respective parents via $\summarize$.
+Selected agents are evicted and their states are summarized into their
+respective parents via $\summarize$.  An optional Hilbert-locality
+clustering step is described in Appendix~\ref{app:hilbert}.
 
-\begin{algorithm}[t]
-\caption{\textsc{Evict}$(n)$ — evict $n$ agents with Hilbert clustering.}
-\label{alg:evict}
-\begin{algorithmic}[1]
-  \STATE $P \gets$ top-$3n$ candidates by eviction priority
-  \STATE Sort $P$ by Hilbert index
-  \STATE $W^* \gets \arg\min_{|W|=n} \max(W.\eta) - \min(W.\eta)$
-  \COMMENT{Tightest sliding window}
-  \FOR{each parent group $(v_p, \{c_1, \dots, c_j\})$ in $W^*$}
-    \STATE $s_p' \gets \summarize(s_p, [s_{c_1}, \dots, s_{c_j}])$
-    \STATE $\mathrm{Cache.Update}(v_p, s_p')$
-    \FOR{$i = 1$ \TO $j$}
-      \STATE $\mathrm{Cache.Remove}(c_i)$
-    \ENDFOR
-  \ENDFOR
-\end{algorithmic}
-\end{algorithm}
+\paragraph{What is heuristic vs.\ LLM-based?}
+To make the implementation choice explicit, Table~\ref{tab:mechanisms}
+maps each step of the BIC pipeline to the concrete mechanism that
+implements it.  The addressing layer (Cantor and Hilbert) is entirely
+closed-form arithmetic with no learning component; the eviction
+selector is a deterministic three-level priority queue; the
+summarization step is the only LLM-eligible component, and our
+default is a deterministic concatenating summarizer (preserves
+recency, no LLM call) with a pluggable interface for an LLM
+summarizer (Gemini-2.0-flash in our experiments) using the prompt
+template in Appendix~\ref{app:summary-prompt}.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Each BIC step and the mechanism implementing it.  Only
+  hierarchical summarization is LLM-eligible; all addressing and
+  selection logic is closed-form.}
+\label{tab:mechanisms}
+\vspace{0.3em}
+\begin{tabular}{lll}
+\toprule
+\textbf{Step} & \textbf{Mechanism} & \textbf{LLM?} \\
+\midrule
+Cantor pairing $\cantor$ & Closed-form arithmetic (Cantor~1878) & No \\
+Hilbert index $\hilbert$ & Bit-interleaving (Butz~1971) & No \\
+Slot mapping $h(v) = \cantor(v) \bmod \slots$ & Modular arithmetic & No \\
+Spawn (\textsc{Register}) & Heuristic registry write & No \\
+Eviction priority & Three-level heuristic (idle / depth / LRU) & No \\
+Hilbert clustering (optional) & Sort + sliding-window selection & No \\
+Hierarchical summarization $\summarize$ & Default: concat-and-merge & No \\
+\quad\emph{LLM-equipped variant} & Gemini-2.0-flash via plug-in & Yes \\
+Query (cache hit) & $\Oh(1)$ hash lookup & No \\
+Query (reconstruct) & Ancestor-chain walk + merge & No (default) \\
+\quad\emph{LLM re-expansion} & Gemini-2.0-flash on cached summaries & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 % ============================================================

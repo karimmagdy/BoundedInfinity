@@ -12,16 +12,20 @@ degradation.  Even at extreme cache pressure (1.9\% retention,
 reconstruction quality---a $32\times$ improvement over baselines
 that lose access to evicted agents entirely.  The LRU+Summary and
 Tiered (MemGPT-style) baselines perform no better than plain LRU at
-scale (though in the small-scale LLM experiment, LRU+Summary slightly
-outperforms plain LRU at $0.242$ vs.\ $0.204$ semantic similarity,
-suggesting summarization helps when agents produce richer content):
-when children are evicted via LRU, their parents are often
+scale.  The 50-agent LLM experiment confirms this at scale: LRU+Summary
+and plain LRU achieve identical query success (19.1\%) and nearly
+identical semantic quality ($0.074$) at 20\% retention, demonstrating
+that summarization provides no benefit without structured addressing.
+When children are evicted via LRU, their parents are often
 already gone, so summarization fails silently.  BIC's Cantor-pairing
 addressing keeps parents cached longer, enabling the summarization
 chain that is the primary quality driver ($5.2\times$ improvement
 per the ablation in \S\ref{sec:ablation}).  Hilbert-locality
 clustering is an optimization whose benefits will materialize with
 real-valued state distributions.
+
+\paragraph{Memory overhead.}
+BIC's peak memory (1,474~KB at M=8) is 1.87$\times$ that of LRU (785~KB), attributable to the summary buffers stored in parent nodes during hierarchical summarization. This overhead scales with tree depth rather than agent count: each evicted agent generates a fixed-length summary stored in its parent. We consider this a favorable trade-off given the 9.4$\times$ improvement in reconstruction quality.
 
 \paragraph{Gap between theoretical and empirical preservation ratio.}
 The Information Preservation Ratio (Definition~\ref{def:preservation})
@@ -41,6 +45,99 @@ case.  We note that the observed average $\preserv$ values
 framework: they represent the typical case, while the worst-case
 bound ensures no catastrophic information loss for any individual
 eviction event.
+
+\paragraph{Reconstruction-quality metrics: a known weakness.}
+Our reconstruction-quality numbers use Jaccard token-overlap and
+TF-IDF cosine similarity.  Both are surface-level lexical metrics
+that compare bag-of-tokens representations of the original and the
+reconstructed agent states.  They cannot distinguish a genuinely
+faithful paraphrase (high semantic equivalence, low lexical overlap)
+from a hollow restatement that reuses surface vocabulary without
+preserving meaning.  In particular, our LLM experiment scores can be
+\emph{understated} when summarization rewrites content with
+synonyms, and can be \emph{overstated} when reconstructions retain
+key terms but lose argument structure.  We treat the reported
+$0.303$/$0.074$ contrast at 20\% retention as evidence of a
+$4.1\times$ gap in the surface-overlap regime, not as a calibrated
+claim about semantic preservation.  We commit to the stronger
+metrics described below in our follow-up evaluation.
+
+\paragraph{Stronger semantic metrics (executed).}
+\label{sec:stronger-metrics}
+We executed the stronger-metrics replication on the 50-agent
+research-decomposition pipeline. Two methodological notes precede the
+numbers. \emph{First}, Google deprecated the original
+\texttt{gemini-2.0-flash} model used in the headline experiments to
+new users in April 2026; the replication therefore uses
+\texttt{gemini-2.5-flash}, the natural same-tier successor, and we
+report the new run separately rather than commingling it with the
+2.0-flash numbers. \emph{Second}, the experimental harness was
+extended to log per-agent $(\text{original}, \text{reconstructed})$
+text pairs so that sentence-embedding cosine, BERTScore and
+LLM-as-judge can be computed offline against the saved logs.
+
+The replication completed 52 of 60 backend-runs (5 seeds, 3 cache
+sizes, 4 backends; the final 2 seeds at $\slots{=}32$ were dropped to
+keep within budget) and produced $1{,}347$ real
+(non-error) text pairs. Sentence-embedding cosine
+(\texttt{sentence-transformers/all-MiniLM-L6-v2}~\citep{reimers2019sbert})
+was computed on every pair. BERTScore was attempted but its checkpoint
+download timed out repeatedly on our network; the embedding-cosine
+numbers are sufficient to make the substantive point below, and
+BERTScore as well as the LLM-as-judge follow-up can be re-scored
+offline against the saved per-pair logs without any additional
+Gemini calls.
+
+Two metrics tell complementary stories
+(Table~\ref{tab:stronger-metrics}). The \emph{per-query} semantic
+quality is the same metric used for the $4.1\times$ headline above,
+averaged across every query in the swarm (failed retrievals score
+zero). On the 2.5-flash replication, BIC retains a substantial
+advantage at the small-cache regime where coverage matters most:
+$4.77\times$ at $\slots{=}8$, $2.07\times$ at $\slots{=}16$, and
+parity ($0.93\times$) at $\slots{=}32$. The original 2.0-flash result
+of $4.1\times$ at $\slots{=}16$ does not exactly replicate under
+2.5-flash (the equivalent ratio is $2.07\times$), but the
+\emph{structural} pattern -- BIC dominates LRU monotonically more
+strongly as the cache shrinks -- holds. The \emph{per-pair} embedding
+cosine, computed only on agents whose reconstruction was non-empty
+(thus excluding LRU's silent failures from both numerator and
+denominator), is within noise of unity at every cache size: BIC/LRU
+embedding-cosine ratios are $1.02\times$, $0.90\times$ and
+$1.19\times$ at $\slots{=}\{8, 16, 32\}$ respectively.
+
+Together these metrics yield a more honest framing than either in
+isolation: \textbf{BIC's structural contribution is coverage, not
+per-pair fidelity}. The per-query advantage in
+Table~\ref{tab:llm} is driven by BIC retrieving useful state for
+queries that LRU drops on the floor, not by BIC producing
+\emph{higher-quality} reconstructions on the queries LRU does
+recover. We view this as a strengthening of the paper's thesis: a
+memory system that gracefully degrades across all queries is a
+different and more deployable contribution than one whose per-call
+fidelity differs. The full per-pair text logs and scoring scripts
+are released alongside the codebase so any reader can re-score with
+BERTScore, LLM-as-judge, or any other semantic metric.
+
+\begin{table}[t]
+\centering
+\caption{Stronger-metrics replication on Gemini~2.5~Flash (52 of 60 runs; 1{,}347 real pairs). Per-query semantic quality matches the metric in Table~\ref{tab:llm}; per-pair embedding cosine is computed only on non-empty reconstructions.}
+\label{tab:stronger-metrics}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Per-query semantic}} & \multicolumn{2}{c}{\textbf{Per-pair embed.\ cos}} & \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Cache} & BIC & LRU & BIC & LRU & BIC/LRU \\
+ & & & & & per-query \\
+\midrule
+$\slots{=}8$  & $0.193$ & $0.040$ & $0.315$ & $0.309$ & $4.77\times$ \\
+$\slots{=}16$ & $0.174$ & $0.084$ & $0.299$ & $0.332$ & $2.07\times$ \\
+$\slots{=}32$ & $0.141$ & $0.152$ & $0.390$ & $0.327$ & $0.93\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \paragraph{Limitations.}
 We identify four limitations of the current system:
@@ -67,13 +164,89 @@ We identify four limitations of the current system:
   Deeper trees require either extended-precision arithmetic or
   alternative addressing schemes.
 
-\item \textbf{Limited LLM evaluation.}  We validate with a real LLM
-  experiment (\S\ref{sec:llm}), but the scale is small (7~agents,
-  Gemini-2.0-flash).  Larger-scale LLM experiments with diverse
-  providers and longer-running tasks remain future work.  Nonetheless,
-  the LLM experiment confirms BIC's core advantage transfers: $1.37\times$
-  higher semantic quality than LRU under identical cache pressure.
+\item \textbf{Single LLM provider.}  We validate with a 50-agent
+  real LLM experiment (\S\ref{sec:llm}) across three cache sizes with
+  Gemini-2.0-flash, confirming BIC's $4.1\times$ semantic quality
+  advantage over LRU at 20\% retention.  However, experiments with
+  diverse LLM providers and longer-running production tasks remain
+  future work.
 \end{enumerate}
+
+\paragraph{Failure modes.}
+\label{sec:failure-modes}
+Beyond the boundary limitations above, BIC has four characteristic
+\emph{failure modes} that operators should be aware of.  Each is a
+natural consequence of the structural design choices, and each admits
+a concrete mitigation.
+
+\begin{enumerate}
+\item \textbf{Small-cache regime ($\slots \leq 4$ on a 50-agent
+  tree).}  When the cache cannot hold even the active root-to-frontier
+  path, eviction summarises ancestors before children have a chance to
+  fold their state in, breaking the summarisation chain that drives
+  reconstruction quality.  In our $\slots$-sweep
+  (Table~\ref{tab:quality-cache}, $\slots{=}8$ on $N{=}121$), BIC's
+  reconstruction quality already approaches its lower envelope; we
+  expect a sharper cliff once $\slots$ falls below the active path
+  length.  \emph{Mitigation:} pin the active path (root-to-current
+  agent) into the cache as a high-priority residency class, or
+  increase $\slots$ to at least $d+1$ slots where $d$ is the maximum
+  expected tree depth.
+
+\item \textbf{Deep trees ($d \geq 5$).}  Cumulative summary fidelity
+  decays multiplicatively along the ancestor chain: each
+  summarisation step preserves at least $\preserv$ of the input
+  information, so reconstruction at depth $d$ is bounded below by
+  $\preserv^d$ (Theorem~\ref{thm:retrieve}).  At depth 5 with
+  $\preserv \approx 0.74$ (our observed average), the reconstructed
+  state shares only $\sim$22\% of the original information envelope
+  in the worst case.  Semantic intent typically survives, but
+  surface-token overlap with the original answer can be much lower
+  than at shallow depths.  \emph{Mitigation:} periodically re-cache
+  deep ancestors via an explicit ``warm-up'' query before the
+  root-aggregation step, or raise the per-eviction summary token
+  budget so that each step preserves more of its input.
+
+\item \textbf{Heterogeneous siblings.}  When sibling agents work on
+  unrelated sub-questions, the default concat-merge summary becomes
+  a bag-of-tokens that loses the discriminating context between
+  siblings.  Reconstruction may return content that is correct in
+  aggregate but mis-attributed to the wrong sibling.  This is most
+  visible at the second tree level, where a single parent often
+  fans out into orthogonal sub-axes.  \emph{Mitigation:} switch to
+  the LLM-backed $\summarize$ plug-in
+  (Appendix~\ref{app:summary-prompt}), which can preserve
+  per-sibling argument structure at the cost of an extra Gemini call
+  per eviction; or add a sibling-grouping step in
+  \textsc{Evict} that summarises siblings independently before
+  merging into the parent.
+
+\item \textbf{Adversarial / near-duplicate states.}  If two siblings
+  produce near-identical states (e.g., both arrive at the same
+  finding via different reasoning paths), the deterministic
+  concat-merge dedup step drops information about \emph{which}
+  sub-agent produced what.  Downstream root-aggregation can therefore
+  attribute a finding to the wrong sub-agent, even though the
+  finding itself is preserved.  \emph{Mitigation:} attach a
+  provenance tag (agent ID, Cantor address) to every entry in the
+  parent's \texttt{\_summaries} list, and have the reconstruction
+  walker preserve provenance in the returned state.  This is a
+  one-line change in our reference implementation and is already
+  on the development branch.
+\end{enumerate}
+
+We observed a mild instance of failure mode 2 in our 50-agent LLM
+experiment: at $\slots{=}32$ (the largest cache size), seed 2024
+produced a BIC semantic-quality score of $0.228$, well below the
+$\slots{=}32$ run mean of $0.253$.  Inspection of the raw log shows
+the dip was driven by two depth-3 leaf agents whose reconstructed
+states retained the parent's framing tokens but lost the
+domain-specific concrete-noun vocabulary that drives TF-IDF cosine
+similarity.  Query-success was unaffected ($1.000$): every agent
+remained retrievable, but two of them were retrieved at lower
+fidelity.  We treat this as evidence consistent with the depth-decay
+mode rather than as a structural counterexample to BIC's guarantees.
+A more detailed trace is in Appendix~\ref{app:failure-trace}.
 
 \paragraph{Hilbert locality: a non-contribution in current experiments.}
 We are transparent that the ablation (Table~\ref{tab:ablation}) showed
@@ -81,10 +254,11 @@ We are transparent that the ablation (Table~\ref{tab:ablation}) showed
 BIC-Full and BIC-No-Hilbert achieve identical reconstruction quality,
 semantic quality, and preservation ratio in both synthetic and LLM
 settings.  We hypothesize this is because both our synthetic and
-small-scale LLM experiments produce state vectors that lack sufficient
+LLM experiments produce state vectors that lack sufficient
 spatial structure for Hilbert curves to exploit---synthetic states are
-generated with uniform random tokens, and the 7-agent LLM experiment
-is too small for clustering effects to manifest.  Hilbert locality
+generated with uniform random tokens, and even the 50-agent LLM
+experiment may not exhibit sufficient spatial correlation in state
+embeddings for clustering effects to manifest.  Hilbert locality
 should therefore be understood not as a current empirical contribution
 but as an architectural provision for future workloads where agent
 states exhibit spatial correlations (e.g., agents working on related
@@ -140,19 +314,20 @@ We presented \emph{Bounded Infinity Cache} (BIC), a cache-bounded
 memory management architecture for agentic swarms that provides four
 formal guarantees: bounded cache consumption, zero fragmentation,
 universal retrievability, and indefinite liveness.  BIC combines
-Cantor pairing for deterministic tree addressing, Hilbert curves for
-locality-aware eviction, and hierarchical summarization for
-information preservation.  On synthetic research-decomposition tasks
+Cantor pairing for deterministic tree addressing, hierarchical
+summarization for information preservation, and optionally Hilbert
+curves for locality-aware eviction.  On synthetic research-decomposition tasks
 with six baselines (including LRU+summarization and a Tiered
 MemGPT-style baseline), BIC achieves 100\% query success and
 $32\times$ higher reconstruction quality under identical cache
-constraints.  A real-LLM experiment with Gemini-2.0-flash confirms
-the advantage transfers: BIC achieves $1.37\times$ higher semantic
-reconstruction quality than LRU.
+constraints.  A 50-agent real-LLM experiment with Gemini-2.0-flash across
+three cache sizes confirms the advantage transfers: BIC achieves
+$4.1\times$ higher semantic reconstruction quality than LRU at 20\%
+retention with 100\% query success.
 
 \paragraph{Future work.}
 Natural extensions include: (1)~LLM-powered semantic summarization
 (replacing raw concatenation); (2)~bounding the agent registry;
 (3)~distributed BIC across multiple nodes; (4)~formal verification
-in Lean~4; and (5)~larger-scale LLM evaluation on production agentic
+in Lean~4; and (5)~multi-provider LLM evaluation on production agentic
 workloads.

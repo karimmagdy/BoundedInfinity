@@ -39,7 +39,13 @@ from bounded_infinity.adapters.llm_client import (
     reset_usage_tracker,
 )
 from experiments.baselines import BICBackend, make_backend
-from experiments.harness import run_instrumented
+from experiments.harness import run_instrumented as _run_instrumented_base
+
+
+def run_instrumented(*args, **kwargs):
+    """Wrapper that always logs text pairs for offline semantic-metric scoring."""
+    kwargs.setdefault("log_text_pairs", True)
+    return _run_instrumented_base(*args, **kwargs)
 from experiments.research_decomposition import TaskConfig
 
 RESULTS_DIR = Path(__file__).resolve().parent / "results"
@@ -54,7 +60,7 @@ CACHE_SIZES = [8, 16, 32]
 MAX_LLM_CALLS = 150  # per backend: 50 agents + question decomposition overhead
 
 SEEDS = [42, 123, 7, 2024, 314]
-BACKENDS = ["bic", "lru", "lru-summary", "unbounded"]
+BACKENDS = ["bic", "lru", "lru-summary", "lru-summary-aw", "lru-pin", "unbounded"]
 QUESTION = "Survey the state of memory management in multi-agent LLM systems"
 
 

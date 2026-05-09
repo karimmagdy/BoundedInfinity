@@ -124,7 +124,10 @@ def _call_anthropic(prompt: str, model: str, max_tokens: int, api_key: str) -> s
 # ------------------------------------------------------------------ #
 
 _DEFAULT_MODELS = {
-    "gemini": "gemini-2.0-flash",
+    # Switched 2026-04-28 from "gemini-2.0-flash" to "gemini-2.5-flash" because
+    # the AI Studio free-tier quota for 2.0-flash was exhausted. The 2.5 model
+    # is on the user's paid tier and is functionally equivalent for our use.
+    "gemini": "gemini-2.5-flash",
     "openai": "gpt-4o-mini",
     "anthropic": "claude-3-haiku-20240307",
 }

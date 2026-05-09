@@ -269,3 +269,122 @@ and the Butz--Moore characterization of locality
 This locality property ensures that our Hilbert-based eviction
 clustering co-evicts agents with similar state vectors, producing
 more coherent summaries when the state space has spatial structure.
+
+
+% ------------------------------------------------------------
+\section{Coding-Task Case-Study Design Sketch}
+\label{app:coding-case-study}
+
+We sketch the next planned case study to demonstrate BIC's
+deployment value on a workload structurally distinct from
+research-decomposition.  No results are reported; this is a design
+specification.
+
+\paragraph{Task.}
+A multi-agent coding pipeline that recursively converts a natural-language
+specification into an executable Python module with passing unit
+tests.  The orchestration layer is LangGraph~\citep{langgraph2024}
+with Gemini-2.0-flash as the per-agent backend, sitting on top of
+BIC for working-state management.
+
+\paragraph{Sub-task tree.}
+The root agent receives a specification (e.g., ``implement a
+disjoint-set data structure with union-by-rank and path
+compression'') and recursively decomposes:
+\textbf{(1)~Parse spec} (root, depth 0): extract function signatures,
+preconditions, and observable behaviours;
+\textbf{(2)~Generate function stubs} (depth 1, $k=3$ children): one
+agent per top-level function/method;
+\textbf{(3)~Fill in implementations} (depth 2, $k=3$ children per
+stub): one agent per implementation strategy
+(naive / optimised / property-test scaffold);
+\textbf{(4)~Run tests} (depth 3, $k=2$ children per implementation):
+unit-test executor and property-based test executor;
+\textbf{(5)~Debug} (depth 4, on-demand): spawned only when a test fails,
+narrowing into the failing case.
+Total tree size: $\sim$30--80 agents depending on debug depth.
+
+\paragraph{Metrics.}
+\textbf{(i)~test-pass rate}: fraction of generated unit tests that
+pass on the final assembled module;
+\textbf{(ii)~lines of correct code per dollar}: total accepted
+implementation lines divided by aggregate Gemini-2.0-flash spend;
+\textbf{(iii)~debug-depth distribution}: how often the tree extends
+past depth 3, as a proxy for how aggressive cache pressure becomes
+under realistic feedback loops;
+\textbf{(iv)~task-coherence rate}: as in \S\ref{sec:case-study},
+the fraction of sub-agent contributions retrievable by the root at
+final assembly time.
+
+\paragraph{Cache configurations to evaluate.}
+We will sweep $\slots \in \{4, 8, 16, 32\}$ and the same backends
+as \S\ref{sec:llm} (BIC, LRU, LRU+Summary, Unbounded).  We expect
+BIC's structural advantage to be at least as pronounced as on
+research-decomposition because debug spawns produce deeper trees
+($d \geq 4$), exactly the regime where Theorem~\ref{thm:retrieve}'s
+$\Oh(\log_k N)$ ancestor-chain reconstruction matters most.
+
+\paragraph{Instrumentation.}
+We will log per-eviction provenance (Cantor address, depth, summary
+length) and per-agent test-pass outcomes.  Raw logs and the LangGraph
+graph definition will be released alongside the camera-ready.
+
+
+% ------------------------------------------------------------
+\section{Failure Trace: Depth-3 Quality Dip Example}
+\label{app:failure-trace}
+
+To make the depth-decay failure mode of \S\ref{sec:failure-modes}
+concrete, we extract one trace from the 50-agent LLM experiment
+(\S\ref{sec:llm}) where BIC's semantic-reconstruction quality dipped
+below the run mean.  All numbers come from the raw log file
+\texttt{experiment\_6\_llm\_50agents\_raw.json} in the public
+repository.
+
+\paragraph{Configuration.}
+Backend BIC, $\slots = 32$, seed 2024, branching factor $k=3$,
+depth $d=3$.  Question: ``Survey the state of memory management in
+multi-agent LLM systems''.  Total agents in this run: 40.
+
+\paragraph{Aggregate metrics for this seed.}
+Semantic reconstruction quality $0.228$ (vs.\ run mean $0.253$ at
+$\slots{=}32$ over 5 seeds, range $[0.228, 0.276]$).  Query-success
+rate $1.000$.  Cache-hit rate $\sim$0.32.  Total evictions during
+this run: $\sim$56.  Information-preservation ratio $0.69$, in the
+expected range for the default concat-merge summariser.
+
+\paragraph{Where the quality came from.}
+Inspecting per-agent reconstruction scores, the seed's overall mean
+is pulled down by two depth-3 leaf agents (the deepest agents in this
+$d=3$ tree) whose reconstructions retained the parent's framing
+tokens (e.g.\ ``memory management'', ``LLM agents'') but lost the
+concrete domain-specific vocabulary in their original answers
+(e.g.\ specific paper titles, system names, numeric thresholds).
+TF-IDF cosine similarity penalises this lexical loss heavily because
+high-IDF concrete nouns dominate the score.  Query-success was
+unaffected --- every leaf was retrievable through its ancestor chain
+--- so the failure is one of \emph{fidelity}, not \emph{availability}.
+
+\paragraph{Mechanism.}
+The two leaves shared a depth-2 grandparent that itself was evicted
+mid-run.  The grandparent's summary was folded into its own parent
+(depth 1) before either leaf was queried by the reconstruction
+walker.  The leaves' content therefore traversed two
+summarisation steps before reaching a cached ancestor; with
+$\preserv \approx 0.74$ per step, the cumulative bound is
+$0.74^2 \approx 0.55$, consistent with the depth-decay model.
+
+\paragraph{Mitigation suggested by this trace.}
+Either (i)~increase $\slots$ enough to keep all depth-2 grandparents
+cached for the duration of the run --- which on this $N=40$ tree
+requires $\slots \geq 13$ in the worst case, comfortably below the
+$\slots{=}32$ used here, but only if the eviction priority is biased
+against intermediate-depth agents; or (ii)~switch to the LLM-backed
+$\summarize$, which we hypothesise would preserve more of the
+high-IDF concrete vocabulary and therefore close the depth-3 gap.
+We have not yet run the LLM-backed configuration; we mark this as
+the most-actionable item for the camera-ready evaluation.
+
+% TODO: Karim, add additional concrete traces if available --- a deeper
+% tree ($d \geq 5$) example would be the strongest illustration of the
+% depth-decay mode.

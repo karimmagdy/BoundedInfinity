@@ -5,6 +5,83 @@
 \section{Related Work}
 \label{sec:related}
 
+BIC sits at the intersection of three established research lineages.
+Rather than claiming to be ``the first'' system to bound agentic
+memory, we explicitly position BIC against each lineage and identify
+the specific gap it fills.
+
+\paragraph{Lineage 1: Operating-system memory management.}
+The systems community has studied bounded-memory caching for over
+half a century: B{\'e}l{\'a}dy's optimal page-replacement
+algorithm~\citep{belady1966study}, Denning's working-set
+model~\citep{denning1970wset}, and the standard LRU/LFU/clock
+heuristics catalogued in modern OS
+textbooks~\citep{tanenbaum2014modern}.  These mechanisms manage a
+fixed pool of physical pages or cache lines, evicting victims to
+secondary storage (swap) or simply discarding them.  BIC inherits the
+fixed-capacity discipline and the $\Oh(M)$ memory bound from this
+tradition, but differs in what eviction \emph{means}: classical OS
+eviction either pages an exact copy to disk (lossless but
+disk-bound) or discards (lossy and unrecoverable).  BIC compresses
+\emph{semantically} via hierarchical summarization, exploiting the
+fact that LLM agent state is natural-language text that admits lossy
+but task-preserving compression.  This is what makes BIC suitable for
+the agent setting where reloading from disk is impractical (each
+``page'' is a full LLM context that cannot be transparently swapped
+mid-reasoning).
+
+\paragraph{Lineage 2: Streaming and sketching algorithms.}
+The streaming-algorithms literature provides bounded-space
+substitutes for unbounded computation: count-min
+sketches~\citep{cormode2005cm}, reservoir
+sampling~\citep{vitter1985reservoir}, space-saving for heavy
+hitters~\citep{metwally2005spacesaving}, HyperLogLog for
+cardinality~\citep{flajolet2007hyperloglog}, and sliding-window
+algorithms~\citep{datar2002sliding}.  BIC's deterministic Cantor
+addressing and Hilbert-curve locality preservation are conceptually
+similar to these sketches: both compress an arbitrary input domain
+into a fixed slot space using a closed-form mapping, and both rely
+on structural properties of the mapping (universality for sketches,
+parent--child locality for Cantor) for correctness.  The key
+difference is data shape: streaming sketches operate on flat,
+unstructured data streams, whereas BIC operates on tree-structured
+agent state with explicit parent--child semantics that drive both
+addressing and summarization.
+
+\paragraph{Lineage 3: RAG and LLM-memory systems.}
+A complementary line of work equips LLM systems with external
+long-term memory accessed through retrieval.
+MemGPT~\citep{packer2023memgpt} (now Letta) introduces an
+OS-inspired paging system for a \emph{single} agent's context window.
+A-MEM~\citep{amem2025} treats memory management itself as an agentic
+task in which an LLM autonomously decides what to remember.
+Voyager~\citep{wang2024voyager} accumulates a growing skill library
+across episodes.  AutoAgents~\citep{wang2024autoagents} dynamically
+generates specialized agents and stores their personas.  The ICLR
+2026 MemAgents Workshop~\citep{memagents2026} surveys this rapidly
+moving area.  All of these systems retrieve external content (vector
+DB or skill library) into a small active context.  BIC is
+\emph{complementary}: it manages the internal active working set
+across recursively spawned sub-agents, the very thing that fills the
+context the moment a RAG retrieval succeeds.  A practical deployment
+would compose BIC (working-set memory bound) with a RAG memory
+(long-term external knowledge) rather than choose between them.
+
+\paragraph{Where BIC fits.}
+None of the three lineages above directly target recursive multi-agent
+state.  OS paging assumes a flat virtual address space and cheap
+swap; streaming sketches assume flat data streams without
+parent--child structure; RAG memory assumes external knowledge rather
+than internal active state.  BIC is a specific instantiation that
+combines (a)~the deterministic addressing of streaming algorithms
+(Cantor pairing on tree positions), (b)~the semantic compression of
+LLM-based summarization, applied to (c)~the recursive agent
+state-management problem that none of the prior systems target
+directly.  We make no claim of being the \emph{only} possible such
+combination---only that this particular combination admits formal
+$\Oh(M)$/$\Oh(\log N)$ guarantees and works on real Gemini-2.0-flash
+agent traces.
+
 \paragraph{Multi-agent LLM frameworks.}
 LangGraph~\citep{langgraph2024} models agent workflows as state
 machines with checkpointing but provides no memory bound.

@@ -1,0 +1,1606 @@
+[
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 3,
+      "response_tokens": 150,
+      "mode": "llm",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 40,
+      "tree_depth": 3,
+      "elapsed_seconds": 78.9773,
+      "answer_length": 961
+    },
+    "memory": {
+      "peak_bytes": 86792333,
+      "final_size": 8,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 35102573,
+          "peak_bytes": 35176100
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 40,
+        "total_s": 0.010343,
+        "mean_s": 0.000259,
+        "min_s": 3.8e-05,
+        "max_s": 0.00098
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 40,
+        "total_s": 19.300828,
+        "mean_s": 0.482521,
+        "min_s": 0.342349,
+        "max_s": 0.922244
+      },
+      "query": {
+        "operation": "query",
+        "count": 42,
+        "total_s": 0.000243,
+        "mean_s": 6e-06,
+        "min_s": 1e-06,
+        "max_s": 4.5e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.1429,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 0.1224,
+      "semantic_reconstruction_quality": 0.1797,
+      "info_preservation_ratio": 0.6281
+    },
+    "evictions": 67,
+    "text_pairs": [
+      {
+        "agent_id": "agent-0",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "agent-1",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "agent-2",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "agent-3",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "agent-4",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-5",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-6",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-7",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-8",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-10",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-11",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-12",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-13",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-14",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-15",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-16",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-17",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-18",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-19",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-20",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-21",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 3)', 'depth': 2, 'completed': True} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0303,
+        "tfidf_cosine": 0.1043
+      },
+      {
+        "agent_id": "agent-22",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-23",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-24",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-25",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-26",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-27",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-28",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-29",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-30",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How do existing frameworks handle tradeoffs in of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'Compare and contrast approaches to tradeoffs in of memory management (sub-question 2)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in tradeoffs in of memory management (sub-question 3)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.1047
+      },
+      {
+        "agent_id": "agent-31",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-32",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-33",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-34",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-35",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-36",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What theoretical foundations underlie approaches to of memory management (sub-question 3)', 'depth': 2, 'max_depth': 3}} {'task': {'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What open problems remain in approaches to of memory management (sub-question 1)', 'depth': 2, 'completed': True} {'task': {'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'What are the tradeoffs in approaches to of memory management (sub-question 2)', 'depth': 2, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0278,
+        "tfidf_cosine": 0.0901
+      },
+      {
+        "agent_id": "agent-37",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "{'task': {'question': 'How does the literature address underlie approaches to of memory (sub-question 1)', 'depth': 3, 'max_depth': 3}} {'task': {'question': 'How do existing frameworks handle underlie approaches to of memory (sub-question 2)', 'depth': 3, 'max_depth': 3}} {'task': {'question': 'What are the tradeoffs in underlie approaches to of memory (sub-question 3)', 'depth': 3, 'max_depth': 3}} {'task': {'question': 'How does the literature address underlie approaches to of memory (sub-question 1)', 'depth': 3, 'max_depth': 3}, 'response': '[LLM Error: ResourceExhausted]', 'question': 'How does the literature address underlie approaches to of memory (sub-question 1)', 'depth': 3, 'completed': True}",
+        "category": "reconstructed",
+        "jaccard": 0.0263,
+        "tfidf_cosine": 0.0633
+      },
+      {
+        "agent_id": "agent-38",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "agent-39",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "reconstructed",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      }
+    ],
+    "seed": 42,
+    "cache_size": 8,
+    "wall_time_s": 83.6,
+    "scale": {
+      "branching": 3,
+      "depth": 3,
+      "expected_agents": 40,
+      "cache": 8
+    },
+    "timing": {
+      "spawn_mean_s": 0.000259,
+      "spawn_count": 40,
+      "query_mean_s": 6e-06,
+      "query_count": 42,
+      "execute_mean_s": 0.482521,
+      "execute_count": 40
+    }
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 3,
+      "response_tokens": 150,
+      "mode": "llm",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 40,
+      "tree_depth": 3,
+      "elapsed_seconds": 36.8269,
+      "answer_length": 970
+    },
+    "memory": {
+      "peak_bytes": 448513,
+      "final_size": 8,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 248138,
+          "peak_bytes": 362047
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 40,
+        "total_s": 0.001418,
+        "mean_s": 3.5e-05,
+        "min_s": 8e-06,
+        "max_s": 0.000165
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 40,
+        "total_s": 18.317414,
+        "mean_s": 0.457935,
+        "min_s": 0.32798,
+        "max_s": 0.65377
+      },
+      "query": {
+        "operation": "query",
+        "count": 42,
+        "total_s": 4.4e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 8e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.1905,
+      "query_success_rate": 0.1905,
+      "reconstruction_quality": 0.2,
+      "semantic_reconstruction_quality": 0.2,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 69,
+    "text_pairs": [
+      {
+        "agent_id": "lru-22dceb295854",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-2a833eca9ea3",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-6cc63f5c4c92",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-0e30d10cf96c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-55bd5bd15367",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-ba79bf39c46e",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-cb39a65b3bda",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-81dcdc63cbde",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-2c932539ed23",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-da58a45e54c1",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-f9f897029d79",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-adf118e5c743",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-3f4a0f16232e",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-3dfc1418f79e",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-f606ef678ea1",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-61a14b0d9b77",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-91d7abff8f07",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-1917fc29a473",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-58b242a68c66",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-bfe83136fec6",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-991bb279267c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-32d5bd17f95a",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-5dfaaf74f98b",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-e4afa0e3f29f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-ffbf9bc2c7e9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-02f17f1d6424",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-6e542c48e8bf",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-a5f26c213e06",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-8ac52057f069",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-28cb4b31c740",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-c1138f626bfb",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-4116d6233626",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lru-33f653b4114c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-0fd49157577b",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-646b52ea804d",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-30a95f3bc09e",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-2cefa321cb4f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-c179a0bec310",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-8ffba2554be6",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lru-46be3c964665",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      }
+    ],
+    "seed": 42,
+    "cache_size": 8,
+    "wall_time_s": 36.85,
+    "scale": {
+      "branching": 3,
+      "depth": 3,
+      "expected_agents": 40,
+      "cache": 8
+    },
+    "timing": {
+      "spawn_mean_s": 3.5e-05,
+      "spawn_count": 40,
+      "query_mean_s": 1e-06,
+      "query_count": 42,
+      "execute_mean_s": 0.457935,
+      "execute_count": 40
+    }
+  },
+  {
+    "backend": "lru-summary",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 3,
+      "response_tokens": 150,
+      "mode": "llm",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 40,
+      "tree_depth": 3,
+      "elapsed_seconds": 36.3391,
+      "answer_length": 970
+    },
+    "memory": {
+      "peak_bytes": 394134,
+      "final_size": 8,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 154194,
+          "peak_bytes": 239868
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 40,
+        "total_s": 0.001762,
+        "mean_s": 4.4e-05,
+        "min_s": 1.1e-05,
+        "max_s": 0.000182
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 40,
+        "total_s": 18.488211,
+        "mean_s": 0.462205,
+        "min_s": 0.325594,
+        "max_s": 0.61474
+      },
+      "query": {
+        "operation": "query",
+        "count": 42,
+        "total_s": 5.8e-05,
+        "mean_s": 1e-06,
+        "min_s": 1e-06,
+        "max_s": 7e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.1905,
+      "query_success_rate": 0.1905,
+      "reconstruction_quality": 0.2,
+      "semantic_reconstruction_quality": 0.2,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 69,
+    "text_pairs": [
+      {
+        "agent_id": "lrus-f5c416868022",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-b1455013aa44",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-01db0502d2b3",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-5deb15248afc",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-b3743d729b1b",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-d570f8bb4bbd",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-c7e9be590271",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-b7d8c7a3b605",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-a5fa752d35f1",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-9748ef47f79c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-2242a1b4f401",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-db42355b5f45",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-f745649b2f33",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-688d7b2d91b7",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-2324399638fa",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-c30ad750276c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-1d5e86705613",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-34c7903364c7",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-c413d7a12984",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-57625ac490a6",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-b8f5484348ee",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-2996b30bf63d",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-c528c79ccbb9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-ec19a6fa2e9f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-a47ce216bb66",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-d32d38eb8484",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-6cbf383ebb6b",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-40efda7dc590",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-6dfe7142595d",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-ad264e8eced0",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-4b161393a6b0",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-2ce5ce5a8506",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "",
+        "category": "lost",
+        "jaccard": 0.0,
+        "tfidf_cosine": 0.0
+      },
+      {
+        "agent_id": "lrus-2db041d72c81",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-46bf8e1da5da",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-1ea674b9929f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-f3f2d1490056",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-b03e05ff75f5",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-94df0edc92fd",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-04f66c3fcfb9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "lrus-7b2770cc852c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      }
+    ],
+    "seed": 42,
+    "cache_size": 8,
+    "wall_time_s": 36.36,
+    "scale": {
+      "branching": 3,
+      "depth": 3,
+      "expected_agents": 40,
+      "cache": 8
+    },
+    "timing": {
+      "spawn_mean_s": 4.4e-05,
+      "spawn_count": 40,
+      "query_mean_s": 1e-06,
+      "query_count": 42,
+      "execute_mean_s": 0.462205,
+      "execute_count": 40
+    }
+  },
+  {
+    "backend": "unbounded",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 3,
+      "response_tokens": 150,
+      "mode": "llm",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 40,
+      "tree_depth": 3,
+      "elapsed_seconds": 35.7946,
+      "answer_length": 970
+    },
+    "memory": {
+      "peak_bytes": 382294,
+      "final_size": 40,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 155004,
+          "peak_bytes": 236222
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 40,
+        "total_s": 0.002253,
+        "mean_s": 5.6e-05,
+        "min_s": 1.5e-05,
+        "max_s": 0.000198
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 40,
+        "total_s": 17.983097,
+        "mean_s": 0.449577,
+        "min_s": 0.320024,
+        "max_s": 0.643477
+      },
+      "query": {
+        "operation": "query",
+        "count": 42,
+        "total_s": 3.8e-05,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 3e-06
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 1.0,
+      "query_success_rate": 1.0,
+      "reconstruction_quality": 1.0,
+      "semantic_reconstruction_quality": 1.0,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 0,
+    "text_pairs": [
+      {
+        "agent_id": "ub-2887430e254f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-0fc4f084c99d",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-38fa85573598",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-4ff6f6d4d237",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-9fe14085fb29",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-e580529deaab",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-05cd52eed9c9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-83ac74492692",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-195983e2ebbd",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-9830ba9370a0",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-4bf994dec3b5",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-9bc7eb5bd56c",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-2fc7e84d3b24",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-94d1317d3833",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-041a03076d7f",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-a95157d29687",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-642d8332d018",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-2987697e6150",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-21eacd1b3f37",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-2e4bd7eb66f9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-1291ad01ef81",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-b1bb5bb52ae8",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-2004d13e41c1",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-63d17b24f7db",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-8221955cc0ec",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-7b8e859c79a0",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-d9a529590ced",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-65dcf40c97eb",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-14405c3e71e4",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-0419b17f1ce4",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-48dc4f013e60",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-06713913faf9",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-7a0975f253db",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-6b30c6edcba4",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-53b247cdbe24",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-99d29dbc6f41",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-82a205ec6880",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-7229116cd614",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-e92b4ce921dd",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      },
+      {
+        "agent_id": "ub-afa688924248",
+        "original": "[LLM Error: ResourceExhausted]",
+        "reconstructed": "[LLM Error: ResourceExhausted]",
+        "category": "cached",
+        "jaccard": 1.0,
+        "tfidf_cosine": 1.0
+      }
+    ],
+    "seed": 42,
+    "cache_size": 8,
+    "wall_time_s": 35.87,
+    "scale": {
+      "branching": 3,
+      "depth": 3,
+      "expected_agents": 40,
+      "cache": 8
+    },
+    "timing": {
+      "spawn_mean_s": 5.6e-05,
+      "spawn_count": 40,
+      "query_mean_s": 1e-06,
+      "query_count": 42,
+      "execute_mean_s": 0.449577,
+      "execute_count": 40
+    }
+  }
+]

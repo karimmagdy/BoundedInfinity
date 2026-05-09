@@ -27,48 +27,63 @@ Reflexion~\citep{shinn2023reflexion} compresses a single agent's
 history but offers no multi-agent guarantees; Generative
 Agents~\citep{park2023generative} maintains an unbounded memory stream.
 
-We propose the \textbf{Bounded Infinity Cache (BIC)}, a principled
-architecture for cache-bounded state management in
-arbitrarily large agent swarms.  We use ``cache-bounded'' precisely:
-the cache holding full agent states is bounded by $\Oh(M)$ for a
-fixed capacity $M$, while a lightweight registry ($\sim$100 bytes per
-agent) tracking tree metadata grows as $\Oh(N)$.  BIC draws on three mathematical tools:
+We propose the \textbf{Bounded Infinity Cache (BIC)}, a memory-bounded
+state-management primitive for recursive agent swarms.  BIC is not a
+new memory-management paradigm; it is a specific instantiation that
+combines (a)~the deterministic addressing of streaming algorithms,
+(b)~the semantic compression of LLM-based summarization, and (c)~the
+recursive agent state-management problem that operating-system
+paging, streaming sketches, and RAG retrieval do not directly target
+(\S\ref{sec:related}).  We use ``cache-bounded'' precisely: the cache
+holding full agent states is bounded by $\Oh(M)$ for a fixed capacity
+$M$, while a lightweight registry ($\sim$100 bytes per agent)
+tracking tree metadata grows as $\Oh(N)$.  BIC draws on two core
+mathematical tools:
 
 \begin{enumerate}
   \item \textbf{Cantor pairing functions} map arbitrary tree-structured
         agent hierarchies to natural-number addresses, which are then
         reduced modulo $M$ to assign cache slots with structural
         locality (siblings land in nearby slots).
-  \item \textbf{Hilbert space-filling curves} compress high-dimensional
-        agent-state vectors to one-dimensional indices, enabling
-        locality-aware eviction: agents with similar states are evicted
-        together, improving the effectiveness of joint summarization.
   \item \textbf{Hierarchical summarization} compresses evicted states
         into their parent's summary buffer via a lossy function
         $\summarize$, creating a chain of summaries up the tree that
         supports $\Oh(\log N)$ reconstruction of any evicted state.
 \end{enumerate}
 
+\noindent
+We additionally explore \textbf{Hilbert space-filling curves} as an
+optional locality-aware eviction optimization that compresses
+high-dimensional agent-state vectors to one-dimensional indices,
+aiming to cluster similar states for joint summarization.  However,
+ablation experiments (\S\ref{sec:experiments}) show no measurable
+benefit from Hilbert clustering in our current experimental settings.
+
 \paragraph{Contributions.} We make three contributions:
 \begin{enumerate}
-  \item We introduce the BIC architecture---to our knowledge the first
-        cache-bounded state-management system for multi-agent LLM
-        swarms---and prove four theorems guaranteeing bounded cache
-        consumption, zero fragmentation, information-preserving
-        retrievability, and indefinite liveness (\S\ref{sec:method}).
+  \item We introduce the BIC architecture---a specific instantiation
+        in the lineage of operating-system memory management,
+        streaming algorithms, and RAG/LLM-memory systems
+        (\S\ref{sec:related}) that combines deterministic structural
+        addressing with semantic-compression-based eviction for the
+        recursive agent state problem.  We prove four theorems
+        guaranteeing bounded cache consumption, zero fragmentation,
+        information-preserving retrievability, and indefinite
+        liveness (\S\ref{sec:method}).
   \item We design a hierarchical summarization scheme with
         Cantor-pairing-based addressing that preserves parent--child
         locality, and formally bound the information loss under
         repeated eviction at $(1-\epsilon)^d$ per $d$ summarization
-        levels.  Hilbert-locality eviction is incorporated as an
-        optional optimization for correlated state distributions
-        (\S\ref{sec:proofs}).
+        levels.  We additionally describe Hilbert-curve locality
+        eviction as an optional optimization; ablation studies show
+        it provides no measurable benefit in current experiments
+        (\S\ref{sec:proofs}, \S\ref{sec:experiments}).
   \item We empirically demonstrate on synthetic and real-LLM
         (Gemini-2.0-flash) research-decomposition tasks that BIC
-        achieves $100\%$ query success with $0.62$ reconstruction
+        achieves $100\%$ query success with $0.619$ reconstruction
         quality in bounded cache, outperforming six baselines
         (including LRU+summarization and a Tiered MemGPT-style
         baseline) by $32\times$ on reconstruction quality at scale,
-        and $1.37\times$ on semantic quality with real LLM outputs
-        (\S\ref{sec:experiments}).
+        and $4.1\times$ on semantic quality with real LLM outputs
+        at 20\% retention (\S\ref{sec:experiments}).
 \end{enumerate}

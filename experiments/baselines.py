@@ -534,6 +534,216 @@ class BICBackend:
         return self._rt.eviction_manager.stats
 
 
+# ------------------------------------------------------------------ #
+# 7. LRU+Summary with Ancestor-Walk on eviction (reviewer Q1 / Tier B B1)
+# ------------------------------------------------------------------ #
+#
+# Strictly stronger LRU+Summary baseline: when the immediate parent of an
+# evicted child is *also* evicted, the existing LRUSummaryBackend drops
+# the child's state on the floor.  This variant walks up the ancestor
+# chain to find the nearest *cached* ancestor and folds the evicted
+# child's state into THAT ancestor's slot.  This emulates BIC's
+# eviction-time chain repair without using BIC's Cantor-structured
+# slot addressing.
+#
+# Compared to BIC, this baseline still lacks: (a) Cantor addressing,
+# (b) depth-prioritised eviction policy, (c) ancestor pinning.
+# Compared to LRUSummaryBackend, it adds (only): registry-assisted
+# ancestor folding on eviction.
+
+class LRUSummaryAWBackend:
+    """LRU+Summary with eviction-time ancestor walk.
+
+    Identical to LRUSummaryBackend except that, when the immediate
+    parent of an evicted agent is itself evicted, the evicted state is
+    folded into the *nearest cached ancestor* (via a registry walk)
+    instead of being dropped.  This addresses reviewer concern Q1
+    (baseline fairness for chain repair).
+    """
+
+    def __init__(self, capacity: int = 64, executor: Any = None) -> None:
+        self.capacity = capacity
+        self.executor = executor or _noop_executor
+        self._cache: OrderedDict[str, dict[str, Any]] = OrderedDict()
+        self._parents: dict[str, str | None] = {}
+        self._tasks: dict[str, dict[str, Any]] = {}
+        self.total_spawns = 0
+        self.total_evictions = 0
+        self.total_chain_repairs = 0  # diagnostic: how often did we have to walk past the immediate parent?
+
+    def _nearest_cached_ancestor(self, agent_id: str) -> str | None:
+        """Walk parent pointers until we find one that is currently cached."""
+        cur = self._parents.get(agent_id)
+        while cur is not None:
+            if cur in self._cache:
+                return cur
+            cur = self._parents.get(cur)
+        return None
+
+    def _evict_if_needed(self) -> None:
+        while len(self._cache) >= self.capacity:
+            evicted_id, evicted_state = self._cache.popitem(last=False)
+            self.total_evictions += 1
+            anchor = self._nearest_cached_ancestor(evicted_id)
+            # Diagnostic: did we have to walk past the immediate parent?
+            immediate_parent = self._parents.get(evicted_id)
+            if anchor is not None and anchor != immediate_parent:
+                self.total_chain_repairs += 1
+            if anchor is not None:
+                self._cache[anchor] = _default_summarize_standalone(
+                    self._cache[anchor], [evicted_state]
+                )
+
+    def spawn(self, parent_id: str | None = None,
+              task: dict[str, Any] | None = None) -> str:
+        agent_id = f"lrusaw-{uuid.uuid4().hex[:12]}"
+        self._tasks[agent_id] = task or {}
+        self._parents[agent_id] = parent_id
+        self._evict_if_needed()
+        self._cache[agent_id] = {"task": task or {}}
+        self.total_spawns += 1
+        return agent_id
+
+    def execute(self, agent_id: str) -> dict[str, Any]:
+        state = self._cache.get(agent_id, {"task": self._tasks.get(agent_id, {})})
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+
+        def _spawn_child(sub_task: dict[str, Any]) -> str:
+            return self.spawn(parent_id=agent_id, task=sub_task)
+
+        updated = self.executor(agent_id, self._tasks.get(agent_id, {}),
+                                state, _spawn_child)
+        self._evict_if_needed()
+        self._cache[agent_id] = updated
+        return updated
+
+    def query(self, agent_id: str) -> dict[str, Any] | None:
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+            return self._cache[agent_id]
+        # Evicted: walk to nearest cached ancestor and return its summaries
+        anchor = self._nearest_cached_ancestor(agent_id)
+        if anchor is None:
+            return None
+        anchor_state = self._cache[anchor]
+        return {
+            "_reconstructed": True,
+            "_ancestor_summaries": [{
+                "ancestor_id": anchor,
+                "summaries": anchor_state.get("_summaries", []),
+            }],
+            "task": self._tasks.get(agent_id, {}),
+            "agent_id": agent_id,
+        }
+
+    def terminate(self, agent_id: str) -> None:
+        self._cache.pop(agent_id, None)
+
+    @property
+    def memory_size(self) -> int:
+        return len(self._cache)
+
+
+# ------------------------------------------------------------------ #
+# 8. LRU+Pin: ancestor-protection baseline (reviewer Q5 / Tier B B2)
+# ------------------------------------------------------------------ #
+#
+# Standard LRU eviction except that shallow agents (root + agents at
+# depth <= pin_depth) are *pinned* and never evicted.  This emulates
+# the "active-path pinning" the reviewer asked for: in a depth-d
+# decomposition tree, leaves still get evicted under cache pressure
+# but their ancestors are protected, so the ancestor chain is intact
+# at query time.
+#
+# This is closer in spirit to BIC's depth-prioritised eviction
+# (BIC = "evict deepest first") than plain LRU.  Comparing BIC vs
+# LRU+Pin isolates how much advantage BIC derives from
+# *deterministic Cantor addressing* vs from *depth-priority eviction*.
+
+class LRUPinBackend:
+    """LRU eviction with shallow-ancestor pinning.
+
+    Agents at depth <= pin_depth (default: 1, i.e. root + immediate
+    children) are pinned and never evicted.  All other agents follow
+    standard LRU eviction.  Evicted states are NOT summarised into
+    their parent (this is plain pin-only LRU; see LRUSummaryAWBackend
+    for the variant that combines pinning with summarisation).
+    """
+
+    def __init__(self, capacity: int = 64, executor: Any = None,
+                 pin_depth: int = 1) -> None:
+        self.capacity = capacity
+        self.executor = executor or _noop_executor
+        self.pin_depth = pin_depth
+        self._cache: OrderedDict[str, dict[str, Any]] = OrderedDict()
+        self._parents: dict[str, str | None] = {}
+        self._depths: dict[str, int] = {}
+        self._tasks: dict[str, dict[str, Any]] = {}
+        self.total_spawns = 0
+        self.total_evictions = 0
+        self.total_pin_skips = 0  # diagnostic: how often did we skip a pinned candidate during eviction?
+
+    def _is_pinned(self, agent_id: str) -> bool:
+        return self._depths.get(agent_id, 0) <= self.pin_depth
+
+    def _evict_if_needed(self) -> None:
+        while len(self._cache) >= self.capacity:
+            # Find the LRU non-pinned victim
+            victim = None
+            for candidate in list(self._cache.keys()):
+                if not self._is_pinned(candidate):
+                    victim = candidate
+                    break
+                self.total_pin_skips += 1
+            if victim is None:
+                # All cached agents are pinned: cache is over-pinned.
+                # Fall back to evicting the LRU pinned agent (a hard
+                # safety valve so we never exceed capacity).
+                victim = next(iter(self._cache))
+            del self._cache[victim]
+            self.total_evictions += 1
+
+    def spawn(self, parent_id: str | None = None,
+              task: dict[str, Any] | None = None) -> str:
+        agent_id = f"lrupin-{uuid.uuid4().hex[:12]}"
+        self._tasks[agent_id] = task or {}
+        self._parents[agent_id] = parent_id
+        parent_depth = self._depths.get(parent_id, -1) if parent_id else -1
+        self._depths[agent_id] = parent_depth + 1
+        self._evict_if_needed()
+        self._cache[agent_id] = {"task": task or {}}
+        self.total_spawns += 1
+        return agent_id
+
+    def execute(self, agent_id: str) -> dict[str, Any]:
+        state = self._cache.get(agent_id, {"task": self._tasks.get(agent_id, {})})
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+
+        def _spawn_child(sub_task: dict[str, Any]) -> str:
+            return self.spawn(parent_id=agent_id, task=sub_task)
+
+        updated = self.executor(agent_id, self._tasks.get(agent_id, {}),
+                                state, _spawn_child)
+        self._evict_if_needed()
+        self._cache[agent_id] = updated
+        return updated
+
+    def query(self, agent_id: str) -> dict[str, Any] | None:
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+            return self._cache[agent_id]
+        return None  # No summarisation: evicted = gone
+
+    def terminate(self, agent_id: str) -> None:
+        self._cache.pop(agent_id, None)
+
+    @property
+    def memory_size(self) -> int:
+        return len(self._cache)
+
+
 def make_backend(name: str, capacity: int = 64, executor: Any = None,
                  seed: int = 42, **kwargs: Any):
     """Factory for creating backends by name."""
@@ -544,6 +754,8 @@ def make_backend(name: str, capacity: int = 64, executor: Any = None,
         "fifo": lambda: FIFOBackend(capacity=capacity, executor=executor),
         "random": lambda: RandomBackend(capacity=capacity, executor=executor, seed=seed),
         "lru-summary": lambda: LRUSummaryBackend(capacity=capacity, executor=executor),
+        "lru-summary-aw": lambda: LRUSummaryAWBackend(capacity=capacity, executor=executor),
+        "lru-pin": lambda: LRUPinBackend(capacity=capacity, executor=executor, **kwargs),
         "tiered": lambda: TieredMemoryBackend(capacity=capacity, executor=executor),
     }
     if name not in backends:
