@@ -43,15 +43,21 @@ def _records(tmp_path, exp):
 def test_plans_match_the_requested_design() -> None:
     sweep = r2.plan_units("sweep")
     assert len(sweep) == 4 * 3 * 5 + 5
-    assert {a for a, _, _ in sweep} == {"bic", "bic-aw", "lru", "lru-summary-aw-pin", "unbounded"}
-    assert [u for u in sweep if u[0] == "unbounded"] == [("unbounded", None, s) for s in r2.SEEDS_5]
+    assert {u[0] for u in sweep} == {"bic", "bic-aw", "lru", "lru-summary-aw-pin", "unbounded"}
+    assert [u for u in sweep if u[0] == "unbounded"] == [
+        ("unbounded", None, s, "bfs") for s in r2.SEEDS_5]
     hash_units = r2.plan_units("hash")
-    assert len(hash_units) == 3 * 5 and {a for a, _, _ in hash_units} == {"bic-hash"}
+    assert len(hash_units) == 3 * 5 and {u[0] for u in hash_units} == {"bic-hash"}
     # The ablation reuses the sweep's seeds and caches, so bic-aw is its partner.
-    assert {(c, s) for _, c, s in hash_units} == {(c, s) for a, c, s in sweep if a == "bic-aw"}
+    assert {u[1:] for u in hash_units} == {u[1:] for u in sweep if u[0] == "bic-aw"}
     pilot = r2.plan_units("pilot")
     assert len(pilot) == 3 * 3 * 3 + 3
-    assert {s for _, _, s in pilot} == set(r2.SEEDS_3)
+    assert {u[2] for u in pilot} == set(r2.SEEDS_3)
+    order = r2.plan_units("order")
+    assert len(order) == 2 * 3 * 5
+    assert {u[3] for u in order} == {"bfs", "dfs", "random"} and {u[1] for u in order} == {16}
+    # Everything outside the order experiment runs breadth-first.
+    assert {u[3] for u in sweep + hash_units + pilot} == {"bfs"}
 
 
 def test_bic_arm_is_original_and_bic_aw_is_ancestor_walk() -> None:
@@ -154,3 +160,13 @@ def test_openai_caller_sends_reasoning_effort_and_tracks_length_cutoffs(monkeypa
     s = llm_client.get_usage_tracker().summary()
     assert s["empty_responses"] == 1 and s["finish_reasons"] == {"length": 1}
     assert s["reasoning_tokens"] == 150 and s["served_models"] == {"gpt-5.4-2026-03-05": 1}
+
+
+def test_order_experiment_records_order_and_fixed_content(fake_llm, tmp_path) -> None:
+    r2.run_experiment("order", caches=None, seeds=[42], include_unbounded=False,
+                      orders=["dfs"])
+    recs = _records(tmp_path, "order")
+    assert [(r["backend"], r["access_order"]) for r in recs] == [
+        ("bic-aw", "dfs"), ("lru-summary-aw-pin", "dfs")]
+    assert all(r["deterministic_content"] and r["cache_size"] == 16 for r in recs)
+    assert next(tmp_path.glob("order.*-odfs*.jsonl"))

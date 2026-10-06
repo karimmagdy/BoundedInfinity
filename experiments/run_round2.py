@@ -15,6 +15,11 @@ hash   : Cantor-vs-hash ablation. bic-hash x cache {8,16,32} x the same 5 seeds;
          compared against the sweep's bic-aw runs (same code, same seeds).
 pilot  : coding pilot (b=3, d=2, 13 agents). {bic-aw, lru, lru-summary-aw-pin}
          x cache {2,4,8} x 3 seeds, plus unbounded x 3 seeds.
+order  : access-order sensitivity on the 50-agent task. {bic-aw,
+         lru-summary-aw-pin} x order {bfs, dfs, random} x cache 16 x 5 seeds,
+         with deterministic_content=True so the decomposition tree (the
+         sub-questions) is identical across orders; only cache dynamics and
+         LLM sampling differ. All other experiments use bfs.
 
 Arm definitions (explicit; make_backend("bic") defaults to ancestor-walk ON,
 which is bic-aw, so "bic" here pins the original behaviour):
@@ -142,28 +147,38 @@ EXPERIMENTS: dict[str, dict[str, Any]] = {
                   caches=[2, 4, 8], seeds=SEEDS_3, unbounded=True,
                   branching=3, depth=2, max_tokens=120, max_calls=60,
                   question=CODING_SPEC, prompt=coding_prompt),
+    "order": dict(arms=["bic-aw", "lru-summary-aw-pin"], caches=[16], seeds=SEEDS_5,
+                  unbounded=False, orders=["bfs", "dfs", "random"],
+                  deterministic_content=True,
+                  branching=3, depth=3, max_tokens=150, max_calls=150,
+                  question=RESEARCH_QUESTION, prompt=research_prompt),
 }
+
+Unit = tuple[str, "int | None", int, str]  # (arm, cache, seed, access order)
 
 
 def plan_units(exp: str, caches: list[int] | None = None,
                seeds: list[int] | None = None,
-               include_unbounded: bool = True) -> list[tuple[str, int | None, int]]:
-    """List (arm, cache, seed) units, seed-major so partial results stay balanced."""
+               include_unbounded: bool = True,
+               orders: list[str] | None = None) -> list[Unit]:
+    """List (arm, cache, seed, order) units, seed-major so partial results stay balanced."""
     spec = EXPERIMENTS[exp]
     caches = caches or spec["caches"]
     seeds = seeds or spec["seeds"]
-    units: list[tuple[str, int | None, int]] = []
+    orders = orders or spec.get("orders", ["bfs"])
+    units: list[Unit] = []
     for seed in seeds:
-        if spec["unbounded"] and include_unbounded:
-            units.append(("unbounded", None, seed))
-        for cache in caches:
-            for arm in spec["arms"]:
-                units.append((arm, cache, seed))
+        for order in orders:
+            if spec["unbounded"] and include_unbounded:
+                units.append(("unbounded", None, seed, order))
+            for cache in caches:
+                for arm in spec["arms"]:
+                    units.append((arm, cache, seed, order))
     return units
 
 
-def unit_key(arm: str, cache: int | None, seed: int) -> str:
-    return f"{arm}|{cache}|{seed}"
+def unit_key(arm: str, cache: int | None, seed: int, order: str = "bfs") -> str:
+    return f"{arm}|{cache}|{seed}|{order}"
 
 
 # ------------------------------------------------------------------ #
@@ -233,7 +248,8 @@ def write_meta(exp: str, shard: str, units: list) -> None:
 # Running
 # ------------------------------------------------------------------ #
 
-def run_unit(exp: str, arm: str, cache: int | None, seed: int) -> dict[str, Any]:
+def run_unit(exp: str, arm: str, cache: int | None, seed: int,
+             order: str = "bfs") -> dict[str, Any]:
     spec = EXPERIMENTS[exp]
     llm_client.reset_usage_tracker()
     llm = llm_client.make_llm_callable(
@@ -242,7 +258,9 @@ def run_unit(exp: str, arm: str, cache: int | None, seed: int) -> dict[str, Any]
     executor = make_executor(llm, spec["prompt"])
     cfg = TaskConfig(branching_factor=spec["branching"], max_depth=spec["depth"],
                      response_tokens=spec["max_tokens"], mode="llm",
-                     llm_callable=llm, seed=seed, question=spec["question"])
+                     llm_callable=llm, seed=seed, question=spec["question"],
+                     access_order=order,
+                     deterministic_content=spec.get("deterministic_content", False))
     backend = build_backend(arm, cache, executor)
     t0 = time.perf_counter()
     metrics = run_instrumented(arm, backend, cfg, log_text_pairs=True)
@@ -251,6 +269,8 @@ def run_unit(exp: str, arm: str, cache: int | None, seed: int) -> dict[str, Any]
         "experiment": exp,
         "seed": seed,
         "cache_size": cache,
+        "access_order": order,
+        "deterministic_content": cfg.deterministic_content,
         "wall_time_s": round(time.perf_counter() - t0, 2),
         "llm_usage": llm_client.get_usage_tracker().summary(),
         "llm": llm_config(),
@@ -266,17 +286,19 @@ def load_done(exp: str) -> dict[str, dict]:
         for line in path.read_text().splitlines():
             if line.strip():
                 r = json.loads(line)
-                done[unit_key(r["backend"], r["cache_size"], r["seed"])] = r
+                done[unit_key(r["backend"], r["cache_size"], r["seed"],
+                              r.get("access_order", "bfs"))] = r
     return done
 
 
 def run_experiment(exp: str, caches: list[int] | None, seeds: list[int] | None,
-                   include_unbounded: bool) -> None:
+                   include_unbounded: bool, orders: list[str] | None = None) -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    units = plan_units(exp, caches, seeds, include_unbounded)
+    units = plan_units(exp, caches, seeds, include_unbounded, orders)
     shard = "-".join(
         [f"c{'_'.join(map(str, caches))}" if caches else "call",
          f"s{'_'.join(map(str, seeds))}" if seeds else "sall"]
+        + ([f"o{'_'.join(orders)}"] if orders else [])
         + ([] if include_unbounded else ["nounb"]))
     out = RESULTS_DIR / f"{exp}.{shard}.jsonl"
     rejected = RESULTS_DIR / f"{exp}_rejected.{shard}.jsonl.txt"
@@ -286,12 +308,12 @@ def run_experiment(exp: str, caches: list[int] | None, seeds: list[int] | None,
     print(f"[{exp}] {len(units)} units, {len(units) - len(todo)} already done, "
           f"{len(todo)} to run. LLM: {llm_config()}", flush=True)
 
-    for i, (arm, cache, seed) in enumerate(todo, 1):
-        r = run_unit(exp, arm, cache, seed)
+    for i, (arm, cache, seed, order) in enumerate(todo, 1):
+        r = run_unit(exp, arm, cache, seed, order)
         u = r["llm_usage"]
         q = r["quality"]
         status = "ok" if r["valid"] else "REJECTED (LLM errors)"
-        print(f"  [{i}/{len(todo)}] {arm:20s} cache={cache} seed={seed} "
+        print(f"  [{i}/{len(todo)}] {arm:20s} cache={cache} seed={seed} order={order} "
               f"sem={q['semantic_reconstruction_quality']:.3f} "
               f"nonempty={q['nonempty_success_rate']:.3f} "
               f"empty_gen={r['task']['empty_generations']} "
@@ -357,6 +379,8 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("experiment", choices=["smoke", *EXPERIMENTS])
     ap.add_argument("--caches", type=int, nargs="+", help="subset of cache sizes (sharding)")
     ap.add_argument("--seeds", type=int, nargs="+", help="subset of seeds")
+    ap.add_argument("--orders", nargs="+", choices=["bfs", "dfs", "random"],
+                    help="subset of access orders (order experiment sharding)")
     ap.add_argument("--no-unbounded", action="store_true",
                     help="skip unbounded units (run them in exactly one shard)")
     args = ap.parse_args(argv)
@@ -364,7 +388,8 @@ def main(argv: list[str] | None = None) -> None:
     if args.experiment == "smoke":
         smoke()
     else:
-        run_experiment(args.experiment, args.caches, args.seeds, not args.no_unbounded)
+        run_experiment(args.experiment, args.caches, args.seeds, not args.no_unbounded,
+                       args.orders)
 
 
 if __name__ == "__main__":

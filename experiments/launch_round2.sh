@@ -22,8 +22,11 @@ export LLM_PROVIDER=openai
 export LLM_MODEL="${GPT_MODEL:-gpt-5.4}"
 export PYTHONHASHSEED=0             # builtin hash() feeds BIC's Hilbert index
 export PYTHONUNBUFFERED=1
-# LLM_REASONING_EFFORT: left to the provider default unless set by the caller;
-# the value used is recorded in every result record and in the meta files.
+# Reasoning effort: "none" by default (short factual answers; hidden reasoning
+# tokens would eat the 150-token budget and leave empty answers). If the
+# deployment rejects it, `all` falls back to "low" once. The value actually
+# used is recorded in every result record and in the meta files.
+export LLM_REASONING_EFFORT="${LLM_REASONING_EFFORT:-none}"
 
 DRIVER="$ROOT/experiments/run_round2.py"
 
@@ -36,18 +39,32 @@ start() {   # start NAME ARGS...  (detached, survives SSH drops)
 
 case "${1:-}" in
   smoke)
-    "$PY" -u "$DRIVER" smoke 2>&1 | tee "$LOGS/round2_smoke.log"
+    echo "reasoning_effort=$LLM_REASONING_EFFORT"
+    LLM_MAX_RETRIES=1 "$PY" -u "$DRIVER" smoke 2>&1 | tee "$LOGS/round2_smoke.log"
     ;;
   all)
-    if ! "$PY" -u "$DRIVER" smoke > "$LOGS/round2_smoke.log" 2>&1; then
-        tail -5 "$LOGS/round2_smoke.log"; echo "SMOKE FAILED, nothing launched"; exit 1
+    if ! LLM_MAX_RETRIES=1 "$PY" -u "$DRIVER" smoke > "$LOGS/round2_smoke.log" 2>&1; then
+        tail -3 "$LOGS/round2_smoke.log"
+        if [ "$LLM_REASONING_EFFORT" = none ]; then
+            echo "smoke failed with reasoning_effort=none; retrying with low"
+            export LLM_REASONING_EFFORT=low
+            if ! LLM_MAX_RETRIES=1 "$PY" -u "$DRIVER" smoke > "$LOGS/round2_smoke.log" 2>&1; then
+                tail -5 "$LOGS/round2_smoke.log"; echo "SMOKE FAILED, nothing launched"; exit 1
+            fi
+        else
+            echo "SMOKE FAILED, nothing launched"; exit 1
+        fi
     fi
+    echo "smoke OK with reasoning_effort=$LLM_REASONING_EFFORT"
     : > "$LOGS/round2.pids"
-    start sweep_c8  sweep --caches 8
-    start sweep_c16 sweep --caches 16 --no-unbounded
-    start sweep_c32 sweep --caches 32 --no-unbounded
-    start hash      hash
-    start pilot     pilot
+    start sweep_c8     sweep --caches 8
+    start sweep_c16    sweep --caches 16 --no-unbounded
+    start sweep_c32    sweep --caches 32 --no-unbounded
+    start hash         hash
+    start pilot        pilot
+    start order_bfs    order --orders bfs
+    start order_dfs    order --orders dfs
+    start order_random order --orders random
     echo "ROUND2_LAUNCHED_OK"
     ;;
   status)
