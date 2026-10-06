@@ -1,4 +1,0 @@
-# file: /home/user/boundedinfinity/experiments/harness.py
-# hypothesis_version: 6.168.5
-
-[1.0, '_ancestor_summaries', '_reconstructed', 'agent_id', 'answer_length', 'backend', 'branching_factor', 'cache_hit_rate', 'cached', 'category', 'config', 'count', 'current_bytes', 'elapsed_seconds', 'empty', 'empty_generations', 'evictions', 'execute', 'final_size', 'inf', 'jaccard', 'latency', 'lost', 'max_depth', 'max_s', 'mean_s', 'memory', 'memory_size', 'min_s', 'mode', 'operation', 'original', 'peak_bytes', 'quality', 'query', 'query_success_rate', 'question', 'reconstructed', 'response', 'response_tokens', 'samples', 'seed', 'spawn', 'step', 'summaries', 'task', 'text_pairs', 'tfidf_cosine', 'total_agents', 'total_evictions', 'total_s', 'tree_depth']

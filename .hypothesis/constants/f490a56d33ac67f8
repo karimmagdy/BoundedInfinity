@@ -1,4 +1,0 @@
-# file: /home/user/boundedinfinity/src/bounded_infinity/adapters/llm_client.py
-# hypothesis_version: 6.168.5
-
-[0.3, 0.5, 150, '4', 'ANTHROPIC_API_KEY', 'GEMINI_API_KEY', 'LLM_MAX_RETRIES', 'LLM_REASONING_EFFORT', 'OPENAI_API_KEY', 'OPENAI_BASE_URL', 'anthropic', 'content', 'empty_responses', 'errors', 'finish_reason', 'finish_reasons', 'gemini', 'gemini-2.5-flash', 'gpt-4o-mini', 'model', 'openai', 'reasoning_effort', 'reasoning_tokens', 'retries', 'role', 'served_models', 'total_calls', 'total_input_tokens', 'total_output_tokens', 'unreachable', 'user']

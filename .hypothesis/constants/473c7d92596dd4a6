@@ -1,4 +1,0 @@
-# file: /Users/kmagdy-ma-eg/Workspace/Research/BoundedInfinity/experiments/baselines.py
-# hypothesis_version: 6.141.1
-
-[0.0, 200, '...', '_', '_ancestor_summaries', '_cold_summary', '_max_summaries', '_reconstructed', '_summaries', 'agent_id', 'ancestor_id', 'bic', 'executed', 'fifo', 'lru', 'lru-summary', 'random', 'status', 'summaries', 'task', 'task_received', 'tiered', 'unbounded']
