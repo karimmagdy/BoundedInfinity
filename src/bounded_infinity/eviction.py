@@ -108,6 +108,10 @@ class EvictionManager:
         idle_threshold: float = 60.0,
         max_history: int = 1000,
         info_metric: InformationMetric | None = None,
+        registry: Any | None = None,
+        eviction_ancestor_walk: bool = True,
+        pin_depth: int = 0,
+        eviction_policy: str = "depth",
     ) -> None:
         self.cache = cache
         self.summarize = summarize or default_summarize
@@ -116,6 +120,52 @@ class EvictionManager:
         self.info_metric = info_metric or structural_info
         self.stats = EvictionStats()
         self._max_history = max_history
+        # When True, eviction folds into the nearest cached ancestor; when
+        # False, only the immediate cached parent (legacy behaviour). The
+        # flag exists so the contribution can be reported as a clean ablation.
+        self.eviction_ancestor_walk = eviction_ancestor_walk
+        # Registry gives full parent pointers (incl. for already-evicted
+        # ancestors), enabling eviction-time ancestor-walk folding so an
+        # evicted state is summarised into the nearest *cached* ancestor
+        # rather than dropped when its immediate parent is also gone. This
+        # makes the eviction path symmetric with query-time reconstruction.
+        self.registry = registry
+        self.total_chain_repairs = 0
+        # Active-path pinning: agents at depth <= pin_depth are protected from
+        # eviction so the shallow "spine" of the tree always stays resident to
+        # anchor reconstruction. 0 disables pinning (legacy behaviour). A
+        # safety valve in _select_candidates still allows evicting pinned
+        # entries if every candidate is pinned (cache would otherwise deadlock).
+        self.pin_depth = pin_depth
+        self.total_pin_protected = 0
+        # "depth" = depth-priority (BIC default); "lru" = evict least-recently
+        # used among non-pinned (the combined heuristic's concentration policy).
+        self.eviction_policy = eviction_policy
+
+    def _nearest_cached_ancestor(self, agent_id: str,
+                                 excluded: set[str] | None = None) -> str | None:
+        """Walk parent pointers (via the registry) to the nearest ancestor
+        that is currently cached and not itself being evicted in this batch.
+
+        Returns the anchor agent_id, or None if no cached ancestor exists.
+        Falls back to the immediate cached parent when no registry is
+        available (preserving legacy behaviour).
+        """
+        excluded = excluded or set()
+        if self.registry is None:
+            entry = self.cache.get(agent_id)
+            pid = entry.parent_id if entry is not None else None
+            if pid is not None and pid not in excluded and self.cache.get(pid) is not None:
+                return pid
+            return None
+        rec = self.registry.get(agent_id)
+        cur = rec.parent_id if rec is not None else None
+        while cur is not None:
+            if cur not in excluded and self.cache.get(cur) is not None:
+                return cur
+            anc = self.registry.get(cur)
+            cur = anc.parent_id if anc is not None else None
+        return None
 
     def needs_eviction(self) -> bool:
         """Check if the cache needs eviction to make room."""
@@ -130,28 +180,41 @@ class EvictionManager:
         candidates = self._select_candidates(count)
 
         evicted_ids: list[str] = []
-        # Group candidates by parent for batch summarization
-        by_parent: dict[str | None, list[CacheEntry]] = {}
+        # Group candidates by their nearest *cached* ancestor (anchor), so an
+        # evicted state whose immediate parent is also evicted is still folded
+        # into a live ancestor instead of being dropped. The whole eviction
+        # batch is excluded when resolving anchors so we never fold into a
+        # node that is itself leaving the cache.
+        batch_ids = {entry.agent_id for entry in candidates}
+        by_anchor: dict[str | None, list[CacheEntry]] = {}
         for entry in candidates:
-            by_parent.setdefault(entry.parent_id, []).append(entry)
+            if self.eviction_ancestor_walk:
+                anchor_id = self._nearest_cached_ancestor(entry.agent_id, excluded=batch_ids)
+            else:
+                pid = entry.parent_id
+                anchor_id = pid if (pid is not None and pid not in batch_ids
+                                    and self.cache.get(pid) is not None) else None
+            if anchor_id is not None and anchor_id != entry.parent_id:
+                self.total_chain_repairs += 1
+            by_anchor.setdefault(anchor_id, []).append(entry)
 
-        for parent_id, children in by_parent.items():
+        for anchor_id, children in by_anchor.items():
             child_states = [c.state for c in children]
             child_ids = [c.agent_id for c in children]
 
-            # Summarize into parent if parent exists and is cached
-            if parent_id is not None:
-                parent_entry = self.cache.get(parent_id)
-                if parent_entry is not None:
-                    parent_before = dict(parent_entry.state)
-                    parent_entry.state = self.summarize(
-                        parent_entry.state, child_states
+            # Summarize into the nearest cached ancestor if one exists
+            if anchor_id is not None:
+                anchor_entry = self.cache.get(anchor_id)
+                if anchor_entry is not None:
+                    anchor_before = dict(anchor_entry.state)
+                    anchor_entry.state = self.summarize(
+                        anchor_entry.state, child_states
                     )
                     self.stats.total_summarizations += 1
                     # Track information preservation
                     ratio = preservation_ratio(
-                        parent_before, child_states,
-                        parent_entry.state, self.info_metric
+                        anchor_before, child_states,
+                        anchor_entry.state, self.info_metric
                     )
                     self.stats.total_information_preserved += ratio
                     self.stats.preservation_ratios.append(ratio)
@@ -205,7 +268,23 @@ class EvictionManager:
         if not entries:
             return []
 
+        # Active-path pinning: keep depth<=pin_depth resident. Only drop the
+        # pinned set if there is nothing else to evict (safety valve), so the
+        # cache can never deadlock when it fills with pinned spine nodes.
+        if self.pin_depth > 0:
+            evictable = [e for e in entries if e.depth > self.pin_depth]
+            if evictable:
+                self.total_pin_protected += len(entries) - len(evictable)
+                entries = evictable
+
         now = time.monotonic()
+
+        # LRU mode: evict the least-recently-accessed non-pinned entries,
+        # ignoring depth. This concentrates content into the pinned shallow
+        # spine exactly like the strongest combined heuristic baseline.
+        if self.eviction_policy == "lru":
+            entries.sort(key=lambda e: e.last_accessed)  # oldest first
+            return entries[:count]
 
         def eviction_priority(entry: CacheEntry) -> tuple[int, int, float]:
             is_idle = 1 if (now - entry.last_accessed) > self.idle_threshold else 0

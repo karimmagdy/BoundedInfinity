@@ -1,0 +1,4 @@
+# file: /home/user/boundedinfinity/experiments/research_decomposition.py
+# hypothesis_version: 6.168.5
+
+[512, 2147483647, '\n---\n', '_summaries', 'access_order', 'bfs', 'completed', 'depth', 'dfs', 'llm', 'max_depth', 'question', 'random', 'response', 'synthetic']

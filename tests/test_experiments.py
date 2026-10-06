@@ -179,3 +179,20 @@ def test_instrumented_quality_bic_vs_lru() -> None:
 def test_make_backend_unknown_raises() -> None:
     with pytest.raises(ValueError):
         make_backend("nonexistent")
+
+
+def test_unbounded_is_exact_ceiling_and_empty_scores_zero():
+    """Unbounded must reconstruct its own stored answers exactly (SR round-2 review, R5),
+    and a record with no text must score 0, not a neutral 0.5."""
+    from experiments.baselines import make_backend
+    from experiments.harness import run_instrumented
+    from experiments.research_decomposition import TaskConfig, research_executor
+
+    cfg = TaskConfig(branching_factor=3, max_depth=2, seed=1)
+    q = run_instrumented("unbounded", make_backend("unbounded", executor=research_executor), cfg).to_dict()["quality"]
+    assert q["semantic_reconstruction_quality"] == 1.0
+    assert q["nonempty_success_rate"] == 1.0
+
+    q = run_instrumented("unbounded", make_backend("unbounded"), cfg).to_dict()["quality"]  # noop: no text stored
+    assert q["semantic_reconstruction_quality"] == 0.0
+    assert q["nonempty_success_rate"] == 0.0

@@ -57,6 +57,8 @@ class TaskConfig:
     mode: str = "synthetic"          # "synthetic" | "llm"
     seed: int = 42
     llm_callable: Any = None         # Callable[[str], str] for LLM mode
+    access_order: str = "bfs"        # "bfs" | "dfs" | "random" — agent spawn/exec order
+    deterministic_content: bool = False  # fix tree content across orders (robustness probe)
 
 
 @dataclass
@@ -69,6 +71,7 @@ class TaskResult:
     final_answer: str
     agent_answers: dict[str, str] = field(default_factory=dict)
     elapsed_seconds: float = 0.0
+    empty_generations: int = 0  # agents whose stored response was empty
 
 
 # ------------------------------------------------------------------ #
@@ -146,27 +149,50 @@ def run_research_task(
         "max_depth": config.max_depth,
     })
 
-    # BFS queue: (agent_id, question, depth)
+    # Frontier order controls which agents are "recently used" when the cache
+    # fills, exercising recency-based policies (LRU) differently. BIC's
+    # depth-priority eviction is order-invariant by construction, so this is a
+    # fair robustness probe: the same tree, only the traversal order changes.
+    order = getattr(config, "access_order", "bfs")
     queue: list[tuple[str, str, int]] = [(root_id, config.question, 0)]
     agent_answers: dict[str, str] = {}
     total_agents = 1
+    empty_generations = 0
 
     while queue:
-        agent_id, question, depth = queue.pop(0)
+        if order == "dfs":
+            agent_id, question, depth = queue.pop()          # LIFO: depth-first
+        elif order == "random":
+            agent_id, question, depth = queue.pop(rng.randrange(len(queue)))
+        else:
+            agent_id, question, depth = queue.pop(0)         # FIFO: breadth-first
 
         # -- Generate response for this agent -------------------------
-        child_seed = rng.randint(0, 2**31)
-        if config.mode == "llm" and config.llm_callable is not None:
-            prompt = f"Research sub-question: {question}\nProvide a detailed answer."
-            response = config.llm_callable(prompt)
+        # By default child_seed is drawn sequentially (legacy). For the
+        # access-order robustness probe we derive it deterministically from the
+        # node's question+depth so that tree CONTENT is identical across
+        # traversal orders and only cache dynamics differ (a clean A/B).
+        if getattr(config, "deterministic_content", False):
+            child_seed = int(hashlib.sha256(
+                f"{question}:{depth}:{config.seed}".encode()).hexdigest()[:8], 16)
         else:
-            response = _synthetic_response(question, config.response_tokens, child_seed)
-
-        # -- Execute: store response in state -------------------------
+            child_seed = rng.randint(0, 2**31)
+        # -- Execute, and take the reference answer from what the backend
+        # stored. Previously the runner generated its OWN answer here (a
+        # second, independent LLM call with a different prompt) and used it as
+        # the reference, so even the Unbounded backend scored ~0.25 against
+        # it. The reference must be the exact text the backend was given.
         state = backend.execute(agent_id)
-        # We need to update state with our response — use execute for this
-        # The executor should have stored the task; we update via a second execute
-        # For simplicity, we write our response into the agent's query state
+        response = (state or {}).get("response", "")
+        if not response and config.mode != "llm":
+            # Executor stored no text (e.g. noop executor): fall back to a
+            # locally generated answer, as before. In LLM mode an empty
+            # generation stays empty: a second, differently-prompted LLM call
+            # would reintroduce the reference mismatch fixed above. Empty
+            # generations are counted in TaskResult.empty_generations.
+            response = _synthetic_response(question, config.response_tokens, child_seed)
+        if not response:
+            empty_generations += 1
         agent_answers[agent_id] = response
 
         # -- Spawn children if not at max depth -----------------------
@@ -197,6 +223,7 @@ def run_research_task(
         final_answer=final_answer,
         agent_answers=agent_answers,
         elapsed_seconds=elapsed,
+        empty_generations=empty_generations,
     )
 
 

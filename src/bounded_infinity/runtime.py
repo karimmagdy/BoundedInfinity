@@ -88,6 +88,9 @@ class BoundedInfinityRuntime:
         Seconds of inactivity before an agent is eligible for eviction.
     auto_compact_interval : int
         Compact the cache every N evictions (0 to disable).
+    addressing : str
+        Slot addressing for the registry: "cantor" (default) or "hash"
+        (plain hash of the ancestry path, for the Cantor-vs-hash ablation).
     """
 
     def __init__(
@@ -101,8 +104,14 @@ class BoundedInfinityRuntime:
         state_dimensions: int = 0,
         hilbert_resolution: int = 8,
         info_metric: InformationMetric | None = None,
+        eviction_ancestor_walk: bool = True,
+        pin_depth: int = 0,
+        eviction_policy: str = "depth",
+        reconstruct_full_chain: bool = False,
+        addressing: str = "cantor",
     ) -> None:
         self.cache_size = cache_size
+        self.reconstruct_full_chain = reconstruct_full_chain
         self.executor = executor or _noop_executor
         self.auto_compact_interval = auto_compact_interval
         self.info_metric = info_metric or structural_info
@@ -116,13 +125,17 @@ class BoundedInfinityRuntime:
             )
 
         self.cache = BoundedCache(capacity=cache_size)
-        self.registry = AgentRegistry(cache_capacity=cache_size)
+        self.registry = AgentRegistry(cache_capacity=cache_size, addressing=addressing)
         self.eviction_manager = EvictionManager(
             cache=self.cache,
             summarize=summarize,
             eviction_batch_size=eviction_batch_size,
             idle_threshold=idle_threshold,
             info_metric=self.info_metric,
+            registry=self.registry,
+            eviction_ancestor_walk=eviction_ancestor_walk,
+            pin_depth=pin_depth,
+            eviction_policy=eviction_policy,
         )
         self.stats = RuntimeStats()
         self._evictions_since_compact = 0
@@ -334,21 +347,26 @@ class BoundedInfinityRuntime:
         chain_depth = 0
         current_id = record.parent_id
 
-        # Walk ancestors
+        # Walk ancestors. Legacy mode stops at the first cached ancestor even
+        # if its summary buffer is empty (a "live" resident node), which yields
+        # content-empty reconstructions. Full-chain mode walks all the way to
+        # the root, collecting every cached ancestor that actually has summary
+        # content, so a reconstruction is empty only if no ancestor holds any.
         while current_id is not None:
             chain_depth += 1
             ancestor_entry = self.cache.get(current_id)
             if ancestor_entry is not None:
-                # Found a cached ancestor — collect its summaries
-                if "_summaries" in ancestor_entry.state:
+                summ = ancestor_entry.state.get("_summaries")
+                if summ:
                     summaries_chain.append({
                         "ancestor_id": current_id,
                         "ancestor_depth": ancestor_entry.depth,
-                        "summaries": ancestor_entry.state["_summaries"],
+                        "summaries": summ,
                     })
-                break  # Stop — we have a live anchor point
+                if not self.reconstruct_full_chain:
+                    break  # Stop — we have a live anchor point
 
-            # Ancestor also evicted — check registry and keep walking
+            # Keep walking up via the registry (covers evicted ancestors too).
             ancestor_record = self.registry.get(current_id)
             if ancestor_record is None:
                 break

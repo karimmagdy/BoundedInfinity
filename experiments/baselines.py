@@ -15,6 +15,9 @@ Six baselines:
   5. LRUSummaryBackend      — fixed-size LRU *with* hierarchical summarization
   6. TieredMemoryBackend    — hot/cold two-tier memory (MemGPT-style)
 
+Ablation: HashAncestryBackend ("bic-hash") is bic-aw with a plain hash of
+the ancestry path in place of Cantor addressing.
+
 Baselines 1-4 do NOT summarize evicted states into parents.
 Baselines 5-6 DO summarize, isolating BIC's Cantor/Hilbert contribution.
 """
@@ -535,6 +538,29 @@ class BICBackend:
 
 
 # ------------------------------------------------------------------ #
+# BIC-aw with hash addressing (Cantor-vs-hash ablation)
+# ------------------------------------------------------------------ #
+#
+# Identical to bic-aw (same runtime, same depth-priority eviction, same
+# eviction-time ancestor walk, same pinning, same batch size and idle
+# threshold) except that the registry derives each agent's preferred slot
+# from a plain hash of its ancestry path instead of Cantor pairing.
+
+BIC_AW_KWARGS = {"eviction_ancestor_walk": True, "pin_depth": 0}
+
+
+class HashAncestryBackend(BICBackend):
+    """bic-aw with Cantor tree addressing replaced by a plain ancestry hash."""
+
+    def __init__(self, cache_size: int = 64, executor: Any = None,
+                 **kwargs: Any) -> None:
+        if kwargs.get("addressing", "hash") != "hash":
+            raise ValueError("HashAncestryBackend always uses addressing='hash'")
+        kwargs["addressing"] = "hash"
+        super().__init__(cache_size=cache_size, executor=executor, **kwargs)
+
+
+# ------------------------------------------------------------------ #
 # 7. LRU+Summary with Ancestor-Walk on eviction (reviewer Q1 / Tier B B1)
 # ------------------------------------------------------------------ #
 #
@@ -744,11 +770,133 @@ class LRUPinBackend:
         return len(self._cache)
 
 
+# ------------------------------------------------------------------ #
+# 9. LRU+Summary+AncestorWalk+Pin: combined strengthened baseline
+# ------------------------------------------------------------------ #
+#
+# The strictly strongest non-BIC baseline. It stacks every strengthening
+# that separates BIC from plain LRU *except* BIC's deterministic
+# Cantor-structured addressing:
+#   (a) hierarchical summarisation on eviction,
+#   (b) registry-assisted ancestor-walk (an evicted child's summary is
+#       folded into the nearest *cached* ancestor instead of dropped),
+#   (c) shallow-ancestor pinning (the active path at depth <= pin_depth
+#       is never evicted).
+# Comparing BIC against this baseline isolates precisely the value of
+# deterministic Cantor addressing + depth-prioritised eviction, because
+# every other mechanism is matched. This is the combined experiment the
+# reviewers identified as the most informative remaining comparison.
+
+class LRUSummaryAWPinBackend:
+    """LRU + hierarchical summary + eviction-time ancestor walk + pinning."""
+
+    def __init__(self, capacity: int = 64, executor: Any = None,
+                 pin_depth: int = 1) -> None:
+        self.capacity = capacity
+        self.executor = executor or _noop_executor
+        self.pin_depth = pin_depth
+        self._cache: OrderedDict[str, dict[str, Any]] = OrderedDict()
+        self._parents: dict[str, str | None] = {}
+        self._depths: dict[str, int] = {}
+        self._tasks: dict[str, dict[str, Any]] = {}
+        self.total_spawns = 0
+        self.total_evictions = 0
+        self.total_chain_repairs = 0
+        self.total_pin_skips = 0
+
+    def _is_pinned(self, agent_id: str) -> bool:
+        return self._depths.get(agent_id, 0) <= self.pin_depth
+
+    def _nearest_cached_ancestor(self, agent_id: str) -> str | None:
+        cur = self._parents.get(agent_id)
+        while cur is not None:
+            if cur in self._cache:
+                return cur
+            cur = self._parents.get(cur)
+        return None
+
+    def _evict_if_needed(self) -> None:
+        while len(self._cache) >= self.capacity:
+            victim = None
+            for candidate in list(self._cache.keys()):
+                if not self._is_pinned(candidate):
+                    victim = candidate
+                    break
+                self.total_pin_skips += 1
+            if victim is None:
+                victim = next(iter(self._cache))  # over-pinned safety valve
+            evicted_state = self._cache.pop(victim)
+            self.total_evictions += 1
+            anchor = self._nearest_cached_ancestor(victim)
+            immediate_parent = self._parents.get(victim)
+            if anchor is not None and anchor != immediate_parent:
+                self.total_chain_repairs += 1
+            if anchor is not None:
+                self._cache[anchor] = _default_summarize_standalone(
+                    self._cache[anchor], [evicted_state]
+                )
+
+    def spawn(self, parent_id: str | None = None,
+              task: dict[str, Any] | None = None) -> str:
+        agent_id = f"lrusawpin-{uuid.uuid4().hex[:12]}"
+        self._tasks[agent_id] = task or {}
+        self._parents[agent_id] = parent_id
+        parent_depth = self._depths.get(parent_id, -1) if parent_id else -1
+        self._depths[agent_id] = parent_depth + 1
+        self._evict_if_needed()
+        self._cache[agent_id] = {"task": task or {}}
+        self.total_spawns += 1
+        return agent_id
+
+    def execute(self, agent_id: str) -> dict[str, Any]:
+        state = self._cache.get(agent_id, {"task": self._tasks.get(agent_id, {})})
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+
+        def _spawn_child(sub_task: dict[str, Any]) -> str:
+            return self.spawn(parent_id=agent_id, task=sub_task)
+
+        updated = self.executor(agent_id, self._tasks.get(agent_id, {}),
+                                state, _spawn_child)
+        self._evict_if_needed()
+        self._cache[agent_id] = updated
+        return updated
+
+    def query(self, agent_id: str) -> dict[str, Any] | None:
+        if agent_id in self._cache:
+            self._cache.move_to_end(agent_id, last=True)
+            return self._cache[agent_id]
+        anchor = self._nearest_cached_ancestor(agent_id)
+        if anchor is None:
+            return None
+        anchor_state = self._cache[anchor]
+        return {
+            "_reconstructed": True,
+            "_ancestor_summaries": [{
+                "ancestor_id": anchor,
+                "summaries": anchor_state.get("_summaries", []),
+            }],
+            "task": self._tasks.get(agent_id, {}),
+            "agent_id": agent_id,
+        }
+
+    def terminate(self, agent_id: str) -> None:
+        self._cache.pop(agent_id, None)
+
+    @property
+    def memory_size(self) -> int:
+        return len(self._cache)
+
+
 def make_backend(name: str, capacity: int = 64, executor: Any = None,
                  seed: int = 42, **kwargs: Any):
     """Factory for creating backends by name."""
     backends = {
         "bic": lambda: BICBackend(cache_size=capacity, executor=executor, **kwargs),
+        "bic-aw": lambda: BICBackend(cache_size=capacity, executor=executor,
+                                     **{**BIC_AW_KWARGS, **kwargs}),
+        "bic-hash": lambda: HashAncestryBackend(cache_size=capacity, executor=executor,
+                                                **{**BIC_AW_KWARGS, **kwargs}),
         "unbounded": lambda: UnboundedBackend(executor=executor),
         "lru": lambda: LRUBackend(capacity=capacity, executor=executor),
         "fifo": lambda: FIFOBackend(capacity=capacity, executor=executor),
@@ -756,6 +904,7 @@ def make_backend(name: str, capacity: int = 64, executor: Any = None,
         "lru-summary": lambda: LRUSummaryBackend(capacity=capacity, executor=executor),
         "lru-summary-aw": lambda: LRUSummaryAWBackend(capacity=capacity, executor=executor),
         "lru-pin": lambda: LRUPinBackend(capacity=capacity, executor=executor, **kwargs),
+        "lru-summary-aw-pin": lambda: LRUSummaryAWPinBackend(capacity=capacity, executor=executor, **kwargs),
         "tiered": lambda: TieredMemoryBackend(capacity=capacity, executor=executor),
     }
     if name not in backends:

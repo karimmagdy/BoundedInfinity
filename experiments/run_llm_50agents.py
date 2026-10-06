@@ -60,7 +60,7 @@ CACHE_SIZES = [8, 16, 32]
 MAX_LLM_CALLS = 150  # per backend: 50 agents + question decomposition overhead
 
 SEEDS = [42, 123, 7, 2024, 314]
-BACKENDS = ["bic", "lru", "lru-summary", "lru-summary-aw", "lru-pin", "unbounded"]
+BACKENDS = ["bic", "lru", "lru-summary", "lru-summary-aw", "lru-pin", "lru-summary-aw-pin", "unbounded"]
 QUESTION = "Survey the state of memory management in multi-agent LLM systems"
 
 

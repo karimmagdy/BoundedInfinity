@@ -1,0 +1,4 @@
+# file: /home/user/boundedinfinity/experiments/baselines.py
+# hypothesis_version: 6.168.5
+
+[200, '...', '_', '_ancestor_summaries', '_cold_summary', '_max_summaries', '_reconstructed', '_summaries', 'addressing', 'agent_id', 'ancestor_id', 'bic', 'bic-aw', 'bic-hash', 'executed', 'fifo', 'hash', 'lru', 'lru-pin', 'lru-summary', 'lru-summary-aw', 'lru-summary-aw-pin', 'pin_depth', 'random', 'status', 'summaries', 'task', 'task_received', 'tiered', 'unbounded']

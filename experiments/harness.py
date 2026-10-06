@@ -90,6 +90,7 @@ class RunMetrics:
     # Quality
     cache_hit_rate: float = 0.0  # fraction of queries served from cache
     query_success_rate: float = 0.0  # fraction of queries that returned non-None
+    nonempty_success_rate: float = 0.0  # fraction of queries that returned non-empty text
     reconstruction_quality: float = 0.0  # average token overlap for reconstructed states
     semantic_reconstruction_quality: float = 0.0  # TF-IDF cosine similarity
     info_preservation_ratio: float = 0.0  # avg ρ from BIC eviction stats
@@ -122,6 +123,7 @@ class RunMetrics:
             "quality": {
                 "cache_hit_rate": round(self.cache_hit_rate, 4),
                 "query_success_rate": round(self.query_success_rate, 4),
+                "nonempty_success_rate": round(self.nonempty_success_rate, 4),
                 "reconstruction_quality": round(self.reconstruction_quality, 4),
                 "semantic_reconstruction_quality": round(self.semantic_reconstruction_quality, 4),
                 "info_preservation_ratio": round(self.info_preservation_ratio, 4),
@@ -308,10 +310,8 @@ def measure_reconstruction_quality(
                 total_semantic += sem
                 category = "cached"
             else:
-                total_jaccard += 0.5
-                total_semantic += 0.5
-                jacc = 0.5
-                sem = 0.5
+                # A record with no recoverable text scores 0, not a neutral 0.5:
+                # the 0.5 credit inflated every backend that returns empty records.
                 category = "empty"
         count += 1
         if pairs_out is not None:
@@ -355,7 +355,7 @@ def run_instrumented(
     task_result = run_research_task(instrumented, config)
 
     # Measure reconstruction quality (query every agent)
-    pairs: list[dict[str, Any]] = [] if log_text_pairs else None  # type: ignore[assignment]
+    pairs: list[dict[str, Any]] = []
     recon_quality, semantic_quality = measure_reconstruction_quality(
         instrumented, task_result.agent_answers, pairs_out=pairs,
     )
@@ -394,6 +394,7 @@ def run_instrumented(
             "tree_depth": task_result.tree_depth,
             "elapsed_seconds": round(task_result.elapsed_seconds, 4),
             "answer_length": len(task_result.final_answer),
+            "empty_generations": task_result.empty_generations,
         },
         peak_memory_bytes=peak_mem,
         memory_samples=[
@@ -409,12 +410,16 @@ def run_instrumented(
         query_latency=instrumented.query_latency.to_dict(),
         cache_hit_rate=instrumented.cache_hit_rate,
         query_success_rate=instrumented.query_success_rate,
+        nonempty_success_rate=(
+            sum(p["category"] in ("cached", "reconstructed") and bool(p["reconstructed"].strip())
+                for p in pairs) / max(len(pairs), 1)
+        ),
         reconstruction_quality=recon_quality,
         semantic_reconstruction_quality=semantic_quality,
         info_preservation_ratio=info_pres,
         total_evictions=total_evictions,
         final_memory_size=final_size,
-        text_pairs=(pairs if pairs is not None else []),
+        text_pairs=(pairs if log_text_pairs else []),
     )
 
     return metrics
