@@ -1,5 +1,7 @@
 # BoundedInfinity
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23205752.svg)](https://doi.org/10.5281/zenodo.23205752)
+
 **Bounding Unbounded Agentic Swarms** — A mathematically rigorous memory
 management architecture for multi-agent systems.
 
