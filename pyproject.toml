@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bounded-infinity"
-version = "0.1.0"
+version = "0.3.0"
 description = "Bounding Unbounded Agentic Swarms: a mathematically rigorous memory management architecture for multi-agent systems"
 readme = "README.md"
 license = "Apache-2.0"
