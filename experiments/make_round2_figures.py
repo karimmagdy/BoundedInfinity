@@ -5,7 +5,7 @@
                             (results/synthetic_fixed/memory_scaling.json)
 
 Run from the repository root:  python experiments/make_round2_figures.py
-Writes to figures/round2/.
+Writes PDF and PNG to figures/round2/.
 """
 import glob
 import json
@@ -73,6 +73,7 @@ def quality_vs_cache():
                        for n, c, m in SERIES.values()], loc="lower right", fontsize=7)
     fig.tight_layout()
     fig.savefig(HERE / "fig_quality_vs_cache.pdf")
+    fig.savefig(HERE / "fig_quality_vs_cache.png", dpi=200, facecolor="white")
     plt.close(fig)
 
 
@@ -93,6 +94,7 @@ def memory_vs_n():
     ax.legend(loc="upper left", fontsize=7)
     fig.tight_layout()
     fig.savefig(HERE / "fig_memory_vs_n.pdf")
+    fig.savefig(HERE / "fig_memory_vs_n.png", dpi=200, facecolor="white")
     plt.close(fig)
 
 

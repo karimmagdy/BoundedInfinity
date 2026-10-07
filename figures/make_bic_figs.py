@@ -96,7 +96,6 @@ def architecture():
     arrow(ax, (0.525, 0.595), (0.525, 0.557), color=BLUE, lw=1.3)
     arrow(ax, (0.70, 0.50), (0.70, 0.407), color=GREEN, lw=1.2, rad=0.0)
     arrow(ax, (0.345, 0.407), (0.345, 0.50), color=GREEN, lw=1.2)
-    ax.text(0.295, 0.46, "evict", rotation=90, ha="center", fontsize=6.6, color=GREEN)
 
     # ---- Right: query paths ----
     arrow(ax, (0.75, 0.60), (0.83, 0.60), color=INK, lw=1.8)
@@ -108,7 +107,7 @@ def architecture():
     arrow(ax, (0.83, 0.585), (0.86, 0.64), color=GREEN, lw=1.2)
     arrow(ax, (0.83, 0.585), (0.86, 0.58), color=AMBER, lw=1.2)
     # registry feeds reconstruction
-    arrow(ax, (0.725, 0.50), (0.86, 0.49), color=GREY, lw=1.1, ls=(0,(3,2)), rad=-0.25)
+    arrow(ax, (0.725, 0.50), (0.80, 0.42), color=GREY, lw=1.1, ls=(0,(3,2)), rad=-0.25)
     ax.text(0.80, 0.345, "registry → reconstruction", ha="center", fontsize=6.6, color=GREY, style="italic")
 
     fig.savefig("fig_bic_architecture.pdf", bbox_inches="tight", pad_inches=0.04)
