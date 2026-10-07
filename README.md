@@ -5,7 +5,7 @@
 **A fixed-capacity cache for the working state of recursive multi-agent LLM systems.**
 
 <p align="center">
-  <img src="docs/images/architecture.png" alt="BIC architecture: a recursive agent swarm spawns agents into a fixed-size cache; when the cache fills, the deepest agents are evicted and their state is folded into the nearest cached ancestor; queries hit the cache in O(1) or reconstruct evicted agents by walking up the registry" width="760">
+  <img src="figures/fig_bic_architecture.png" alt="BIC architecture: a recursive agent swarm spawns agents into a fixed-size cache; when the cache fills, the deepest agents are evicted and their state is folded into the nearest cached ancestor; queries hit the cache in O(1) or reconstruct evicted agents by walking up the registry" width="760">
 </p>
 
 ## Problem
@@ -25,6 +25,10 @@ The **Bounded Infinity Cache (BIC)** holds at most *M* agent states:
   tree (through a lightweight registry) to the nearest cached ancestor.
 - **Deterministic addressing** places each agent at a slot derived from its ancestry
   path via Cantor pairing, so placement is reproducible across runs.
+
+<p align="center">
+  <img src="figures/fig_bic_operations.png" alt="(a) evicted children a1 and a2 are folded into their nearest cached ancestor a; (b) a query for the evicted a1 walks up to a and returns its summaries" width="700">
+</p>
 
 ## Results
 
