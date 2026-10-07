@@ -207,6 +207,14 @@ class BoundedInfinityRuntime:
 
         # Execute
         updated_state = self.executor(agent_id, record.task, state, _spawn_child)
+        # The stub above is marked "_reconstructed" for the executor's benefit;
+        # once executed and written back the agent is an ordinary cached entry.
+        # Executors typically copy their input state, so drop the marker here,
+        # otherwise query() returns a resident state that looks like an
+        # (empty) reconstruction.
+        if updated_state.get("_reconstructed"):
+            updated_state = {k: v for k, v in updated_state.items()
+                             if k != "_reconstructed"}
 
         # Write back to cache (ensure room first)
         if not self.cache.contains(agent_id):

@@ -1,0 +1,63 @@
+{
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.4",
+    "endpoint_host": "azure-openai-endpoint (redacted)",
+    "reasoning_effort": "none",
+    "temperature": "provider default (GPT-5.x rejects overrides)",
+    "max_retries": 1
+  },
+  "probes": {
+    "research": {
+      "max_completion_tokens": 150,
+      "usage": {
+        "total_calls": 6,
+        "total_input_tokens": 270,
+        "total_output_tokens": 670,
+        "errors": 0,
+        "retries": 0,
+        "empty_responses": 0,
+        "reasoning_tokens": 0,
+        "finish_reasons": {
+          "stop": 6
+        },
+        "served_models": {
+          "gpt-5.4-2026-03-05": 6
+        }
+      },
+      "mean_latency_s": 4.76,
+      "mean_words": 78.3,
+      "samples": [
+        "Memory management in multi-agent LLM systems is still an emerging area: most frameworks distinguish **short-term context** (message buffers, rolling summaries, scratchpads) from **long-term memory** (vector stores, knowledge graphs, databases), with agents selectively retrieving, summarizing, and sharing information to stay within context limits. Current research focuses on **coordination memory**\u2014how agents persist task state, beliefs, plans, and provenance across interactions\u2014while key open problems remain memory consistency, conflict resolution between agents, retrieval relevance, privacy/security, and evaluation of memory quality over long-horizon tasks.",
+        "Memory management in multi-agent LLM systems is still early-stage and centers on combining short-term context buffers with shared long-term stores such as vector databases, knowledge graphs, and external tool memory so agents can coordinate without exceeding context windows. Current work focuses on retrieval, summarization, role-specific memory, and write/read policies to reduce redundancy and conflict, but key open problems remain around consistency across agents, memory staleness, credit assignment, privacy/security, and rigorous evaluation of what memory actually improves."
+      ]
+    },
+    "coding": {
+      "max_completion_tokens": 120,
+      "usage": {
+        "total_calls": 6,
+        "total_input_tokens": 360,
+        "total_output_tokens": 712,
+        "errors": 0,
+        "retries": 0,
+        "empty_responses": 0,
+        "reasoning_tokens": 0,
+        "finish_reasons": {
+          "length": 5,
+          "stop": 1
+        },
+        "served_models": {
+          "gpt-5.4-2026-03-05": 6
+        }
+      },
+      "mean_latency_s": 4.8,
+      "mean_words": 81.8,
+      "samples": [
+        "Current multi-agent LLM systems typically split memory into short-term context buffers, role/task state, and external long-term stores such as vector databases, key-value stores, or structured knowledge graphs; frameworks like AutoGen, LangGraph, and CrewAI commonly pair message history with retrieval over persisted artifacts. The main active problems are selective retention and forgetting, cross-agent consistency, provenance/versioning of shared memories, and preventing context-window bloat or memory poisoning, with newer work adding episodic summaries, hierarchical memory managers, and reflection-based write policies so agents store only high-value facts and outcomes.",
+        "State-of-the-art memory in multi-agent LLM systems is mostly organized as a hierarchy: short-term conversational state in the context window, episodic traces stored in vector databases or logs, and structured long-term memory in knowledge graphs, tool outputs, or task boards shared across agents. Current systems commonly use retrieval-augmented memory with summarization, relevance filtering, and role-specific scratchpads to reduce context pressure, but they still struggle with stale or conflicting memories, provenance tracking, write/read contention between agents, and deciding what to consolidate versus forget."
+      ]
+    }
+  },
+  "tree_unbounded_semantic": 1.0000000000000002,
+  "tree_unbounded_nonempty": 1.0
+}

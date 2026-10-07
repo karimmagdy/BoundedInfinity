@@ -147,6 +147,12 @@ EXPERIMENTS: dict[str, dict[str, Any]] = {
                   caches=[2, 4, 8], seeds=SEEDS_3, unbounded=True,
                   branching=3, depth=2, max_tokens=120, max_calls=60,
                   question=CODING_SPEC, prompt=coding_prompt),
+    # Each heuristic enhancement on its own (replaces the Gemini strengthened-
+    # baseline table); bic, bic-aw, lru, combined and unbounded come from sweep.
+    "baselines": dict(arms=["lru-summary", "lru-summary-aw", "lru-pin"],
+                      caches=[8], seeds=SEEDS_5, unbounded=False,
+                      branching=3, depth=3, max_tokens=150, max_calls=150,
+                      question=RESEARCH_QUESTION, prompt=research_prompt),
     "order": dict(arms=["bic-aw", "lru-summary-aw-pin"], caches=[16], seeds=SEEDS_5,
                   unbounded=False, orders=["bfs", "dfs", "random"],
                   deterministic_content=True,

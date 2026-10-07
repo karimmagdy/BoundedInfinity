@@ -1,0 +1,322 @@
+[
+  {
+    "backend": "bic-full",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.1707,
+      "answer_length": 9295,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 6105994,
+      "final_size": 30,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 105425,
+          "peak_bytes": 112794
+        },
+        {
+          "step": 100,
+          "current_bytes": 223607,
+          "peak_bytes": 229324
+        },
+        {
+          "step": 150,
+          "current_bytes": 375973,
+          "peak_bytes": 382958
+        },
+        {
+          "step": 200,
+          "current_bytes": 648324,
+          "peak_bytes": 655309
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.044362,
+        "mean_s": 0.000367,
+        "min_s": 4.9e-05,
+        "max_s": 0.011412
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.120925,
+        "mean_s": 0.000999,
+        "min_s": 0.000537,
+        "max_s": 0.00333
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.00289,
+        "mean_s": 2.3e-05,
+        "min_s": 2e-06,
+        "max_s": 7.3e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.122,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.8595,
+      "reconstruction_quality": 0.4935,
+      "semantic_reconstruction_quality": 0.8209,
+      "info_preservation_ratio": 0.6159
+    },
+    "evictions": 196,
+    "text_pairs": []
+  },
+  {
+    "backend": "bic-no-hilbert",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.2101,
+      "answer_length": 9295,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 6144171,
+      "final_size": 30,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 105313,
+          "peak_bytes": 112682
+        },
+        {
+          "step": 100,
+          "current_bytes": 244079,
+          "peak_bytes": 249796
+        },
+        {
+          "step": 150,
+          "current_bytes": 396445,
+          "peak_bytes": 403430
+        },
+        {
+          "step": 200,
+          "current_bytes": 535564,
+          "peak_bytes": 584179
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.03849,
+        "mean_s": 0.000318,
+        "min_s": 4.8e-05,
+        "max_s": 0.001262
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.165224,
+        "mean_s": 0.001365,
+        "min_s": 0.000547,
+        "max_s": 0.005476
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.002466,
+        "mean_s": 2e-05,
+        "min_s": 2e-06,
+        "max_s": 6.2e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.122,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.8595,
+      "reconstruction_quality": 0.4935,
+      "semantic_reconstruction_quality": 0.8209,
+      "info_preservation_ratio": 0.6159
+    },
+    "evictions": 196,
+    "text_pairs": []
+  },
+  {
+    "backend": "bic-no-summary",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.1062,
+      "answer_length": 9295,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 935009,
+      "final_size": 30,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 103537,
+          "peak_bytes": 110906
+        },
+        {
+          "step": 100,
+          "current_bytes": 240535,
+          "peak_bytes": 246196
+        },
+        {
+          "step": 150,
+          "current_bytes": 388653,
+          "peak_bytes": 395638
+        },
+        {
+          "step": 200,
+          "current_bytes": 540300,
+          "peak_bytes": 547405
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.019598,
+        "mean_s": 0.000162,
+        "min_s": 4.7e-05,
+        "max_s": 0.000692
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.083199,
+        "mean_s": 0.000688,
+        "min_s": 0.000536,
+        "max_s": 0.003624
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000879,
+        "mean_s": 7e-06,
+        "min_s": 1e-06,
+        "max_s": 3.7e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.122,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.1074,
+      "reconstruction_quality": 0.1074,
+      "semantic_reconstruction_quality": 0.1074,
+      "info_preservation_ratio": 0.6159
+    },
+    "evictions": 196,
+    "text_pairs": []
+  },
+  {
+    "backend": "bic-minimal",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 4,
+      "response_tokens": 512,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 121,
+      "tree_depth": 4,
+      "elapsed_seconds": 0.1097,
+      "answer_length": 9295,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 938179,
+      "final_size": 30,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 103537,
+          "peak_bytes": 110906
+        },
+        {
+          "step": 100,
+          "current_bytes": 240535,
+          "peak_bytes": 246196
+        },
+        {
+          "step": 150,
+          "current_bytes": 387693,
+          "peak_bytes": 394678
+        },
+        {
+          "step": 200,
+          "current_bytes": 540796,
+          "peak_bytes": 547901
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 121,
+        "total_s": 0.020133,
+        "mean_s": 0.000166,
+        "min_s": 4.3e-05,
+        "max_s": 0.000658
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 121,
+        "total_s": 0.085883,
+        "mean_s": 0.00071,
+        "min_s": 0.000535,
+        "max_s": 0.001975
+      },
+      "query": {
+        "operation": "query",
+        "count": 123,
+        "total_s": 0.000765,
+        "mean_s": 6e-06,
+        "min_s": 1e-06,
+        "max_s": 4.4e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.122,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.1074,
+      "reconstruction_quality": 0.1074,
+      "semantic_reconstruction_quality": 0.1074,
+      "info_preservation_ratio": 0.6159
+    },
+    "evictions": 196,
+    "text_pairs": []
+  }
+]

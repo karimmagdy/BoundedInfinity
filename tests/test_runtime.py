@@ -165,6 +165,25 @@ def test_reconstruction_chain_walk() -> None:
         assert state["_chain_depth"] >= 1
 
 
+def test_executed_after_eviction_is_not_flagged_reconstructed() -> None:
+    """An agent evicted before it ran, then executed, is a normal cached entry.
+
+    execute() runs such an agent from a stub marked "_reconstructed"; that
+    marker must not survive into the stored state, or a later query of the
+    (resident) agent looks like a reconstruction with no summaries.
+    """
+    rt = BoundedInfinityRuntime(cache_size=3, executor=_counting_executor,
+                                idle_threshold=0.0)
+    root = rt.spawn(task={"goal": "root"})
+    children = [rt.spawn(parent_id=root, task={"goal": f"c{i}"}) for i in range(4)]
+    evicted = next(c for c in children if not rt.cache.contains(c))
+    rt.execute(evicted)
+    assert rt.cache.contains(evicted)
+    state = rt.query(evicted)
+    assert state["executed"] is True
+    assert not state.get("_reconstructed")
+
+
 def test_hilbert_index_computation() -> None:
     """Runtime should compute Hilbert indices for cached entries."""
     rt = BoundedInfinityRuntime(cache_size=16)

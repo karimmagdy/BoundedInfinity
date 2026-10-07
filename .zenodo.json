@@ -1,0 +1,31 @@
+{
+  "upload_type": "software",
+  "title": "Cache-Bounded State Management for Recursive LLM Agent Swarms using Deterministic Addressing and Hierarchical Summarization: code and results",
+  "description": "<p>Reference implementation of the Bounded Infinity Cache (BIC), a fixed-capacity cache for the working state of recursive multi-agent LLM systems, together with the baselines, experiment drivers, per-run result logs and the scripts that produce every table and figure of the accompanying manuscript.</p><p>The <code>experiments/results/round2</code> directory holds the GPT-5.4 runs (per-agent original and reconstructed texts included); <code>experiments/results/synthetic_fixed</code> holds the synthetic experiments. Records that predate the correction of an evaluation error are kept in <code>experiments/results/round2/superseded_stale_flag</code> with an explanatory README.</p>",
+  "creators": [
+    {
+      "name": "Magdy, Karim",
+      "affiliation": "Capital University, Helwan, Egypt",
+      "orcid": "0000-0003-2653-1988"
+    },
+    {
+      "name": "Khoriba, Ghada",
+      "affiliation": "Capital University, Helwan, Egypt; Nile University, Giza, Egypt",
+      "orcid": "0000-0001-7332-0759"
+    },
+    {
+      "name": "Abbas, Hala",
+      "affiliation": "Arab Open University, Cairo, Egypt; Capital University, Helwan, Egypt",
+      "orcid": "0000-0003-4225-8782"
+    }
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "multi-agent systems",
+    "large language models",
+    "memory management",
+    "caching",
+    "hierarchical summarization"
+  ],
+  "access_right": "open"
+}

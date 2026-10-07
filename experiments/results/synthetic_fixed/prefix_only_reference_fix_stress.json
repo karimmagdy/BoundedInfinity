@@ -1,0 +1,4292 @@
+[
+  {
+    "backend": "bic",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 4.8174,
+      "answer_length": 9295,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 291886480,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 94633,
+          "peak_bytes": 102002
+        },
+        {
+          "step": 100,
+          "current_bytes": 206799,
+          "peak_bytes": 212636
+        },
+        {
+          "step": 150,
+          "current_bytes": 342133,
+          "peak_bytes": 349502
+        },
+        {
+          "step": 200,
+          "current_bytes": 491692,
+          "peak_bytes": 496764
+        },
+        {
+          "step": 250,
+          "current_bytes": 535735,
+          "peak_bytes": 551746
+        },
+        {
+          "step": 300,
+          "current_bytes": 677691,
+          "peak_bytes": 683032
+        },
+        {
+          "step": 350,
+          "current_bytes": 822711,
+          "peak_bytes": 829696
+        },
+        {
+          "step": 400,
+          "current_bytes": 829023,
+          "peak_bytes": 879457
+        },
+        {
+          "step": 450,
+          "current_bytes": 981159,
+          "peak_bytes": 988144
+        },
+        {
+          "step": 500,
+          "current_bytes": 1128667,
+          "peak_bytes": 1134307
+        },
+        {
+          "step": 550,
+          "current_bytes": 1138679,
+          "peak_bytes": 1191813
+        },
+        {
+          "step": 600,
+          "current_bytes": 1260994,
+          "peak_bytes": 1266387
+        },
+        {
+          "step": 650,
+          "current_bytes": 1404237,
+          "peak_bytes": 1411222
+        },
+        {
+          "step": 700,
+          "current_bytes": 1412740,
+          "peak_bytes": 1519408
+        },
+        {
+          "step": 750,
+          "current_bytes": 1550117,
+          "peak_bytes": 1557102
+        },
+        {
+          "step": 800,
+          "current_bytes": 1681881,
+          "peak_bytes": 1687310
+        },
+        {
+          "step": 850,
+          "current_bytes": 1698623,
+          "peak_bytes": 1828369
+        },
+        {
+          "step": 900,
+          "current_bytes": 1829779,
+          "peak_bytes": 1835214
+        },
+        {
+          "step": 950,
+          "current_bytes": 1978533,
+          "peak_bytes": 1985518
+        },
+        {
+          "step": 1000,
+          "current_bytes": 2111260,
+          "peak_bytes": 2116699
+        },
+        {
+          "step": 1050,
+          "current_bytes": 2120698,
+          "peak_bytes": 2163130
+        },
+        {
+          "step": 1100,
+          "current_bytes": 2253304,
+          "peak_bytes": 2258951
+        },
+        {
+          "step": 1150,
+          "current_bytes": 2390043,
+          "peak_bytes": 2397028
+        },
+        {
+          "step": 1200,
+          "current_bytes": 2387408,
+          "peak_bytes": 2481579
+        },
+        {
+          "step": 1250,
+          "current_bytes": 2532705,
+          "peak_bytes": 2539690
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2659373,
+          "peak_bytes": 2665014
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2790933,
+          "peak_bytes": 2797918
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2799233,
+          "peak_bytes": 2804642
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2936462,
+          "peak_bytes": 2943479
+        },
+        {
+          "step": 1500,
+          "current_bytes": 3064274,
+          "peak_bytes": 3069778
+        },
+        {
+          "step": 1550,
+          "current_bytes": 3059583,
+          "peak_bytes": 3141117
+        },
+        {
+          "step": 1600,
+          "current_bytes": 3188420,
+          "peak_bytes": 3193739
+        },
+        {
+          "step": 1650,
+          "current_bytes": 3323263,
+          "peak_bytes": 3330248
+        },
+        {
+          "step": 1700,
+          "current_bytes": 3449711,
+          "peak_bytes": 3455222
+        },
+        {
+          "step": 1750,
+          "current_bytes": 3455186,
+          "peak_bytes": 3485637
+        },
+        {
+          "step": 1800,
+          "current_bytes": 3585687,
+          "peak_bytes": 3590995
+        },
+        {
+          "step": 1850,
+          "current_bytes": 3747951,
+          "peak_bytes": 3754936
+        },
+        {
+          "step": 1900,
+          "current_bytes": 3737918,
+          "peak_bytes": 3847421
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3873304,
+          "peak_bytes": 3880289
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3997344,
+          "peak_bytes": 4002649
+        },
+        {
+          "step": 2050,
+          "current_bytes": 4140289,
+          "peak_bytes": 4147274
+        },
+        {
+          "step": 2100,
+          "current_bytes": 4133441,
+          "peak_bytes": 4187339
+        },
+        {
+          "step": 2150,
+          "current_bytes": 4263007,
+          "peak_bytes": 4269992
+        },
+        {
+          "step": 2200,
+          "current_bytes": 4383647,
+          "peak_bytes": 4388933
+        },
+        {
+          "step": 2250,
+          "current_bytes": 4522302,
+          "peak_bytes": 4529287
+        },
+        {
+          "step": 2300,
+          "current_bytes": 4522799,
+          "peak_bytes": 4537097
+        },
+        {
+          "step": 2350,
+          "current_bytes": 4651610,
+          "peak_bytes": 4658595
+        },
+        {
+          "step": 2400,
+          "current_bytes": 4777926,
+          "peak_bytes": 4783213
+        },
+        {
+          "step": 2450,
+          "current_bytes": 4784165,
+          "peak_bytes": 4867937
+        },
+        {
+          "step": 2500,
+          "current_bytes": 4912217,
+          "peak_bytes": 4917725
+        },
+        {
+          "step": 2550,
+          "current_bytes": 5041007,
+          "peak_bytes": 5047992
+        },
+        {
+          "step": 2600,
+          "current_bytes": 5170090,
+          "peak_bytes": 5175373
+        },
+        {
+          "step": 2650,
+          "current_bytes": 5171479,
+          "peak_bytes": 5214358
+        },
+        {
+          "step": 2700,
+          "current_bytes": 5301095,
+          "peak_bytes": 5306438
+        },
+        {
+          "step": 2750,
+          "current_bytes": 5453239,
+          "peak_bytes": 5460224
+        },
+        {
+          "step": 2800,
+          "current_bytes": 5455039,
+          "peak_bytes": 5573955
+        },
+        {
+          "step": 2850,
+          "current_bytes": 5588183,
+          "peak_bytes": 5595168
+        },
+        {
+          "step": 2900,
+          "current_bytes": 5710889,
+          "peak_bytes": 5716193
+        },
+        {
+          "step": 2950,
+          "current_bytes": 5843135,
+          "peak_bytes": 5850120
+        },
+        {
+          "step": 3000,
+          "current_bytes": 5833507,
+          "peak_bytes": 5946006
+        },
+        {
+          "step": 3050,
+          "current_bytes": 5971632,
+          "peak_bytes": 5978617
+        },
+        {
+          "step": 3100,
+          "current_bytes": 6102139,
+          "peak_bytes": 6107446
+        },
+        {
+          "step": 3150,
+          "current_bytes": 6230864,
+          "peak_bytes": 6237849
+        },
+        {
+          "step": 3200,
+          "current_bytes": 6229365,
+          "peak_bytes": 6279208
+        },
+        {
+          "step": 3250,
+          "current_bytes": 6366909,
+          "peak_bytes": 6373894
+        },
+        {
+          "step": 3300,
+          "current_bytes": 6494647,
+          "peak_bytes": 6499958
+        },
+        {
+          "step": 3350,
+          "current_bytes": 6491175,
+          "peak_bytes": 6614467
+        },
+        {
+          "step": 3400,
+          "current_bytes": 6624112,
+          "peak_bytes": 6629407
+        },
+        {
+          "step": 3450,
+          "current_bytes": 6758974,
+          "peak_bytes": 6765959
+        },
+        {
+          "step": 3500,
+          "current_bytes": 6884149,
+          "peak_bytes": 6889634
+        },
+        {
+          "step": 3550,
+          "current_bytes": 6884035,
+          "peak_bytes": 6943768
+        },
+        {
+          "step": 3600,
+          "current_bytes": 7019654,
+          "peak_bytes": 7024948
+        },
+        {
+          "step": 3650,
+          "current_bytes": 7208100,
+          "peak_bytes": 7228208
+        },
+        {
+          "step": 3700,
+          "current_bytes": 7333303,
+          "peak_bytes": 7338802
+        },
+        {
+          "step": 3750,
+          "current_bytes": 7329770,
+          "peak_bytes": 7346532
+        },
+        {
+          "step": 3800,
+          "current_bytes": 7458414,
+          "peak_bytes": 7463706
+        },
+        {
+          "step": 3850,
+          "current_bytes": 7591045,
+          "peak_bytes": 7598030
+        },
+        {
+          "step": 3900,
+          "current_bytes": 7590503,
+          "peak_bytes": 7691068
+        },
+        {
+          "step": 3950,
+          "current_bytes": 7719160,
+          "peak_bytes": 7726145
+        },
+        {
+          "step": 4000,
+          "current_bytes": 7850617,
+          "peak_bytes": 7855777
+        },
+        {
+          "step": 4050,
+          "current_bytes": 7988419,
+          "peak_bytes": 7995436
+        },
+        {
+          "step": 4100,
+          "current_bytes": 7986540,
+          "peak_bytes": 8023659
+        },
+        {
+          "step": 4150,
+          "current_bytes": 8117927,
+          "peak_bytes": 8124912
+        },
+        {
+          "step": 4200,
+          "current_bytes": 8249083,
+          "peak_bytes": 8254382
+        },
+        {
+          "step": 4250,
+          "current_bytes": 8251480,
+          "peak_bytes": 8356978
+        },
+        {
+          "step": 4300,
+          "current_bytes": 8382269,
+          "peak_bytes": 8387760
+        },
+        {
+          "step": 4350,
+          "current_bytes": 8507534,
+          "peak_bytes": 8514519
+        },
+        {
+          "step": 4400,
+          "current_bytes": 8723698,
+          "peak_bytes": 8730683
+        },
+        {
+          "step": 4450,
+          "current_bytes": 8862192,
+          "peak_bytes": 9008983
+        },
+        {
+          "step": 4500,
+          "current_bytes": 9141439,
+          "peak_bytes": 9148544
+        },
+        {
+          "step": 4550,
+          "current_bytes": 9418969,
+          "peak_bytes": 9426074
+        },
+        {
+          "step": 4600,
+          "current_bytes": 9699516,
+          "peak_bytes": 9706621
+        },
+        {
+          "step": 4650,
+          "current_bytes": 10004961,
+          "peak_bytes": 10012066
+        },
+        {
+          "step": 4700,
+          "current_bytes": 10281640,
+          "peak_bytes": 10288745
+        },
+        {
+          "step": 4750,
+          "current_bytes": 10562157,
+          "peak_bytes": 10569262
+        },
+        {
+          "step": 4800,
+          "current_bytes": 10650681,
+          "peak_bytes": 10808496
+        },
+        {
+          "step": 4850,
+          "current_bytes": 10931896,
+          "peak_bytes": 10939001
+        },
+        {
+          "step": 4900,
+          "current_bytes": 11211912,
+          "peak_bytes": 11219017
+        },
+        {
+          "step": 4950,
+          "current_bytes": 11488350,
+          "peak_bytes": 11495455
+        },
+        {
+          "step": 5000,
+          "current_bytes": 11768347,
+          "peak_bytes": 11775452
+        },
+        {
+          "step": 5050,
+          "current_bytes": 12047654,
+          "peak_bytes": 12054759
+        },
+        {
+          "step": 5100,
+          "current_bytes": 12325472,
+          "peak_bytes": 12332577
+        },
+        {
+          "step": 5150,
+          "current_bytes": 12416030,
+          "peak_bytes": 12540373
+        },
+        {
+          "step": 5200,
+          "current_bytes": 12694766,
+          "peak_bytes": 12701871
+        },
+        {
+          "step": 5250,
+          "current_bytes": 12975350,
+          "peak_bytes": 12982455
+        },
+        {
+          "step": 5300,
+          "current_bytes": 13254403,
+          "peak_bytes": 13261508
+        },
+        {
+          "step": 5350,
+          "current_bytes": 13531513,
+          "peak_bytes": 13538618
+        },
+        {
+          "step": 5400,
+          "current_bytes": 13810235,
+          "peak_bytes": 13817340
+        },
+        {
+          "step": 5450,
+          "current_bytes": 14082331,
+          "peak_bytes": 14089436
+        },
+        {
+          "step": 5500,
+          "current_bytes": 14170801,
+          "peak_bytes": 14216884
+        },
+        {
+          "step": 5550,
+          "current_bytes": 14450501,
+          "peak_bytes": 14457606
+        },
+        {
+          "step": 5600,
+          "current_bytes": 14728537,
+          "peak_bytes": 14735642
+        },
+        {
+          "step": 5650,
+          "current_bytes": 15009293,
+          "peak_bytes": 15016398
+        },
+        {
+          "step": 5700,
+          "current_bytes": 15288793,
+          "peak_bytes": 15295898
+        },
+        {
+          "step": 5750,
+          "current_bytes": 15565851,
+          "peak_bytes": 15572956
+        },
+        {
+          "step": 5800,
+          "current_bytes": 15846465,
+          "peak_bytes": 15853570
+        },
+        {
+          "step": 5850,
+          "current_bytes": 15935806,
+          "peak_bytes": 15942911
+        },
+        {
+          "step": 5900,
+          "current_bytes": 16212520,
+          "peak_bytes": 16219625
+        },
+        {
+          "step": 5950,
+          "current_bytes": 16487589,
+          "peak_bytes": 16494694
+        },
+        {
+          "step": 6000,
+          "current_bytes": 16764831,
+          "peak_bytes": 16771936
+        },
+        {
+          "step": 6050,
+          "current_bytes": 17096248,
+          "peak_bytes": 17103353
+        },
+        {
+          "step": 6100,
+          "current_bytes": 17374766,
+          "peak_bytes": 17381871
+        },
+        {
+          "step": 6150,
+          "current_bytes": 17657155,
+          "peak_bytes": 17664260
+        },
+        {
+          "step": 6200,
+          "current_bytes": 17746801,
+          "peak_bytes": 17753906
+        },
+        {
+          "step": 6250,
+          "current_bytes": 18026870,
+          "peak_bytes": 18033975
+        },
+        {
+          "step": 6300,
+          "current_bytes": 18306685,
+          "peak_bytes": 18313790
+        },
+        {
+          "step": 6350,
+          "current_bytes": 18582361,
+          "peak_bytes": 18589466
+        },
+        {
+          "step": 6400,
+          "current_bytes": 18854768,
+          "peak_bytes": 18861873
+        },
+        {
+          "step": 6450,
+          "current_bytes": 19132097,
+          "peak_bytes": 19139202
+        },
+        {
+          "step": 6500,
+          "current_bytes": 19406917,
+          "peak_bytes": 19414022
+        },
+        {
+          "step": 6550,
+          "current_bytes": 19479912,
+          "peak_bytes": 19487017
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 1.821299,
+        "mean_s": 0.000555,
+        "min_s": 4.3e-05,
+        "max_s": 0.004197
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.833091,
+        "mean_s": 0.000864,
+        "min_s": 0.000528,
+        "max_s": 0.007475
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.103308,
+        "mean_s": 3.1e-05,
+        "min_s": 2e-06,
+        "max_s": 0.000165
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0128,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.9927,
+      "reconstruction_quality": 0.4584,
+      "semantic_reconstruction_quality": 0.9391,
+      "info_preservation_ratio": 0.5479
+    },
+    "evictions": 6456,
+    "text_pairs": []
+  },
+  {
+    "backend": "lru",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 2.401,
+      "answer_length": 9206,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 19342637,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 80831,
+          "peak_bytes": 88200
+        },
+        {
+          "step": 100,
+          "current_bytes": 160941,
+          "peak_bytes": 167514
+        },
+        {
+          "step": 150,
+          "current_bytes": 245561,
+          "peak_bytes": 252930
+        },
+        {
+          "step": 200,
+          "current_bytes": 321800,
+          "peak_bytes": 328338
+        },
+        {
+          "step": 250,
+          "current_bytes": 405194,
+          "peak_bytes": 412563
+        },
+        {
+          "step": 300,
+          "current_bytes": 480897,
+          "peak_bytes": 487464
+        },
+        {
+          "step": 350,
+          "current_bytes": 562754,
+          "peak_bytes": 570123
+        },
+        {
+          "step": 400,
+          "current_bytes": 638531,
+          "peak_bytes": 645116
+        },
+        {
+          "step": 450,
+          "current_bytes": 718713,
+          "peak_bytes": 726082
+        },
+        {
+          "step": 500,
+          "current_bytes": 800699,
+          "peak_bytes": 807293
+        },
+        {
+          "step": 550,
+          "current_bytes": 880452,
+          "peak_bytes": 887821
+        },
+        {
+          "step": 600,
+          "current_bytes": 956206,
+          "peak_bytes": 962761
+        },
+        {
+          "step": 650,
+          "current_bytes": 1036783,
+          "peak_bytes": 1044152
+        },
+        {
+          "step": 700,
+          "current_bytes": 1115619,
+          "peak_bytes": 1122216
+        },
+        {
+          "step": 750,
+          "current_bytes": 1196171,
+          "peak_bytes": 1203540
+        },
+        {
+          "step": 800,
+          "current_bytes": 1270893,
+          "peak_bytes": 1277484
+        },
+        {
+          "step": 850,
+          "current_bytes": 1351267,
+          "peak_bytes": 1358636
+        },
+        {
+          "step": 900,
+          "current_bytes": 1426253,
+          "peak_bytes": 1432850
+        },
+        {
+          "step": 950,
+          "current_bytes": 1519560,
+          "peak_bytes": 1526929
+        },
+        {
+          "step": 1000,
+          "current_bytes": 1595364,
+          "peak_bytes": 1601965
+        },
+        {
+          "step": 1050,
+          "current_bytes": 1675581,
+          "peak_bytes": 1682950
+        },
+        {
+          "step": 1100,
+          "current_bytes": 1750850,
+          "peak_bytes": 1757447
+        },
+        {
+          "step": 1150,
+          "current_bytes": 1831160,
+          "peak_bytes": 1838529
+        },
+        {
+          "step": 1200,
+          "current_bytes": 1907294,
+          "peak_bytes": 1913876
+        },
+        {
+          "step": 1250,
+          "current_bytes": 1986983,
+          "peak_bytes": 1994352
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2062883,
+          "peak_bytes": 2069478
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2143894,
+          "peak_bytes": 2151263
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2225415,
+          "peak_bytes": 2231988
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2305174,
+          "peak_bytes": 2312543
+        },
+        {
+          "step": 1500,
+          "current_bytes": 2380476,
+          "peak_bytes": 2387052
+        },
+        {
+          "step": 1550,
+          "current_bytes": 2461191,
+          "peak_bytes": 2468560
+        },
+        {
+          "step": 1600,
+          "current_bytes": 2536820,
+          "peak_bytes": 2543423
+        },
+        {
+          "step": 1650,
+          "current_bytes": 2616792,
+          "peak_bytes": 2624161
+        },
+        {
+          "step": 1700,
+          "current_bytes": 2692381,
+          "peak_bytes": 2698960
+        },
+        {
+          "step": 1750,
+          "current_bytes": 2773089,
+          "peak_bytes": 2780458
+        },
+        {
+          "step": 1800,
+          "current_bytes": 2848727,
+          "peak_bytes": 2855315
+        },
+        {
+          "step": 1850,
+          "current_bytes": 2954655,
+          "peak_bytes": 2962024
+        },
+        {
+          "step": 1900,
+          "current_bytes": 3030216,
+          "peak_bytes": 3036767
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3111322,
+          "peak_bytes": 3118691
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3186641,
+          "peak_bytes": 3193218
+        },
+        {
+          "step": 2050,
+          "current_bytes": 3266974,
+          "peak_bytes": 3274343
+        },
+        {
+          "step": 2100,
+          "current_bytes": 3342324,
+          "peak_bytes": 3348906
+        },
+        {
+          "step": 2150,
+          "current_bytes": 3422227,
+          "peak_bytes": 3429596
+        },
+        {
+          "step": 2200,
+          "current_bytes": 3497724,
+          "peak_bytes": 3504294
+        },
+        {
+          "step": 2250,
+          "current_bytes": 3578935,
+          "peak_bytes": 3586304
+        },
+        {
+          "step": 2300,
+          "current_bytes": 3654314,
+          "peak_bytes": 3660896
+        },
+        {
+          "step": 2350,
+          "current_bytes": 3734158,
+          "peak_bytes": 3741527
+        },
+        {
+          "step": 2400,
+          "current_bytes": 3809490,
+          "peak_bytes": 3816057
+        },
+        {
+          "step": 2450,
+          "current_bytes": 3889272,
+          "peak_bytes": 3896641
+        },
+        {
+          "step": 2500,
+          "current_bytes": 3965690,
+          "peak_bytes": 3972274
+        },
+        {
+          "step": 2550,
+          "current_bytes": 4045745,
+          "peak_bytes": 4053114
+        },
+        {
+          "step": 2600,
+          "current_bytes": 4120979,
+          "peak_bytes": 4127538
+        },
+        {
+          "step": 2650,
+          "current_bytes": 4200745,
+          "peak_bytes": 4208114
+        },
+        {
+          "step": 2700,
+          "current_bytes": 4275956,
+          "peak_bytes": 4282547
+        },
+        {
+          "step": 2750,
+          "current_bytes": 4369187,
+          "peak_bytes": 4376556
+        },
+        {
+          "step": 2800,
+          "current_bytes": 4444846,
+          "peak_bytes": 4451387
+        },
+        {
+          "step": 2850,
+          "current_bytes": 4526074,
+          "peak_bytes": 4533443
+        },
+        {
+          "step": 2900,
+          "current_bytes": 4601419,
+          "peak_bytes": 4607995
+        },
+        {
+          "step": 2950,
+          "current_bytes": 4681508,
+          "peak_bytes": 4688877
+        },
+        {
+          "step": 3000,
+          "current_bytes": 4756781,
+          "peak_bytes": 4763354
+        },
+        {
+          "step": 3050,
+          "current_bytes": 4837328,
+          "peak_bytes": 4844697
+        },
+        {
+          "step": 3100,
+          "current_bytes": 4912717,
+          "peak_bytes": 4919308
+        },
+        {
+          "step": 3150,
+          "current_bytes": 4992943,
+          "peak_bytes": 5000312
+        },
+        {
+          "step": 3200,
+          "current_bytes": 5070266,
+          "peak_bytes": 5076836
+        },
+        {
+          "step": 3250,
+          "current_bytes": 5150518,
+          "peak_bytes": 5157887
+        },
+        {
+          "step": 3300,
+          "current_bytes": 5226429,
+          "peak_bytes": 5233020
+        },
+        {
+          "step": 3350,
+          "current_bytes": 5306680,
+          "peak_bytes": 5314049
+        },
+        {
+          "step": 3400,
+          "current_bytes": 5382590,
+          "peak_bytes": 5389169
+        },
+        {
+          "step": 3450,
+          "current_bytes": 5462591,
+          "peak_bytes": 5469960
+        },
+        {
+          "step": 3500,
+          "current_bytes": 5538303,
+          "peak_bytes": 5544856
+        },
+        {
+          "step": 3550,
+          "current_bytes": 5618239,
+          "peak_bytes": 5625608
+        },
+        {
+          "step": 3600,
+          "current_bytes": 5695213,
+          "peak_bytes": 5701787
+        },
+        {
+          "step": 3650,
+          "current_bytes": 5827360,
+          "peak_bytes": 5861715
+        },
+        {
+          "step": 3700,
+          "current_bytes": 5902368,
+          "peak_bytes": 5908939
+        },
+        {
+          "step": 3750,
+          "current_bytes": 5982464,
+          "peak_bytes": 5989833
+        },
+        {
+          "step": 3800,
+          "current_bytes": 6057685,
+          "peak_bytes": 6064249
+        },
+        {
+          "step": 3850,
+          "current_bytes": 6137611,
+          "peak_bytes": 6144980
+        },
+        {
+          "step": 3900,
+          "current_bytes": 6213350,
+          "peak_bytes": 6219930
+        },
+        {
+          "step": 3950,
+          "current_bytes": 6293254,
+          "peak_bytes": 6300623
+        },
+        {
+          "step": 4000,
+          "current_bytes": 6368950,
+          "peak_bytes": 6375514
+        },
+        {
+          "step": 4050,
+          "current_bytes": 6450973,
+          "peak_bytes": 6458342
+        },
+        {
+          "step": 4100,
+          "current_bytes": 6526422,
+          "peak_bytes": 6532998
+        },
+        {
+          "step": 4150,
+          "current_bytes": 6606501,
+          "peak_bytes": 6613870
+        },
+        {
+          "step": 4200,
+          "current_bytes": 6681968,
+          "peak_bytes": 6688547
+        },
+        {
+          "step": 4250,
+          "current_bytes": 6761698,
+          "peak_bytes": 6769067
+        },
+        {
+          "step": 4300,
+          "current_bytes": 6836605,
+          "peak_bytes": 6843172
+        },
+        {
+          "step": 4350,
+          "current_bytes": 6916551,
+          "peak_bytes": 6923920
+        },
+        {
+          "step": 4400,
+          "current_bytes": 7087672,
+          "peak_bytes": 7095041
+        },
+        {
+          "step": 4450,
+          "current_bytes": 7345240,
+          "peak_bytes": 7352609
+        },
+        {
+          "step": 4500,
+          "current_bytes": 7594297,
+          "peak_bytes": 7601850
+        },
+        {
+          "step": 4550,
+          "current_bytes": 7842914,
+          "peak_bytes": 7850467
+        },
+        {
+          "step": 4600,
+          "current_bytes": 8091447,
+          "peak_bytes": 8099000
+        },
+        {
+          "step": 4650,
+          "current_bytes": 8365816,
+          "peak_bytes": 8373369
+        },
+        {
+          "step": 4700,
+          "current_bytes": 8615120,
+          "peak_bytes": 8622673
+        },
+        {
+          "step": 4750,
+          "current_bytes": 8864075,
+          "peak_bytes": 8871628
+        },
+        {
+          "step": 4800,
+          "current_bytes": 9113000,
+          "peak_bytes": 9120553
+        },
+        {
+          "step": 4850,
+          "current_bytes": 9362602,
+          "peak_bytes": 9370155
+        },
+        {
+          "step": 4900,
+          "current_bytes": 9611507,
+          "peak_bytes": 9619060
+        },
+        {
+          "step": 4950,
+          "current_bytes": 9860349,
+          "peak_bytes": 9867902
+        },
+        {
+          "step": 5000,
+          "current_bytes": 10109722,
+          "peak_bytes": 10117275
+        },
+        {
+          "step": 5050,
+          "current_bytes": 10358582,
+          "peak_bytes": 10366135
+        },
+        {
+          "step": 5100,
+          "current_bytes": 10607476,
+          "peak_bytes": 10615029
+        },
+        {
+          "step": 5150,
+          "current_bytes": 10855698,
+          "peak_bytes": 10863251
+        },
+        {
+          "step": 5200,
+          "current_bytes": 11104759,
+          "peak_bytes": 11112312
+        },
+        {
+          "step": 5250,
+          "current_bytes": 11352706,
+          "peak_bytes": 11360259
+        },
+        {
+          "step": 5300,
+          "current_bytes": 11601613,
+          "peak_bytes": 11609166
+        },
+        {
+          "step": 5350,
+          "current_bytes": 11849747,
+          "peak_bytes": 11857300
+        },
+        {
+          "step": 5400,
+          "current_bytes": 12097812,
+          "peak_bytes": 12105365
+        },
+        {
+          "step": 5450,
+          "current_bytes": 12338128,
+          "peak_bytes": 12345681
+        },
+        {
+          "step": 5500,
+          "current_bytes": 12587322,
+          "peak_bytes": 12594875
+        },
+        {
+          "step": 5550,
+          "current_bytes": 12836468,
+          "peak_bytes": 12844021
+        },
+        {
+          "step": 5600,
+          "current_bytes": 13085633,
+          "peak_bytes": 13093186
+        },
+        {
+          "step": 5650,
+          "current_bytes": 13333681,
+          "peak_bytes": 13341234
+        },
+        {
+          "step": 5700,
+          "current_bytes": 13583165,
+          "peak_bytes": 13590718
+        },
+        {
+          "step": 5750,
+          "current_bytes": 13832023,
+          "peak_bytes": 13839576
+        },
+        {
+          "step": 5800,
+          "current_bytes": 14080894,
+          "peak_bytes": 14088447
+        },
+        {
+          "step": 5850,
+          "current_bytes": 14329621,
+          "peak_bytes": 14337174
+        },
+        {
+          "step": 5900,
+          "current_bytes": 14578482,
+          "peak_bytes": 14586035
+        },
+        {
+          "step": 5950,
+          "current_bytes": 14823400,
+          "peak_bytes": 14830953
+        },
+        {
+          "step": 6000,
+          "current_bytes": 15072396,
+          "peak_bytes": 15079949
+        },
+        {
+          "step": 6050,
+          "current_bytes": 15373028,
+          "peak_bytes": 15380581
+        },
+        {
+          "step": 6100,
+          "current_bytes": 15621971,
+          "peak_bytes": 15629524
+        },
+        {
+          "step": 6150,
+          "current_bytes": 15871486,
+          "peak_bytes": 15879039
+        },
+        {
+          "step": 6200,
+          "current_bytes": 16116954,
+          "peak_bytes": 16124507
+        },
+        {
+          "step": 6250,
+          "current_bytes": 16365502,
+          "peak_bytes": 16373055
+        },
+        {
+          "step": 6300,
+          "current_bytes": 16613908,
+          "peak_bytes": 16621461
+        },
+        {
+          "step": 6350,
+          "current_bytes": 16861776,
+          "peak_bytes": 16869329
+        },
+        {
+          "step": 6400,
+          "current_bytes": 17107854,
+          "peak_bytes": 17115407
+        },
+        {
+          "step": 6450,
+          "current_bytes": 17353271,
+          "peak_bytes": 17360824
+        },
+        {
+          "step": 6500,
+          "current_bytes": 17598077,
+          "peak_bytes": 17605630
+        },
+        {
+          "step": 6550,
+          "current_bytes": 17842587,
+          "peak_bytes": 17850140
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 0.127293,
+        "mean_s": 3.9e-05,
+        "min_s": 2.3e-05,
+        "max_s": 0.001234
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.140012,
+        "mean_s": 0.000652,
+        "min_s": 0.000474,
+        "max_s": 0.002878
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.001508,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 3.3e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0195,
+      "query_success_rate": 0.0195,
+      "nonempty_success_rate": 0.0195,
+      "reconstruction_quality": 0.0195,
+      "semantic_reconstruction_quality": 0.0195,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 6472,
+    "text_pairs": []
+  },
+  {
+    "backend": "lru-summary",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 2.8312,
+      "answer_length": 9222,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 19333654,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 82042,
+          "peak_bytes": 89411
+        },
+        {
+          "step": 100,
+          "current_bytes": 161685,
+          "peak_bytes": 168320
+        },
+        {
+          "step": 150,
+          "current_bytes": 246429,
+          "peak_bytes": 253798
+        },
+        {
+          "step": 200,
+          "current_bytes": 321751,
+          "peak_bytes": 328351
+        },
+        {
+          "step": 250,
+          "current_bytes": 406700,
+          "peak_bytes": 414069
+        },
+        {
+          "step": 300,
+          "current_bytes": 480810,
+          "peak_bytes": 487439
+        },
+        {
+          "step": 350,
+          "current_bytes": 562057,
+          "peak_bytes": 569426
+        },
+        {
+          "step": 400,
+          "current_bytes": 635384,
+          "peak_bytes": 642031
+        },
+        {
+          "step": 450,
+          "current_bytes": 714433,
+          "peak_bytes": 721802
+        },
+        {
+          "step": 500,
+          "current_bytes": 801771,
+          "peak_bytes": 808427
+        },
+        {
+          "step": 550,
+          "current_bytes": 880495,
+          "peak_bytes": 887864
+        },
+        {
+          "step": 600,
+          "current_bytes": 954634,
+          "peak_bytes": 961251
+        },
+        {
+          "step": 650,
+          "current_bytes": 1033694,
+          "peak_bytes": 1041063
+        },
+        {
+          "step": 700,
+          "current_bytes": 1110739,
+          "peak_bytes": 1117398
+        },
+        {
+          "step": 750,
+          "current_bytes": 1189099,
+          "peak_bytes": 1196468
+        },
+        {
+          "step": 800,
+          "current_bytes": 1263048,
+          "peak_bytes": 1269701
+        },
+        {
+          "step": 850,
+          "current_bytes": 1341913,
+          "peak_bytes": 1349282
+        },
+        {
+          "step": 900,
+          "current_bytes": 1415895,
+          "peak_bytes": 1422554
+        },
+        {
+          "step": 950,
+          "current_bytes": 1520924,
+          "peak_bytes": 1528293
+        },
+        {
+          "step": 1000,
+          "current_bytes": 1594961,
+          "peak_bytes": 1601624
+        },
+        {
+          "step": 1050,
+          "current_bytes": 1673761,
+          "peak_bytes": 1681130
+        },
+        {
+          "step": 1100,
+          "current_bytes": 1747848,
+          "peak_bytes": 1754507
+        },
+        {
+          "step": 1150,
+          "current_bytes": 1826443,
+          "peak_bytes": 1833812
+        },
+        {
+          "step": 1200,
+          "current_bytes": 1900612,
+          "peak_bytes": 1907256
+        },
+        {
+          "step": 1250,
+          "current_bytes": 1979038,
+          "peak_bytes": 1986407
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2053434,
+          "peak_bytes": 2060091
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2132781,
+          "peak_bytes": 2140150
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2212951,
+          "peak_bytes": 2219586
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2291161,
+          "peak_bytes": 2298530
+        },
+        {
+          "step": 1500,
+          "current_bytes": 2365230,
+          "peak_bytes": 2371868
+        },
+        {
+          "step": 1550,
+          "current_bytes": 2444348,
+          "peak_bytes": 2451717
+        },
+        {
+          "step": 1600,
+          "current_bytes": 2517654,
+          "peak_bytes": 2524319
+        },
+        {
+          "step": 1650,
+          "current_bytes": 2596077,
+          "peak_bytes": 2603446
+        },
+        {
+          "step": 1700,
+          "current_bytes": 2670213,
+          "peak_bytes": 2676854
+        },
+        {
+          "step": 1750,
+          "current_bytes": 2749533,
+          "peak_bytes": 2756902
+        },
+        {
+          "step": 1800,
+          "current_bytes": 2823436,
+          "peak_bytes": 2830086
+        },
+        {
+          "step": 1850,
+          "current_bytes": 2953941,
+          "peak_bytes": 2961310
+        },
+        {
+          "step": 1900,
+          "current_bytes": 3027818,
+          "peak_bytes": 3034431
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3107428,
+          "peak_bytes": 3114797
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3181395,
+          "peak_bytes": 3188034
+        },
+        {
+          "step": 2050,
+          "current_bytes": 3260180,
+          "peak_bytes": 3267549
+        },
+        {
+          "step": 2100,
+          "current_bytes": 3334052,
+          "peak_bytes": 3340696
+        },
+        {
+          "step": 2150,
+          "current_bytes": 3412115,
+          "peak_bytes": 3419484
+        },
+        {
+          "step": 2200,
+          "current_bytes": 3485928,
+          "peak_bytes": 3492560
+        },
+        {
+          "step": 2250,
+          "current_bytes": 3565635,
+          "peak_bytes": 3573004
+        },
+        {
+          "step": 2300,
+          "current_bytes": 3639556,
+          "peak_bytes": 3646200
+        },
+        {
+          "step": 2350,
+          "current_bytes": 3718174,
+          "peak_bytes": 3725543
+        },
+        {
+          "step": 2400,
+          "current_bytes": 3791856,
+          "peak_bytes": 3798485
+        },
+        {
+          "step": 2450,
+          "current_bytes": 3870105,
+          "peak_bytes": 3877474
+        },
+        {
+          "step": 2500,
+          "current_bytes": 3945644,
+          "peak_bytes": 3952290
+        },
+        {
+          "step": 2550,
+          "current_bytes": 4024265,
+          "peak_bytes": 4031634
+        },
+        {
+          "step": 2600,
+          "current_bytes": 4098090,
+          "peak_bytes": 4104711
+        },
+        {
+          "step": 2650,
+          "current_bytes": 4176644,
+          "peak_bytes": 4184013
+        },
+        {
+          "step": 2700,
+          "current_bytes": 4250644,
+          "peak_bytes": 4257297
+        },
+        {
+          "step": 2750,
+          "current_bytes": 4342004,
+          "peak_bytes": 4349373
+        },
+        {
+          "step": 2800,
+          "current_bytes": 4415263,
+          "peak_bytes": 4421866
+        },
+        {
+          "step": 2850,
+          "current_bytes": 4495248,
+          "peak_bytes": 4502617
+        },
+        {
+          "step": 2900,
+          "current_bytes": 4569367,
+          "peak_bytes": 4576005
+        },
+        {
+          "step": 2950,
+          "current_bytes": 4647877,
+          "peak_bytes": 4655246
+        },
+        {
+          "step": 3000,
+          "current_bytes": 4722055,
+          "peak_bytes": 4728690
+        },
+        {
+          "step": 3050,
+          "current_bytes": 4801016,
+          "peak_bytes": 4808385
+        },
+        {
+          "step": 3100,
+          "current_bytes": 4874824,
+          "peak_bytes": 4881477
+        },
+        {
+          "step": 3150,
+          "current_bytes": 4953507,
+          "peak_bytes": 4960876
+        },
+        {
+          "step": 3200,
+          "current_bytes": 5028933,
+          "peak_bytes": 5035565
+        },
+        {
+          "step": 3250,
+          "current_bytes": 5107271,
+          "peak_bytes": 5114640
+        },
+        {
+          "step": 3300,
+          "current_bytes": 5181397,
+          "peak_bytes": 5188050
+        },
+        {
+          "step": 3350,
+          "current_bytes": 5260052,
+          "peak_bytes": 5267421
+        },
+        {
+          "step": 3400,
+          "current_bytes": 5334284,
+          "peak_bytes": 5340925
+        },
+        {
+          "step": 3450,
+          "current_bytes": 5412618,
+          "peak_bytes": 5419987
+        },
+        {
+          "step": 3500,
+          "current_bytes": 5486662,
+          "peak_bytes": 5493277
+        },
+        {
+          "step": 3550,
+          "current_bytes": 5565152,
+          "peak_bytes": 5572521
+        },
+        {
+          "step": 3600,
+          "current_bytes": 5641003,
+          "peak_bytes": 5647639
+        },
+        {
+          "step": 3650,
+          "current_bytes": 5823490,
+          "peak_bytes": 5858105
+        },
+        {
+          "step": 3700,
+          "current_bytes": 5897419,
+          "peak_bytes": 5904052
+        },
+        {
+          "step": 3750,
+          "current_bytes": 5975977,
+          "peak_bytes": 5983346
+        },
+        {
+          "step": 3800,
+          "current_bytes": 6050036,
+          "peak_bytes": 6056662
+        },
+        {
+          "step": 3850,
+          "current_bytes": 6128521,
+          "peak_bytes": 6135890
+        },
+        {
+          "step": 3900,
+          "current_bytes": 6202707,
+          "peak_bytes": 6209349
+        },
+        {
+          "step": 3950,
+          "current_bytes": 6281053,
+          "peak_bytes": 6288422
+        },
+        {
+          "step": 4000,
+          "current_bytes": 6354862,
+          "peak_bytes": 6361488
+        },
+        {
+          "step": 4050,
+          "current_bytes": 6436986,
+          "peak_bytes": 6444355
+        },
+        {
+          "step": 4100,
+          "current_bytes": 6512537,
+          "peak_bytes": 6519111
+        },
+        {
+          "step": 4150,
+          "current_bytes": 6592633,
+          "peak_bytes": 6600002
+        },
+        {
+          "step": 4200,
+          "current_bytes": 6668259,
+          "peak_bytes": 6674836
+        },
+        {
+          "step": 4250,
+          "current_bytes": 6748539,
+          "peak_bytes": 6755908
+        },
+        {
+          "step": 4300,
+          "current_bytes": 6823907,
+          "peak_bytes": 6830472
+        },
+        {
+          "step": 4350,
+          "current_bytes": 6903960,
+          "peak_bytes": 6911329
+        },
+        {
+          "step": 4400,
+          "current_bytes": 7075164,
+          "peak_bytes": 7082533
+        },
+        {
+          "step": 4450,
+          "current_bytes": 7333183,
+          "peak_bytes": 7340552
+        },
+        {
+          "step": 4500,
+          "current_bytes": 7582219,
+          "peak_bytes": 7589772
+        },
+        {
+          "step": 4550,
+          "current_bytes": 7831043,
+          "peak_bytes": 7838596
+        },
+        {
+          "step": 4600,
+          "current_bytes": 8079895,
+          "peak_bytes": 8087448
+        },
+        {
+          "step": 4650,
+          "current_bytes": 8355512,
+          "peak_bytes": 8363065
+        },
+        {
+          "step": 4700,
+          "current_bytes": 8604107,
+          "peak_bytes": 8611660
+        },
+        {
+          "step": 4750,
+          "current_bytes": 8852975,
+          "peak_bytes": 8860528
+        },
+        {
+          "step": 4800,
+          "current_bytes": 9101734,
+          "peak_bytes": 9109287
+        },
+        {
+          "step": 4850,
+          "current_bytes": 9350691,
+          "peak_bytes": 9358244
+        },
+        {
+          "step": 4900,
+          "current_bytes": 9599700,
+          "peak_bytes": 9607253
+        },
+        {
+          "step": 4950,
+          "current_bytes": 9848183,
+          "peak_bytes": 9855736
+        },
+        {
+          "step": 5000,
+          "current_bytes": 10097092,
+          "peak_bytes": 10104645
+        },
+        {
+          "step": 5050,
+          "current_bytes": 10345423,
+          "peak_bytes": 10352976
+        },
+        {
+          "step": 5100,
+          "current_bytes": 10594672,
+          "peak_bytes": 10602225
+        },
+        {
+          "step": 5150,
+          "current_bytes": 10843354,
+          "peak_bytes": 10850907
+        },
+        {
+          "step": 5200,
+          "current_bytes": 11091988,
+          "peak_bytes": 11099541
+        },
+        {
+          "step": 5250,
+          "current_bytes": 11340816,
+          "peak_bytes": 11348369
+        },
+        {
+          "step": 5300,
+          "current_bytes": 11588935,
+          "peak_bytes": 11596488
+        },
+        {
+          "step": 5350,
+          "current_bytes": 11837452,
+          "peak_bytes": 11845005
+        },
+        {
+          "step": 5400,
+          "current_bytes": 12085672,
+          "peak_bytes": 12093225
+        },
+        {
+          "step": 5450,
+          "current_bytes": 12326209,
+          "peak_bytes": 12333762
+        },
+        {
+          "step": 5500,
+          "current_bytes": 12575740,
+          "peak_bytes": 12583293
+        },
+        {
+          "step": 5550,
+          "current_bytes": 12825495,
+          "peak_bytes": 12833048
+        },
+        {
+          "step": 5600,
+          "current_bytes": 13073958,
+          "peak_bytes": 13081511
+        },
+        {
+          "step": 5650,
+          "current_bytes": 13323168,
+          "peak_bytes": 13330721
+        },
+        {
+          "step": 5700,
+          "current_bytes": 13571300,
+          "peak_bytes": 13578853
+        },
+        {
+          "step": 5750,
+          "current_bytes": 13820333,
+          "peak_bytes": 13827886
+        },
+        {
+          "step": 5800,
+          "current_bytes": 14070084,
+          "peak_bytes": 14077637
+        },
+        {
+          "step": 5850,
+          "current_bytes": 14319277,
+          "peak_bytes": 14326830
+        },
+        {
+          "step": 5900,
+          "current_bytes": 14568694,
+          "peak_bytes": 14576247
+        },
+        {
+          "step": 5950,
+          "current_bytes": 14812764,
+          "peak_bytes": 14820317
+        },
+        {
+          "step": 6000,
+          "current_bytes": 15060990,
+          "peak_bytes": 15068543
+        },
+        {
+          "step": 6050,
+          "current_bytes": 15360362,
+          "peak_bytes": 15367915
+        },
+        {
+          "step": 6100,
+          "current_bytes": 15609205,
+          "peak_bytes": 15616758
+        },
+        {
+          "step": 6150,
+          "current_bytes": 15857235,
+          "peak_bytes": 15864788
+        },
+        {
+          "step": 6200,
+          "current_bytes": 16103437,
+          "peak_bytes": 16110990
+        },
+        {
+          "step": 6250,
+          "current_bytes": 16352080,
+          "peak_bytes": 16359633
+        },
+        {
+          "step": 6300,
+          "current_bytes": 16600705,
+          "peak_bytes": 16608258
+        },
+        {
+          "step": 6350,
+          "current_bytes": 16849416,
+          "peak_bytes": 16856969
+        },
+        {
+          "step": 6400,
+          "current_bytes": 17096022,
+          "peak_bytes": 17103575
+        },
+        {
+          "step": 6450,
+          "current_bytes": 17340878,
+          "peak_bytes": 17348431
+        },
+        {
+          "step": 6500,
+          "current_bytes": 17587529,
+          "peak_bytes": 17595082
+        },
+        {
+          "step": 6550,
+          "current_bytes": 17833637,
+          "peak_bytes": 17841190
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 0.135439,
+        "mean_s": 4.1e-05,
+        "min_s": 2.1e-05,
+        "max_s": 0.000214
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.541605,
+        "mean_s": 0.000775,
+        "min_s": 0.000472,
+        "max_s": 0.004826
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.003883,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 3.5e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0195,
+      "query_success_rate": 0.0195,
+      "nonempty_success_rate": 0.0195,
+      "reconstruction_quality": 0.0195,
+      "semantic_reconstruction_quality": 0.0195,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 6472,
+    "text_pairs": []
+  },
+  {
+    "backend": "tiered",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 2.3562,
+      "answer_length": 9293,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 21168895,
+      "final_size": 63,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 81532,
+          "peak_bytes": 88901
+        },
+        {
+          "step": 100,
+          "current_bytes": 166545,
+          "peak_bytes": 172772
+        },
+        {
+          "step": 150,
+          "current_bytes": 265538,
+          "peak_bytes": 272731
+        },
+        {
+          "step": 200,
+          "current_bytes": 352718,
+          "peak_bytes": 358982
+        },
+        {
+          "step": 250,
+          "current_bytes": 449200,
+          "peak_bytes": 456393
+        },
+        {
+          "step": 300,
+          "current_bytes": 537645,
+          "peak_bytes": 543938
+        },
+        {
+          "step": 350,
+          "current_bytes": 629554,
+          "peak_bytes": 636747
+        },
+        {
+          "step": 400,
+          "current_bytes": 714124,
+          "peak_bytes": 720435
+        },
+        {
+          "step": 450,
+          "current_bytes": 804367,
+          "peak_bytes": 811560
+        },
+        {
+          "step": 500,
+          "current_bytes": 908952,
+          "peak_bytes": 915272
+        },
+        {
+          "step": 550,
+          "current_bytes": 998858,
+          "peak_bytes": 1006051
+        },
+        {
+          "step": 600,
+          "current_bytes": 1083493,
+          "peak_bytes": 1089774
+        },
+        {
+          "step": 650,
+          "current_bytes": 1173854,
+          "peak_bytes": 1181047
+        },
+        {
+          "step": 700,
+          "current_bytes": 1261745,
+          "peak_bytes": 1268068
+        },
+        {
+          "step": 750,
+          "current_bytes": 1351812,
+          "peak_bytes": 1359005
+        },
+        {
+          "step": 800,
+          "current_bytes": 1436270,
+          "peak_bytes": 1442587
+        },
+        {
+          "step": 850,
+          "current_bytes": 1526479,
+          "peak_bytes": 1533672
+        },
+        {
+          "step": 900,
+          "current_bytes": 1624277,
+          "peak_bytes": 1630600
+        },
+        {
+          "step": 950,
+          "current_bytes": 1740239,
+          "peak_bytes": 1747432
+        },
+        {
+          "step": 1000,
+          "current_bytes": 1824781,
+          "peak_bytes": 1831108
+        },
+        {
+          "step": 1050,
+          "current_bytes": 1915407,
+          "peak_bytes": 1922600
+        },
+        {
+          "step": 1100,
+          "current_bytes": 1999875,
+          "peak_bytes": 2006198
+        },
+        {
+          "step": 1150,
+          "current_bytes": 2090062,
+          "peak_bytes": 2097255
+        },
+        {
+          "step": 1200,
+          "current_bytes": 2175111,
+          "peak_bytes": 2181419
+        },
+        {
+          "step": 1250,
+          "current_bytes": 2265012,
+          "peak_bytes": 2272205
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2350017,
+          "peak_bytes": 2356338
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2440623,
+          "peak_bytes": 2447816
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2531464,
+          "peak_bytes": 2537763
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2621308,
+          "peak_bytes": 2628501
+        },
+        {
+          "step": 1500,
+          "current_bytes": 2705493,
+          "peak_bytes": 2711795
+        },
+        {
+          "step": 1550,
+          "current_bytes": 2796188,
+          "peak_bytes": 2803381
+        },
+        {
+          "step": 1600,
+          "current_bytes": 2880798,
+          "peak_bytes": 2887127
+        },
+        {
+          "step": 1650,
+          "current_bytes": 2996664,
+          "peak_bytes": 3010683
+        },
+        {
+          "step": 1700,
+          "current_bytes": 3081272,
+          "peak_bytes": 3087577
+        },
+        {
+          "step": 1750,
+          "current_bytes": 3172079,
+          "peak_bytes": 3179272
+        },
+        {
+          "step": 1800,
+          "current_bytes": 3256799,
+          "peak_bytes": 3263113
+        },
+        {
+          "step": 1850,
+          "current_bytes": 3398968,
+          "peak_bytes": 3406161
+        },
+        {
+          "step": 1900,
+          "current_bytes": 3483428,
+          "peak_bytes": 3489705
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3574495,
+          "peak_bytes": 3581688
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3659256,
+          "peak_bytes": 3665559
+        },
+        {
+          "step": 2050,
+          "current_bytes": 3748692,
+          "peak_bytes": 3755885
+        },
+        {
+          "step": 2100,
+          "current_bytes": 3833135,
+          "peak_bytes": 3839443
+        },
+        {
+          "step": 2150,
+          "current_bytes": 3922882,
+          "peak_bytes": 3930075
+        },
+        {
+          "step": 2200,
+          "current_bytes": 4007488,
+          "peak_bytes": 4013784
+        },
+        {
+          "step": 2250,
+          "current_bytes": 4097998,
+          "peak_bytes": 4105191
+        },
+        {
+          "step": 2300,
+          "current_bytes": 4182816,
+          "peak_bytes": 4189124
+        },
+        {
+          "step": 2350,
+          "current_bytes": 4272459,
+          "peak_bytes": 4279652
+        },
+        {
+          "step": 2400,
+          "current_bytes": 4356914,
+          "peak_bytes": 4363207
+        },
+        {
+          "step": 2450,
+          "current_bytes": 4446416,
+          "peak_bytes": 4453609
+        },
+        {
+          "step": 2500,
+          "current_bytes": 4532247,
+          "peak_bytes": 4538557
+        },
+        {
+          "step": 2550,
+          "current_bytes": 4622044,
+          "peak_bytes": 4629237
+        },
+        {
+          "step": 2600,
+          "current_bytes": 4706786,
+          "peak_bytes": 4713071
+        },
+        {
+          "step": 2650,
+          "current_bytes": 4797016,
+          "peak_bytes": 4804209
+        },
+        {
+          "step": 2700,
+          "current_bytes": 4882180,
+          "peak_bytes": 4888497
+        },
+        {
+          "step": 2750,
+          "current_bytes": 4985334,
+          "peak_bytes": 4992527
+        },
+        {
+          "step": 2800,
+          "current_bytes": 5070074,
+          "peak_bytes": 5076341
+        },
+        {
+          "step": 2850,
+          "current_bytes": 5160965,
+          "peak_bytes": 5168158
+        },
+        {
+          "step": 2900,
+          "current_bytes": 5245546,
+          "peak_bytes": 5251848
+        },
+        {
+          "step": 2950,
+          "current_bytes": 5335259,
+          "peak_bytes": 5342452
+        },
+        {
+          "step": 3000,
+          "current_bytes": 5419783,
+          "peak_bytes": 5426082
+        },
+        {
+          "step": 3050,
+          "current_bytes": 5509341,
+          "peak_bytes": 5516534
+        },
+        {
+          "step": 3100,
+          "current_bytes": 5593982,
+          "peak_bytes": 5600299
+        },
+        {
+          "step": 3150,
+          "current_bytes": 5683660,
+          "peak_bytes": 5690853
+        },
+        {
+          "step": 3200,
+          "current_bytes": 5769763,
+          "peak_bytes": 5776059
+        },
+        {
+          "step": 3250,
+          "current_bytes": 5911276,
+          "peak_bytes": 5918469
+        },
+        {
+          "step": 3300,
+          "current_bytes": 5995948,
+          "peak_bytes": 6002265
+        },
+        {
+          "step": 3350,
+          "current_bytes": 6085885,
+          "peak_bytes": 6093078
+        },
+        {
+          "step": 3400,
+          "current_bytes": 6170554,
+          "peak_bytes": 6176859
+        },
+        {
+          "step": 3450,
+          "current_bytes": 6260223,
+          "peak_bytes": 6267416
+        },
+        {
+          "step": 3500,
+          "current_bytes": 6345193,
+          "peak_bytes": 6351472
+        },
+        {
+          "step": 3550,
+          "current_bytes": 6434686,
+          "peak_bytes": 6441879
+        },
+        {
+          "step": 3600,
+          "current_bytes": 6521241,
+          "peak_bytes": 6527541
+        },
+        {
+          "step": 3650,
+          "current_bytes": 6715040,
+          "peak_bytes": 6747426
+        },
+        {
+          "step": 3700,
+          "current_bytes": 6799543,
+          "peak_bytes": 6805840
+        },
+        {
+          "step": 3750,
+          "current_bytes": 6889723,
+          "peak_bytes": 6896916
+        },
+        {
+          "step": 3800,
+          "current_bytes": 6974587,
+          "peak_bytes": 6980877
+        },
+        {
+          "step": 3850,
+          "current_bytes": 7064215,
+          "peak_bytes": 7071408
+        },
+        {
+          "step": 3900,
+          "current_bytes": 7148737,
+          "peak_bytes": 7155043
+        },
+        {
+          "step": 3950,
+          "current_bytes": 7238880,
+          "peak_bytes": 7246073
+        },
+        {
+          "step": 4000,
+          "current_bytes": 7323648,
+          "peak_bytes": 7329938
+        },
+        {
+          "step": 4050,
+          "current_bytes": 7416841,
+          "peak_bytes": 7424034
+        },
+        {
+          "step": 4100,
+          "current_bytes": 7502707,
+          "peak_bytes": 7508945
+        },
+        {
+          "step": 4150,
+          "current_bytes": 7594180,
+          "peak_bytes": 7601373
+        },
+        {
+          "step": 4200,
+          "current_bytes": 7680139,
+          "peak_bytes": 7686380
+        },
+        {
+          "step": 4250,
+          "current_bytes": 7771367,
+          "peak_bytes": 7778560
+        },
+        {
+          "step": 4300,
+          "current_bytes": 7857468,
+          "peak_bytes": 7863697
+        },
+        {
+          "step": 4350,
+          "current_bytes": 7948969,
+          "peak_bytes": 7956162
+        },
+        {
+          "step": 4400,
+          "current_bytes": 8132681,
+          "peak_bytes": 8139874
+        },
+        {
+          "step": 4450,
+          "current_bytes": 8397671,
+          "peak_bytes": 8404860
+        },
+        {
+          "step": 4500,
+          "current_bytes": 8662598,
+          "peak_bytes": 8669851
+        },
+        {
+          "step": 4550,
+          "current_bytes": 8928450,
+          "peak_bytes": 8935703
+        },
+        {
+          "step": 4600,
+          "current_bytes": 9194040,
+          "peak_bytes": 9201293
+        },
+        {
+          "step": 4650,
+          "current_bytes": 9485606,
+          "peak_bytes": 9492859
+        },
+        {
+          "step": 4700,
+          "current_bytes": 9750987,
+          "peak_bytes": 9758240
+        },
+        {
+          "step": 4750,
+          "current_bytes": 10015897,
+          "peak_bytes": 10023150
+        },
+        {
+          "step": 4800,
+          "current_bytes": 10281544,
+          "peak_bytes": 10288797
+        },
+        {
+          "step": 4850,
+          "current_bytes": 10547537,
+          "peak_bytes": 10554790
+        },
+        {
+          "step": 4900,
+          "current_bytes": 10813050,
+          "peak_bytes": 10820303
+        },
+        {
+          "step": 4950,
+          "current_bytes": 11078852,
+          "peak_bytes": 11086105
+        },
+        {
+          "step": 5000,
+          "current_bytes": 11345014,
+          "peak_bytes": 11352267
+        },
+        {
+          "step": 5050,
+          "current_bytes": 11610220,
+          "peak_bytes": 11617473
+        },
+        {
+          "step": 5100,
+          "current_bytes": 11875397,
+          "peak_bytes": 11882650
+        },
+        {
+          "step": 5150,
+          "current_bytes": 12139266,
+          "peak_bytes": 12146519
+        },
+        {
+          "step": 5200,
+          "current_bytes": 12404226,
+          "peak_bytes": 12411479
+        },
+        {
+          "step": 5250,
+          "current_bytes": 12670345,
+          "peak_bytes": 12677598
+        },
+        {
+          "step": 5300,
+          "current_bytes": 12935946,
+          "peak_bytes": 12943199
+        },
+        {
+          "step": 5350,
+          "current_bytes": 13202050,
+          "peak_bytes": 13209303
+        },
+        {
+          "step": 5400,
+          "current_bytes": 13467765,
+          "peak_bytes": 13475018
+        },
+        {
+          "step": 5450,
+          "current_bytes": 13724774,
+          "peak_bytes": 13732027
+        },
+        {
+          "step": 5500,
+          "current_bytes": 13990353,
+          "peak_bytes": 13997606
+        },
+        {
+          "step": 5550,
+          "current_bytes": 14255876,
+          "peak_bytes": 14263129
+        },
+        {
+          "step": 5600,
+          "current_bytes": 14521340,
+          "peak_bytes": 14528593
+        },
+        {
+          "step": 5650,
+          "current_bytes": 14787058,
+          "peak_bytes": 14794311
+        },
+        {
+          "step": 5700,
+          "current_bytes": 15052461,
+          "peak_bytes": 15059714
+        },
+        {
+          "step": 5750,
+          "current_bytes": 15317972,
+          "peak_bytes": 15325225
+        },
+        {
+          "step": 5800,
+          "current_bytes": 15583548,
+          "peak_bytes": 15590801
+        },
+        {
+          "step": 5850,
+          "current_bytes": 15850139,
+          "peak_bytes": 15857392
+        },
+        {
+          "step": 5900,
+          "current_bytes": 16115539,
+          "peak_bytes": 16122792
+        },
+        {
+          "step": 5950,
+          "current_bytes": 16376747,
+          "peak_bytes": 16384000
+        },
+        {
+          "step": 6000,
+          "current_bytes": 16642065,
+          "peak_bytes": 16649318
+        },
+        {
+          "step": 6050,
+          "current_bytes": 16960311,
+          "peak_bytes": 16967564
+        },
+        {
+          "step": 6100,
+          "current_bytes": 17226065,
+          "peak_bytes": 17233318
+        },
+        {
+          "step": 6150,
+          "current_bytes": 17491636,
+          "peak_bytes": 17498889
+        },
+        {
+          "step": 6200,
+          "current_bytes": 17755285,
+          "peak_bytes": 17762538
+        },
+        {
+          "step": 6250,
+          "current_bytes": 18019709,
+          "peak_bytes": 18026962
+        },
+        {
+          "step": 6300,
+          "current_bytes": 18285623,
+          "peak_bytes": 18292876
+        },
+        {
+          "step": 6350,
+          "current_bytes": 18655907,
+          "peak_bytes": 18663160
+        },
+        {
+          "step": 6400,
+          "current_bytes": 18919122,
+          "peak_bytes": 18926375
+        },
+        {
+          "step": 6450,
+          "current_bytes": 19180761,
+          "peak_bytes": 19188014
+        },
+        {
+          "step": 6500,
+          "current_bytes": 19443829,
+          "peak_bytes": 19451082
+        },
+        {
+          "step": 6550,
+          "current_bytes": 19706749,
+          "peak_bytes": 19714002
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 0.140455,
+        "mean_s": 4.3e-05,
+        "min_s": 2.2e-05,
+        "max_s": 0.001012
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.07389,
+        "mean_s": 0.000632,
+        "min_s": 0.000482,
+        "max_s": 0.002819
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.010288,
+        "mean_s": 3e-06,
+        "min_s": 2e-06,
+        "max_s": 5.6e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0192,
+      "query_success_rate": 1.0,
+      "nonempty_success_rate": 0.0192,
+      "reconstruction_quality": 0.0192,
+      "semantic_reconstruction_quality": 0.0192,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 6473,
+    "text_pairs": []
+  },
+  {
+    "backend": "fifo",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 2.5455,
+      "answer_length": 9237,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 19206229,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 80380,
+          "peak_bytes": 87749
+        },
+        {
+          "step": 100,
+          "current_bytes": 159136,
+          "peak_bytes": 165707
+        },
+        {
+          "step": 150,
+          "current_bytes": 242350,
+          "peak_bytes": 249719
+        },
+        {
+          "step": 200,
+          "current_bytes": 316683,
+          "peak_bytes": 323283
+        },
+        {
+          "step": 250,
+          "current_bytes": 398211,
+          "peak_bytes": 405580
+        },
+        {
+          "step": 300,
+          "current_bytes": 472909,
+          "peak_bytes": 479538
+        },
+        {
+          "step": 350,
+          "current_bytes": 553495,
+          "peak_bytes": 560864
+        },
+        {
+          "step": 400,
+          "current_bytes": 627020,
+          "peak_bytes": 633667
+        },
+        {
+          "step": 450,
+          "current_bytes": 705935,
+          "peak_bytes": 713304
+        },
+        {
+          "step": 500,
+          "current_bytes": 786641,
+          "peak_bytes": 793297
+        },
+        {
+          "step": 550,
+          "current_bytes": 864809,
+          "peak_bytes": 872178
+        },
+        {
+          "step": 600,
+          "current_bytes": 938456,
+          "peak_bytes": 945073
+        },
+        {
+          "step": 650,
+          "current_bytes": 1017772,
+          "peak_bytes": 1025141
+        },
+        {
+          "step": 700,
+          "current_bytes": 1095101,
+          "peak_bytes": 1101760
+        },
+        {
+          "step": 750,
+          "current_bytes": 1173859,
+          "peak_bytes": 1181228
+        },
+        {
+          "step": 800,
+          "current_bytes": 1247645,
+          "peak_bytes": 1254298
+        },
+        {
+          "step": 850,
+          "current_bytes": 1326371,
+          "peak_bytes": 1333740
+        },
+        {
+          "step": 900,
+          "current_bytes": 1400241,
+          "peak_bytes": 1406900
+        },
+        {
+          "step": 950,
+          "current_bytes": 1491875,
+          "peak_bytes": 1499244
+        },
+        {
+          "step": 1000,
+          "current_bytes": 1565670,
+          "peak_bytes": 1572333
+        },
+        {
+          "step": 1050,
+          "current_bytes": 1644427,
+          "peak_bytes": 1651796
+        },
+        {
+          "step": 1100,
+          "current_bytes": 1718650,
+          "peak_bytes": 1725309
+        },
+        {
+          "step": 1150,
+          "current_bytes": 1797416,
+          "peak_bytes": 1804785
+        },
+        {
+          "step": 1200,
+          "current_bytes": 1871805,
+          "peak_bytes": 1878449
+        },
+        {
+          "step": 1250,
+          "current_bytes": 1950130,
+          "peak_bytes": 1957499
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2024482,
+          "peak_bytes": 2031139
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2103600,
+          "peak_bytes": 2110969
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2183963,
+          "peak_bytes": 2190598
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2262034,
+          "peak_bytes": 2269403
+        },
+        {
+          "step": 1500,
+          "current_bytes": 2335400,
+          "peak_bytes": 2342038
+        },
+        {
+          "step": 1550,
+          "current_bytes": 2414380,
+          "peak_bytes": 2421749
+        },
+        {
+          "step": 1600,
+          "current_bytes": 2488107,
+          "peak_bytes": 2494772
+        },
+        {
+          "step": 1650,
+          "current_bytes": 2566304,
+          "peak_bytes": 2573673
+        },
+        {
+          "step": 1700,
+          "current_bytes": 2640008,
+          "peak_bytes": 2646649
+        },
+        {
+          "step": 1750,
+          "current_bytes": 2719663,
+          "peak_bytes": 2727032
+        },
+        {
+          "step": 1800,
+          "current_bytes": 2793618,
+          "peak_bytes": 2800268
+        },
+        {
+          "step": 1850,
+          "current_bytes": 2897664,
+          "peak_bytes": 2905033
+        },
+        {
+          "step": 1900,
+          "current_bytes": 2971302,
+          "peak_bytes": 2977915
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3050851,
+          "peak_bytes": 3058220
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3124851,
+          "peak_bytes": 3131490
+        },
+        {
+          "step": 2050,
+          "current_bytes": 3203264,
+          "peak_bytes": 3210633
+        },
+        {
+          "step": 2100,
+          "current_bytes": 3277441,
+          "peak_bytes": 3284085
+        },
+        {
+          "step": 2150,
+          "current_bytes": 3355941,
+          "peak_bytes": 3363310
+        },
+        {
+          "step": 2200,
+          "current_bytes": 3430085,
+          "peak_bytes": 3436717
+        },
+        {
+          "step": 2250,
+          "current_bytes": 3509621,
+          "peak_bytes": 3516990
+        },
+        {
+          "step": 2300,
+          "current_bytes": 3583358,
+          "peak_bytes": 3590002
+        },
+        {
+          "step": 2350,
+          "current_bytes": 3661690,
+          "peak_bytes": 3669059
+        },
+        {
+          "step": 2400,
+          "current_bytes": 3734934,
+          "peak_bytes": 3741563
+        },
+        {
+          "step": 2450,
+          "current_bytes": 3813257,
+          "peak_bytes": 3820626
+        },
+        {
+          "step": 2500,
+          "current_bytes": 3888084,
+          "peak_bytes": 3894730
+        },
+        {
+          "step": 2550,
+          "current_bytes": 3966370,
+          "peak_bytes": 3973739
+        },
+        {
+          "step": 2600,
+          "current_bytes": 4040395,
+          "peak_bytes": 4047016
+        },
+        {
+          "step": 2650,
+          "current_bytes": 4119015,
+          "peak_bytes": 4126384
+        },
+        {
+          "step": 2700,
+          "current_bytes": 4192496,
+          "peak_bytes": 4199149
+        },
+        {
+          "step": 2750,
+          "current_bytes": 4283836,
+          "peak_bytes": 4291205
+        },
+        {
+          "step": 2800,
+          "current_bytes": 4357538,
+          "peak_bytes": 4364141
+        },
+        {
+          "step": 2850,
+          "current_bytes": 4437696,
+          "peak_bytes": 4445065
+        },
+        {
+          "step": 2900,
+          "current_bytes": 4511521,
+          "peak_bytes": 4518159
+        },
+        {
+          "step": 2950,
+          "current_bytes": 4589742,
+          "peak_bytes": 4597111
+        },
+        {
+          "step": 3000,
+          "current_bytes": 4663424,
+          "peak_bytes": 4670059
+        },
+        {
+          "step": 3050,
+          "current_bytes": 4741792,
+          "peak_bytes": 4749161
+        },
+        {
+          "step": 3100,
+          "current_bytes": 4815774,
+          "peak_bytes": 4822427
+        },
+        {
+          "step": 3150,
+          "current_bytes": 4894225,
+          "peak_bytes": 4901594
+        },
+        {
+          "step": 3200,
+          "current_bytes": 4969703,
+          "peak_bytes": 4976335
+        },
+        {
+          "step": 3250,
+          "current_bytes": 5048014,
+          "peak_bytes": 5055383
+        },
+        {
+          "step": 3300,
+          "current_bytes": 5121885,
+          "peak_bytes": 5128538
+        },
+        {
+          "step": 3350,
+          "current_bytes": 5200240,
+          "peak_bytes": 5207609
+        },
+        {
+          "step": 3400,
+          "current_bytes": 5274274,
+          "peak_bytes": 5280915
+        },
+        {
+          "step": 3450,
+          "current_bytes": 5352666,
+          "peak_bytes": 5360035
+        },
+        {
+          "step": 3500,
+          "current_bytes": 5426602,
+          "peak_bytes": 5433217
+        },
+        {
+          "step": 3550,
+          "current_bytes": 5504717,
+          "peak_bytes": 5512086
+        },
+        {
+          "step": 3600,
+          "current_bytes": 5579968,
+          "peak_bytes": 5586604
+        },
+        {
+          "step": 3650,
+          "current_bytes": 5710548,
+          "peak_bytes": 5745015
+        },
+        {
+          "step": 3700,
+          "current_bytes": 5783960,
+          "peak_bytes": 5790593
+        },
+        {
+          "step": 3750,
+          "current_bytes": 5862740,
+          "peak_bytes": 5870109
+        },
+        {
+          "step": 3800,
+          "current_bytes": 5936608,
+          "peak_bytes": 5943234
+        },
+        {
+          "step": 3850,
+          "current_bytes": 6015483,
+          "peak_bytes": 6022852
+        },
+        {
+          "step": 3900,
+          "current_bytes": 6089690,
+          "peak_bytes": 6096332
+        },
+        {
+          "step": 3950,
+          "current_bytes": 6168103,
+          "peak_bytes": 6175472
+        },
+        {
+          "step": 4000,
+          "current_bytes": 6242072,
+          "peak_bytes": 6248698
+        },
+        {
+          "step": 4050,
+          "current_bytes": 6324154,
+          "peak_bytes": 6331523
+        },
+        {
+          "step": 4100,
+          "current_bytes": 6399573,
+          "peak_bytes": 6406147
+        },
+        {
+          "step": 4150,
+          "current_bytes": 6479476,
+          "peak_bytes": 6486845
+        },
+        {
+          "step": 4200,
+          "current_bytes": 6555470,
+          "peak_bytes": 6562047
+        },
+        {
+          "step": 4250,
+          "current_bytes": 6635941,
+          "peak_bytes": 6643310
+        },
+        {
+          "step": 4300,
+          "current_bytes": 6711629,
+          "peak_bytes": 6718194
+        },
+        {
+          "step": 4350,
+          "current_bytes": 6791876,
+          "peak_bytes": 6799245
+        },
+        {
+          "step": 4400,
+          "current_bytes": 6963791,
+          "peak_bytes": 6971160
+        },
+        {
+          "step": 4450,
+          "current_bytes": 7222409,
+          "peak_bytes": 7229778
+        },
+        {
+          "step": 4500,
+          "current_bytes": 7471244,
+          "peak_bytes": 7478613
+        },
+        {
+          "step": 4550,
+          "current_bytes": 7719956,
+          "peak_bytes": 7727325
+        },
+        {
+          "step": 4600,
+          "current_bytes": 7968440,
+          "peak_bytes": 7975809
+        },
+        {
+          "step": 4650,
+          "current_bytes": 8243032,
+          "peak_bytes": 8250401
+        },
+        {
+          "step": 4700,
+          "current_bytes": 8491559,
+          "peak_bytes": 8498928
+        },
+        {
+          "step": 4750,
+          "current_bytes": 8740050,
+          "peak_bytes": 8747419
+        },
+        {
+          "step": 4800,
+          "current_bytes": 8988582,
+          "peak_bytes": 8995951
+        },
+        {
+          "step": 4850,
+          "current_bytes": 9237471,
+          "peak_bytes": 9244840
+        },
+        {
+          "step": 4900,
+          "current_bytes": 9487409,
+          "peak_bytes": 9494778
+        },
+        {
+          "step": 4950,
+          "current_bytes": 9736463,
+          "peak_bytes": 9743832
+        },
+        {
+          "step": 5000,
+          "current_bytes": 9985028,
+          "peak_bytes": 9992397
+        },
+        {
+          "step": 5050,
+          "current_bytes": 10233650,
+          "peak_bytes": 10241019
+        },
+        {
+          "step": 5100,
+          "current_bytes": 10482916,
+          "peak_bytes": 10490285
+        },
+        {
+          "step": 5150,
+          "current_bytes": 10731316,
+          "peak_bytes": 10738685
+        },
+        {
+          "step": 5200,
+          "current_bytes": 10979940,
+          "peak_bytes": 10987309
+        },
+        {
+          "step": 5250,
+          "current_bytes": 11228676,
+          "peak_bytes": 11236045
+        },
+        {
+          "step": 5300,
+          "current_bytes": 11477711,
+          "peak_bytes": 11485080
+        },
+        {
+          "step": 5350,
+          "current_bytes": 11727118,
+          "peak_bytes": 11734487
+        },
+        {
+          "step": 5400,
+          "current_bytes": 11976092,
+          "peak_bytes": 11983461
+        },
+        {
+          "step": 5450,
+          "current_bytes": 12216892,
+          "peak_bytes": 12224261
+        },
+        {
+          "step": 5500,
+          "current_bytes": 12466137,
+          "peak_bytes": 12473506
+        },
+        {
+          "step": 5550,
+          "current_bytes": 12715335,
+          "peak_bytes": 12722704
+        },
+        {
+          "step": 5600,
+          "current_bytes": 12964173,
+          "peak_bytes": 12971542
+        },
+        {
+          "step": 5650,
+          "current_bytes": 13213998,
+          "peak_bytes": 13221367
+        },
+        {
+          "step": 5700,
+          "current_bytes": 13462799,
+          "peak_bytes": 13470168
+        },
+        {
+          "step": 5750,
+          "current_bytes": 13711683,
+          "peak_bytes": 13719052
+        },
+        {
+          "step": 5800,
+          "current_bytes": 13960447,
+          "peak_bytes": 13967816
+        },
+        {
+          "step": 5850,
+          "current_bytes": 14208524,
+          "peak_bytes": 14215893
+        },
+        {
+          "step": 5900,
+          "current_bytes": 14457094,
+          "peak_bytes": 14464463
+        },
+        {
+          "step": 5950,
+          "current_bytes": 14701561,
+          "peak_bytes": 14708930
+        },
+        {
+          "step": 6000,
+          "current_bytes": 14950007,
+          "peak_bytes": 14957376
+        },
+        {
+          "step": 6050,
+          "current_bytes": 15251266,
+          "peak_bytes": 15258635
+        },
+        {
+          "step": 6100,
+          "current_bytes": 15500198,
+          "peak_bytes": 15507567
+        },
+        {
+          "step": 6150,
+          "current_bytes": 15749577,
+          "peak_bytes": 15756946
+        },
+        {
+          "step": 6200,
+          "current_bytes": 15995847,
+          "peak_bytes": 16003216
+        },
+        {
+          "step": 6250,
+          "current_bytes": 16244970,
+          "peak_bytes": 16252339
+        },
+        {
+          "step": 6300,
+          "current_bytes": 16494520,
+          "peak_bytes": 16501889
+        },
+        {
+          "step": 6350,
+          "current_bytes": 16743654,
+          "peak_bytes": 16751023
+        },
+        {
+          "step": 6400,
+          "current_bytes": 16989837,
+          "peak_bytes": 16997206
+        },
+        {
+          "step": 6450,
+          "current_bytes": 17234387,
+          "peak_bytes": 17241756
+        },
+        {
+          "step": 6500,
+          "current_bytes": 17480306,
+          "peak_bytes": 17487859
+        },
+        {
+          "step": 6550,
+          "current_bytes": 17730557,
+          "peak_bytes": 17738110
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 0.14343,
+        "mean_s": 4.4e-05,
+        "min_s": 2.2e-05,
+        "max_s": 0.000831
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.248931,
+        "mean_s": 0.000686,
+        "min_s": 0.000468,
+        "max_s": 0.003666
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.001575,
+        "mean_s": 0.0,
+        "min_s": 0.0,
+        "max_s": 3.9e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0195,
+      "query_success_rate": 0.0195,
+      "nonempty_success_rate": 0.0195,
+      "reconstruction_quality": 0.0195,
+      "semantic_reconstruction_quality": 0.0195,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 3216,
+    "text_pairs": []
+  },
+  {
+    "backend": "random",
+    "config": {
+      "question": "Survey the state of memory management in multi-agent LLM systems",
+      "branching_factor": 3,
+      "max_depth": 7,
+      "response_tokens": 256,
+      "mode": "synthetic",
+      "seed": 42
+    },
+    "task": {
+      "total_agents": 3280,
+      "tree_depth": 7,
+      "elapsed_seconds": 2.761,
+      "answer_length": 9346,
+      "empty_generations": 0
+    },
+    "memory": {
+      "peak_bytes": 19197699,
+      "final_size": 64,
+      "samples": [
+        {
+          "step": 50,
+          "current_bytes": 79237,
+          "peak_bytes": 86606
+        },
+        {
+          "step": 100,
+          "current_bytes": 157319,
+          "peak_bytes": 163892
+        },
+        {
+          "step": 150,
+          "current_bytes": 239514,
+          "peak_bytes": 246883
+        },
+        {
+          "step": 200,
+          "current_bytes": 314206,
+          "peak_bytes": 320744
+        },
+        {
+          "step": 250,
+          "current_bytes": 396342,
+          "peak_bytes": 403711
+        },
+        {
+          "step": 300,
+          "current_bytes": 470594,
+          "peak_bytes": 477225
+        },
+        {
+          "step": 350,
+          "current_bytes": 551008,
+          "peak_bytes": 558377
+        },
+        {
+          "step": 400,
+          "current_bytes": 625040,
+          "peak_bytes": 631689
+        },
+        {
+          "step": 450,
+          "current_bytes": 703733,
+          "peak_bytes": 711102
+        },
+        {
+          "step": 500,
+          "current_bytes": 784653,
+          "peak_bytes": 791311
+        },
+        {
+          "step": 550,
+          "current_bytes": 863077,
+          "peak_bytes": 870446
+        },
+        {
+          "step": 600,
+          "current_bytes": 937457,
+          "peak_bytes": 944076
+        },
+        {
+          "step": 650,
+          "current_bytes": 1016177,
+          "peak_bytes": 1023546
+        },
+        {
+          "step": 700,
+          "current_bytes": 1093401,
+          "peak_bytes": 1100062
+        },
+        {
+          "step": 750,
+          "current_bytes": 1172075,
+          "peak_bytes": 1179444
+        },
+        {
+          "step": 800,
+          "current_bytes": 1245644,
+          "peak_bytes": 1252299
+        },
+        {
+          "step": 850,
+          "current_bytes": 1324158,
+          "peak_bytes": 1331527
+        },
+        {
+          "step": 900,
+          "current_bytes": 1398120,
+          "peak_bytes": 1404781
+        },
+        {
+          "step": 950,
+          "current_bytes": 1490141,
+          "peak_bytes": 1497510
+        },
+        {
+          "step": 1000,
+          "current_bytes": 1564162,
+          "peak_bytes": 1570827
+        },
+        {
+          "step": 1050,
+          "current_bytes": 1643421,
+          "peak_bytes": 1650790
+        },
+        {
+          "step": 1100,
+          "current_bytes": 1716836,
+          "peak_bytes": 1723497
+        },
+        {
+          "step": 1150,
+          "current_bytes": 1795914,
+          "peak_bytes": 1803283
+        },
+        {
+          "step": 1200,
+          "current_bytes": 1870176,
+          "peak_bytes": 1876822
+        },
+        {
+          "step": 1250,
+          "current_bytes": 1948732,
+          "peak_bytes": 1956101
+        },
+        {
+          "step": 1300,
+          "current_bytes": 2022640,
+          "peak_bytes": 2029299
+        },
+        {
+          "step": 1350,
+          "current_bytes": 2102413,
+          "peak_bytes": 2109782
+        },
+        {
+          "step": 1400,
+          "current_bytes": 2182755,
+          "peak_bytes": 2189392
+        },
+        {
+          "step": 1450,
+          "current_bytes": 2261007,
+          "peak_bytes": 2268376
+        },
+        {
+          "step": 1500,
+          "current_bytes": 2334550,
+          "peak_bytes": 2341190
+        },
+        {
+          "step": 1550,
+          "current_bytes": 2413949,
+          "peak_bytes": 2421318
+        },
+        {
+          "step": 1600,
+          "current_bytes": 2487784,
+          "peak_bytes": 2494451
+        },
+        {
+          "step": 1650,
+          "current_bytes": 2566391,
+          "peak_bytes": 2573760
+        },
+        {
+          "step": 1700,
+          "current_bytes": 2640335,
+          "peak_bytes": 2646978
+        },
+        {
+          "step": 1750,
+          "current_bytes": 2719826,
+          "peak_bytes": 2727195
+        },
+        {
+          "step": 1800,
+          "current_bytes": 2793995,
+          "peak_bytes": 2800647
+        },
+        {
+          "step": 1850,
+          "current_bytes": 2898052,
+          "peak_bytes": 2905421
+        },
+        {
+          "step": 1900,
+          "current_bytes": 2971880,
+          "peak_bytes": 2978495
+        },
+        {
+          "step": 1950,
+          "current_bytes": 3051552,
+          "peak_bytes": 3058921
+        },
+        {
+          "step": 2000,
+          "current_bytes": 3125841,
+          "peak_bytes": 3132482
+        },
+        {
+          "step": 2050,
+          "current_bytes": 3203910,
+          "peak_bytes": 3211279
+        },
+        {
+          "step": 2100,
+          "current_bytes": 3277545,
+          "peak_bytes": 3284191
+        },
+        {
+          "step": 2150,
+          "current_bytes": 3355842,
+          "peak_bytes": 3363211
+        },
+        {
+          "step": 2200,
+          "current_bytes": 3429380,
+          "peak_bytes": 3436014
+        },
+        {
+          "step": 2250,
+          "current_bytes": 3508852,
+          "peak_bytes": 3516221
+        },
+        {
+          "step": 2300,
+          "current_bytes": 3582759,
+          "peak_bytes": 3589405
+        },
+        {
+          "step": 2350,
+          "current_bytes": 3660844,
+          "peak_bytes": 3668213
+        },
+        {
+          "step": 2400,
+          "current_bytes": 3734988,
+          "peak_bytes": 3741619
+        },
+        {
+          "step": 2450,
+          "current_bytes": 3813236,
+          "peak_bytes": 3820605
+        },
+        {
+          "step": 2500,
+          "current_bytes": 3887965,
+          "peak_bytes": 3894613
+        },
+        {
+          "step": 2550,
+          "current_bytes": 3966000,
+          "peak_bytes": 3973369
+        },
+        {
+          "step": 2600,
+          "current_bytes": 4039871,
+          "peak_bytes": 4046494
+        },
+        {
+          "step": 2650,
+          "current_bytes": 4118209,
+          "peak_bytes": 4125578
+        },
+        {
+          "step": 2700,
+          "current_bytes": 4192309,
+          "peak_bytes": 4198964
+        },
+        {
+          "step": 2750,
+          "current_bytes": 4283806,
+          "peak_bytes": 4291175
+        },
+        {
+          "step": 2800,
+          "current_bytes": 4357430,
+          "peak_bytes": 4364035
+        },
+        {
+          "step": 2850,
+          "current_bytes": 4437106,
+          "peak_bytes": 4444475
+        },
+        {
+          "step": 2900,
+          "current_bytes": 4510959,
+          "peak_bytes": 4517599
+        },
+        {
+          "step": 2950,
+          "current_bytes": 4589598,
+          "peak_bytes": 4596967
+        },
+        {
+          "step": 3000,
+          "current_bytes": 4663617,
+          "peak_bytes": 4670254
+        },
+        {
+          "step": 3050,
+          "current_bytes": 4742263,
+          "peak_bytes": 4749632
+        },
+        {
+          "step": 3100,
+          "current_bytes": 4816290,
+          "peak_bytes": 4822945
+        },
+        {
+          "step": 3150,
+          "current_bytes": 4894670,
+          "peak_bytes": 4902039
+        },
+        {
+          "step": 3200,
+          "current_bytes": 4970346,
+          "peak_bytes": 4976980
+        },
+        {
+          "step": 3250,
+          "current_bytes": 5048645,
+          "peak_bytes": 5056014
+        },
+        {
+          "step": 3300,
+          "current_bytes": 5122565,
+          "peak_bytes": 5129220
+        },
+        {
+          "step": 3350,
+          "current_bytes": 5201054,
+          "peak_bytes": 5208423
+        },
+        {
+          "step": 3400,
+          "current_bytes": 5275029,
+          "peak_bytes": 5281672
+        },
+        {
+          "step": 3450,
+          "current_bytes": 5353421,
+          "peak_bytes": 5360790
+        },
+        {
+          "step": 3500,
+          "current_bytes": 5426969,
+          "peak_bytes": 5433586
+        },
+        {
+          "step": 3550,
+          "current_bytes": 5505381,
+          "peak_bytes": 5512750
+        },
+        {
+          "step": 3600,
+          "current_bytes": 5581167,
+          "peak_bytes": 5587805
+        },
+        {
+          "step": 3650,
+          "current_bytes": 5712067,
+          "peak_bytes": 5746446
+        },
+        {
+          "step": 3700,
+          "current_bytes": 5785914,
+          "peak_bytes": 5792549
+        },
+        {
+          "step": 3750,
+          "current_bytes": 5864669,
+          "peak_bytes": 5872038
+        },
+        {
+          "step": 3800,
+          "current_bytes": 5938725,
+          "peak_bytes": 5945353
+        },
+        {
+          "step": 3850,
+          "current_bytes": 6017406,
+          "peak_bytes": 6024775
+        },
+        {
+          "step": 3900,
+          "current_bytes": 6091488,
+          "peak_bytes": 6098132
+        },
+        {
+          "step": 3950,
+          "current_bytes": 6170547,
+          "peak_bytes": 6177916
+        },
+        {
+          "step": 4000,
+          "current_bytes": 6244590,
+          "peak_bytes": 6251218
+        },
+        {
+          "step": 4050,
+          "current_bytes": 6326453,
+          "peak_bytes": 6333822
+        },
+        {
+          "step": 4100,
+          "current_bytes": 6402044,
+          "peak_bytes": 6408620
+        },
+        {
+          "step": 4150,
+          "current_bytes": 6481791,
+          "peak_bytes": 6489160
+        },
+        {
+          "step": 4200,
+          "current_bytes": 6557531,
+          "peak_bytes": 6564110
+        },
+        {
+          "step": 4250,
+          "current_bytes": 6636896,
+          "peak_bytes": 6644265
+        },
+        {
+          "step": 4300,
+          "current_bytes": 6712174,
+          "peak_bytes": 6718741
+        },
+        {
+          "step": 4350,
+          "current_bytes": 6792135,
+          "peak_bytes": 6799504
+        },
+        {
+          "step": 4400,
+          "current_bytes": 6963007,
+          "peak_bytes": 6970376
+        },
+        {
+          "step": 4450,
+          "current_bytes": 7221541,
+          "peak_bytes": 7228910
+        },
+        {
+          "step": 4500,
+          "current_bytes": 7471044,
+          "peak_bytes": 7478413
+        },
+        {
+          "step": 4550,
+          "current_bytes": 7719580,
+          "peak_bytes": 7726949
+        },
+        {
+          "step": 4600,
+          "current_bytes": 7968131,
+          "peak_bytes": 7975500
+        },
+        {
+          "step": 4650,
+          "current_bytes": 8242448,
+          "peak_bytes": 8249817
+        },
+        {
+          "step": 4700,
+          "current_bytes": 8491626,
+          "peak_bytes": 8498995
+        },
+        {
+          "step": 4750,
+          "current_bytes": 8740296,
+          "peak_bytes": 8747665
+        },
+        {
+          "step": 4800,
+          "current_bytes": 8989395,
+          "peak_bytes": 8996764
+        },
+        {
+          "step": 4850,
+          "current_bytes": 9239039,
+          "peak_bytes": 9246408
+        },
+        {
+          "step": 4900,
+          "current_bytes": 9487687,
+          "peak_bytes": 9495056
+        },
+        {
+          "step": 4950,
+          "current_bytes": 9736351,
+          "peak_bytes": 9743720
+        },
+        {
+          "step": 5000,
+          "current_bytes": 9984110,
+          "peak_bytes": 9991479
+        },
+        {
+          "step": 5050,
+          "current_bytes": 10232589,
+          "peak_bytes": 10239958
+        },
+        {
+          "step": 5100,
+          "current_bytes": 10481282,
+          "peak_bytes": 10488651
+        },
+        {
+          "step": 5150,
+          "current_bytes": 10730835,
+          "peak_bytes": 10738204
+        },
+        {
+          "step": 5200,
+          "current_bytes": 10979484,
+          "peak_bytes": 10986853
+        },
+        {
+          "step": 5250,
+          "current_bytes": 11227597,
+          "peak_bytes": 11234966
+        },
+        {
+          "step": 5300,
+          "current_bytes": 11475711,
+          "peak_bytes": 11483080
+        },
+        {
+          "step": 5350,
+          "current_bytes": 11723733,
+          "peak_bytes": 11731102
+        },
+        {
+          "step": 5400,
+          "current_bytes": 11973095,
+          "peak_bytes": 11980464
+        },
+        {
+          "step": 5450,
+          "current_bytes": 12214602,
+          "peak_bytes": 12221971
+        },
+        {
+          "step": 5500,
+          "current_bytes": 12463803,
+          "peak_bytes": 12471172
+        },
+        {
+          "step": 5550,
+          "current_bytes": 12712909,
+          "peak_bytes": 12720278
+        },
+        {
+          "step": 5600,
+          "current_bytes": 12961871,
+          "peak_bytes": 12969240
+        },
+        {
+          "step": 5650,
+          "current_bytes": 13210320,
+          "peak_bytes": 13217689
+        },
+        {
+          "step": 5700,
+          "current_bytes": 13459490,
+          "peak_bytes": 13466859
+        },
+        {
+          "step": 5750,
+          "current_bytes": 13708220,
+          "peak_bytes": 13715589
+        },
+        {
+          "step": 5800,
+          "current_bytes": 13956973,
+          "peak_bytes": 13964342
+        },
+        {
+          "step": 5850,
+          "current_bytes": 14205581,
+          "peak_bytes": 14212950
+        },
+        {
+          "step": 5900,
+          "current_bytes": 14454650,
+          "peak_bytes": 14462019
+        },
+        {
+          "step": 5950,
+          "current_bytes": 14698778,
+          "peak_bytes": 14706147
+        },
+        {
+          "step": 6000,
+          "current_bytes": 14947607,
+          "peak_bytes": 14954976
+        },
+        {
+          "step": 6050,
+          "current_bytes": 15248999,
+          "peak_bytes": 15256368
+        },
+        {
+          "step": 6100,
+          "current_bytes": 15497401,
+          "peak_bytes": 15504770
+        },
+        {
+          "step": 6150,
+          "current_bytes": 15746236,
+          "peak_bytes": 15753605
+        },
+        {
+          "step": 6200,
+          "current_bytes": 15993530,
+          "peak_bytes": 16000899
+        },
+        {
+          "step": 6250,
+          "current_bytes": 16242055,
+          "peak_bytes": 16249424
+        },
+        {
+          "step": 6300,
+          "current_bytes": 16491195,
+          "peak_bytes": 16498564
+        },
+        {
+          "step": 6350,
+          "current_bytes": 16739313,
+          "peak_bytes": 16746682
+        },
+        {
+          "step": 6400,
+          "current_bytes": 16984393,
+          "peak_bytes": 16991762
+        },
+        {
+          "step": 6450,
+          "current_bytes": 17230585,
+          "peak_bytes": 17237954
+        },
+        {
+          "step": 6500,
+          "current_bytes": 17477253,
+          "peak_bytes": 17484622
+        },
+        {
+          "step": 6550,
+          "current_bytes": 17723334,
+          "peak_bytes": 17730703
+        }
+      ]
+    },
+    "latency": {
+      "spawn": {
+        "operation": "spawn",
+        "count": 3280,
+        "total_s": 0.128387,
+        "mean_s": 3.9e-05,
+        "min_s": 2.1e-05,
+        "max_s": 0.000657
+      },
+      "execute": {
+        "operation": "execute",
+        "count": 3280,
+        "total_s": 2.480621,
+        "mean_s": 0.000756,
+        "min_s": 0.000472,
+        "max_s": 0.005924
+      },
+      "query": {
+        "operation": "query",
+        "count": 3282,
+        "total_s": 0.001954,
+        "mean_s": 1e-06,
+        "min_s": 0.0,
+        "max_s": 4.8e-05
+      }
+    },
+    "quality": {
+      "cache_hit_rate": 0.0195,
+      "query_success_rate": 0.0195,
+      "nonempty_success_rate": 0.0195,
+      "reconstruction_quality": 0.0195,
+      "semantic_reconstruction_quality": 0.0195,
+      "info_preservation_ratio": 0.0
+    },
+    "evictions": 3216,
+    "text_pairs": []
+  }
+]

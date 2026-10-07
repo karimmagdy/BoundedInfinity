@@ -79,7 +79,8 @@ class RunMetrics:
     task_result: dict[str, Any]
 
     # Memory
-    peak_memory_bytes: int = 0
+    peak_memory_bytes: int = 0       # whole run, including the measurement loop
+    run_peak_memory_bytes: int = 0   # swarm run only (the working-state figure)
     memory_samples: list[dict[str, Any]] = field(default_factory=list)
 
     # Latency
@@ -112,6 +113,7 @@ class RunMetrics:
             "task": self.task_result,
             "memory": {
                 "peak_bytes": self.peak_memory_bytes,
+                "run_peak_bytes": self.run_peak_memory_bytes,
                 "final_size": self.final_memory_size,
                 "samples": self.memory_samples,
             },
@@ -353,6 +355,10 @@ def run_instrumented(
 
     # Run the task
     task_result = run_research_task(instrumented, config)
+    # Peak during the swarm run alone. Querying every agent below builds large
+    # reconstructions and TF-IDF matrices, which would otherwise dominate the
+    # peak and say nothing about the backend's working-state memory.
+    _, run_peak_mem = tracemalloc.get_traced_memory()
 
     # Measure reconstruction quality (query every agent)
     pairs: list[dict[str, Any]] = []
@@ -397,6 +403,7 @@ def run_instrumented(
             "empty_generations": task_result.empty_generations,
         },
         peak_memory_bytes=peak_mem,
+        run_peak_memory_bytes=run_peak_mem,
         memory_samples=[
             {
                 "step": s.step,

@@ -1,0 +1,194 @@
+{
+  "experiment": "sweep",
+  "started_utc": "2026-10-06T09:07:22+00:00",
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.4",
+    "endpoint_host": "azure-openai-endpoint (redacted)",
+    "reasoning_effort": "none",
+    "temperature": "provider default (GPT-5.x rejects overrides)",
+    "max_retries": 4
+  },
+  "spec": {
+    "arms": [
+      "bic",
+      "bic-aw",
+      "lru",
+      "lru-summary-aw-pin"
+    ],
+    "caches": [
+      8,
+      16,
+      32
+    ],
+    "seeds": [
+      42,
+      123,
+      7,
+      2024,
+      314
+    ],
+    "unbounded": true,
+    "branching": 3,
+    "depth": 3,
+    "max_tokens": 150,
+    "max_calls": 150,
+    "question": "Survey the state of memory management in multi-agent LLM systems"
+  },
+  "units": [
+    "bic|16|42|bfs",
+    "bic-aw|16|42|bfs",
+    "lru|16|42|bfs",
+    "lru-summary-aw-pin|16|42|bfs",
+    "bic|16|123|bfs",
+    "bic-aw|16|123|bfs",
+    "lru|16|123|bfs",
+    "lru-summary-aw-pin|16|123|bfs",
+    "bic|16|7|bfs",
+    "bic-aw|16|7|bfs",
+    "lru|16|7|bfs",
+    "lru-summary-aw-pin|16|7|bfs",
+    "bic|16|2024|bfs",
+    "bic-aw|16|2024|bfs",
+    "lru|16|2024|bfs",
+    "lru-summary-aw-pin|16|2024|bfs",
+    "bic|16|314|bfs",
+    "bic-aw|16|314|bfs",
+    "lru|16|314|bfs",
+    "lru-summary-aw-pin|16|314|bfs"
+  ],
+  "code_sha256": "5334676d09cede48602d9e0e02ff9a9dc30ce6af55534853598df79ac44eed65",
+  "python": "3.13.16",
+  "pythonhashseed": "0",
+  "host": "vm",
+  "resumes": [
+    {
+      "experiment": "sweep",
+      "started_utc": "2026-10-06T11:06:24+00:00",
+      "llm": {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "endpoint_host": "azure-openai-endpoint (redacted)",
+        "reasoning_effort": "none",
+        "temperature": "provider default (GPT-5.x rejects overrides)",
+        "max_retries": 4
+      },
+      "spec": {
+        "arms": [
+          "bic",
+          "bic-aw",
+          "lru",
+          "lru-summary-aw-pin"
+        ],
+        "caches": [
+          8,
+          16,
+          32
+        ],
+        "seeds": [
+          42,
+          123,
+          7,
+          2024,
+          314
+        ],
+        "unbounded": true,
+        "branching": 3,
+        "depth": 3,
+        "max_tokens": 150,
+        "max_calls": 150,
+        "question": "Survey the state of memory management in multi-agent LLM systems"
+      },
+      "units": [
+        "bic|16|42|bfs",
+        "bic-aw|16|42|bfs",
+        "lru|16|42|bfs",
+        "lru-summary-aw-pin|16|42|bfs",
+        "bic|16|123|bfs",
+        "bic-aw|16|123|bfs",
+        "lru|16|123|bfs",
+        "lru-summary-aw-pin|16|123|bfs",
+        "bic|16|7|bfs",
+        "bic-aw|16|7|bfs",
+        "lru|16|7|bfs",
+        "lru-summary-aw-pin|16|7|bfs",
+        "bic|16|2024|bfs",
+        "bic-aw|16|2024|bfs",
+        "lru|16|2024|bfs",
+        "lru-summary-aw-pin|16|2024|bfs",
+        "bic|16|314|bfs",
+        "bic-aw|16|314|bfs",
+        "lru|16|314|bfs",
+        "lru-summary-aw-pin|16|314|bfs"
+      ],
+      "code_sha256": "ed89d7341a593fcc494d7b1dc9a1d7d5e3a08ec3508facc5ec111078e0798f87",
+      "python": "3.13.16",
+      "pythonhashseed": "0",
+      "host": "vm"
+    },
+    {
+      "experiment": "sweep",
+      "started_utc": "2026-10-06T11:38:27+00:00",
+      "llm": {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "endpoint_host": "azure-openai-endpoint (redacted)",
+        "reasoning_effort": "none",
+        "temperature": "provider default (GPT-5.x rejects overrides)",
+        "max_retries": 4
+      },
+      "spec": {
+        "arms": [
+          "bic",
+          "bic-aw",
+          "lru",
+          "lru-summary-aw-pin"
+        ],
+        "caches": [
+          8,
+          16,
+          32
+        ],
+        "seeds": [
+          42,
+          123,
+          7,
+          2024,
+          314
+        ],
+        "unbounded": true,
+        "branching": 3,
+        "depth": 3,
+        "max_tokens": 150,
+        "max_calls": 150,
+        "question": "Survey the state of memory management in multi-agent LLM systems"
+      },
+      "units": [
+        "bic|16|42|bfs",
+        "bic-aw|16|42|bfs",
+        "lru|16|42|bfs",
+        "lru-summary-aw-pin|16|42|bfs",
+        "bic|16|123|bfs",
+        "bic-aw|16|123|bfs",
+        "lru|16|123|bfs",
+        "lru-summary-aw-pin|16|123|bfs",
+        "bic|16|7|bfs",
+        "bic-aw|16|7|bfs",
+        "lru|16|7|bfs",
+        "lru-summary-aw-pin|16|7|bfs",
+        "bic|16|2024|bfs",
+        "bic-aw|16|2024|bfs",
+        "lru|16|2024|bfs",
+        "lru-summary-aw-pin|16|2024|bfs",
+        "bic|16|314|bfs",
+        "bic-aw|16|314|bfs",
+        "lru|16|314|bfs",
+        "lru-summary-aw-pin|16|314|bfs"
+      ],
+      "code_sha256": "ed89d7341a593fcc494d7b1dc9a1d7d5e3a08ec3508facc5ec111078e0798f87",
+      "python": "3.13.16",
+      "pythonhashseed": "0",
+      "host": "vm"
+    }
+  ]
+}

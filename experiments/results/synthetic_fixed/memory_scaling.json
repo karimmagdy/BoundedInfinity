@@ -1,0 +1,218 @@
+[
+  {
+    "backend": "bic-aw",
+    "depth": 3,
+    "agents": 40,
+    "cache_size": 64,
+    "run_peak_bytes": 255174,
+    "final_bytes": 247829,
+    "seconds": 0.02
+  },
+  {
+    "backend": "lru",
+    "depth": 3,
+    "agents": 40,
+    "cache_size": 64,
+    "run_peak_bytes": 223828,
+    "final_bytes": 216459,
+    "seconds": 0.02
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 3,
+    "agents": 40,
+    "cache_size": 64,
+    "run_peak_bytes": 225919,
+    "final_bytes": 218550,
+    "seconds": 0.02
+  },
+  {
+    "backend": "unbounded",
+    "depth": 3,
+    "agents": 40,
+    "cache_size": 64,
+    "run_peak_bytes": 223051,
+    "final_bytes": 215682,
+    "seconds": 0.02
+  },
+  {
+    "backend": "bic-aw",
+    "depth": 4,
+    "agents": 121,
+    "cache_size": 64,
+    "run_peak_bytes": 808674,
+    "final_bytes": 801481,
+    "seconds": 0.07
+  },
+  {
+    "backend": "lru",
+    "depth": 4,
+    "agents": 121,
+    "cache_size": 64,
+    "run_peak_bytes": 398366,
+    "final_bytes": 385802,
+    "seconds": 0.05
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 4,
+    "agents": 121,
+    "cache_size": 64,
+    "run_peak_bytes": 533502,
+    "final_bytes": 521104,
+    "seconds": 0.05
+  },
+  {
+    "backend": "unbounded",
+    "depth": 4,
+    "agents": 121,
+    "cache_size": 64,
+    "run_peak_bytes": 684726,
+    "final_bytes": 677173,
+    "seconds": 0.06
+  },
+  {
+    "backend": "bic-aw",
+    "depth": 5,
+    "agents": 364,
+    "cache_size": 64,
+    "run_peak_bytes": 2255360,
+    "final_bytes": 2172051,
+    "seconds": 0.22
+  },
+  {
+    "backend": "lru",
+    "depth": 5,
+    "agents": 364,
+    "cache_size": 64,
+    "run_peak_bytes": 498984,
+    "final_bytes": 484197,
+    "seconds": 0.14
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 5,
+    "agents": 364,
+    "cache_size": 64,
+    "run_peak_bytes": 775271,
+    "final_bytes": 762786,
+    "seconds": 0.18
+  },
+  {
+    "backend": "unbounded",
+    "depth": 5,
+    "agents": 364,
+    "cache_size": 64,
+    "run_peak_bytes": 2056150,
+    "final_bytes": 2048597,
+    "seconds": 0.17
+  },
+  {
+    "backend": "bic-aw",
+    "depth": 6,
+    "agents": 1093,
+    "cache_size": 64,
+    "run_peak_bytes": 3664670,
+    "final_bytes": 3645310,
+    "seconds": 0.74
+  },
+  {
+    "backend": "lru",
+    "depth": 6,
+    "agents": 1093,
+    "cache_size": 64,
+    "run_peak_bytes": 783426,
+    "final_bytes": 764267,
+    "seconds": 0.51
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 6,
+    "agents": 1093,
+    "cache_size": 64,
+    "run_peak_bytes": 1087511,
+    "final_bytes": 1072757,
+    "seconds": 0.45
+  },
+  {
+    "backend": "unbounded",
+    "depth": 6,
+    "agents": 1093,
+    "cache_size": 64,
+    "run_peak_bytes": 6119453,
+    "final_bytes": 6111900,
+    "seconds": 0.49
+  },
+  {
+    "backend": "bic-aw",
+    "depth": 7,
+    "agents": 3280,
+    "cache_size": 64,
+    "run_peak_bytes": 5594227,
+    "final_bytes": 5443722,
+    "seconds": 2.55
+  },
+  {
+    "backend": "lru",
+    "depth": 7,
+    "agents": 3280,
+    "cache_size": 64,
+    "run_peak_bytes": 1688713,
+    "final_bytes": 1648019,
+    "seconds": 1.42
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 7,
+    "agents": 3280,
+    "cache_size": 64,
+    "run_peak_bytes": 2158941,
+    "final_bytes": 2127012,
+    "seconds": 1.39
+  },
+  {
+    "backend": "unbounded",
+    "depth": 7,
+    "agents": 3280,
+    "cache_size": 64,
+    "run_peak_bytes": 18428800,
+    "final_bytes": 18421247,
+    "seconds": 1.35
+  },
+  {
+    "backend": "bic-aw",
+    "depth": 8,
+    "agents": 9841,
+    "cache_size": 64,
+    "run_peak_bytes": 10830452,
+    "final_bytes": 10584543,
+    "seconds": 11.91
+  },
+  {
+    "backend": "lru",
+    "depth": 8,
+    "agents": 9841,
+    "cache_size": 64,
+    "run_peak_bytes": 4517477,
+    "final_bytes": 4242752,
+    "seconds": 4.31
+  },
+  {
+    "backend": "lru-summary-aw-pin",
+    "depth": 8,
+    "agents": 9841,
+    "cache_size": 64,
+    "run_peak_bytes": 5169033,
+    "final_bytes": 4969601,
+    "seconds": 4.36
+  },
+  {
+    "backend": "unbounded",
+    "depth": 8,
+    "agents": 9841,
+    "cache_size": 64,
+    "run_peak_bytes": 55049664,
+    "final_bytes": 55042111,
+    "seconds": 5.0
+  }
+]

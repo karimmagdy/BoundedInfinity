@@ -1,0 +1,76 @@
+
+## Sweep (bfs)
+  ('bic', 16)                                   sem 0.624 ± 0.005 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic', 32)                                   sem 0.888 ± 0.009 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic', 8)                                    sem 0.453 ± 0.009 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 16)                                sem 0.666 ± 0.008 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 32)                                sem 0.893 ± 0.008 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 8)                                 sem 0.518 ± 0.004 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru', 16)                                   sem 0.400 ± 0.000 (n=5)  nonempty 0.400  qsucc 0.381
+  ('lru', 32)                                   sem 0.775 ± 0.000 (n=5)  nonempty 0.775  qsucc 0.738
+  ('lru', 8)                                    sem 0.200 ± 0.000 (n=5)  nonempty 0.200  qsucc 0.191
+  ('lru-summary-aw-pin', 16)                    sem 0.626 ± 0.007 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru-summary-aw-pin', 32)                    sem 0.864 ± 0.003 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru-summary-aw-pin', 8)                     sem 0.493 ± 0.006 (n=5)  nonempty 1.000  qsucc 1.000
+  ('unbounded', None)                           sem 1.000 ± 0.000 (n=5)  nonempty 1.000  qsucc 1.000
+
+### bic-aw (A) vs lru-summary-aw-pin (B)
+  cache 8 semantic: diff +0.025 ± 0.003, A wins 5/5 seeds, paired t p=0.002, Wilcoxon p=0.062
+  cache 8 nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+  cache 16 semantic: diff +0.040 ± 0.008, A wins 5/5 seeds, paired t p=0.006, Wilcoxon p=0.062
+  cache 16 nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+  cache 32 semantic: diff +0.029 ± 0.007, A wins 5/5 seeds, paired t p=0.016, Wilcoxon p=0.062
+  cache 32 nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+
+### bic-aw (A) vs bic (B)
+  cache 8: diff +0.065 ± 0.008, A wins 5/5 seeds, paired t p=0.001, Wilcoxon p=0.062
+  cache 16: diff +0.041 ± 0.005, A wins 5/5 seeds, paired t p=0.001, Wilcoxon p=0.062
+  cache 32: diff +0.004 ± 0.013, A wins 2/5 seeds, paired t p=0.744, Wilcoxon p=1.000
+
+### bic-aw (A) vs lru (B)
+  cache 8: diff +0.318 ± 0.004, A wins 5/5 seeds, paired t p=0.000, Wilcoxon p=0.062
+  cache 16: diff +0.266 ± 0.008, A wins 5/5 seeds, paired t p=0.000, Wilcoxon p=0.062
+  cache 32: diff +0.118 ± 0.008, A wins 5/5 seeds, paired t p=0.000, Wilcoxon p=0.062
+
+## Hash ablation
+  ('bic-hash', 16)                              sem 0.666 ± 0.008 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-hash', 32)                              sem 0.877 ± 0.007 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-hash', 8)                               sem 0.526 ± 0.007 (n=5)  nonempty 1.000  qsucc 1.000
+
+### bic-hash (A) vs sweep bic-aw (B)
+  cache 8: diff +0.008 ± 0.005, A wins 3/5 seeds, paired t p=0.216, Wilcoxon p=0.312
+  cache 16: diff +0.001 ± 0.007, A wins 3/5 seeds, paired t p=0.936, Wilcoxon p=1.000
+  cache 32: diff -0.016 ± 0.013, A wins 2/5 seeds, paired t p=0.277, Wilcoxon p=0.438
+
+## Access order (cache 16)
+  ('bic-aw', 16, 'bfs')                         sem 0.675 ± 0.011 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 16, 'dfs')                         sem 0.678 ± 0.012 (n=5)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 16, 'random')                      sem 0.683 ± 0.003 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru-summary-aw-pin', 16, 'bfs')             sem 0.630 ± 0.008 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru-summary-aw-pin', 16, 'dfs')             sem 0.648 ± 0.005 (n=5)  nonempty 1.000  qsucc 1.000
+  ('lru-summary-aw-pin', 16, 'random')          sem 0.635 ± 0.005 (n=5)  nonempty 1.000  qsucc 1.000
+
+### bic-aw (A) vs lru-summary-aw-pin (B) by order
+  bfs: diff +0.045 ± 0.008, A wins 5/5 seeds, paired t p=0.004, Wilcoxon p=0.062
+  bfs nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+  dfs: diff +0.029 ± 0.009, A wins 5/5 seeds, paired t p=0.032, Wilcoxon p=0.062
+  dfs nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+  random: diff +0.048 ± 0.006, A wins 5/5 seeds, paired t p=0.001, Wilcoxon p=0.062
+  random nonempty: diff +0.000 ± 0.000, A wins 0/5 seeds
+
+## Coding pilot
+  ('bic-aw', 2)                                 sem 0.154 ± 0.000 (n=3)  nonempty 0.154  qsucc 1.000
+  ('bic-aw', 4)                                 sem 0.553 ± 0.005 (n=3)  nonempty 1.000  qsucc 1.000
+  ('bic-aw', 8)                                 sem 0.787 ± 0.007 (n=3)  nonempty 1.000  qsucc 1.000
+  ('lru', 2)                                    sem 0.154 ± 0.000 (n=3)  nonempty 0.154  qsucc 0.133
+  ('lru', 4)                                    sem 0.308 ± 0.000 (n=3)  nonempty 0.308  qsucc 0.267
+  ('lru', 8)                                    sem 0.615 ± 0.000 (n=3)  nonempty 0.615  qsucc 0.533
+  ('lru-summary-aw-pin', 2)                     sem 0.215 ± 0.001 (n=3)  nonempty 0.308  qsucc 0.267
+  ('lru-summary-aw-pin', 4)                     sem 0.537 ± 0.009 (n=3)  nonempty 0.923  qsucc 0.800
+  ('lru-summary-aw-pin', 8)                     sem 0.769 ± 0.006 (n=3)  nonempty 1.000  qsucc 1.000
+  ('unbounded', None)                           sem 1.000 ± 0.000 (n=3)  nonempty 1.000  qsucc 1.000
+  pilot cache 2: diff -0.061 ± 0.001, A wins 0/3 seeds, paired t p=0.000, Wilcoxon p=0.250
+  pilot cache 4: diff +0.016 ± 0.009, A wins 2/3 seeds, paired t p=0.218, Wilcoxon p=0.500
+  pilot cache 8: diff +0.018 ± 0.005, A wins 3/3 seeds, paired t p=0.073, Wilcoxon p=0.250
+
+errors: 0 empty_gen: 0 runs: 140

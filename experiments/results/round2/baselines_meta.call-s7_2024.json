@@ -1,0 +1,47 @@
+{
+  "experiment": "baselines",
+  "started_utc": "2026-10-06T12:22:45+00:00",
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.4",
+    "endpoint_host": "azure-openai-endpoint (redacted)",
+    "reasoning_effort": "none",
+    "temperature": "provider default (GPT-5.x rejects overrides)",
+    "max_retries": 4
+  },
+  "spec": {
+    "arms": [
+      "lru-summary",
+      "lru-summary-aw",
+      "lru-pin"
+    ],
+    "caches": [
+      8
+    ],
+    "seeds": [
+      42,
+      123,
+      7,
+      2024,
+      314
+    ],
+    "unbounded": false,
+    "branching": 3,
+    "depth": 3,
+    "max_tokens": 150,
+    "max_calls": 150,
+    "question": "Survey the state of memory management in multi-agent LLM systems"
+  },
+  "units": [
+    "lru-summary|8|7|bfs",
+    "lru-summary-aw|8|7|bfs",
+    "lru-pin|8|7|bfs",
+    "lru-summary|8|2024|bfs",
+    "lru-summary-aw|8|2024|bfs",
+    "lru-pin|8|2024|bfs"
+  ],
+  "code_sha256": "fc9bb2c958db39c7c6f85e10a1bd7e61823eb3d93d78853bc9887516b22ec24b",
+  "python": "3.13.16",
+  "pythonhashseed": "0",
+  "host": "vm"
+}

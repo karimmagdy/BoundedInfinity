@@ -241,7 +241,8 @@ def experiment_stress(quick: bool = False) -> list[dict[str, Any]]:
         wall_time = time.perf_counter() - t0
         results.append(metrics.to_dict())
 
-        print(f"mem={metrics.peak_memory_bytes // 1024:6d}KB "
+        print(f"run_mem={metrics.run_peak_memory_bytes // 1024:6d}KB "
+              f"mem={metrics.peak_memory_bytes // 1024:6d}KB "
               f"time={wall_time:.2f}s "
               f"recon={metrics.reconstruction_quality:.3f}")
 

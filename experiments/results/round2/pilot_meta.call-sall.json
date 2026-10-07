@@ -1,0 +1,215 @@
+{
+  "experiment": "pilot",
+  "started_utc": "2026-10-06T09:07:22+00:00",
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.4",
+    "endpoint_host": "azure-openai-endpoint (redacted)",
+    "reasoning_effort": "none",
+    "temperature": "provider default (GPT-5.x rejects overrides)",
+    "max_retries": 4
+  },
+  "spec": {
+    "arms": [
+      "bic-aw",
+      "lru",
+      "lru-summary-aw-pin"
+    ],
+    "caches": [
+      2,
+      4,
+      8
+    ],
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "unbounded": true,
+    "branching": 3,
+    "depth": 2,
+    "max_tokens": 120,
+    "max_calls": 60,
+    "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion."
+  },
+  "units": [
+    "unbounded|None|42|bfs",
+    "bic-aw|2|42|bfs",
+    "lru|2|42|bfs",
+    "lru-summary-aw-pin|2|42|bfs",
+    "bic-aw|4|42|bfs",
+    "lru|4|42|bfs",
+    "lru-summary-aw-pin|4|42|bfs",
+    "bic-aw|8|42|bfs",
+    "lru|8|42|bfs",
+    "lru-summary-aw-pin|8|42|bfs",
+    "unbounded|None|123|bfs",
+    "bic-aw|2|123|bfs",
+    "lru|2|123|bfs",
+    "lru-summary-aw-pin|2|123|bfs",
+    "bic-aw|4|123|bfs",
+    "lru|4|123|bfs",
+    "lru-summary-aw-pin|4|123|bfs",
+    "bic-aw|8|123|bfs",
+    "lru|8|123|bfs",
+    "lru-summary-aw-pin|8|123|bfs",
+    "unbounded|None|7|bfs",
+    "bic-aw|2|7|bfs",
+    "lru|2|7|bfs",
+    "lru-summary-aw-pin|2|7|bfs",
+    "bic-aw|4|7|bfs",
+    "lru|4|7|bfs",
+    "lru-summary-aw-pin|4|7|bfs",
+    "bic-aw|8|7|bfs",
+    "lru|8|7|bfs",
+    "lru-summary-aw-pin|8|7|bfs"
+  ],
+  "code_sha256": "5334676d09cede48602d9e0e02ff9a9dc30ce6af55534853598df79ac44eed65",
+  "python": "3.13.16",
+  "pythonhashseed": "0",
+  "host": "vm",
+  "resumes": [
+    {
+      "experiment": "pilot",
+      "started_utc": "2026-10-06T11:06:24+00:00",
+      "llm": {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "endpoint_host": "azure-openai-endpoint (redacted)",
+        "reasoning_effort": "none",
+        "temperature": "provider default (GPT-5.x rejects overrides)",
+        "max_retries": 4
+      },
+      "spec": {
+        "arms": [
+          "bic-aw",
+          "lru",
+          "lru-summary-aw-pin"
+        ],
+        "caches": [
+          2,
+          4,
+          8
+        ],
+        "seeds": [
+          42,
+          123,
+          7
+        ],
+        "unbounded": true,
+        "branching": 3,
+        "depth": 2,
+        "max_tokens": 120,
+        "max_calls": 60,
+        "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion."
+      },
+      "units": [
+        "unbounded|None|42|bfs",
+        "bic-aw|2|42|bfs",
+        "lru|2|42|bfs",
+        "lru-summary-aw-pin|2|42|bfs",
+        "bic-aw|4|42|bfs",
+        "lru|4|42|bfs",
+        "lru-summary-aw-pin|4|42|bfs",
+        "bic-aw|8|42|bfs",
+        "lru|8|42|bfs",
+        "lru-summary-aw-pin|8|42|bfs",
+        "unbounded|None|123|bfs",
+        "bic-aw|2|123|bfs",
+        "lru|2|123|bfs",
+        "lru-summary-aw-pin|2|123|bfs",
+        "bic-aw|4|123|bfs",
+        "lru|4|123|bfs",
+        "lru-summary-aw-pin|4|123|bfs",
+        "bic-aw|8|123|bfs",
+        "lru|8|123|bfs",
+        "lru-summary-aw-pin|8|123|bfs",
+        "unbounded|None|7|bfs",
+        "bic-aw|2|7|bfs",
+        "lru|2|7|bfs",
+        "lru-summary-aw-pin|2|7|bfs",
+        "bic-aw|4|7|bfs",
+        "lru|4|7|bfs",
+        "lru-summary-aw-pin|4|7|bfs",
+        "bic-aw|8|7|bfs",
+        "lru|8|7|bfs",
+        "lru-summary-aw-pin|8|7|bfs"
+      ],
+      "code_sha256": "ed89d7341a593fcc494d7b1dc9a1d7d5e3a08ec3508facc5ec111078e0798f87",
+      "python": "3.13.16",
+      "pythonhashseed": "0",
+      "host": "vm"
+    },
+    {
+      "experiment": "pilot",
+      "started_utc": "2026-10-06T11:38:27+00:00",
+      "llm": {
+        "provider": "openai",
+        "model": "gpt-5.4",
+        "endpoint_host": "azure-openai-endpoint (redacted)",
+        "reasoning_effort": "none",
+        "temperature": "provider default (GPT-5.x rejects overrides)",
+        "max_retries": 4
+      },
+      "spec": {
+        "arms": [
+          "bic-aw",
+          "lru",
+          "lru-summary-aw-pin"
+        ],
+        "caches": [
+          2,
+          4,
+          8
+        ],
+        "seeds": [
+          42,
+          123,
+          7
+        ],
+        "unbounded": true,
+        "branching": 3,
+        "depth": 2,
+        "max_tokens": 120,
+        "max_calls": 60,
+        "question": "Write a Python function fibonacci(n) that returns the nth Fibonacci number. fibonacci(0) = 0, fibonacci(1) = 1. The function should run in O(n) time and not use recursion."
+      },
+      "units": [
+        "unbounded|None|42|bfs",
+        "bic-aw|2|42|bfs",
+        "lru|2|42|bfs",
+        "lru-summary-aw-pin|2|42|bfs",
+        "bic-aw|4|42|bfs",
+        "lru|4|42|bfs",
+        "lru-summary-aw-pin|4|42|bfs",
+        "bic-aw|8|42|bfs",
+        "lru|8|42|bfs",
+        "lru-summary-aw-pin|8|42|bfs",
+        "unbounded|None|123|bfs",
+        "bic-aw|2|123|bfs",
+        "lru|2|123|bfs",
+        "lru-summary-aw-pin|2|123|bfs",
+        "bic-aw|4|123|bfs",
+        "lru|4|123|bfs",
+        "lru-summary-aw-pin|4|123|bfs",
+        "bic-aw|8|123|bfs",
+        "lru|8|123|bfs",
+        "lru-summary-aw-pin|8|123|bfs",
+        "unbounded|None|7|bfs",
+        "bic-aw|2|7|bfs",
+        "lru|2|7|bfs",
+        "lru-summary-aw-pin|2|7|bfs",
+        "bic-aw|4|7|bfs",
+        "lru|4|7|bfs",
+        "lru-summary-aw-pin|4|7|bfs",
+        "bic-aw|8|7|bfs",
+        "lru|8|7|bfs",
+        "lru-summary-aw-pin|8|7|bfs"
+      ],
+      "code_sha256": "ed89d7341a593fcc494d7b1dc9a1d7d5e3a08ec3508facc5ec111078e0798f87",
+      "python": "3.13.16",
+      "pythonhashseed": "0",
+      "host": "vm"
+    }
+  ]
+}

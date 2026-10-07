@@ -55,11 +55,35 @@ src/bounded_infinity/
 ├── eviction.py          # Hierarchical summarization eviction
 ├── agent_registry.py    # Agent ID → cache slot addressing
 ├── runtime.py           # Main BoundedInfinity orchestrator
-└── adapters/            # Framework adapters (LangGraph, AutoGen, CrewAI)
+└── adapters/            # LLM client (Gemini, OpenAI-compatible, Anthropic) used by the experiments
 tests/                   # Unit + property-based tests
 benchmarks/              # Performance benchmarks
 docs/                    # Paper and technical report
+experiments/             # Baselines, harness, experiment drivers, results
 ```
+
+## Reproducing the paper's results
+
+All numbers in the manuscript come from the result logs in this repository.
+
+```bash
+pip install -e . scipy scikit-learn matplotlib
+python experiments/extract_round2_numbers.py   # every number used in the paper
+python experiments/make_round2_figures.py      # figures, written to figures/round2/
+```
+
+- `experiments/results/round2/`: GPT-5.4 runs (sweep, single-enhancement baselines,
+  Cantor-vs-hash ablation, access order, coding pilot), one JSON record per run including
+  each agent's original and reconstructed text. Records produced before an evaluation
+  error was corrected are kept in `superseded_stale_flag/` (see its README).
+- `experiments/results/synthetic_fixed/`: synthetic capacity sweep, ablation, stress test
+  and memory-vs-N runs (see its README).
+
+To re-run the GPT-5.4 experiments, set `OPENAI_API_KEY`, `OPENAI_BASE_URL` and
+`GPT_MODEL` in a private shell file and run `GPT_ENV_FILE=<file> sh
+experiments/launch_round2.sh all` (resumable; `status` shows progress). The synthetic
+experiments need no API access: `python -m experiments.run_experiments` and
+`python -m experiments.run_memory_scaling`.
 
 ## License
 
